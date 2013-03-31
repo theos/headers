@@ -6,7 +6,13 @@ Feel free to use these (`git clone git://github.com/hbang/headers.git $THEOS/inc
 
 ## Code rules
 * Create headers only for what you use.
+* Follow the existing coding style.
 * Singleton (`sharedInstance`) methods should return `id`.
+* Don't just copy and paste lines from class-dumps - replace `id` with the appropriate class. Cycript is helpful here:
+
+        $ cycript -p SpringBoard
+        cy# [SBBaconController sharedInstance].baconCurrentlyBeingEaten.class
+        @"SBBacon"
 * Any headers from an open-source library can be included here, but please note its license here in the readme if the headers don't already mention it.
 * If a class has methods that were added and/or removed in a particular iOS version, note it in a comment. For example:
 
