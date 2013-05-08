@@ -1,6 +1,6 @@
 #import "SBApplication.h"
 
 @interface SBApplicationController : NSObject
--(SBApplicationController *)sharedInstance;
++(SBApplicationController *)sharedInstance;
 -(SBApplication *)applicationWithDisplayIdentifier:(NSString *)bundleIdentifier;
 @end
