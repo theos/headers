@@ -1,3 +1,3 @@
 @interface RecentCall : NSObject
--(int)type;
+- (int)type;
 @end

@@ -4,5 +4,5 @@
 	NSArray *_specifiers;
 }
 
--(NSArray *)loadSpecifiersFromPlistName:(NSString *)name target:(id)target;
+- (NSArray *)loadSpecifiersFromPlistName:(NSString *)name target:(id)target;
 @end

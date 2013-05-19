@@ -1,8 +1,11 @@
 The headers that HASHBANG Productions uses. Headers are only created for classes we need, and only methods that we use are added to them. This is due to the large number of classes and methods that are broken in `class-dump`s - this way, we manually set up the headers and they are guaranteed to work.
 
-Feel free to use these (`git clone git://github.com/hbang/headers.git $THEOS/include` - if you have an existing `$THEOS/include`  directory, rename it) and [add on to them.](https://github.com/hbang/headers/pulls)
+Feel free to use these (`git clone git://github.com/hbang/headers.git $THEOS/include` - if you have an existing `$THEOS/include` directory, rename it) and [add on to them.](https://github.com/hbang/headers/pulls)
 
-[WTFPL.](http://wtfpl.net) Contains OpenSSL headers that are licensed under the OpenSSL license.
+## Licenses
+* OpenSSL headers: [OpenSSL](https://www.openssl.org/source/license.html)
+* GraphicsServices headers: [BSD 3 Clause](http://opensource.org/licenses/BSD-3-Clause)
+* Everything else: [WTFPL](http://wtfpl.net)
 
 ## Code rules
 * Create headers only for what you use.

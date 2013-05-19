@@ -4,5 +4,5 @@
 @property(retain) MKPlacemark *placemark;
 @property BOOL isCurrentLocation;
 
-+(NSArray *)mapItemsFromURL:(NSURL *)url options:(id *)options;
++ (NSArray *)mapItemsFromURL:(NSURL *)url options:(id *)options;
 @end

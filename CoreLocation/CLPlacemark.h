@@ -1,3 +1,3 @@
 @interface CLPlacemark : NSObject
-@property(readonly) NSDictionary *addressDictionary;
+@property (readonly) NSDictionary *addressDictionary;
 @end
