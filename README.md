@@ -21,9 +21,9 @@ Feel free to use these (`git clone git://github.com/hbang/headers.git $THEOS/inc
 
     Added in 4.0, removed after 5.1:
 
-        -(BOOL)isAwesome; // 4.0 - 5.1
+        - (BOOL)isAwesome; // 4.0 - 5.1
 
     Added in 6.0, not removed since:
 
-        -(void)eatBacon; // 6.0
+        - (void)eatBacon; // 6.0
 * (Optional) Be awesome; pull request your changes back to this repo so others can benefit.
