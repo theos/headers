@@ -4,4 +4,5 @@
 	UIStatusBarForegroundView *_foregroundView;
 }
 
++ (int)defaultStatusBarStyle;
 @end
