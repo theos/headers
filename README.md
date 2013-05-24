@@ -16,14 +16,8 @@ Feel free to use these (`git clone git://github.com/hbang/headers.git $THEOS/inc
         $ cycript -p SpringBoard
         cy# [SBBaconController sharedInstance].baconCurrentlyBeingEaten.class
         @"SBBacon"
-* Any headers from an open-source library can be included here, but please note its license here in the readme if the headers don't already mention it.
-* If a class has methods that were added and/or removed in a particular iOS version, note it in a comment. For example:
-
-    Added in 4.0, removed after 5.1:
+* Any headers from an open-source library can be included here, but please note its license here in the readme.
+* If a class has methods that were removed in a particular iOS version, note it in a comment. For example, a method added in 4.0, but removed after 5.1:
 
         - (BOOL)isAwesome; // 4.0 - 5.1
-
-    Added in 6.0, not removed since:
-
-        - (void)eatBacon; // 6.0
 * (Optional) Be awesome; pull request your changes back to this repo so others can benefit.
