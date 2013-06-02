@@ -1,5 +1,3 @@
-@interface PSViewController : NSObject
+@interface PSViewController : UIViewController
 - (id)initForContentSize:(CGSize)contentSize;
-- (UIView *)view;
-- (UINavigationItem *)navigationItem;
 @end
