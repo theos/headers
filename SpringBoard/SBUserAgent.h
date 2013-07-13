@@ -1,4 +1,4 @@
 @interface SBUserAgent : NSObject
-+ (id)sharedUserAgent;
++ (instancetype)sharedUserAgent;
 - (NSString *)foregroundApplicationDisplayID;
 @end

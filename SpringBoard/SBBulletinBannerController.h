@@ -1,4 +1,4 @@
 @interface SBBulletinBannerController : NSObject
-+ (id)sharedInstance;
++ (instancetype)sharedInstance;
 - (void)showTestBanner;
 @end

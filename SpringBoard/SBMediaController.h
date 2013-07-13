@@ -1,7 +1,7 @@
 #import "SBApplication.h"
 
 @interface SBMediaController : NSObject
-+ (id)sharedInstance;
++ (instancetype)sharedInstance;
 - (NSDictionary *)_nowPlayingInfo;
 - (SBApplication *)nowPlayingApplication;
 - (NSString *)nowPlayingTitle;
