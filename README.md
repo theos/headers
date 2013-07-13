@@ -10,7 +10,7 @@ Feel free to use these (`git clone git://github.com/hbang/headers.git $THEOS/inc
 ## Code rules
 * Create headers only for what you use.
 * Follow the existing coding style.
-* Singleton (`sharedInstance`) methods should return `id`.
+* Singleton (`sharedInstance`) methods should return `instancetype`.
 * Don't just copy and paste lines from class-dumps - replace `id` with the appropriate class. Cycript is helpful here:
 
         $ cycript -p SpringBoard
