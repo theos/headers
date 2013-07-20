@@ -4,7 +4,7 @@ Feel free to use these (`git clone git://github.com/hbang/headers.git $THEOS/inc
 
 ## Licenses
 * OpenSSL headers: [OpenSSL](https://www.openssl.org/source/license.html)
-* GraphicsServices headers: [BSD 3 Clause](http://opensource.org/licenses/BSD-3-Clause)
+* GraphicsServices/IOSurface headers: [BSD 3 Clause](http://opensource.org/licenses/BSD-3-Clause)
 * Everything else: [WTFPL](http://wtfpl.net)
 
 ## Code rules
