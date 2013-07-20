@@ -1,0 +1,2 @@
+@interface SBWallpaperView : UIImageView
+@end
