@@ -1,3 +1,3 @@
 @interface PSViewController : UIViewController
-- (id)initForContentSize:(CGSize)contentSize;
+- (instancetype)initForContentSize:(CGSize)contentSize;
 @end

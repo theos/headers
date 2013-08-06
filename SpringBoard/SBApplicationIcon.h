@@ -16,6 +16,6 @@ typedef enum {
 } SBApplicationIconFormat;
 
 @interface SBApplicationIcon : NSObject
-- (id)initWithApplication:(SBApplication *)application;
+- (instancetype)initWithApplication:(SBApplication *)application;
 - (UIImage *)getIconImage:(SBApplicationIconFormat)image;
 @end

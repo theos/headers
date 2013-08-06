@@ -24,7 +24,7 @@ enum StatusBarAlignment
 
 @interface LSStatusBarItem (API)
 
-- (id) initWithIdentifier: (NSString*) identifier alignment: (StatusBarAlignment) alignment;
+- (instancetype) initWithIdentifier: (NSString*) identifier alignment: (StatusBarAlignment) alignment;
 
 // bitmasks (e.g. left or right) are not supported yet
 @property (nonatomic, readonly) StatusBarAlignment alignment;

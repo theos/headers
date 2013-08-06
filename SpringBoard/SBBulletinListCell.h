@@ -6,5 +6,5 @@ typedef enum {
 @interface SBBulletinListCell : UITableViewCell
 @property SBBulletinListCellAccessoryStyle bulletinAccessoryStyle;
 
-- (id)initWithLinenView:(id)linenView reuseIdentifier:(NSString *)reuseIdentifier;
+- (instancetype)initWithLinenView:(UIView *)linenView reuseIdentifier:(NSString *)reuseIdentifier;
 @end

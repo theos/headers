@@ -1,3 +1,3 @@
 @interface PSSpecifier : NSObject
-- (id)properties;
+- (NSDictionary *)properties;
 @end

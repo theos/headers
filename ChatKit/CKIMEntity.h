@@ -1,5 +1,5 @@
 #import "CKEntity.h"
 
 @interface CKIMEntity : CKEntity
-+ (id)copyEntityForAddressString:(NSString *)address;
++ (instancetype)copyEntityForAddressString:(NSString *)address;
 @end
