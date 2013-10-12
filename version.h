@@ -17,6 +17,7 @@
  * 5.0	675.00
  * 5.1	690.10
  * 6.x	793.00
+ * 7.0	847.20
  */
 
 /**
@@ -53,41 +54,14 @@
 #define kCFCoreFoundationVersionNumber_iOS_6_1 793.00
 #endif
 
+#ifndef kCFCoreFoundationVersionNumber_iOS_7_0
+#define kCFCoreFoundationVersionNumber_iOS_7_0 847.20
+#endif
+
 /**
  * Let's also define some useful functions to check which firmware
  * the user is on. (Note that feature detection is highly
  * recommended where possible)
- *
- * First up are some general checks of the major version, then
- * separate quick macros for checking particular minor versions.
- */
-
-#define IS_IOS_2 (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iPhoneOS_2_0 && kCFCoreFoundationVersionNumber < kCFCoreFoundationVersionNumber_iPhoneOS_3_0)
-#define IS_IOS_3 (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iPhoneOS_3_0 && kCFCoreFoundationVersionNumber < kCFCoreFoundationVersionNumber_iOS_4_0)
-#define IS_IOS_4 (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_4_0 && kCFCoreFoundationVersionNumber < kCFCoreFoundationVersionNumber_iOS_5_0)
-#define IS_IOS_5 (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_5_0 && kCFCoreFoundationVersionNumber < kCFCoreFoundationVersionNumber_iOS_6_0)
-#define IS_IOS_6 (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_6_0)
-
-#define IS_IOS_2_0 (kCFCoreFoundationVersionNumber == kCFCoreFoundationVersionNumber_iPhoneOS_2_0)
-#define IS_IOS_2_1 (kCFCoreFoundationVersionNumber == kCFCoreFoundationVersionNumber_iPhoneOS_2_1)
-#define IS_IOS_2_2 (kCFCoreFoundationVersionNumber == kCFCoreFoundationVersionNumber_iPhoneOS_2_2)
-#define IS_IOS_3_0 (kCFCoreFoundationVersionNumber == kCFCoreFoundationVersionNumber_iPhoneOS_3_0)
-#define IS_IOS_3_1 (kCFCoreFoundationVersionNumber == kCFCoreFoundationVersionNumber_iPhoneOS_3_1)
-#define IS_IOS_3_2 (kCFCoreFoundationVersionNumber == kCFCoreFoundationVersionNumber_iPhoneOS_3_2)
-#define IS_IOS_4_0 (kCFCoreFoundationVersionNumber == kCFCoreFoundationVersionNumber_iOS_4_0)
-#define IS_IOS_4_1 (kCFCoreFoundationVersionNumber == kCFCoreFoundationVersionNumber_iOS_4_1)
-#define IS_IOS_4_2 (kCFCoreFoundationVersionNumber == kCFCoreFoundationVersionNumber_iOS_4_2)
-#define IS_IOS_4_3 (kCFCoreFoundationVersionNumber == kCFCoreFoundationVersionNumber_iOS_4_3)
-#define IS_IOS_5_0 (kCFCoreFoundationVersionNumber == kCFCoreFoundationVersionNumber_iOS_5_0)
-#define IS_IOS_5_1 (kCFCoreFoundationVersionNumber == kCFCoreFoundationVersionNumber_iOS_5_1)
-#define IS_IOS_6_0 (kCFCoreFoundationVersionNumber == kCFCoreFoundationVersionNumber_iOS_6_0)
-#define IS_IOS_6_1 (kCFCoreFoundationVersionNumber == kCFCoreFoundationVersionNumber_iOS_6_1)
-
-/**
- * Sometimes those functions aren't all that helpful, so
- * here's some more that check if the device is on a firmware
- * that's older or newer than a version or between two
- * specified versions.
  */
 
 #define IS_IOS_OR_OLDER(version) (kCFCoreFoundationVersionNumber <= kCFCoreFoundationVersionNumber_##version)
