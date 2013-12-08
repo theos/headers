@@ -1,5 +1,7 @@
-#import "RecentCall.h"
+@class RecentCall;
 
 @interface RecentsTableViewCell : UITableViewCell
--(RecentCall *)call;
+
+- (RecentCall *)call;
+
 @end

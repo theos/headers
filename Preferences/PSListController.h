@@ -5,4 +5,5 @@
 }
 
 - (NSArray *)loadSpecifiersFromPlistName:(NSString *)name target:(PSListController *)target;
+
 @end

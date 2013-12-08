@@ -3,4 +3,5 @@
 // 5.x
 
 @interface CKMadridEntity : CKIMEntity
+
 @end

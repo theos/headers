@@ -2,5 +2,6 @@
 #include_next <UIKit/UICollectionViewCell.h>
 #else
 @interface UICollectionViewCell : UIView
+
 @end
 #endif

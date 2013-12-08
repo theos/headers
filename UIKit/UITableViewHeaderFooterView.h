@@ -1,2 +1,3 @@
 @interface UITableViewHeaderFooterView : UITableViewCell
+
 @end

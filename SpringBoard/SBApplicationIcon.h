@@ -1,4 +1,4 @@
-#import "SBApplication.h"
+@class SBApplication;
 
 typedef enum {
 	SBApplicationIconFormatSmall, // 29x29
@@ -16,6 +16,8 @@ typedef enum {
 } SBApplicationIconFormat;
 
 @interface SBApplicationIcon : NSObject
+
 - (instancetype)initWithApplication:(SBApplication *)application;
 - (UIImage *)getIconImage:(SBApplicationIconFormat)image;
+
 @end

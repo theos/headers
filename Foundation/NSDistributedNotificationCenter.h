@@ -1,2 +1,3 @@
 @interface NSDistributedNotificationCenter : NSNotificationCenter
+
 @end

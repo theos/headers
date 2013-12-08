@@ -4,6 +4,8 @@
 #import "UICollectionViewCell.h"
 
 @interface UICollectionView : UIView
+
 - (NSIndexPath *)indexPathForCell:(UICollectionViewCell *)cell;
+
 @end
 #endif

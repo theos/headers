@@ -1,2 +1,3 @@
 @interface RecentsTableViewCellContentView : UIView
+
 @end

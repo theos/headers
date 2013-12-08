@@ -5,4 +5,5 @@
 }
 
 + (int)defaultStatusBarStyle;
+
 @end

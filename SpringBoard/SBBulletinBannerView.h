@@ -3,4 +3,5 @@
 #import "SBBannerView.h"
 
 @interface SBBulletinBannerView : SBBannerView
+
 @end

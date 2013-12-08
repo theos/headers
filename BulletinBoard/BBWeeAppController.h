@@ -1,4 +1,5 @@
 @protocol BBWeeAppController
+
 - (UIView *)view;
 
 @optional
@@ -22,4 +23,5 @@
 - (void)viewDidDisappear;
 - (void)viewWillAppear;
 - (float)viewHeight;
+
 @end

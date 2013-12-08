@@ -3,7 +3,10 @@ typedef struct {
 } SBStatusBarData;
 
 @interface SBStatusBarDataManager : NSObject
+
 + (instancetype)sharedDataManager;
+
 - (void)_updateTimeString;
 - (void)_dataChanged;
+
 @end
