@@ -1,8 +1,8 @@
 @interface BBSectionInfo : NSObject
 
-+ (instancetype)defaultSectionInfoForType:(unsigned)type;
++ (instancetype)defaultSectionInfoForType:(NSUInteger)type;
 
-@property unsigned notificationCenterLimit;
+@property NSUInteger notificationCenterLimit;
 @property (nonatomic, retain) NSString *sectionID;
 
 @end
