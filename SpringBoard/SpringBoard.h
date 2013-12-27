@@ -7,6 +7,5 @@
 
 @property (nonatomic, retain) UIWindow *window;
 @property (readonly) BOOL isLocked;
-@property (readonly) BOOL _isDim;
 
 @end
