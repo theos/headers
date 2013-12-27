@@ -1,10 +1,10 @@
-@interface _SBUIWidgetViewController : UIViewController
+#import "_SBUIWidgetHost.h"
+
+@interface _SBUIWidgetViewController : UIViewController <_SBUIWidgetHost>
 
 @property (readonly, assign, nonatomic) CGSize preferredViewSize;
+@property (readonly, assign, nonatomic) id<_SBUIWidgetHost> widgetHost;
 
-- (void)invalidatePreferredViewSize;
-- (void)requestLaunchOfURL:(NSURL *)url;
-- (void)requestPresentationOfViewController:(UIViewController *)viewController presentationStyle:(UIModalPresentationStyle)style context:(void *)context completion:(void (^)(void))completion;
 - (void)hostDidDismiss;
 - (void)hostWillDismiss;
 - (void)hostDidPresent;

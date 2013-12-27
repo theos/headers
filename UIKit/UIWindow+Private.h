@@ -1,3 +1,5 @@
+#define UIWindowLevelNotificationCenter 1056.f
+
 @interface UIWindow (Private)
 
 + (UIWindow *)keyWindow;
