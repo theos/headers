@@ -1,3 +1,5 @@
+@class BBAction;
+
 @interface BBBulletin : NSObject
 
 @property (nonatomic, retain) NSString *bulletinID;
@@ -10,6 +12,8 @@
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic, retain) NSDate *date;
 @property (nonatomic, retain) NSDate *lastInterruptDate;
+
+@property (nonatomic, retain) BBAction *defaultAction;
 
 @property (nonatomic, retain) NSDictionary *context;
 

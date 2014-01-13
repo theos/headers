@@ -3,7 +3,7 @@
 @protocol BBDataProvider <NSObject>
 
 @required
-- (NSArray *)bulletinsFilteredBy:(unsigned)by count:(unsigned)count lastCleared:(NSDate *)cleared;
+- (NSArray *)bulletinsFilteredBy:(NSUInteger)by count:(NSUInteger)count lastCleared:(NSDate *)cleared;
 - (NSString *)sectionIdentifier;
 - (NSArray *)sortDescriptors;
 
