@@ -1,0 +1,3 @@
+@interface SBIconModel : NSObject
+
+@end
