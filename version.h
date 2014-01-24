@@ -4,20 +4,21 @@
  * by HASHBANG Productions <http://hbang.ws>
  * WTFPL <http://wtfpl.net>
  *
- * 2.0	478.23
- * 2.1	478.26
- * 2.2	478.29
- * 3.0	478.47
- * 3.1	478.52
- * 3.2	478.61
- * 4.0	550.32
- * 4.1	550.38
- * 4.2	550.52
- * 4.3	550.58
- * 5.0	675.00
- * 5.1	690.10
- * 6.x	793.00
- * 7.0	847.20
+ * 2.0		478.23
+ * 2.1		478.26
+ * 2.2		478.29
+ * 3.0		478.47
+ * 3.1		478.52
+ * 3.2		478.61
+ * 4.0		550.32
+ * 4.1		550.38
+ * 4.2		550.52
+ * 4.3		550.58
+ * 5.0		675.00
+ * 5.1		690.10
+ * 6.x		793.00
+ * 7.0		847.20
+ * 7.0.3	847.21
  */
 
 /**
@@ -56,6 +57,10 @@
 
 #ifndef kCFCoreFoundationVersionNumber_iOS_7_0
 #define kCFCoreFoundationVersionNumber_iOS_7_0 847.20
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_7_0_3
+#define kCFCoreFoundationVersionNumber_iOS_7_0_3 847.21
 #endif
 
 /**
