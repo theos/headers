@@ -1,5 +1,10 @@
 @class BBAction;
 
+typedef NS_ENUM(NSUInteger, BBBulletinAccessoryStyle) {
+	BBBulletinAccessoryStyleNone,
+	BBBulletinAccessoryStyleVIP = 4,
+};
+
 @interface BBBulletin : NSObject
 
 @property (nonatomic, retain) NSString *bulletinID;
@@ -14,6 +19,7 @@
 @property (nonatomic, retain) NSDate *lastInterruptDate;
 
 @property (nonatomic, retain) BBAction *defaultAction;
+@property BBBulletinAccessoryStyle accessoryStyle;
 
 @property (nonatomic, retain) NSDictionary *context;
 
