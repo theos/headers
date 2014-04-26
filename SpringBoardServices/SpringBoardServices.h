@@ -1,6 +1,6 @@
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include <sys/cdefs.h>
+
+__BEGIN_DECLS
 
 mach_port_t SBSSpringBoardServerPort();
 
@@ -10,6 +10,4 @@ void SBSUndimScreen();
 
 bool SBSOpenSensitiveURLAndUnlock(CFURLRef url, char flags);
 
-#ifdef __cplusplus
-}
-#endif
+__END_DECLS

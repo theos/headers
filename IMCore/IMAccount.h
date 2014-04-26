@@ -1,3 +1,5 @@
+#include <sys/cdefs.h>
+
 @class IMHandle, IMServiceImpl;
 
 @interface IMAccount : NSObject
@@ -8,12 +10,8 @@
 
 @end
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+__BEGIN_DECLS
 
 extern "C" IMAccount *IMPreferredSendingAccountForAddressesWithFallbackService(NSArray *addresses, IMServiceImpl *service);
 
-#ifdef __cplusplus
-}
-#endif
+__END_DECLS

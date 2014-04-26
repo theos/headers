@@ -1,3 +1,5 @@
+#include <sys/cdefs.h>
+
 @class BBBulletinRequest;
 @protocol BBDataProvider;
 
@@ -7,11 +9,9 @@
 
 @end
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-	extern void BBDataProviderAddBulletin(id<BBDataProvider> dataProvider, BBBulletinRequest *bulletinRequest);
-	extern void BBDataProviderWithdrawBulletinsWithRecordID(id<BBDataProvider> dataProvider, NSString *recordID);
-#ifdef __cplusplus
-}
-#endif
+__BEGIN_DECLS
+
+extern void BBDataProviderAddBulletin(id<BBDataProvider> dataProvider, BBBulletinRequest *bulletinRequest);
+extern void BBDataProviderWithdrawBulletinsWithRecordID(id<BBDataProvider> dataProvider, NSString *recordID);
+
+__END_DECLS

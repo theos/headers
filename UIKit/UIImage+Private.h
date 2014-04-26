@@ -1,12 +1,11 @@
 #import <IOSurface/IOSurface.h>
+#include <sys/cdefs.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+__BEGIN_DECLS
+
 UIImage *_UIImageWithName(NSString *name);
-#ifdef __cplusplus
-}
-#endif
+
+__END_DECLS
 
 @interface UIImage (Private)
 

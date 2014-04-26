@@ -1,14 +1,12 @@
+#include <sys/cdefs.h>
+
 typedef struct BKSDisplayBrightnessTransaction *BKSDisplayBrightnessTransactionRef;
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+__BEGIN_DECLS
 
 BKSDisplayBrightnessTransactionRef BKSDisplayBrightnessTransactionCreate(CFAllocatorRef allocator);
 
 CGFloat BKSDisplayBrightnessGetCurrent();
 void BKSDisplayBrightnessSet(CGFloat brightness, NSInteger wtfIsThis);
 
-#ifdef __cplusplus
-}
-#endif
+__END_DECLS

@@ -5,10 +5,11 @@
  * Source: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-#include <CoreGraphics/CoreGraphics.h>
-#include <QuartzCore/QuartzCore.h>
+#import <CoreGraphics/CoreGraphics.h>
+#import <QuartzCore/QuartzCore.h>
+#import <IOSurface/IOSurface.h>
 #include <pthread.h>
-#include <IOSurface/IOSurface.h>
+#include <sys/cdefs.h>
 
 typedef struct {
 	int x;
@@ -272,23 +273,19 @@ typedef struct {
 	int _field2;
 } XXStruct_K5nmsA;
 
-#if __cplusplus
-extern "C" {
-#endif
-	NSString* CAAtomGetString(unsigned atomNum);
-	unsigned CAInternAtom(NSString* atomStr);
-	
-	// log CA object to stdout.
-	typedef void* CARenderObjectRef;
-	
-	void CARenderShow(CARenderObjectRef object);
-	CARenderObjectRef CARenderRetain(CARenderObjectRef object);
-	void CARenderRelease(CARenderObjectRef object);
-	
-	unsigned CAGetDebugFlags();
-	void CASetDebugFlags(unsigned flags);
-	
-#if __cplusplus
-}
-#endif
-		
+__BEGIN_DECLS
+
+NSString* CAAtomGetString(unsigned atomNum);
+unsigned CAInternAtom(NSString* atomStr);
+
+// log CA object to stdout.
+typedef void* CARenderObjectRef;
+
+void CARenderShow(CARenderObjectRef object);
+CARenderObjectRef CARenderRetain(CARenderObjectRef object);
+void CARenderRelease(CARenderObjectRef object);
+
+unsigned CAGetDebugFlags();
+void CASetDebugFlags(unsigned flags);
+
+__END_DECLS

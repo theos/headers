@@ -1,9 +1,5 @@
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include <sys/cdefs.h>
 
+__BEGIN_DECLS
 extern NSString *PLLocalizedFrameworkString(NSString *key, NSString *comment);
-
-#ifdef __cplusplus
-}
-#endif
+__END_DECLS
