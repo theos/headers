@@ -14,9 +14,11 @@ typedef NS_ENUM(NSUInteger, BBBulletinAccessoryStyle) {
 @property BOOL showsUnreadIndicator;
 
 @property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *subtitle;
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic, retain) NSDate *date;
 @property (nonatomic, retain) NSDate *lastInterruptDate;
+@property (nonatomic, retain) NSString *unlockActionLabelOverride;
 
 @property (nonatomic, retain) BBAction *defaultAction;
 @property BBBulletinAccessoryStyle accessoryStyle;

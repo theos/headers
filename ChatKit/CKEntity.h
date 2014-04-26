@@ -7,4 +7,6 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) IMHandle *handle;
 
+@property BOOL foundABNameForSender;
+
 @end
