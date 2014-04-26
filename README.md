@@ -3,6 +3,7 @@ The headers that HASHBANG Productions uses. Headers are only created for classes
 Feel free to use these (`git clone git://github.com/hbang/headers.git $THEOS/include` - if you have an existing `$THEOS/include` directory, rename it) and [add on to them](https://github.com/hbang/headers/pulls).
 
 ## Licenses
+* CaptainHook headers: [MIT License](http://mit-license.org/)
 * GraphicsServices/IOSurface headers: [BSD 3 Clause](http://opensource.org/licenses/BSD-3-Clause)
 * IOKit headers: [Apple Public Source](http://www.opensource.apple.com/apsl)
 * libhbangcommon headers: [Apache License 2](https://www.apache.org/licenses/LICENSE-2.0.html)
