@@ -19,6 +19,7 @@ typedef NS_ENUM(NSUInteger, BBBulletinAccessoryStyle) {
 @property (nonatomic, retain) NSDate *date;
 @property (nonatomic, retain) NSDate *lastInterruptDate;
 @property (nonatomic, retain) NSString *unlockActionLabelOverride;
+@property (nonatomic, retain) NSString *section;
 
 @property (nonatomic, retain) BBAction *defaultAction;
 @property BBBulletinAccessoryStyle accessoryStyle;

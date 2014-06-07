@@ -1,4 +1,5 @@
-#define UIWindowLevelNotificationCenter 1056.f
+const UIWindowLevel UIWindowLevelNotificationCenter = 1056.f;
+const UIWindowLevel UIWindowLevelStatusBarLockScreen = 1052.f;
 
 @interface UIWindow (Private)
 

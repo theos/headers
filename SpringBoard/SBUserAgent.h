@@ -2,6 +2,8 @@
 
 + (instancetype)sharedUserAgent;
 
-- (NSString *)foregroundApplicationDisplayID;
+- (void)openURL:(NSURL *)url allowUnlock:(BOOL)allowUnlock animated:(BOOL)animated;
+
+@property (nonatomic, retain) NSString *foregroundApplicationDisplayID;
 
 @end

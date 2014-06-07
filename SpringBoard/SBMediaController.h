@@ -1,5 +1,7 @@
 @class SBApplication;
 
+static NSString *const kSBNowPlayingInfoArtworkDataKey = @"artworkData";
+
 @interface SBMediaController : NSObject
 
 + (instancetype)sharedInstance;

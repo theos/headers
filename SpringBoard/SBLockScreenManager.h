@@ -1,4 +1,4 @@
-@class SBLockScreenNotificationListController;
+@class SBLockScreenViewController;
 
 @interface SBLockScreenManager : NSObject
 
@@ -6,6 +6,6 @@
 
 - (void)lockUIFromSource:(NSUInteger)source withOptions:(id)options;
 
-@property (nonatomic, retain) SBLockScreenNotificationListController *lockScreenViewController;
+@property (nonatomic, retain) SBLockScreenViewController *lockScreenViewController;
 
 @end
