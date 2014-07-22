@@ -10,4 +10,6 @@
 - (void)hostDidPresent;
 - (void)hostWillPresent;
 
+- (void)invalidatePreferredViewSize;
+
 @end

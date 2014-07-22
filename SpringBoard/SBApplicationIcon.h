@@ -3,20 +3,20 @@
 #if __IPHONE_7_0
 typedef NS_ENUM(NSUInteger, SBApplicationIconFormat) {
 												// iphone  ipad
-	SBApplicationIconFormatSmall,				// 29x29 29x29
-	SBApplicationIconFormatSpotlight,			// 40x40 40x40
-	SBApplicationIconFormatDefault,				// 62x62 78x78
-	SBApplicationIconFormatGameCenter,			// 42x42 78x78
-	SBApplicationIconFormatDocumentFull,		// 37x48 37x48
-	SBApplicationIconFormatDocumentSmall,		// 37x48 37z48
-	SBApplicationIconFormatSquareBig,			// 82x82 128x128
-	SBApplicationIconFormatSquareDefault,		// 62x62 78x78
-	SBApplicationIconFormatTiny,				// 20x20 20x20
-	SBApplicationIconFormatDocument,			// 37x48 247x320
-	SBApplicationIconFormatDocumentLarge,		// 37x48 247x320
+	SBApplicationIconFormatSmall,				// 29x29   29x29
+	SBApplicationIconFormatSpotlight,			// 40x40   40x40
+	SBApplicationIconFormatDefault,				// 62x62   78x78
+	SBApplicationIconFormatGameCenter,			// 42x42   78x78
+	SBApplicationIconFormatDocumentFull,		// 37x48   37x48
+	SBApplicationIconFormatDocumentSmall,		// 37x48   37z48
+	SBApplicationIconFormatSquareBig,			// 82x82   128x128
+	SBApplicationIconFormatSquareDefault,		// 62x62   78x78
+	SBApplicationIconFormatTiny,				// 20x20   20x20
+	SBApplicationIconFormatDocument,			// 37x48   247x320
+	SBApplicationIconFormatDocumentLarge,		// 37x48   247x320
 	SBApplicationIconFormatUnknownGradient,		// 300x150 300x150
-	SBApplicationIconFormatSquareGameCenter,	// 42x42 42x42
-	SBApplicationIconFormatUnknownDefault,		// 62x62 78x78
+	SBApplicationIconFormatSquareGameCenter,	// 42x42   42x42
+	SBApplicationIconFormatUnknownDefault,		// 62x62   78x78
 
 	/*
 	 todo: find out what UnknownGradient and UnknownDefault are for.
@@ -45,6 +45,7 @@ typedef NS_ENUM(NSUInteger, SBApplicationIconFormat) {
 @interface SBApplicationIcon : NSObject
 
 - (instancetype)initWithApplication:(SBApplication *)application;
+
 - (UIImage *)getIconImage:(SBApplicationIconFormat)image;
 
 @end
