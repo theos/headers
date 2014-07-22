@@ -7,9 +7,10 @@ Feel free to use these (`git clone git://github.com/hbang/headers.git $THEOS/inc
 * GraphicsServices/IOSurface headers: [BSD 3 Clause](http://opensource.org/licenses/BSD-3-Clause)
 * IconSupport headers: ?
 * IOKit headers: [Apple Public Source](http://www.opensource.apple.com/apsl)
-* libhbangcommon headers: [Apache License 2](https://www.apache.org/licenses/LICENSE-2.0.html)
-* libopener headers: [GNU GPL v3](https://www.gnu.org/copyleft/gpl.html)
 * libactivator headers: [GNU LGPL v2.1](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
+* libhbangcommon headers: [Apache License 2](https://www.apache.org/licenses/LICENSE-2.0.html)
+* libobjcipc headers: ?
+* libopener headers: [GNU GPL v3](https://www.gnu.org/copyleft/gpl.html)
 * OpenSSL headers: [OpenSSL](https://www.openssl.org/source/license.html)
 * Everything else: [WTFPL](http://wtfpl.net)
 
