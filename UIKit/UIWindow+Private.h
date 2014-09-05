@@ -1,5 +1,6 @@
 const UIWindowLevel UIWindowLevelNotificationCenter = 1056.f;
 const UIWindowLevel UIWindowLevelStatusBarLockScreen = 1052.f;
+const UIWindowLevel UIWindowLevelAlertReal = 1996.f;
 
 @interface UIWindow (Private)
 
