@@ -20,6 +20,8 @@
  * 7.0		847.20
  * 7.0.3	847.21
  * 7.1		847.26
+ * 8.0		1140.10
+ * 8.1		1141.14
  */
 
 /**
@@ -65,6 +67,14 @@
 
 #ifndef kCFCoreFoundationVersionNumber_iOS_7_1
 #define kCFCoreFoundationVersionNumber_iOS_7_1 847.26
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_8_0
+#define kCFCoreFoundationVersionNumber_iOS_8_0 1140.10
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_8_1
+#define kCFCoreFoundationVersionNumber_iOS_8_1 1141.14
 #endif
 
 /**
