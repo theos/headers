@@ -48,4 +48,6 @@ typedef NS_ENUM(NSUInteger, SBApplicationIconFormat) {
 
 - (UIImage *)getIconImage:(SBApplicationIconFormat)image;
 
+@property (nonatomic, retain, readonly) SBApplication *application;
+
 @end
