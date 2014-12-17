@@ -4,6 +4,7 @@
 	UIStatusBarForegroundView *_foregroundView;
 }
 
-+ (int)defaultStatusBarStyle;
++ (UIStatusBarStyle)defaultStatusBarStyle;
++ (CGFloat)heightForStyle:(UIStatusBarStyle)statusBarStyle orientation:(UIInterfaceOrientation)orientation;
 
 @end

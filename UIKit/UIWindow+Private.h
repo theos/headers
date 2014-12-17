@@ -10,5 +10,6 @@ const UIWindowLevel UIWindowLevelAlertReal = 1996.f;
 - (void)_updateToInterfaceOrientation:(UIInterfaceOrientation)orientation duration:(double)duration force:(BOOL)force;
 
 @property BOOL keepContextInBackground;
+@property (nonatomic, retain, readonly) UIResponder *firstResponder;
 
 @end
