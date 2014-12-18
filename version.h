@@ -77,6 +77,10 @@
 #define kCFCoreFoundationVersionNumber_iOS_8_1 1141.14
 #endif
 
+#ifndef kCFCoreFoundationVersionNumber10_10
+#define kCFCoreFoundationVersionNumber10_10 1151.16
+#endif
+
 /**
  * Let's also define some useful functions to check which firmware the user is
  * on. (Note that feature detection is highly recommended where possible)
@@ -85,3 +89,11 @@
 #define IS_IOS_OR_OLDER(version) (kCFCoreFoundationVersionNumber <= kCFCoreFoundationVersionNumber_##version)
 #define IS_IOS_OR_NEWER(version) (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_##version)
 #define IS_IOS_BETWEEN(start, end) (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_##start && kCFCoreFoundationVersionNumber <= kCFCoreFoundationVersionNumber_##end)
+
+/**
+ * And let's make equivalent macros for OS X so it doesn't feel lonely.
+ */
+
+#define IS_OSX_OR_OLDER (kCFCoreFoundationVersionNumber <= kCFCoreFoundationVersionNumber##version)
+#define IS_OSX_OR_NEWER(version) (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber##version)
+#define IS_OSX_BETWEEN(start, end) (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber##start && kCFCoreFoundationVersionNumber <= kCFCoreFoundationVersionNumber##end)
