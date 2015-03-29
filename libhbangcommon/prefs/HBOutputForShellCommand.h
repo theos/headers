@@ -1,1 +1,0 @@
-NSString *HBOutputForShellCommand(NSString *command);

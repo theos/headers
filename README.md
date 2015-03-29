@@ -11,6 +11,7 @@ Feel free to use these (`git clone git://github.com/hbang/headers.git $THEOS/inc
 * libhbangcommon headers: [Apache License 2](https://www.apache.org/licenses/LICENSE-2.0.html)
 * libobjcipc headers: ?
 * libopener headers: [GNU GPL v3](https://www.gnu.org/copyleft/gpl.html)
+* MediaRemote, MobileGestalt headers: [GNU GPL v3](https://www.gnu.org/copyleft/gpl.html) from [Cykey](https://github.com/Cykey/ios-reversed-headers)
 * OpenSSL headers: [OpenSSL](https://www.openssl.org/source/license.html)
 * Everything else: [WTFPL](http://wtfpl.net)
 

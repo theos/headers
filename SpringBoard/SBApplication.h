@@ -1,3 +1,5 @@
+static NSString *const kSBAppTagsHidden = @"hidden";
+
 @interface SBApplication : NSObject
 
 @property (nonatomic, retain, readonly) NSString *bundleIdentifier;
@@ -7,5 +9,7 @@
 @property (nonatomic, retain, readonly) NSString *sandboxPath;
 @property (nonatomic, retain, readonly) NSString *bundleContainerPath;
 @property (nonatomic, retain, readonly) NSString *path;
+
+@property (nonatomic, retain, setter=_setTags:) NSArray *tags;
 
 @end

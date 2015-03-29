@@ -8,4 +8,6 @@
 
 @property (nonatomic, retain) SBLockScreenViewController *lockScreenViewController;
 
+@property BOOL isUILocked;
+
 @end

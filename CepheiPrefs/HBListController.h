@@ -3,5 +3,6 @@
 @interface HBListController : PSListController
 
 + (UIColor *)hb_tintColor;
++ (NSString *)hb_specifierPlist;
 
 @end

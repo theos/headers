@@ -1,3 +1,5 @@
+#import <AddressBook/AddressBook.h>
+
 @class BBAction;
 
 typedef NS_ENUM(NSUInteger, BBBulletinAccessoryStyle) {
@@ -25,5 +27,7 @@ typedef NS_ENUM(NSUInteger, BBBulletinAccessoryStyle) {
 @property BBBulletinAccessoryStyle accessoryStyle;
 
 @property (nonatomic, retain) NSDictionary *context;
+
+@property ABRecordID addressBookRecordID;
 
 @end

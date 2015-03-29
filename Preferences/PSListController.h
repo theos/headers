@@ -14,6 +14,9 @@
 
 @property (nonatomic, retain) UITableView *view;
 @property (nonatomic, retain) UITableView *table; // 3.0 - 6.0
+@property (nonatomic, retain) UITableView *tableView;
+
+@property (nonatomic, retain) NSArray *specifiers;
 
 @property (nonatomic, retain) PSRootController *rootController;
 @property (nonatomic, retain) PSRootController *parentController;
