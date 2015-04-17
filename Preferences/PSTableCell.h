@@ -10,6 +10,9 @@
 @property (nonatomic, retain) id target;
 @property SEL action;
 
+@property (nonatomic, retain) id cellTarget;
+@property SEL cellAction;
+
 @property BOOL cellEnabled;
 
 @end
