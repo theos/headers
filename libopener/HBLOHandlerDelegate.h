@@ -36,7 +36,7 @@
 
 /**
  * Called when a URL is opened in order to check if your handler wants to override the URL.
-
+ *
  * @param url The original URL that the user wants to open.
  * @param sender The bundle identifier of the app that invoked the URL open request. Not reliable
  * on iOS 5.
