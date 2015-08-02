@@ -6,7 +6,7 @@ __BEGIN_DECLS
 
 BKSDisplayBrightnessTransactionRef BKSDisplayBrightnessTransactionCreate(CFAllocatorRef allocator);
 
-CGFloat BKSDisplayBrightnessGetCurrent();
-void BKSDisplayBrightnessSet(CGFloat brightness, NSInteger wtfIsThis);
+float BKSDisplayBrightnessGetCurrent();
+void BKSDisplayBrightnessSet(float brightness, NSInteger unknown);
 
 __END_DECLS
