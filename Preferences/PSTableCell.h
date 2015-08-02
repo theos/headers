@@ -15,4 +15,11 @@
 
 @property BOOL cellEnabled;
 
+@property (nonatomic, retain) UIImage *icon;
+
+- (UIImage *)getLazyIcon;
+
+@property (nonatomic, retain, readonly) UIImage *blankIcon;
+@property (nonatomic, retain, readonly) NSString *lazyIconAppID;
+
 @end
