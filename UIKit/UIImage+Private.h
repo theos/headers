@@ -13,7 +13,9 @@ __END_DECLS
 + (UIImage *)kitImageNamed:(NSString *)name;
 + (UIImage *)imageNamed:(NSString *)name inBundle:(NSBundle *)bundle;
 
-//- (instancetype)_initWithIOSurface:(IOSurfaceRef)surface scale:(CGFloat)scale orientation:(UIImageOrientation)orientation;
++ (UIImage *)_applicationIconImageForBundleIdentifier:(NSString *)bundleIdentifier format:(SBApplicationIconFormat)format scale:(CGFloat)scale;
+
+// - (instancetype)_initWithIOSurface:(IOSurfaceRef)surface scale:(CGFloat)scale orientation:(UIImageOrientation)orientation;
 
 - (UIImage *)_applicationIconImageForFormat:(SBApplicationIconFormat)format precomposed:(BOOL)precomposed scale:(CGFloat)scale;
 
