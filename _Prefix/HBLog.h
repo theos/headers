@@ -6,7 +6,7 @@
 }
 
 #ifdef __DEBUG__
-	#define HB_LOG_FORMAT(color) "\e[1;3" #color "m[%s] %s:\e[m\e[0;3" #color "m%d\e[m \e[0;30;4" #color "m%s:\e[m %s"
+	#define HB_LOG_FORMAT(color) "\e[1;3" #color "m[%s] \e[m\e[0;3" #color "m%s:%d\e[m \e[0;30;4" #color "m%s:\e[m %s"
 #else
 	#define HB_LOG_FORMAT(color) "[%s: %s:%d] %s: %s"
 #endif
