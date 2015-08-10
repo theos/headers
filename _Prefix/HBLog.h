@@ -1,5 +1,4 @@
 #include <sys/syslog.h>
-#include <libgen.h>
 
 #define NSLog(...) { \
 	_Pragma("message(\"NSLog is deprecated. Try HBLogDebug, HBLogInfo, and HBLogError.\")"); \
@@ -12,7 +11,7 @@
 	#define HB_LOG_FORMAT(color) "[%s: %s:%d] %s: %s"
 #endif
 
-#define HB_LOG_INTERNAL(color, level, type, ...) syslog(level, HB_LOG_FORMAT(color), THEOS_INSTANCE_NAME, basename(__FILE__), __LINE__, type, [NSString stringWithFormat:__VA_ARGS__].UTF8String);
+#define HB_LOG_INTERNAL(color, level, type, ...) syslog(level, HB_LOG_FORMAT(color), THEOS_INSTANCE_NAME, __BASE_FILE__, __LINE__, type, [NSString stringWithFormat:__VA_ARGS__].UTF8String);
 
 #ifdef __DEBUG__
 	#define HBLogDebug(...) HB_LOG_INTERNAL(6, LOG_NOTICE, "DEBUG", __VA_ARGS__)
