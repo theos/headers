@@ -5,7 +5,7 @@ typedef NS_ENUM(NSUInteger, UIStatusBarItemViewTextStyle) {
 
 typedef NSUInteger UIStatusBarItemViewActions; // TODO
 
-@class UIStatusBarItem, UIStatusBarForegroundStyleAttributes, _UILegibilityImageSet;
+@class UIStatusBarItem, UIStatusBarForegroundStyleAttributes, UIStatusBarLayoutManager, _UILegibilityImageSet;
 
 @interface UIStatusBarItemView : UIView
 
@@ -15,5 +15,8 @@ typedef NSUInteger UIStatusBarItemViewActions; // TODO
 - (_UILegibilityImageSet *)imageWithText:(NSString *)text;
 
 @property (nonatomic, retain) UIStatusBarForegroundStyleAttributes *foregroundStyle;
+@property (nonatomic, retain) UIStatusBarLayoutManager *layoutManager;
+
+@property BOOL persistentAnimationsEnabled;
 
 @end
