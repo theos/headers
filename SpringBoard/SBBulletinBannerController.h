@@ -1,4 +1,4 @@
-@class BBObserver, BBBulletinRequest;
+@class BBObserver, BBBulletinRequest, BBBulletin;
 
 @interface SBBulletinBannerController : NSObject
 
