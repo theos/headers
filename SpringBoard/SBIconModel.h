@@ -2,6 +2,7 @@
 
 @interface SBIconModel : NSObject
 
-- (SBApplicationIcon *)applicationIconForBundleIdentifier:(NSString *)bundleID;
+- (SBApplicationIcon *)applicationIconForBundleIdentifier:(NSString *)bundleID NS_AVAILABLE_IOS(8_0);
+- (SBApplicationIcon *)applicationIconForDisplayIdentifier:(NSString *)displayIdentifier NS_DEPRECATED_IOS(4_0, 8_0);
 
 @end
