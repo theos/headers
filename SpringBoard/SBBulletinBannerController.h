@@ -4,9 +4,9 @@
 
 + (instancetype)sharedInstance;
 
-- (void)observer:(BBObserver *)observer addBulletin:(BBBulletin *)bulletin forFeed:(NSUInteger)feed; // 7.0 - 8.1
-- (void)observer:(BBObserver *)observer addBulletin:(BBBulletin *)bulletin forFeed:(NSUInteger)feed playLightsAndSirens:(BOOL)playLightsAndSirens withReply:(id)reply; // 8.2 -
+- (void)observer:(BBObserver *)observer addBulletin:(BBBulletin *)bulletin forFeed:(NSUInteger)feed NS_DEPRECATED_IOS(7_0, 8_1);
+- (void)observer:(BBObserver *)observer addBulletin:(BBBulletin *)bulletin forFeed:(NSUInteger)feed playLightsAndSirens:(BOOL)playLightsAndSirens withReply:(id)reply NS_AVAILABLE_IOS(8_2);
 
-- (void)showTestBanner; // 5.0 - 6.1
+- (void)showTestBanner NS_DEPRECATED_IOS(5_0, 6_1);
 
 @end
