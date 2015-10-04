@@ -22,4 +22,6 @@
 @property (nonatomic, retain, readonly) UIImage *blankIcon;
 @property (nonatomic, retain, readonly) NSString *lazyIconAppID;
 
+@property (nonatomic, retain, readonly) UILabel *titleLabel;
+
 @end
