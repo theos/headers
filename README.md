@@ -8,6 +8,7 @@ Feel free to use these (`git clone git://github.com/hbang/headers.git $THEOS/inc
 * IconSupport headers: ?
 * IOKit headers: [Apple Public Source](http://www.opensource.apple.com/apsl)
 * libactivator headers: [GNU LGPL v2.1](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
+* libcolorpicker headers: [MIT License](http://git.pixelfiredev.com/pixelfire/libcolorpicker/blob/master/LICENSE.md)
 * libhbangcommon headers: [Apache License 2](https://www.apache.org/licenses/LICENSE-2.0.html)
 * libobjcipc headers: ?
 * libopener headers: [GNU GPL v3](https://www.gnu.org/copyleft/gpl.html)
