@@ -1,6 +1,7 @@
-//#import <IOSurface/IOSurface.h>
-#import <SpringBoard/SBApplicationIcon.h>
+#import <MobileIcons/MobileIcons.h>
 #include <sys/cdefs.h>
+
+@class LSApplicationProxy;
 
 __BEGIN_DECLS
 
@@ -10,14 +11,13 @@ __END_DECLS
 
 @interface UIImage (Private)
 
-+ (UIImage *)kitImageNamed:(NSString *)name;
-+ (UIImage *)imageNamed:(NSString *)name inBundle:(NSBundle *)bundle;
++ (instancetype)kitImageNamed:(NSString *)name;
++ (instancetype)imageNamed:(NSString *)name inBundle:(NSBundle *)bundle;
 
-+ (UIImage *)_applicationIconImageForBundleIdentifier:(NSString *)bundleIdentifier format:(SBApplicationIconFormat)format scale:(CGFloat)scale;
++ (instancetype)_applicationIconImageForBundleIdentifier:(NSString *)bundleIdentifier format:(MIIconVariant)format scale:(CGFloat)scale;
++ (instancetype)_iconForResourceProxy:(LSApplicationProxy *)applicationProxy format:(MIIconVariant)format;
 
-// - (instancetype)_initWithIOSurface:(IOSurfaceRef)surface scale:(CGFloat)scale orientation:(UIImageOrientation)orientation;
-
-- (UIImage *)_applicationIconImageForFormat:(SBApplicationIconFormat)format precomposed:(BOOL)precomposed scale:(CGFloat)scale;
+- (instancetype)_applicationIconImageForFormat:(MIIconVariant)format precomposed:(BOOL)precomposed scale:(CGFloat)scale;
 
 @property CGFloat scale;
 
