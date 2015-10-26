@@ -11,7 +11,7 @@
 	#define HB_LOG_FORMAT(color) CFSTR("[%s: %s:%d] %s: %@")
 #endif
 
-#define HB_LOG_INTERNAL(color, level, type, ...) CFLog(level, HB_LOG_FORMAT(color), THEOS_INSTANCE_NAME, __BASE_FILE__, __LINE__, type, (CFStringRef)[NSString stringWithFormat:__VA_ARGS__]);
+#define HB_LOG_INTERNAL(color, level, type, ...) CFLog(level, HB_LOG_FORMAT(color), THEOS_INSTANCE_NAME, __BASE_FILE__, __LINE__, type, (__bridge CFStringRef)[NSString stringWithFormat:__VA_ARGS__]);
 
 #ifdef __DEBUG__
 	#define HBLogDebug(...) HB_LOG_INTERNAL(6, kCFLogLevelNotice, "DEBUG", __VA_ARGS__)
