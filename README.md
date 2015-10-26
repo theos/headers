@@ -2,18 +2,21 @@ The headers that HASHBANG Productions uses. Headers are only created for classes
 
 Feel free to use these (`git clone git://github.com/hbang/headers.git $THEOS/include` - if you have an existing `$THEOS/include` directory, rename it) and [add on to them](https://github.com/hbang/headers/pulls).
 
-## Licenses
-* CaptainHook headers: [MIT License](http://mit-license.org/)
-* GraphicsServices/IOSurface headers: [BSD 3 Clause](http://opensource.org/licenses/BSD-3-Clause)
-* IconSupport headers: ?
-* IOKit headers: [Apple Public Source License](https://opensource.apple.com/license/apsl/)
-* libactivator headers: [GNU LGPL v2.1](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
-* libcolorpicker headers: [MIT License](http://git.pixelfiredev.com/pixelfire/libcolorpicker/blob/master/LICENSE.md)
-* libhbangcommon headers: [Apache License 2](https://www.apache.org/licenses/LICENSE-2.0.html)
-* libopener headers: [GNU GPL v3](https://www.gnu.org/copyleft/gpl.html)
-* MediaRemote, MobileGestalt headers: [GNU GPL v3](https://github.com/Cykey/ios-reversed-headers/blob/master/LICENSE.txt)
-* OpenSSL headers: [OpenSSL](https://www.openssl.org/source/license.html)
-* Everything else: [Public Domain](http://unlicense.org/)
+## Credits
+* Apple: IOKit headers: [Apple Public Source License](https://opensource.apple.com/license/apsl/)
+* ashikase: IconSupport: ?
+* ashikase: libpackageinfo: [GNU GPL v3](https://github.com/ashikase/libpackageinfo/blob/master/LICENSE)
+* ashikase: TechSupport: [GNU LGPL v3, Apache License 2](https://github.com/ashikase/TechSupport/blob/master/LICENSE)
+* Cykey: MediaRemote, MobileGestalt headers: [GNU GPL v3](https://github.com/Cykey/ios-reversed-headers/blob/master/LICENSE.txt)
+* HASHBANG: libcephei: [Apache License 2](https://www.apache.org/licenses/LICENSE-2.0.html)
+* HASHBANG: libopener: [GNU GPL v3](https://www.gnu.org/copyleft/gpl.html)
+* KennyTM: GraphicsServices, IOSurface headers: [BSD 3 Clause](http://opensource.org/licenses/BSD-3-Clause)
+* OpenSSL: OpenSSL: [OpenSSL](https://www.openssl.org/source/license.html)
+* PixelFire: libcolorpicker: [MIT License](http://git.pixelfiredev.com/pixelfire/libcolorpicker/blob/master/LICENSE.md)
+* Ryan Petrich: CaptainHook: [MIT License](http://mit-license.org/)
+* Ryan Petrich: libactivator: [GNU LGPL v2.1](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
+
+Headers that aren't from elsewhere are released into the [Public Domain](LICENSE.md).
 
 ## Code rules
 * Create headers only for what you use.
