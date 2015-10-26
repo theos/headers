@@ -2,7 +2,7 @@
  * CoreFoundation Version Header
  *
  * by HASHBANG Productions <http://hbang.ws>
- * WTFPL <http://wtfpl.net>
+ * Public Domain
  *
  * 2.0		478.23
  * 2.1		478.26
@@ -22,6 +22,10 @@
  * 7.1		847.26
  * 8.0		1140.10
  * 8.1		1141.14
+ * 8.2		1142.16
+ * 8.3		1144.17
+ * 8.4		1145.15
+ * 9.0		1240.1
  */
 
 /**
@@ -75,6 +79,22 @@
 
 #ifndef kCFCoreFoundationVersionNumber_iOS_8_1
 #define kCFCoreFoundationVersionNumber_iOS_8_1 1141.14
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_8_2
+#define kCFCoreFoundationVersionNumber_iOS_8_2 1142.16
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_8_3
+#define kCFCoreFoundationVersionNumber_iOS_8_3 1144.17
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_8_4
+#define kCFCoreFoundationVersionNumber_iOS_8_4 1145.15
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_9_0
+#define kCFCoreFoundationVersionNumber_iOS_9_0 1240.1
 #endif
 
 #ifndef kCFCoreFoundationVersionNumber10_10
