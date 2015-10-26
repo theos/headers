@@ -15,6 +15,8 @@ Feel free to use these (`git clone git://github.com/hbang/headers.git $THEOS/inc
 * PixelFire: libcolorpicker: [MIT License](http://git.pixelfiredev.com/pixelfire/libcolorpicker/blob/master/LICENSE.md)
 * Ryan Petrich: CaptainHook: [MIT License](http://mit-license.org/)
 * Ryan Petrich: libactivator: [GNU LGPL v2.1](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
+* Ryan Petrich: LightMessaging (submodule): ?
+* Ryan Petrich: RocketBootstrap (submodule): ?
 
 Headers that aren't from elsewhere are released into the [Public Domain](LICENSE.md).
 
