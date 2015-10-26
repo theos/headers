@@ -1,0 +1,3 @@
+[submodule "LightMessaging"]
+	path = LightMessaging
+	url = https://github.com/rpetrich/LightMessaging.git
