@@ -1,3 +1,7 @@
 [submodule "LightMessaging"]
 	path = LightMessaging
 	url = https://github.com/rpetrich/LightMessaging.git
+[submodule "rocketbootstrap"]
+	path = rocketbootstrap
+	url = https://github.com/rpetrich/rocketbootstrap.git
+	branch = ios9
