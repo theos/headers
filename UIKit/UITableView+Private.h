@@ -1,6 +1,6 @@
 @interface UITableView (Private)
 
-@property CGFloat _marginWidth;
+@property (setter=_setMarginWidth:) CGFloat _marginWidth;
 
 @property (nonatomic, retain) UIView *wrapperView;
 
