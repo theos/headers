@@ -1,6 +1,6 @@
 #import "PSViewController.h"
 
-@class PSRootController, PSSpecifier;
+@class PSRootController, PSSpecifier, PSTableCell;
 
 @interface PSListController : PSViewController <UITableViewDelegate, UITableViewDataSource, UIAppearance> {
 	NSArray *_specifiers;
@@ -96,6 +96,9 @@
 - (void)updateSpecifiersInRange:(NSRange)range withSpecifiers:(NSArray *)newSpecifiers;
 
 - (NSRange)rangeOfSpecifiersInGroupID:(NSString *)groupID;
+
+- (PSTableCell *)cachedCellForSpecifier:(PSSpecifier *)specifier;
+- (PSTableCell *)cachedCellForSpecifierID:(NSString *)specifierID;
 
 @property (nonatomic, retain) NSBundle *bundle;
 
