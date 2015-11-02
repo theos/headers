@@ -1,4 +1,10 @@
+#include <sys/cdefs.h>
+
+__BEGIN_DECLS
+
 CGImageRef LICreateDefaultIcon(NSInteger a, NSInteger b, NSInteger c);
+
+__END_DECLS
 
 #if __IPHONE_7_0
 typedef NS_ENUM(NSUInteger, MIIconVariant) {
