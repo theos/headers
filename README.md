@@ -13,6 +13,7 @@ Feel free to use these (`git clone git://github.com/hbang/headers.git $THEOS/inc
 * KennyTM: GraphicsServices, IOSurface headers: [BSD 3 Clause](http://opensource.org/licenses/BSD-3-Clause)
 * OpenSSL: OpenSSL: [OpenSSL](https://www.openssl.org/source/license.html)
 * PixelFire: libcolorpicker: [MIT License](http://git.pixelfiredev.com/pixelfire/libcolorpicker/blob/master/LICENSE.md)
+* Ryan Petrich: AppList: [GNU LGPL v2.1](https://github.com/rpetrich/AppList/blob/master/LICENSE)
 * Ryan Petrich: CaptainHook (submodule): [MIT License](http://mit-license.org/)
 * Ryan Petrich: libactivator (submodule): [GNU LGPL v2.1](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
 * Ryan Petrich: LightMessaging (submodule): ?
