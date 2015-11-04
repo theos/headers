@@ -8,7 +8,6 @@ Feel free to use these (`git clone git://github.com/hbang/headers.git $THEOS/inc
 * ashikase: libpackageinfo: [GNU GPL v3](https://github.com/ashikase/libpackageinfo/blob/master/LICENSE)
 * ashikase: TechSupport: [GNU LGPL v3, Apache License 2](https://github.com/ashikase/TechSupport/blob/master/LICENSE)
 * Cykey: MediaRemote, MobileGestalt headers: [GNU GPL v3](https://github.com/Cykey/ios-reversed-headers/blob/master/LICENSE.txt)
-* HASHBANG: libcephei: [Apache License 2](https://www.apache.org/licenses/LICENSE-2.0.html)
 * HASHBANG: libopener: [GNU GPL v3](https://www.gnu.org/copyleft/gpl.html)
 * KennyTM: GraphicsServices, IOSurface headers: [BSD 3 Clause](http://opensource.org/licenses/BSD-3-Clause)
 * OpenSSL: OpenSSL: [OpenSSL](https://www.openssl.org/source/license.html)
