@@ -135,4 +135,6 @@ __END_DECLS
 @property (nonatomic, retain) NSDictionary *shortTitleDictionary;
 @property (nonatomic, retain) NSDictionary *titleDictionary;
 
+@property SEL controllerLoadAction;
+
 @end
