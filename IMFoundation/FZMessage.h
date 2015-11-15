@@ -1,12 +1,5 @@
-typedef enum {
-	FZMessageFlagsTypingBegan = 4096
-} FZMessageFlags;
+#import "IMMessageItem.h"
 
-@interface FZMessage : NSObject
-
-@property FZMessageFlags flags;
-@property (nonatomic, retain) NSString *handle;
-@property (nonatomic, retain) NSString *sender;
-@property (nonatomic, retain) NSDate *timeRead;
+@interface FZMessage : IMMessageItem
 
 @end
