@@ -19,6 +19,8 @@ __END_DECLS
 
 - (instancetype)_applicationIconImageForFormat:(MIIconVariant)format precomposed:(BOOL)precomposed scale:(CGFloat)scale;
 
+- (instancetype)_flatImageWithColor:(UIColor *)color;
+
 @property CGFloat scale;
 
 @end
