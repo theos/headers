@@ -6,4 +6,6 @@
 
 @property (nonatomic, retain) SBWallpaperView *wallpaperView;
 
+- (UIWindow *)window;
+
 @end
