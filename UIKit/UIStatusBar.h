@@ -1,4 +1,4 @@
-#import "UIStatusBarForegroundView.h"
+@class UIStatusBarForegroundStyleAttributes, UIStatusBarForegroundView;
 
 typedef NS_ENUM(NSInteger, UIStatusBarPosition) {
 	UIStatusBarPositionLeft,
@@ -11,6 +11,10 @@ typedef NS_ENUM(NSInteger, UIStatusBarPosition) {
 }
 
 + (UIStatusBarStyle)defaultStatusBarStyle;
++ (UIStatusBarStyle)defaultStatusBarStyleWithTint:(BOOL)withTint;
+
 + (CGFloat)heightForStyle:(UIStatusBarStyle)statusBarStyle orientation:(UIInterfaceOrientation)orientation;
+
++ (UIStatusBarForegroundStyleAttributes *)_styleAttributesForStatusBarStyle:(UIStatusBarStyle)style legacy:(BOOL)legacy;
 
 @end
