@@ -1,4 +1,4 @@
-@interface SBUIPasscodeLockViewSimple4DigitKeypad : UIView
+@interface SBUIPasscodeLockViewSimpleFixedDigitKeypad : UIView
 
 @property (nonatomic) CGFloat backgroundAlpha;
 
