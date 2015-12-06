@@ -27,13 +27,14 @@ typedef NS_ENUM(NSInteger, PSCellType) {
 - (void)refreshCellContentsWithSpecifier:(PSSpecifier *)specifier;
 
 @property (nonatomic, retain) PSSpecifier *specifier;
+@property (nonatomic) PSCellType type;
 @property (nonatomic, retain) id target;
-@property SEL action;
+@property (nonatomic) SEL action;
 
 @property (nonatomic, retain) id cellTarget;
-@property SEL cellAction;
+@property (nonatomic) SEL cellAction;
 
-@property BOOL cellEnabled;
+@property (nonatomic) BOOL cellEnabled;
 
 @property (nonatomic, retain) UIImage *icon;
 
