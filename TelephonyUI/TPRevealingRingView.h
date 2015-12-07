@@ -1,0 +1,3 @@
+@interface TPRevealingRingView : UIView
+
+@end
