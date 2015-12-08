@@ -1,5 +1,5 @@
-@class SBUIPasscodeLockNumberPad
-@class SBPasscodeNumberPadButton
+@class SBUIPasscodeLockNumberPad;
+@class SBPasscodeNumberPadButton;
 
 @interface SBUIPasscodeLockViewSimpleFixedDigitKeypad : UIView
 
