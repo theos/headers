@@ -1,4 +1,4 @@
-#import <TelephonyUI/TPRevealingRingView.h>
+@class TPRevealingRingView;
 
 @interface SBPasscodeNumberPadButton : UIView
 

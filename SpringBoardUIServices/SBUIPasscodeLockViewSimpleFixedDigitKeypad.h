@@ -1,5 +1,5 @@
-#import <SpringBoardUIServices/SBUIPasscodeLockNumberPad.h>
-#import <SpringBoardUIServices/SBPasscodeNumberPadButton.h>
+@class SBUIPasscodeLockNumberPad
+@class SBPasscodeNumberPadButton
 
 @interface SBUIPasscodeLockViewSimpleFixedDigitKeypad : UIView
 
