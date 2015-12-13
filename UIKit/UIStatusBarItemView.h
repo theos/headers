@@ -1,6 +1,6 @@
 typedef NS_ENUM(NSUInteger, UIStatusBarItemViewTextStyle) {
-	UIStatusBarItemViewTextStyleRegular,
-	UIStatusBarItemViewTextStyleBold
+	UIStatusBarItemViewTextStyleRegular = 1,
+	UIStatusBarItemViewTextStyleBold = 3
 };
 
 typedef NSUInteger UIStatusBarItemViewActions; // TODO
