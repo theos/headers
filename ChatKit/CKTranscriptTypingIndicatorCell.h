@@ -4,4 +4,8 @@
 
 - (void)stopPulseAnimation;
 
+- (void)startGrowAnimation;
+
+- (void)startShrinkAnimation;
+
 @end
