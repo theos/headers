@@ -26,6 +26,8 @@ typedef NS_ENUM(NSInteger, PSCellType) {
 
 - (void)refreshCellContentsWithSpecifier:(PSSpecifier *)specifier;
 
+- (void)setSeparatorStyle:(UITableViewCellSeparatorStyle)style;
+
 @property (nonatomic, retain) PSSpecifier *specifier;
 @property (nonatomic) PSCellType type;
 @property (nonatomic, retain) id target;
