@@ -116,7 +116,10 @@ extern NSString *const PSValuesDataSourceKey; // @"valuesDataSource"
 
 __END_DECLS
 
-@interface PSSpecifier : NSObject
+@interface PSSpecifier : NSObject {
+@public
+	SEL action;
+}
 
 + (instancetype)preferenceSpecifierNamed:(NSString *)identifier target:(id)target set:(SEL)set get:(SEL)get detail:(Class)detail cell:(PSCellType)cellType edit:(Class)edit;
 + (instancetype)emptyGroupSpecifier;
@@ -135,6 +138,6 @@ __END_DECLS
 @property (nonatomic, retain) NSDictionary *shortTitleDictionary;
 @property (nonatomic, retain) NSDictionary *titleDictionary;
 
-@property SEL controllerLoadAction;
+@property (nonatomic) SEL controllerLoadAction;
 
 @end
