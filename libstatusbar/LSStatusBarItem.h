@@ -24,7 +24,7 @@ enum StatusBarAlignment
 
 @interface LSStatusBarItem (API)
 
-- (instancetype) initWithIdentifier: (NSString*) identifier alignment: (StatusBarAlignment) alignment;
+- (id) initWithIdentifier: (NSString*) identifier alignment: (StatusBarAlignment) alignment;
 
 // bitmasks (e.g. left or right) are not supported yet
 @property (nonatomic, readonly) StatusBarAlignment alignment;
@@ -37,6 +37,9 @@ enum StatusBarAlignment
 // useful only with center alignment - will throw error otherwise
 // will not be visible on the lockscreen
 @property (nonatomic, assign) NSString* titleString;
+
+// useful if you want to override the UIStatusBarCustomItemView drawing.  Your class must exist in EVERY UIKit process.
+@property (nonatomic, assign) NSString* customViewClass;
 
 // set to NO and manually call update if you need to make multiple changes
 @property (nonatomic, getter=isManualUpdate) BOOL manualUpdate;
@@ -69,7 +72,7 @@ enum StatusBarAlignment
 
 @interface LSStatusBarItem (Private)
 
-+ (void) _updateItems;
++ (void) _updateProperties: (NSMutableDictionary*) properties forIdentifier: (NSString*) identifier;
 - (void) _setProperties: (NSDictionary*) dict;
 
 @end
