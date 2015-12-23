@@ -12,4 +12,6 @@ static NSString *const kSBAppTagsHidden = @"hidden";
 
 @property (nonatomic, retain, setter=_setTags:) NSArray *tags;
 
+- (NSNumber *)badgeNumberOrString;
+
 @end
