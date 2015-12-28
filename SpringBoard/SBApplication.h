@@ -1,3 +1,5 @@
+@class FBScene;
+
 static NSString *const kSBAppTagsHidden = @"hidden";
 
 @interface SBApplication : NSObject
@@ -13,5 +15,11 @@ static NSString *const kSBAppTagsHidden = @"hidden";
 @property (nonatomic, retain, setter=_setTags:) NSArray *tags;
 
 - (NSNumber *)badgeNumberOrString;
+
+- (FBScene *)mainScene;
+
+- (BOOL)isRunning;
+
+- (void)clearDeactivationSettings;
 
 @end
