@@ -14,6 +14,8 @@ typedef NSUInteger UIStatusBarItemViewActions; // TODO
 - (_UILegibilityImageSet *)imageWithShadowNamed:(NSString *)imageName;
 - (_UILegibilityImageSet *)imageWithText:(NSString *)text;
 
+- (_UILegibilityImageSet *)contentsImage;
+
 - (CGFloat)updateContentsAndWidth;
 
 @property (nonatomic, retain) UIStatusBarForegroundStyleAttributes *foregroundStyle;
