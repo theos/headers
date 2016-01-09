@@ -1,9 +1,11 @@
 #import "FBSceneClient.h"
 #import "FBSceneClientProvider.h"
 
-@class FBSSceneSettings, FBSMutableSceneSettings, FBSSceneTransitionContext;
+@class FBSSceneSettings, FBSMutableSceneSettings, FBSSceneTransitionContext, FBProcess;
 
 @interface FBScene : NSObject
+
+@property (nonatomic, readonly, retain) FBProcess *clientProcess;
 
 @property (readonly, retain, nonatomic) FBSSceneSettings *settings;
 
