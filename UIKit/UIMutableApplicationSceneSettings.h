@@ -2,4 +2,6 @@
 
 @interface UIMutableApplicationSceneSettings : FBSMutableSceneSettings
 
+@property (nonatomic) BOOL idleModeEnabled;
+
 @end
