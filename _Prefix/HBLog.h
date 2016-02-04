@@ -1,10 +1,5 @@
 #include <CoreFoundation/CFLogUtilities.h>
 
-#define NSLog(...) { \
-	_Pragma("message(\"NSLog is deprecated. Try HBLogDebug, HBLogInfo, and HBLogError.\")"); \
-	NSLog(__VA_ARGS__); \
-}
-
 #ifdef __DEBUG__
 	#define HB_LOG_FORMAT(color) CFSTR("\e[1;3" #color "m[%s] \e[m\e[0;3" #color "m%s:%d\e[m \e[0;30;4" #color "m%s:\e[m %@")
 #else
