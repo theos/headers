@@ -1,3 +1,48 @@
+# License
+There is no particular license on this repo. Files in this repo come from many sources with different licenses.
+
+## By Author
+### Apple
+* IOKit headers: [Apple Public Source License](https://opensource.apple.com/license/apsl/)
+
+### ashikase
+* IconSupport: ?
+* libpackageinfo: [GNU GPL v3](https://github.com/ashikase/libpackageinfo/blob/master/LICENSE)
+* TechSupport: [GNU LGPL v3, Apache License 2](https://github.com/ashikase/TechSupport/blob/master/LICENSE)
+
+### Cykey
+* MediaRemote, MobileGestalt headers: [GNU GPL v3](https://github.com/Cykey/ios-reversed-headers/blob/master/LICENSE.txt)
+
+### Dustin Howett
+* libprefs: [GNU LGPL v3](https://github.com/DHowett/preferenceloader/blob/master/LICENSE)
+
+### KennyTM
+* GraphicsServices, IOSurface, substrate2.h headers: [BSD 3 Clause](http://opensource.org/licenses/BSD-3-Clause)
+
+### OpenSSL
+* OpenSSL: [OpenSSL](https://www.openssl.org/source/license.html)
+
+### PixelFire
+* libcolorpicker: [MIT License](http://git.pixelfiredev.com/pixelfire/libcolorpicker/blob/master/LICENSE.md)
+
+### Ryan Petrich
+* AppList: [GNU LGPL v2.1](https://github.com/rpetrich/AppList/blob/master/LICENSE)
+* CaptainHook (submodule): [MIT License](http://mit-license.org/)
+* libactivator (submodule): [GNU LGPL v2.1](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
+* LightMessaging (submodule): ?
+* RocketBootstrap (submodule): ?
+
+### SaurikIT
+* Cydia Substrate: Licensing is rather strange and unclear here.
+    * As of approximately version 0.9.3997, Cydia Substrate became closed source. It was previously GNU GPL v3.
+    * The header provided here has a comment that indicates that it is licensed under [GNU LGPL v3](substrate.h).
+    * Header is taken from the Substrate Git repo at commit 64605bb. It is unclear whether any newer header is actually open source despite having the GPL v3 notice at the start of the file.
+
+### Other headers
+Headers that aren't from elsewhere are released into the Public Domain.
+
+---
+
 This is free and unencumbered software released into the public domain.
 
 Anyone is free to copy, modify, publish, use, compile, sell, or
