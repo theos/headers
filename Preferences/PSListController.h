@@ -9,6 +9,7 @@
 + (BOOL)displaysButtonBar;
 
 - (NSArray *)loadSpecifiersFromPlistName:(NSString *)name target:(PSListController *)target;
+- (NSArray *)loadSpecifiersFromPlistName:(NSString *)name target:(PSListController *)target bundle:(NSBundle *)bundle;
 
 - (Class)tableViewClass;
 - (UITableViewStyle)tableViewStyle;
