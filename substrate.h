@@ -87,12 +87,13 @@ void SubstrateMemoryRelease(SubstrateMemoryRef memory);
 
 #ifdef __ANDROID__
 #include <jni.h>
-_extern void MSJavaHookClassLoad(JNIEnv *jni, const char *name, void (*callback)(void *, JNIEnv *, jclass), void *data _default(NULL));
+_extern void MSJavaHookClassLoad(JNIEnv *jni, const char *name, void (*callback)(JNIEnv *, jclass, void *), void *data _default(NULL));
 _extern void MSJavaHookMethod(JNIEnv *jni, jclass _class, jmethodID methodID, void *function, void **result);
 _extern void MSJavaBlessClassLoader(JNIEnv *jni, jobject loader);
 
 typedef struct MSJavaObjectKey_ *MSJavaObjectKey;
 _extern MSJavaObjectKey MSJavaNewObjectKey();
+_extern void MSJavaDeleteObjectKey(MSJavaObjectKey key);
 _extern void *MSJavaGetObjectKey(JNIEnv *jni, jobject object, MSJavaObjectKey key);
 _extern void MSJavaSetObjectKey(JNIEnv *jni, jobject object, MSJavaObjectKey key, void *value, void (*clean)(void *, JNIEnv *, void *) _default(NULL), void *data _default(NULL));
 #endif
@@ -344,14 +345,18 @@ static inline void MSHookFunction(MSImageRef image, const char *name, Type_ *rep
 
 #ifdef __ANDROID__
 
-template <typename Type_>
-static inline void MSJavaHookMethod(JNIEnv *jni, jclass _class, jmethodID method, Type_ *replace, Type_ **result) {
+#ifdef __cplusplus
+
+template <typename Type_, typename Kind_, typename ...Args_>
+static inline void MSJavaHookMethod(JNIEnv *jni, jclass _class, jmethodID method, Type_ (*replace)(JNIEnv *, Kind_, Args_...), Type_ (**result)(JNIEnv *, Kind_, ...)) {
     return MSJavaHookMethod(
         jni, _class, method,
         reinterpret_cast<void *>(replace),
         reinterpret_cast<void **>(result)
     );
 }
+
+#endif
 
 static inline void MSAndroidGetPackage(JNIEnv *jni, jobject global, const char *name, jobject &local, jobject &loader) {
     jclass Context(jni->FindClass("android/content/Context"));
@@ -385,8 +390,9 @@ _disused static void MSJavaCleanWeak(void *data, JNIEnv *jni, void *value) {
     _disused static type (*_ ## name)(args); \
     static type $ ## name(args)
 
-#define MSJavaHook(type, name, args...) \
-    MSHook(type, name, JNIEnv *jni, ## args)
+#define MSJavaHook(type, name, arg0, args...) \
+    _disused static type (*_ ## name)(JNIEnv *jni, arg0, ...); \
+    static type $ ## name(JNIEnv *jni, arg0, ## args)
 
 #ifdef __cplusplus
 #define MSHake(name) \
@@ -414,6 +420,7 @@ _disused static void MSJavaCleanWeak(void *data, JNIEnv *jni, void *value) {
 #define MSFilterObjC_Class "Filter:ObjC.Class"
 #endif
 
+#define MSFilterLibrary "Filter:Library"
 #define MSFilterExecutable "Filter:Executable"
 
 #define MSConfig(name, value) \

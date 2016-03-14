@@ -35,8 +35,8 @@ There is no particular license on this repo. Files in this repo come from many s
 ### SaurikIT
 * Cydia Substrate: Licensing is rather strange and unclear here.
     * As of approximately version 0.9.3997, Cydia Substrate became closed source. It was previously GNU GPL v3.
-    * The header provided here has a comment that indicates that it is licensed under [GNU LGPL v3](substrate.h).
-    * Header is taken from the Substrate Git repo at commit 64605bb. It is unclear whether any newer header is actually open source despite having the GPL v3 notice at the start of the file.
+    * The header provided here is taken from Cydia Substrate 0.9.4001 (February 2013) and has a comment that indicates that it is licensed under [GNU LGPL v3](substrate.h).
+    * Cydia Substrate 0.9.5000 (December 2013) changed the license comment to GNU GPL v3. It is unclear why this has changed.
 
 ### Other headers
 Headers that aren't from elsewhere are released into the Public Domain.
