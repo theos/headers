@@ -1,9 +1,9 @@
-enum StatusBarAlignment
+typedef enum
 {
 	StatusBarAlignmentLeft = 1,
 	StatusBarAlignmentRight = 2,
 	StatusBarAlignmentCenter = 4
-};
+} StatusBarAlignment;
 
 
 // only LSStatusBarItem (API) methods are considered public.
