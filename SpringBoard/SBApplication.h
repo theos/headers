@@ -14,6 +14,8 @@ static NSString *const kSBAppTagsHidden = @"hidden";
 
 @property (nonatomic, retain, setter=_setTags:) NSArray *tags;
 
+@property (readonly, nonatomic) int pid;
+
 - (NSNumber *)badgeNumberOrString;
 
 - (FBScene *)mainScene;
