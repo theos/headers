@@ -28,7 +28,10 @@ typedef NS_ENUM(NSUInteger, BBBulletinAccessoryStyle) {
 
 @property (nonatomic, retain) NSDictionary *context;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 @property ABRecordID addressBookRecordID;
+#pragma clang diagnostic pop
 
 - (BBSectionSubtypeParameters *)_sectionSubtypeParameters;
 
