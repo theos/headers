@@ -17,9 +17,11 @@ typedef NSUInteger ALApplicationIconSize;
 
 @property (nonatomic, readonly) NSDictionary *applications;
 - (NSDictionary *)applicationsFilteredUsingPredicate:(NSPredicate *)predicate;
+- (NSDictionary *)applicationsFilteredUsingPredicate:(NSPredicate *)predicate onlyVisible:(BOOL)onlyVisible titleSortedIdentifiers:(NSArray **)outSortedByTitle;
 
 - (id)valueForKeyPath:(NSString *)keyPath forDisplayIdentifier:(NSString *)displayIdentifier;
 - (id)valueForKey:(NSString *)keyPath forDisplayIdentifier:(NSString *)displayIdentifier;
+- (BOOL)applicationWithDisplayIdentifierIsHidden:(NSString *)displayIdentifier;
 
 - (CGImageRef)copyIconOfSize:(ALApplicationIconSize)iconSize forDisplayIdentifier:(NSString *)displayIdentifier;
 - (UIImage *)iconOfSize:(ALApplicationIconSize)iconSize forDisplayIdentifier:(NSString *)displayIdentifier;
