@@ -9,6 +9,8 @@ typedef NSUInteger UIStatusBarItemViewActions; // TODO
 
 @interface UIStatusBarItemView : UIView
 
++ (instancetype)createViewForItem:(UIStatusBarItem *)item withData:(id)data actions:(UIStatusBarItemViewActions)actions foregroundStyle:(UIStatusBarForegroundStyleAttributes *)style;
+
 - (instancetype)initWithItem:(UIStatusBarItem *)item data:(id)data actions:(UIStatusBarItemViewActions)actions style:(UIStatusBarForegroundStyleAttributes *)style;
 
 - (_UILegibilityImageSet *)imageWithShadowNamed:(NSString *)imageName;
