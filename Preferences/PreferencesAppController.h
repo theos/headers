@@ -4,4 +4,6 @@
 
 @property (nonatomic, retain) PSUIPrefsRootController *rootController;
 
+- (void)generateURL;
+
 @end
