@@ -11,6 +11,7 @@ typedef NS_ENUM(NSUInteger, BBBulletinAccessoryStyle) {
 
 @property (nonatomic, retain) NSString *bulletinID;
 @property (nonatomic, retain) NSString *sectionID;
+@property (nonatomic, retain) NSString *parentSectionID;
 @property (nonatomic, retain) NSString *publisherBulletinID;
 @property (nonatomic, retain) NSString *recordID;
 @property BOOL showsUnreadIndicator;

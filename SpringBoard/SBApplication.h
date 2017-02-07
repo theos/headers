@@ -1,6 +1,10 @@
-@class FBScene;
+typedef NS_ENUM(NSUInteger, SBApplicationActivationSetting) {
+	SBApplicationActivationSettingAppLink = 19
+};
 
 static NSString *const kSBAppTagsHidden = @"hidden";
+
+@class FBScene;
 
 @interface SBApplication : NSObject
 
@@ -14,14 +18,20 @@ static NSString *const kSBAppTagsHidden = @"hidden";
 
 @property (nonatomic, retain, setter=_setTags:) NSArray *tags;
 
-@property (readonly, nonatomic) int pid;
+@property (readonly, nonatomic) pid_t pid;
 
 - (NSNumber *)badgeNumberOrString;
 
+- (BOOL)isRunning;
 - (FBScene *)mainScene;
 
-- (BOOL)isRunning;
-
 - (void)clearDeactivationSettings;
+
+- (id)objectForActivationSetting:(SBApplicationActivationSetting)activationSetting;
+- (NSInteger)flagForActivationSetting:(SBApplicationActivationSetting)activationSetting;
+- (BOOL)boolForActivationSetting:(SBApplicationActivationSetting)activationSetting;
+- (void)setObject:(id)object forActivationSetting:(SBApplicationActivationSetting)activationSetting;
+- (void)setFlag:(NSInteger)flag forActivationSetting:(SBApplicationActivationSetting)activationSetting;
+- (void)setBool:(BOOL)value forActivationSetting:(SBApplicationActivationSetting)activationSetting;
 
 @end

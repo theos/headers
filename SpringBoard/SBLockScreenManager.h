@@ -4,7 +4,8 @@
 
 + (instancetype)sharedInstance;
 
-- (void)lockUIFromSource:(NSUInteger)source withOptions:(id)options;
+- (void)lockUIFromSource:(NSUInteger)source withOptions:(NSDictionary *)options;
+- (void)unlockUIFromSource:(NSUInteger)source withOptions:(NSDictionary *)options;
 
 @property (nonatomic, retain) SBLockScreenViewController *lockScreenViewController;
 

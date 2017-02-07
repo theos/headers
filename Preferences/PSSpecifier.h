@@ -129,6 +129,12 @@ __END_DECLS
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *identifier;
 
+@property (nonatomic) PSCellType cellType;
+@property (nonatomic) SEL buttonAction;
+@property (nonatomic) SEL confirmationAction;
+@property (nonatomic) SEL confirmationCancelAction;
+@property (nonatomic) SEL controllerLoadAction;
+
 @property (nonatomic, retain) NSMutableDictionary *properties;
 
 - (id)propertyForKey:(NSString *)key;
@@ -137,7 +143,5 @@ __END_DECLS
 
 @property (nonatomic, retain) NSDictionary *shortTitleDictionary;
 @property (nonatomic, retain) NSDictionary *titleDictionary;
-
-@property (nonatomic) SEL controllerLoadAction;
 
 @end

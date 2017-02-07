@@ -1,0 +1,3 @@
+@interface CKDetailsCell : UITableViewCell
+
+@end
