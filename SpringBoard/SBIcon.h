@@ -17,6 +17,8 @@
 - (NSString *)leafIdentifier;
 - (SBApplication *)application;
 
+@property (nonatomic, assign) BOOL isFolderIcon;
+
 - (UIImage *)generateIconImage:(NSInteger)type;
 
 - (UIImage *)getIconImage:(MIIconVariant)variant;
