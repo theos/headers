@@ -21,10 +21,16 @@ __END_DECLS
 
 - (instancetype)_applicationIconImageForFormat:(MIIconVariant)format precomposed:(BOOL)precomposed scale:(CGFloat)scale;
 
-- (instancetype)_flatImageWithColor:(UIColor *)color;
+- (instancetype)_flatImageWithColor:(UIColor *)color; NS_AVAILABLE(7_0)
 
 - (BOOL)writeToCPBitmapFile:(NSString *)filename flags:(NSInteger)flags; // TODO: make this an enum
 
+- (BOOL)_isResizable;
+
 @property CGFloat scale;
 
+@end
+
+@interface UIImage (PhotosUI)
++ (UIImage *)pu_PhotosUIImageNamed:(NSString *)name; NS_AVAILABLE(8_0)
 @end

@@ -1,4 +1,4 @@
-@class _UIBackdropViewSettings, _UIBackdropEffectView;
+@class _UIBackdropViewSettings, _UIBackdropEffectView, CABackdropLayer;
 
 /*
 _UIBackdropViewSettingsCombiner			-3
@@ -51,5 +51,7 @@ typedef NS_ENUM(NSUInteger, _UIBackdropViewStyle) {
 - (void)transitionToPrivateStyle:(NSUInteger)privateStyle; // currently calls the above method
 
 @property (nonatomic, retain) _UIBackdropEffectView *backdropEffectView;
+@property (retain, nonatomic) CABackdropLayer *backdropLayer;
+@property (nonatomic) float zoom;
 
 @end

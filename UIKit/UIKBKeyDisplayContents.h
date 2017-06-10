@@ -1,0 +1,2 @@
+@interface UIKBKeyDisplayContents : NSObject
+@end
