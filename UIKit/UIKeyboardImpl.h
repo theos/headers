@@ -1,6 +1,7 @@
 #import "UIKeyboardTaskQueue.h"
 #import "UIKeyboardAutocorrectionController.h"
 #import "UIKeyboardTaskExecutionContext.h"
+#import "UIKeyboardLayoutStar.h"
 
 @protocol textInputDelegate
 - (NSString *)text;
@@ -9,7 +10,7 @@
 @interface UIKeyboardImpl : UIView
 + (instancetype)activeInstance;
 + (instancetype)sharedInstance;
-+ (UIWindow *)keyboardWindow; NS_AVAILABLE(10_0)
++ (UIWindow *)keyboardWindow;
 + (CGSize)sizeForInterfaceOrientation:(NSInteger)orientation;
 + (CGSize)defaultSizeForInterfaceOrientation:(NSInteger)orientation;
 + (CGSize)_defaultSizeForInterfaceOrientation:(NSInteger)orientation;
@@ -17,10 +18,10 @@
 + (UIScreen *)keyboardScreen;
 + (Class)layoutClassForCurrentInputMode;
 + (BOOL)isSplit;
-+ (id)orientationKeyForOrientation:(NSInteger)orientation; NS_AVAILABLE(7_0, 7_0) // ?
++ (id)orientationKeyForOrientation:(NSInteger)orientation;
 
-@property(retain, nonatomic) UIKeyboardTaskQueue *taskQueue;
-@property(retain, nonatomic) id changedDelegate;
+@property (retain, nonatomic) UIKeyboardTaskQueue *taskQueue;
+@property (retain, nonatomic) id changedDelegate;
 
 - (UIKeyboardAutocorrectionController *)autocorrectionController;
 - (UIKeyboardLayoutStar *)_layout;

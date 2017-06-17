@@ -1,7 +1,9 @@
 #import "UIKeyboardLayout.h"
 #import "UIKBTree.h"
+#import "UIKBScreenTraits.h"
 #import "UIKeyboardTouchInfo.h"
 #import "UIKeyboardTaskExecutionContext.h"
+#import "UIKeyboardInputMode.h"
 
 @interface UIKeyboardLayoutStar : UIKeyboardLayout
 
