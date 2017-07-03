@@ -3,7 +3,7 @@
 @class PSRootController, PSSpecifier, PSTableCell;
 
 @interface PSListController : PSViewController <UITableViewDelegate, UITableViewDataSource, UIAppearance> {
-	NSMutableArray *_specifiers;
+	NSArray *_specifiers;
 }
 
 + (BOOL)displaysButtonBar;
