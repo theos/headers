@@ -2,4 +2,5 @@
 
 @interface UIKBRenderFactory : NSObject
 + (BOOL)_enabled;
+- (UIKBRenderConfig *)renderConfig;
 @end
