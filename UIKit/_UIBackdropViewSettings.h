@@ -12,8 +12,8 @@
 - (instancetype)initWithDefaultValues;
 - (instancetype)initWithDefaultValuesForGraphicsQuality:(NSInteger)graphicsQuality;
 
-@property (assign) instancetype parentSettings;
-@property (retain) instancetype colorSettings;
+@property (assign) _UIBackdropViewSettings *parentSettings;
+@property (retain) _UIBackdropViewSettings *colorSettings;
 
 @property (assign) _UIBackdropView *backdrop;
 
@@ -31,15 +31,12 @@
 @property CGFloat blurRadius;
 @property CGFloat colorBurnTintAlpha;
 @property CGFloat colorBurnTintLevel;
-@property CGFloat colorTintAlpha;
 @property CGFloat colorTintMaskAlpha;
 @property CGFloat darkeningTintAlpha;
 @property CGFloat darkeningTintBrightness;
 @property CGFloat darkeningTintHue;
 @property CGFloat darkeningTintSaturation;
 @property CGFloat filterMaskAlpha;
-@property CGFloat grayscaleTintAlpha;
-@property CGFloat grayscaleTintLevel;
 @property CGFloat grayscaleTintMaskAlpha;
 @property CGFloat saturationDeltaFactor;
 @property CGFloat scale;
