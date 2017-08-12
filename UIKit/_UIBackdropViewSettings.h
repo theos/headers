@@ -56,7 +56,7 @@
 
 @property (getter = isBackdropVisible) BOOL backdropVisible;
 @property (getter = isSelected) BOOL selected;
-@property(setter = setDesignMode :) BOOL designMode;
+@property(setter = setDesignMode:) BOOL designMode;
 @property(getter = isEnabled) BOOL enabled;
 @property(getter = isHighlighted) BOOL highlighted;
 
@@ -81,5 +81,7 @@
 @property NSInteger stackingLevel;
 @property NSInteger style;
 @property NSInteger suppressSettingsDidChange;
+
+- (void)setDefaultValues;
 
 @end

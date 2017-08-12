@@ -4,4 +4,6 @@
 
 + (instancetype)gradientWithFlatColor:(NSString *)color;
 
+- (CGGradientRef)CGGradient;
+
 @end

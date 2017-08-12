@@ -1,7 +1,9 @@
 #import "UIKeyboardInputMode.h"
 
-@interface UICompatibilityInputViewController : NSObject
+@interface UICompatibilityInputViewController : UIInputViewController
 
 @property(retain, nonatomic) UIKeyboardInputMode *inputMode;
+
+- (UIViewController *)inputController;
 
 @end
