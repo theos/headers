@@ -8,6 +8,7 @@
 
 - (UIView *)transformedContainerView;
 - (UIViewController *)containerRootController;
+- (UIResponder <UITextInputTraits> *)responder;
 - (UIKBRenderConfig *)_renderConfigForCurrentResponder;
 
 - (void)updateRenderConfigForCurrentResponder;
