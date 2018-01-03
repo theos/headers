@@ -1,8 +1,8 @@
-#import <MobileIcons/MobileIcons.h>
+#import "SBLeafIcon.h"
 
 @class SBApplication;
 
-@interface SBApplicationIcon : NSObject
+@interface SBApplicationIcon : SBLeafIcon
 
 - (instancetype)initWithApplication:(SBApplication *)application;
 

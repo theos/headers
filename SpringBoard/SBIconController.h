@@ -1,8 +1,10 @@
-@class SBDockIconListView, SBIconModel, SBRootIconListView, SBRootFolderController;
+@class SBDockIconListView, SBIconModel, SBRootIconListView, SBRootFolderController, SBIconViewMap;
 
-@interface SBIconController : NSObject
+@interface SBIconController : NSObject {
+    SBIconModel* _iconModel;
+}
 
-+ (instancetype)sharedInstance;
++ (SBIconController *)sharedInstance;
 
 @property (nonatomic, retain) SBIconModel *model;
 
