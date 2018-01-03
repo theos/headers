@@ -55,8 +55,11 @@ typedef NS_ENUM(NSUInteger, ProcessAssertionFlags) {
 
 - (instancetype)initWithPID:(NSInteger)pid flags:(NSUInteger)flags reason:(NSUInteger)reason name:(NSString *)name withHandler:(id)handler;
 
+- (instancetype)initWithBundleIdentifier:(NSString *)identifier flags:(NSUInteger)flags reason:(NSUInteger)reason name:(NSString *)name withHandler:(id)handler;
+
 + (NSString *)NameForReason:(NSUInteger)reason;
 
 - (BOOL)valid;
+- (void)invalidate;
 
 @end
