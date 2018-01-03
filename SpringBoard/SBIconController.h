@@ -6,6 +6,8 @@
 
 @property (nonatomic, retain) SBIconModel *model;
 
+@property (nonatomic,readonly) SBIconViewMap *homescreenIconViewMap;
+
 @property (nonatomic, retain, readonly) SBRootIconListView *currentRootIconList;
 @property (nonatomic, retain, readonly) SBDockIconListView *dockListView;
 
