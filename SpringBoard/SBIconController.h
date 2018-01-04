@@ -1,7 +1,7 @@
 @class SBDockIconListView, SBIconModel, SBRootIconListView, SBRootFolderController, SBIconViewMap;
 
 @interface SBIconController : NSObject {
-    SBIconModel* _iconModel;
+    SBIconModel *_iconModel;
 }
 
 + (SBIconController *)sharedInstance;
