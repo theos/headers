@@ -67,7 +67,7 @@ extern "C" {
 
 #pragma mark - Baseband Information
 
-static const CFStringRef kMGBasebandSerialNumber = CFSTR("BasebandSerialNumber");
+    static const CFStringRef kMGBasebandSerialNumber = CFSTR("BasebandSerialNumber");
     static const CFStringRef kMGBasebandCertId = CFSTR("BasebandCertId");
     static const CFStringRef kMGBasebandChipId = CFSTR("BasebandChipId");
     static const CFStringRef kMGBasebandFirmwareManifestData = CFSTR("BasebandFirmwareManifestData");
