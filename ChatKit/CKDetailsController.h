@@ -1,5 +1,7 @@
 #import "CKScrollViewController.h"
 
+@class CKDetailsTableView, CKConversation;
+
 @interface CKDetailsController : CKScrollViewController
 
 @property (nonatomic, retain) CKDetailsTableView *tableView;
