@@ -4,4 +4,8 @@
 
 @property NSInteger signalStrengthBars;
 
+- (NSString *)currentNetworkName;
+
+- (NSArray *)knownNetworks;
+
 @end
