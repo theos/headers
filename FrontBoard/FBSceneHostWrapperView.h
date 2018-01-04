@@ -1,3 +1,5 @@
+@class FBScene;
+
 @interface FBSceneHostWrapperView : UIView
 
 @property (nonatomic,retain,readonly) FBScene *scene;

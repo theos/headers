@@ -1,4 +1,4 @@
-@class FBApplicationProcess;
+@class FBApplicationProcess, FBProcess;
 
 @interface FBProcessManager : NSObject
 
