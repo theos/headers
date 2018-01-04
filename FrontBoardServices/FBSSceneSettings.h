@@ -1,8 +1,8 @@
 @interface FBSSceneSettings : NSObject <NSCopying, NSMutableCopying>
 
-@property (getter=isBackgrounded, nonatomic, readonly) BOOL backgrounded;
+@property (nonatomic, readonly, getter=isBackgrounded) BOOL backgrounded;
 
-@property (getter=isEffectivelyBackgrounded, nonatomic, readonly) BOOL effectivelyBackgrounded;
+@property (nonatomic, readonly, getter=isEffectivelyBackgrounded) BOOL effectivelyBackgrounded;
 
 - (instancetype)initWithSettings:(FBSSceneSettings *)settings;
 

@@ -8,8 +8,8 @@
 + (void)start;
 
 @property (nonatomic, readonly) FBSceneManager *sceneManager;
-@property (getter=isMedusaEnabled, nonatomic, readonly) BOOL medusaEnabled;
-@property (getter=isSpringBoardActive, nonatomic, readonly) BOOL springBoardActive;
+@property (nonatomic, readonly, getter=isMedusaEnabled) BOOL medusaEnabled;
+@property (nonatomic, readonly, getter=isSpringBoardActive) BOOL springBoardActive;
 @property (nonatomic, readonly) CGFloat autoDimTime;
 @property (nonatomic, readonly) CGFloat autoLockTime;
 

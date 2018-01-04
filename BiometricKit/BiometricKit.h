@@ -4,7 +4,7 @@
 
 + (BiometricKit *)manager;
 
-@property (assign, nonatomic) id<BiometricKitDelegate> delegate;
+@property (nonatomic, assign) id<BiometricKitDelegate> delegate;
 
 - (NSArray *)identities:(id)object;
 

@@ -2,7 +2,7 @@
 
 + (instancetype)sharedInstance;
 
-@property NSInteger signalStrengthBars;
+- (NSInteger)signalStrengthBars;
 
 - (NSString *)currentNetworkName;
 

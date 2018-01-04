@@ -7,9 +7,9 @@
     SBFStaticWallpaperView *_sharedWallpaperView;
 }
 
-@property (strong, nonatomic) SBFStaticWallpaperView *lockscreenWallpaperView;
-@property (strong, nonatomic) SBFStaticWallpaperView *homescreenWallpaperView;
-@property (strong, nonatomic) SBFStaticWallpaperView *sharedWallpaperView;
+@property (nonatomic, strong) SBFStaticWallpaperView *lockscreenWallpaperView;
+@property (nonatomic, strong) SBFStaticWallpaperView *homescreenWallpaperView;
+@property (nonatomic, strong) SBFStaticWallpaperView *sharedWallpaperView;
 
 + (SBWallpaperController *)sharedInstance;
 

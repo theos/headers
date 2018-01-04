@@ -9,7 +9,7 @@
 - (FBApplicationProcess *)applicationProcessForPID:(int)pid;
 - (FBApplicationProcess *)applicationProcessesForBundleIdentifier:(NSString *)identifier;
 
-- (FBApplicationProcess *)createApplicationProcessForBundleID:(NSString *)identifier ;
+- (FBApplicationProcess *)createApplicationProcessForBundleID:(NSString *)identifier;
 
 - (NSArray *)allApplicationProcesses;
 - (NSArray *)allProcesses;

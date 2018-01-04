@@ -18,7 +18,7 @@ static NSString *const kSBAppTagsHidden = @"hidden";
 
 @property (nonatomic, retain, setter=_setTags:) NSArray *tags;
 
-@property (nonatomic, copy, readonly) NSArray *staticApplicationShortcutItems; NS_AVAILABLE_IOS(8_0);
+@property (nonatomic, copy, readonly) NSArray *staticApplicationShortcutItems; NS_AVAILABLE_IOS(9_3);
 @property (nonatomic, copy) NSArray *staticShortcutItems; NS_DEPRECATED_IOS(9_0, 9_3);
 
 @property (readonly, nonatomic) pid_t pid;

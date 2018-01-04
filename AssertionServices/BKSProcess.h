@@ -1,6 +1,6 @@
 @interface BKSProcess : NSObject
 
-@property (assign,nonatomic) BOOL nowPlayingWithAudio;
-@property (assign,nonatomic) BOOL recordingAudio;
+@property (nonatomic, assign) BOOL nowPlayingWithAudio;
+@property (nonatomic, assign) BOOL recordingAudio;
 
 @end

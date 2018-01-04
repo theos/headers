@@ -2,8 +2,8 @@
 
 @interface SBWorkspaceTransaction : NSObject
 
-@property (nonatomic,readonly) FBSDisplay *display;
-@property (nonatomic,readonly) SBWorkspaceTransitionRequest *transitionRequest;
+@property (nonatomic, readonly) FBSDisplay *display;
+@property (nonatomic, readonly) SBWorkspaceTransitionRequest *transitionRequest;
 
 - (instancetype)initWithTransitionRequest:(SBWorkspaceTransitionRequest *)request;
 

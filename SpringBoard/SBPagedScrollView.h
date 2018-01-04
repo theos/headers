@@ -1,5 +1,5 @@
 @interface SBPagedScrollView : UIScrollView
 
-@property (copy, nonatomic) NSArray *pageViews;
+@property (nonatomic, copy) NSArray *pageViews;
 
 @end
