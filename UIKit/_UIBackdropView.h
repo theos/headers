@@ -52,4 +52,6 @@ typedef NS_ENUM(NSUInteger, _UIBackdropViewStyle) {
 
 @property (nonatomic, retain) _UIBackdropEffectView *backdropEffectView;
 
+@property (nonatomic, retain) _UIBackdropViewSettings *inputSettings;
+
 @end
