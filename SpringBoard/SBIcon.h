@@ -1,3 +1,5 @@
+#import <MobileIcons/MobileIcons.h>
+
 @class SBApplication;
 
 @interface SBIcon : NSObject
@@ -9,6 +11,9 @@
 - (SBApplication *)application;
 
 - (UIImage *)generateIconImage:(NSInteger)type;
+
+- (UIImage *)getIconImage:(MIIconVariant)variant;
+- (UIImage *)getUnmaskedIconImage:(MIIconVariant)variant;
 
 - (NSInteger)badgeValue;
 
