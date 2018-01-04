@@ -3,6 +3,6 @@
 + (instancetype)entity;
 
 @property (nonatomic, copy) NSString *identifier;
-@property (assign, nonatomic) NSInteger layoutRole;
+@property (nonatomic, assign) NSInteger layoutRole;
 
 @end

@@ -10,8 +10,8 @@
 
 - (void)killForReason:(NSInteger)reason andReport:(BOOL)report withDescription:(NSString *)description;
 
-@property (assign ,getter=isRecordingAudio, nonatomic) BOOL recordingAudio;                                                         //@synthesize recordingAudio=_recordingAudio - In the implementation block
-@property (assign ,getter=isNowPlayingWithAudio, nonatomic) BOOL nowPlayingWithAudio;
+@property (nonatomic, assign, getter=isRecordingAudio) BOOL recordingAudio;
+@property (nonatomic, assign, getter=isNowPlayingWithAudio) BOOL nowPlayingWithAudio;
 
 - (void)processWillExpire:(BKSProcess *)process;
 

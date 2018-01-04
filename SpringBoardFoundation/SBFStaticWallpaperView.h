@@ -2,7 +2,7 @@
 
 @interface SBFStaticWallpaperView : SBFWallpaperView
 
-@property (setter=_setDisplayedImage:, getter=_displayedImage, nonatomic, retain) UIImage *displayedImage;
+@property (nonatomic, retain, getter=_displayedImage, setter=_setDisplayedImage:) UIImage *displayedImage;
 
 - (UIImage *)snapshotImage;
 - (UIImage *)wallpaperImage;

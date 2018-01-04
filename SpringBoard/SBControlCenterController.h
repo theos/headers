@@ -5,7 +5,7 @@
 - (void)presentAnimated:(BOOL)animated completion:(void(^)())completion;
 - (void)dismissAnimated:(BOOL)animated completion:(void(^)())completion;
 
-@property (assign, getter=isUILocked, nonatomic) BOOL UILocked;
+@property (nonatomic, assign, getter=isUILocked) BOOL UILocked;
 
 - (BOOL)_shouldShowGrabberOnFirstSwipe;
 

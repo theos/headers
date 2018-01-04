@@ -1,6 +1,6 @@
 @interface SBWorkspaceTransitionContext : NSObject
 
 @property (nonatomic, copy, readonly) NSSet *entities;
-@property (assign, nonatomic) BOOL animationDisabled; 
+@property (nonatomic, assign) BOOL animationDisabled; 
 
 @end
