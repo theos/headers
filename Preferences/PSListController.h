@@ -3,13 +3,13 @@
 @class PSRootController, PSSpecifier, PSTableCell;
 
 @interface PSListController : PSViewController <UITableViewDelegate, UITableViewDataSource, UIAppearance> {
-	NSArray *_specifiers;
+	NSMutableArray *_specifiers;
 }
 
 + (BOOL)displaysButtonBar;
 
-- (NSArray *)loadSpecifiersFromPlistName:(NSString *)name target:(PSListController *)target;
-- (NSArray *)loadSpecifiersFromPlistName:(NSString *)name target:(PSListController *)target bundle:(NSBundle *)bundle;
+- (NSMutableArray *)loadSpecifiersFromPlistName:(NSString *)name target:(PSListController *)target;
+- (NSMutableArray *)loadSpecifiersFromPlistName:(NSString *)name target:(PSListController *)target bundle:(NSBundle *)bundle;
 
 - (Class)tableViewClass;
 - (UITableViewStyle)tableViewStyle;
@@ -24,7 +24,7 @@
 - (NSArray *)specifiersForIDs:(NSArray *)identifiers;
 - (NSArray *)specifiersInGroup:(NSInteger)group;
 
-@property (nonatomic, retain) NSArray *specifiers;
+@property (nonatomic, retain) NSMutableArray *specifiers;
 @property (nonatomic, retain) PSSpecifier *specifier;
 @property (nonatomic, retain) NSString *specifierID;
 @property (nonatomic, retain) NSString *specifierIDPendingPush;

@@ -1,31 +1,40 @@
 #import <AddressBook/AddressBook.h>
 
-@class BBAction, BBSectionParameters, BBSectionSubtypeParameters;
+@class BBAction, BBSectionIcon, BBSectionParameters, BBSectionSubtypeParameters;
 
 typedef NS_ENUM(NSUInteger, BBBulletinAccessoryStyle) {
 	BBBulletinAccessoryStyleNone,
-	BBBulletinAccessoryStyleVIP = 4,
+	BBBulletinAccessoryStyleVIP = 4
+};
+
+typedef NS_ENUM(NSInteger, BBAttachmentMetadataType) {
+	BBAttachmentMetadataTypeImage = 1
 };
 
 @interface BBBulletin : NSObject
 
-@property (nonatomic, retain) NSString *bulletinID;
-@property (nonatomic, retain) NSString *sectionID;
-@property (nonatomic, retain) NSString *parentSectionID;
-@property (nonatomic, retain) NSString *publisherBulletinID;
-@property (nonatomic, retain) NSString *recordID;
+@property (nonatomic, copy) NSString *bulletinID;
+@property (nonatomic, copy) NSString *sectionID;
+@property (nonatomic, copy) NSString *parentSectionID;
+@property (nonatomic, copy) NSSet *subsectionIDs;
+@property (nonatomic, copy) NSString *publisherBulletinID;
+@property (nonatomic, copy) NSString *recordID;
+@property (nonatomic, copy) NSString *categoryID;
 @property BOOL showsUnreadIndicator;
 
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *subtitle;
-@property (nonatomic, retain) NSString *message;
-@property (nonatomic, retain) NSDate *date;
-@property (nonatomic, retain) NSDate *lastInterruptDate;
-@property (nonatomic, retain) NSString *unlockActionLabelOverride;
-@property (nonatomic, retain) NSString *section;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSDate *date;
+@property (nonatomic, copy) NSDate *lastInterruptDate;
+@property (nonatomic, copy) NSString *unlockActionLabelOverride;
+@property (nonatomic, copy) NSString *section;
 
-@property (nonatomic, retain) BBAction *defaultAction;
-@property BBBulletinAccessoryStyle accessoryStyle;
+@property (nonatomic, copy) BBAction *defaultAction;
+@property (nonatomic, copy, readonly) NSArray *supplementaryActions;
+@property (nonatomic) BBBulletinAccessoryStyle accessoryStyle;
+
+@property (nonatomic, retain) BBSectionIcon *icon;
 
 @property (nonatomic, retain) NSDictionary *context;
 
@@ -33,6 +42,10 @@ typedef NS_ENUM(NSUInteger, BBBulletinAccessoryStyle) {
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 @property ABRecordID addressBookRecordID;
 #pragma clang diagnostic pop
+
+@property BOOL turnsOnDisplay;
+
+@property (nonatomic) BBAttachmentMetadataType primaryAttachmentType;
 
 - (BBSectionSubtypeParameters *)_sectionSubtypeParameters;
 
