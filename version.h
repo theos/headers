@@ -1,7 +1,7 @@
 /**
  * CoreFoundation Version Header
  *
- * by HASHBANG Productions <http://hbang.ws>
+ * by HASHBANG Productions
  * Public Domain
  *
  * 2.0		478.23
@@ -36,20 +36,19 @@
  * 11.0		1443.00
  * 11.1		1445.32
  * 11.2		1450.14
+ *
+ * Reference: http://iphonedevwiki.net/index.php/CoreFoundation.framework#Versions
  */
 
-/**
- * iOS 2.0 - 4.2 are defined in CoreFoundation/CFBase.h. The format prior to
- * 4.0 is kCFCoreFoundationVersionNumber_iPhoneOS_X_Y. 4.0 and newer have the
- * format kCFCoreFoundationVersionNumber_iOS_X_Y.
- */
+// iOS 2.0 – 4.2 are defined in <CoreFoundation/CFBase.h>. The format prior to 4.0 is
+// kCFCoreFoundationVersionNumber_iPhoneOS_X_Y. 4.0 and newer have the format
+// kCFCoreFoundationVersionNumber_iOS_X_Y.
 
 #import <CoreFoundation/CFBase.h>
 
-/**
- * The weird thing about those #defines is that some newer ones don't exist in
- * newer SDKs. Let's define version numbers all the way up to the latest.
- */
+// Newer version number #defines may or may not be defined. For instance, the iOS 5, 6, 7 SDKs
+// didn’t define any newer version than iOS 4.2. 9.3 SDK defines versions up to iOS 8.4. 10.1 SDK
+// defines versions up to 9.4(!) but not 10.0
 
 #ifndef kCFCoreFoundationVersionNumber_iOS_4_3
 #define kCFCoreFoundationVersionNumber_iOS_4_3 550.58
@@ -151,19 +150,19 @@
 #define kCFCoreFoundationVersionNumber10_10 1151.16
 #endif
 
-/**
- * Let's also define some useful functions to check which firmware the user is
- * on. (Note that feature detection is highly recommended where possible)
- */
+// Let’s also define some useful functions to check which firmware the user is on. (Note that
+// feature detection is highly recommended where possible)
 
 #define IS_IOS_OR_OLDER(version) (kCFCoreFoundationVersionNumber <= kCFCoreFoundationVersionNumber_##version)
 #define IS_IOS_OR_NEWER(version) (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_##version)
 #define IS_IOS_BETWEEN(start, end) (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_##start && kCFCoreFoundationVersionNumber <= kCFCoreFoundationVersionNumber_##end)
 
-/**
- * And let's make equivalent macros for OS X so it doesn't feel lonely.
- */
+// And let’s make equivalent macros for macOS so it doesn’t feel lonely.
 
-#define IS_OSX_OR_OLDER (kCFCoreFoundationVersionNumber <= kCFCoreFoundationVersionNumber##version)
-#define IS_OSX_OR_NEWER(version) (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber##version)
-#define IS_OSX_BETWEEN(start, end) (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber##start && kCFCoreFoundationVersionNumber <= kCFCoreFoundationVersionNumber##end)
+#define IS_MACOS_OR_OLDER(version) (kCFCoreFoundationVersionNumber <= kCFCoreFoundationVersionNumber##version)
+#define IS_MACOS_OR_NEWER(version) (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber##version)
+#define IS_MACOS_BETWEEN(start, end) (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber##start && kCFCoreFoundationVersionNumber <= kCFCoreFoundationVersionNumber##end)
+
+#define IS_OSX_OR_OLDER(version) IS_MACOS_OR_OLDER(version)
+#define IS_OSX_OR_NEWER(version) IS_MACOS_OR_NEWER(version)
+#define IS_OSX_BETWEEN(version) IS_MACOS_BETWEEN(version)
