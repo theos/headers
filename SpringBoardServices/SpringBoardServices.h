@@ -5,6 +5,7 @@ __BEGIN_DECLS
 mach_port_t SBSSpringBoardServerPort();
 
 void SBFrontmostApplicationDisplayIdentifier(mach_port_t port, char *result);
+NSString *SBSCopyFrontmostApplicationDisplayIdentifier();
 void SBGetScreenLockStatus(mach_port_t port, BOOL *lockStatus, BOOL *passcodeEnabled);
 void SBSUndimScreen();
 

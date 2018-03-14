@@ -1,8 +1,10 @@
 #import <BaseBoard/BSAction.h>
 
-typedef NS_ENUM(NSUInteger, SBSRelaunchActionOptions) {
-	// TODO: fill out enum
-	SBSRelaunchActionOptionsIdk
+typedef NS_OPTIONS(NSUInteger, SBSRelaunchActionOptions) {
+	SBSRelaunchActionOptionsNone,
+	SBSRelaunchActionOptionsRestartRenderServer = 1 << 0,
+	SBSRelaunchActionOptionsSnapshotTransition = 1 << 1,
+	SBSRelaunchActionOptionsFadeToBlackTransition = 1 << 2
 };
 
 @interface SBSRelaunchAction : BSAction
