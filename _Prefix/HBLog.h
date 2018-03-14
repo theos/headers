@@ -1,4 +1,12 @@
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_10_0 && __has_include(<os/log.h>)
+#ifndef HB_LOG_USE_COLOR
+	#if defined(__DEBUG__) || defined(__IPHONE_10_0)
+		#define HB_LOG_USE_COLOR 0
+	#else
+		#define HB_LOG_USE_COLOR 1
+	#endif
+#endif
+
+#if defined(__IPHONE_10_0) && __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_10_0 && __has_include(<os/log.h>)
 	#import <os/log.h>
 
 	#define HB_LOG_INTERNAL(level, type, ...) os_log_with_type(OS_LOG_DEFAULT, level, "[%{public}s:%{public}d] %{public}@", __BASE_FILE__, __LINE__, [NSString stringWithFormat:__VA_ARGS__])
@@ -10,7 +18,7 @@
 #else
 	#include <CoreFoundation/CFLogUtilities.h>
 
-	#ifdef __DEBUG__
+	#ifdef HB_LOG_USE_COLOR
 		#define HB_LOG_FORMAT(color) CFSTR("\e[1;3" #color "m[%s] \e[m\e[0;3" #color "m%s:%d\e[m \e[0;30;4" #color "m%s:\e[m %@")
 	#else
 		#define HB_LOG_FORMAT(color) CFSTR("[%s: %s:%d] %s: %@")
