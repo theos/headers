@@ -5,6 +5,9 @@
 - (void)openApplicationWithBundleID:(NSString *)bundleID;
 
 - (NSArray *)applicationsAvailableForHandlingURLScheme:(NSString *)urlScheme;
+- (NSArray *)applicationsAvailableForOpeningURL:(NSURL *)url;
+- (NSArray *)applicationsAvailableForOpeningURL:(NSURL *)url legacySPI:(BOOL)legacySPI;
+
 - (NSURL *)URLOverrideForURL:(NSURL *)url;
 
 - (BOOL)registerApplication:(NSURL *)url;
