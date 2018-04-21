@@ -18,6 +18,8 @@
 
 - (BOOL)launchApplicationWithIdentifier:(NSString *)identifier suspended:(BOOL)suspended;
 
+- (BOOL)isShowingHomescreen;
+
 - (UIInterfaceOrientation)activeInterfaceOrientation;
 
 @property (nonatomic, retain) UIWindow *window;
