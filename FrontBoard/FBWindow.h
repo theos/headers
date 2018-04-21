@@ -2,6 +2,4 @@
 
 @interface FBWindow : UIWindow
 
-- (NSString *)recursiveDescription;
-
 @end
