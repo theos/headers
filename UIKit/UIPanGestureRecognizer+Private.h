@@ -1,6 +1,5 @@
 @interface UIPanGestureRecognizer (Private)
 
-- (CGFloat)_hysteresis;
-- (void)_setHysteresis:(CGFloat)hysteresis;
+@property (setter=_setHysteresis:) BOOL _hysteresis;
 
 @end
