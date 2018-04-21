@@ -18,6 +18,8 @@
 
 - (BOOL)launchApplicationWithIdentifier:(NSString *)identifier suspended:(BOOL)suspended;
 
+- (UIInterfaceOrientation)activeInterfaceOrientation;
+
 @property (nonatomic, retain) UIWindow *window;
 @property (readonly) BOOL isLocked;
 @property (nonatomic, retain, readonly) SBApplication *_accessibilityFrontMostApplication;

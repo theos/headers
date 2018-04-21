@@ -22,6 +22,8 @@ typedef NS_ENUM(int64_t, SBSystemGestureType) {
 
 + (SBMainDisplaySystemGestureManager *)mainDisplayManager;
 
+@property (assign, getter=areSystemGesturesDisabledForAccessibility, nonatomic) BOOL systemGesturesDisabledForAccessibility;
+
 - (void)addGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer withType:(SBSystemGestureType)type;
 
 @end

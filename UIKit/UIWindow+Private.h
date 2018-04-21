@@ -9,6 +9,7 @@ const UIWindowLevel UIWindowLevelTextEffects = 2100.f;
 + (NSArray *)allWindowsIncludingInternalWindows:(BOOL)internalWindows onlyVisibleWindows:(BOOL)onlyVisibleWindows;
 
 - (void)_updateToInterfaceOrientation:(UIInterfaceOrientation)orientation duration:(double)duration force:(BOOL)force;
+- (void)_setRotatableViewOrientation:(UIInterfaceOrientation)orientation updateStatusBar:(BOOL)updateStatusBar duration:(CGFloat)duration force:(BOOL)force;
 
 @property BOOL keepContextInBackground;
 @property (getter=_isSecure, setter=_setSecure:) BOOL _secure;
