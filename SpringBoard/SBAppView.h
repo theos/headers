@@ -1,4 +1,13 @@
-@interface SBAppView : UIView <FBSceneMonitorDelegate>
+#import <UIKit/UIView.h>
 
-- (instancetype)initWithApp:(id)arg1 referenceSize:(CGSize)arg2 orientation:(long long)arg3 display:(id)arg4 ;
-- (instancetype)initWithApp:(id)arg1 referenceSize:(CGSize)arg2 orientation:(long long)arg3 display:(id)arg4 hostRequester:(id)arg5 ;
+@class SBApplication, FBSDisplay;
+
+@interface SBAppView : UIView
+
+- (instancetype)initWithApp:(SBApplication *)application referenceSize:(CGSize)size orientation:(UIInterfaceOrientation)orientation display:(FBSDisplay *)display hostRequester:(NSString *)requester;
+- (instancetype)initWithApp:(SBApplication *)application referenceSize:(CGSize)size orientation:(UIInterfaceOrientation)orientation display:(FBSDisplay *)display;
+
+- (void)setForcesStatusBarHidden:(BOOL)hidden;
+- (CGSize)sizeThatFits:(CGSize)size;
+
+@end
