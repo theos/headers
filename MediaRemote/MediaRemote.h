@@ -80,20 +80,26 @@ extern "C" {
         /*
          * Use nil for userInfo.
          */
-        kMRPlay = 0,
-        kMRPause = 1,
-        kMRTogglePlayPause = 2,
-        kMRStop = 3,
-        kMRNextTrack = 4,
-        kMRPreviousTrack = 5,
-        kMRToggleShuffle = 6,
-        kMRToggleRepeat = 7,
-        kMRStartForwardSeek = 8,
-        kMREndForwardSeek = 9,
-        kMRStartBackwardSeek = 10,
-        kMREndBackwardSeek = 11,
-        kMRGoBackFifteenSeconds = 12,
-        kMRSkipFifteenSeconds = 13,
+        MRMediaRemoteCommandPlay,
+        MRMediaRemoteCommandPause,
+        MRMediaRemoteCommandTogglePlayPause,
+        MRMediaRemoteCommandStop,
+        MRMediaRemoteCommandNextTrack,
+        MRMediaRemoteCommandPreviousTrack,
+        MRMediaRemoteCommandAdvanceShuffleMode,
+        MRMediaRemoteCommandAdvanceRepeatMode,
+        MRMediaRemoteCommandBeginFastForward,
+        MRMediaRemoteCommandEndFastForward,
+        MRMediaRemoteCommandBeginRewind,
+        MRMediaRemoteCommandEndRewind,
+        MRMediaRemoteCommandRewind15Seconds,
+        MRMediaRemoteCommandFastForward15Seconds,
+        MRMediaRemoteCommandRewind30Seconds,
+        MRMediaRemoteCommandFastForward30Seconds,
+        MRMediaRemoteCommandToggleRecord,
+        MRMediaRemoteCommandSkipForward,
+        MRMediaRemoteCommandSkipBackward,
+        MRMediaRemoteCommandChangePlaybackRate,
 
         /*
          * Use a NSDictionary for userInfo, which contains three keys:
@@ -101,13 +107,22 @@ extern "C" {
          * kMRMediaRemoteOptionStationID
          * kMRMediaRemoteOptionStationHash
          */
-        kMRLikeTrack = 0x6A,
-        kMRBanTrack = 0x6B,
-        kMRAddTrackToWishList = 0x6C,
-        kMRRemoveTrackFromWishList = 0x6D
-    } MRCommand;
+        MRMediaRemoteCommandRateTrack,
+        MRMediaRemoteCommandLikeTrack,
+        MRMediaRemoteCommandDislikeTrack,
+        MRMediaRemoteCommandBookmarkTrack,
 
-    Boolean MRMediaRemoteSendCommand(MRCommand command, id userInfo);
+        /*
+         * Use nil for userInfo.
+         */
+        MRMediaRemoteCommandSeekToPlaybackPosition,
+        MRMediaRemoteCommandChangeRepeatMode,
+        MRMediaRemoteCommandChangeShuffleMode,
+        MRMediaRemoteCommandEnableLanguageOption,
+        MRMediaRemoteCommandDisableLanguageOption
+    } MRMediaRemoteCommand;
+
+    Boolean MRMediaRemoteSendCommand(MRMediaRemoteCommand command, NSDictionary *userInfo);
 
     void MRMediaRemoteSetPlaybackSpeed(int speed);
     void MRMediaRemoteSetElapsedTime(double elapsedTime);
@@ -136,8 +151,8 @@ extern "C" {
     void MRMediaRemoteSetRepeatMode(int mode);
 
     /*
-    * The identifier can be obtained using MRMediaRemoteCopyPickableRoutes.
-    * Use the 'RouteUID' or the 'RouteName' key.
+     * The identifier can be obtained using MRMediaRemoteCopyPickableRoutes.
+     * Use the 'RouteUID' or the 'RouteName' key.
      */
 
     int MRMediaRemoteSelectSourceWithID(CFStringRef identifier);
@@ -145,7 +160,7 @@ extern "C" {
 
     CFArrayRef MRMediaRemoteCopyPickableRoutesForCategory(NSString *category);
     Boolean MRMediaRemotePickedRouteHasVolumeControl();
-    void MRMediaRemoteSetCanBeNowPlayingApplication(Boolean can);
+    Boolean MRMediaRemoteSetCanBeNowPlayingApplication(Boolean can);
     void MRMediaRemoteSetNowPlayingInfo(CFDictionaryRef information);
 
 
