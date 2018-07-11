@@ -16,6 +16,9 @@
 - (void)_relaunchSpringBoardNow;
 - (void)undim;
 
+- (void)_simulateLockButtonPress;
+- (void)_simulateHomeButtonPress;
+
 - (BOOL)launchApplicationWithIdentifier:(NSString *)identifier suspended:(BOOL)suspended;
 
 - (BOOL)isShowingHomescreen;

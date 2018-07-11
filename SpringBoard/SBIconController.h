@@ -15,6 +15,9 @@
 
 @property (nonatomic, retain, readonly) SBRootFolderController *_rootFolderController;
 
+
+- (BOOL)isEditing;
+- (void)setIsEditing:(BOOL)editing;
 - (void)setIsEditing:(BOOL)editing withFeedbackBehavior:(id)behavior;
 
 @end
