@@ -4,8 +4,6 @@
 
 @interface SBMainWorkspaceTransaction : SBWorkspaceTransaction
 
-@property (nonatomic, readonly) SBMainWorkspaceTransitionRequest *transitionRequest;
-
 - (instancetype)initWithTransitionRequest:(SBMainWorkspaceTransitionRequest *)request;
 
 @end
