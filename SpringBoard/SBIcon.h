@@ -4,6 +4,13 @@
 
 @interface SBIcon : NSObject
 
+@property (copy, nonatomic, readonly) NSString *displayName;
+
+- (BOOL)isDownloadingIcon;
+- (BOOL)isFolderIcon;
+
+- (NSString *)applicationBundleID;
+
 - (BOOL)isApplicationIcon;
 - (BOOL)isBeta;
 

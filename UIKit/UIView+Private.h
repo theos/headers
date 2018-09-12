@@ -2,4 +2,6 @@
 
 - (UIViewController *)_viewControllerForAncestor;
 
+- (void)layoutBelowIfNeeded;
+
 @end

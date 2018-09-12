@@ -1,7 +1,9 @@
-#import "SBSystemGestureManager.h"
+#import <UIKit/UIScreenEdgePanGestureRecognizer+Private.h>
+#import "SBSystemGestureRecognizerDelegate.h"
+#import "UIGestureRecognizer+SpringBoard.h"
 
 @interface SBScreenEdgePanGestureRecognizer : UIScreenEdgePanGestureRecognizer
 
-- (instancetype)initWithTarget:(id)target action:(SEL)action type:(SBSystemGestureType)type;
+@property (weak, nonatomic) id<SBSystemGestureRecognizerDelegate> delegate;
 
 @end
