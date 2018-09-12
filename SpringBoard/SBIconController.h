@@ -1,7 +1,7 @@
 @class SBDockIconListView, SBIconModel, SBRootIconListView, SBRootFolderController, SBIconViewMap;
 
 @interface SBIconController : NSObject {
-    SBIconModel *_iconModel;
+	SBIconModel *_iconModel;
 }
 
 + (SBIconController *)sharedInstance;
@@ -14,7 +14,6 @@
 @property (nonatomic, retain, readonly) SBDockIconListView *dockListView;
 
 @property (nonatomic, retain, readonly) SBRootFolderController *_rootFolderController;
-
 
 - (BOOL)isEditing;
 - (void)setIsEditing:(BOOL)editing;

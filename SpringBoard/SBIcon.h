@@ -3,6 +3,7 @@
 @class SBApplication;
 
 @interface SBIcon : NSObject
+
 @property (copy, nonatomic, readonly) NSString *displayName;
 
 - (BOOL)isDownloadingIcon;

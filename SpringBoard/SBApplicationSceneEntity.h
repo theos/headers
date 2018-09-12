@@ -3,6 +3,7 @@
 @class SBApplication;
 
 @interface SBApplicationSceneEntity : SBWorkspaceEntity
-@property (nonatomic, readonly) SBApplication * application;
+
+@property (nonatomic, readonly) SBApplication *application;
 
 @end
