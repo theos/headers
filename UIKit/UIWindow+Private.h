@@ -1,7 +1,7 @@
-const UIWindowLevel UIWindowLevelNotificationCenter = 1056.f;
-const UIWindowLevel UIWindowLevelStatusBarLockScreen = 1052.f;
-const UIWindowLevel UIWindowLevelAlertReal = 1996.f;
-const UIWindowLevel UIWindowLevelTextEffects = 2100.f;
+#define UIWindowLevelNotificationCenter 1056.f;
+#define UIWindowLevelStatusBarLockScreen 1052.f;
+#define UIWindowLevelAlertReal 1996.f;
+#define UIWindowLevelTextEffects 2100.f;
 
 @interface UIWindow (Private)
 
