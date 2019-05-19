@@ -13,12 +13,6 @@
 
 @end
 
-@interface UIView (CameraUI)
-
-- (void)cam_ensureSubview:(UIView *)view;
-
-@end
-
 @interface UIView (Contraints)
 
 // iOS 8+

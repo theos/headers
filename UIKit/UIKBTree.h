@@ -31,6 +31,7 @@
 - (id)initWithType:(NSInteger)type;
 - (BOOL)_renderAsStringKey;
 - (BOOL)renderAsStringKey;
+- (BOOL)isSplit;
 - (UIKBTree *)subtreeWithName:(NSString *)name;
 - (CGRect)_keyplaneFrame;
 
