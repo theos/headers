@@ -1,10 +1,11 @@
-extern NSString *const _AVSystemController_HeadphoneJackIsConnectedDidChangeNotification;
-extern NSString *const _AVSystemController_HeadphoneJackIsConnectedAttribute;
+extern NSString *const AVSystemController_HeadphoneJackIsConnectedDidChangeNotification;
+extern NSString *const AVSystemController_HeadphoneJackIsConnectedAttribute;
 
 @interface AVSystemController : NSObject
 
 + (instancetype)sharedAVSystemController;
 
-- (id)attributeForKey:(id)key;
+- (id)attributeForKey:(NSString *)key;
+- (BOOL)setAttribute:(id)value forKey:(NSString *)key error:(NSError **)error;
 
 @end
