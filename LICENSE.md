@@ -4,6 +4,7 @@ There is no particular license on this repo. Files in this repo come from many s
 ## By Author
 ### Apple
 * IOKit headers: [Apple Public Source License](https://opensource.apple.com/license/apsl/)
+* MediaPlayer, Celestial headers: [2-Clause BSD License](https://github.com/WebKit/webkit/blob/master/Source/WebCore/LICENSE-APPLE)
 
 ### ashikase
 * IconSupport: ?
@@ -17,13 +18,13 @@ There is no particular license on this repo. Files in this repo come from many s
 * libprefs: [GNU LGPL v3](https://github.com/DHowett/preferenceloader/blob/master/LICENSE)
 
 ### KennyTM
-* GraphicsServices, IOSurface, substrate2.h headers: [BSD 3 Clause](http://opensource.org/licenses/BSD-3-Clause)
+* GraphicsServices, IOSurface, substrate2.h headers: [3-Clause BSD License](http://opensource.org/licenses/BSD-3-Clause)
 
 ### OpenSSL
 * OpenSSL: [OpenSSL](https://www.openssl.org/source/license.html)
 
 ### PixelFire
-* libcolorpicker: [MIT License](http://git.pixelfiredev.com/pixelfire/libcolorpicker/blob/master/LICENSE.md)
+* libcolorpicker: [MIT License](https://github.com/atomikpanda/libcolorpicker/blob/master/LICENSE.md)
 
 ### Ryan Petrich
 * AppList: [GNU LGPL v2.1](https://github.com/rpetrich/AppList/blob/master/LICENSE)
