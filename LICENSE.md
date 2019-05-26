@@ -5,6 +5,7 @@ There is no particular license on this repo. Files in this repo come from many s
 ### Apple
 * IOKit headers: [Apple Public Source License](https://opensource.apple.com/license/apsl/)
 * MediaPlayer, Celestial headers: [2-Clause BSD License](https://github.com/WebKit/webkit/blob/master/Source/WebCore/LICENSE-APPLE)
+* launch.h: [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 ### ashikase
 * IconSupport: ?
