@@ -21,14 +21,14 @@
  * This value is _nil_ by default. When nil, a default placeholder string will
  * be displayed. The default string is localized.
  */
-@property(nonatomic, copy) NSString *detailEntryPlaceholderText;
+@property (nonatomic, copy) NSString *detailEntryPlaceholderText;
 
 /**
  * The string used for the subject of the generated email.
  *
  * This value is _nil_ by default.
  */
-@property(nonatomic, copy) NSString *subject;
+@property (nonatomic, copy) NSString *subject;
 
 /**
  * The string displayed in the generated email, below the device details and
@@ -36,7 +36,7 @@
  *
  * This value is _nil_ by default.
  */
-@property(nonatomic, copy) NSString *messageBody;
+@property (nonatomic, copy) NSString *messageBody;
 
 /**
  * A string used for formatting the details input by the user.
@@ -44,14 +44,14 @@
  * This value is _nil_ by default. Any set value *must* include a "%@" to
  * represent where the user input will be inserted.
  */
-@property(nonatomic, copy) NSString *detailFormat;
+@property (nonatomic, copy) NSString *detailFormat;
 
 /**
  * A string representing the generator of this email.
  *
  * This value is _nil_ by default.
  */
-@property(nonatomic, copy) NSString *byline;
+@property (nonatomic, copy) NSString *byline;
 
 /**
  * A Boolean value that determines whether a user must enter details.
@@ -59,7 +59,7 @@
  * This value is NO by default. When YES, the user will not be able to generate
  * the email without entering text into the detail area.
  */
-@property(nonatomic, assign) BOOL requiresDetailsFromUser;
+@property (nonatomic, assign) BOOL requiresDetailsFromUser;
 
 /**
  * Initializer.

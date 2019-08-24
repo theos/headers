@@ -11,7 +11,7 @@
 + (instancetype)keyboardFromFactoryWithName:(NSString *)name screen:(UIScreen *)screen;
 + (CGSize)keyboardSizeForInputMode:(UIKeyboardInputMode *)inputMode screenTraits:(UIKBScreenTraits *)traits;
 
-@property(retain, nonatomic) UIKBTree *activeKey;
+@property (retain, nonatomic) UIKBTree *activeKey;
 
 - (BOOL)touchPassesDragThreshold:(UIKeyboardTouchInfo *)touchInfo;
 

@@ -6,12 +6,16 @@
 
 + (instancetype)emptyTraits;
 
-@property(retain, nonatomic) UIKBRenderGeometry *geometry;
-@property(retain, nonatomic) UIKBGradient *backgroundGradient;
-@property(retain, nonatomic) UIKBGradient *layeredBackgroundGradient;
-@property(retain, nonatomic) UIKBTextStyle *symbolStyle;
-@property(retain, nonatomic) NSArray *variantGeometries;
-@property(assign) NSInteger blendForm;
+@property (retain, nonatomic) UIKBRenderGeometry *geometry;
+
+@property (retain, nonatomic) UIKBGradient *backgroundGradient;
+@property (retain, nonatomic) UIKBGradient *layeredBackgroundGradient;
+
+@property (retain, nonatomic) UIKBTextStyle *symbolStyle;
+
+@property (retain, nonatomic) NSArray *variantGeometries;
+
+@property (assign) NSInteger blendForm;
 
 - (void)removeAllRenderEffects;
 

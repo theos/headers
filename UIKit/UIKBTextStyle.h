@@ -5,9 +5,11 @@
 + (instancetype)styleWithFontName:(NSString *)fontName withFontSize:(CGFloat)fontSize;
 + (instancetype)styleWithTextColor:(NSString *)textColor;
 
-@property(retain, nonatomic) NSString *textColor;
-@property(retain, nonatomic) NSString *etchColor;
-@property(assign) CGFloat fontSize;
-@property(assign) CGPoint textOffset;
+@property (retain, nonatomic) NSString *textColor;
+@property (retain, nonatomic) NSString *etchColor;
+
+@property (assign) CGFloat fontSize;
+
+@property (assign) CGPoint textOffset;
 
 @end

@@ -56,22 +56,22 @@
 
 @property (getter = isBackdropVisible) BOOL backdropVisible;
 @property (getter = isSelected) BOOL selected;
-@property(setter = setDesignMode:) BOOL designMode;
-@property(getter = isEnabled) BOOL enabled;
-@property(getter = isHighlighted) BOOL highlighted;
+@property (setter = setDesignMode:) BOOL designMode;
+@property (getter = isEnabled) BOOL enabled;
+@property (getter = isHighlighted) BOOL highlighted;
 
 @property (copy) NSString *blurQuality;
 
-@property(retain) UIImage *colorTintMaskImage;
-@property(retain) UIImage *colorBurnTintMaskImage;
-@property(retain) UIImage *darkeningTintMaskImage;
-@property(retain) UIImage *filterMaskImage;
-@property(retain) UIImage *grayscaleTintMaskImage;
+@property (retain) UIImage *colorTintMaskImage;
+@property (retain) UIImage *colorBurnTintMaskImage;
+@property (retain) UIImage *darkeningTintMaskImage;
+@property (retain) UIImage *filterMaskImage;
+@property (retain) UIImage *grayscaleTintMaskImage;
 
 @property (nonatomic, retain) UIColor *colorTint;
 @property (readonly) UIColor *color;
-@property(retain) UIColor *combinedTintColor;
-@property(retain) UIColor *legibleColor;
+@property (retain) UIColor *combinedTintColor;
+@property (retain) UIColor *legibleColor;
 
 @property double statisticsInterval;
 

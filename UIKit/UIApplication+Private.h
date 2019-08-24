@@ -15,11 +15,16 @@ typedef enum {
 
 + (BOOL)registerAsSystemApp;
 + (BOOL)shouldMakeUIForDefaultPNG;
+
 - (BOOL)isSuspended;
 - (BOOL)_isSpringBoard;
+
 - (UIInterfaceOrientation)activeInterfaceOrientation;
-- (NSString *)displayIdentifier;
+
 - (NSInteger)_frontMostAppOrientation;
+
+- (NSString *)displayIdentifier;
+
 - (void)_setBackgroundStyle:(UIBackgroundStyle)backgroundStyle;
 
 @end

@@ -2,7 +2,7 @@
 
 @interface UIKeyboardTaskQueue : NSObject
 
-@property(retain, nonatomic) UIKeyboardTaskExecutionContext *executionContext;
+@property (retain, nonatomic) UIKeyboardTaskExecutionContext *executionContext;
 
 - (void)addTask:(id)task;
 

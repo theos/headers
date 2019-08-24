@@ -5,8 +5,8 @@
 
 @interface TIKeyboardCandidateSingle : TIKeyboardCandidate
 
-@property(assign, nonatomic) NSString *candidate;
-@property(assign, nonatomic) NSString *input;
+@property (assign, nonatomic) NSString *candidate;
+@property (assign, nonatomic) NSString *input;
 
 @end
 
@@ -27,7 +27,7 @@
 @property BOOL deferredAutocorrection;
 @property BOOL requestedAutocorrection;
 
-@property(retain, nonatomic) TIAutocorrectionList *autocorrectionList;
+@property (retain, nonatomic) TIAutocorrectionList *autocorrectionList;
 
 - (void)updateSuggestionViews;
 - (void)clearAutocorrection;

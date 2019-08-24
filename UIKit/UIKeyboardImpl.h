@@ -8,16 +8,23 @@
 @end
 
 @interface UIKeyboardImpl : UIView
+
 + (instancetype)activeInstance;
 + (instancetype)sharedInstance;
+
 + (UIWindow *)keyboardWindow;
+
 + (CGSize)sizeForInterfaceOrientation:(NSInteger)orientation;
 + (CGSize)defaultSizeForInterfaceOrientation:(NSInteger)orientation;
 + (CGSize)_defaultSizeForInterfaceOrientation:(NSInteger)orientation;
 + (CGSize)keyboardSizeForInterfaceOrientation:(NSInteger)orientation;
+
 + (UIScreen *)keyboardScreen;
+
 + (Class)layoutClassForCurrentInputMode;
+
 + (BOOL)isSplit;
+
 + (id)orientationKeyForOrientation:(NSInteger)orientation;
 
 @property (retain, nonatomic) UIKeyboardTaskQueue *taskQueue;

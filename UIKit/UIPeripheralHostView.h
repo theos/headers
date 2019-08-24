@@ -4,7 +4,7 @@
 
 + (instancetype)sharedInstance;
 
-@property(nonatomic) BOOL automaticAppearanceEnabled;
+@property (nonatomic) BOOL automaticAppearanceEnabled;
 
 - (void)_setReloadInputViewsForcedIsAllowed:(BOOL)allowed;
 

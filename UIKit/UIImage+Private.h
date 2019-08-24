@@ -32,5 +32,7 @@ __END_DECLS
 @end
 
 @interface UIImage (PhotosUI)
+
 + (UIImage *)pu_PhotosUIImageNamed:(NSString *)name;
+
 @end

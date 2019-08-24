@@ -6,4 +6,5 @@
 - (CGFloat)rivenSizeFactor:(CGFloat)factor;
 
 - (void)setValue:(id)value forKey:(NSInteger)key;
+
 @end

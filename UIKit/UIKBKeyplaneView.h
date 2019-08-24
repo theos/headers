@@ -2,8 +2,10 @@
 
 @interface UIKBKeyplaneView : UIView
 
-- (UIView *)viewForKey:(UIKBTree *)key;
 - (NSInteger)stateForKey:(UIKBTree *)key;
+
+- (UIView *)viewForKey:(UIKBTree *)key;
+
 - (NSString *)cacheIdentifierForKey:(UIKBTree *)key withState:(NSInteger)state;
 
 @end

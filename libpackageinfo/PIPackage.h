@@ -12,15 +12,15 @@
 @interface PIPackage : NSObject {
     @package NSMutableDictionary *packageDetails_;
 }
-@property(nonatomic, readonly) NSString *identifier;
-@property(nonatomic, readonly) NSString *storeIdentifier;
-@property(nonatomic, readonly) NSString *name;
-@property(nonatomic, readonly) NSString *author;
-@property(nonatomic, readonly) NSString *maintainer;
-@property(nonatomic, readonly) NSString *version;
-@property(nonatomic, readonly) NSDate *installDate;
-@property(nonatomic, readonly) NSString *bundlePath;
-@property(nonatomic, readonly) NSString *libraryPath;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) NSString *storeIdentifier;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSString *author;
+@property (nonatomic, readonly) NSString *maintainer;
+@property (nonatomic, readonly) NSString *version;
+@property (nonatomic, readonly) NSDate *installDate;
+@property (nonatomic, readonly) NSString *bundlePath;
+@property (nonatomic, readonly) NSString *libraryPath;
 + (instancetype)packageForFile:(NSString *)filepath;
 + (instancetype)packageWithIdentifier:(NSString *)identifier;
 - (id)initWithDetails:(NSDictionary *)details;
