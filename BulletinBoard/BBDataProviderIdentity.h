@@ -1,6 +1,15 @@
+@class BBDataProvider, BBSectionInfo, BBSectionParameters;
+
 @interface BBDataProviderIdentity : NSObject
 
-+ (id)identityForDataProvider:(id)arg1;
-- (id)defaultSubsectionInfos;
++ (instancetype)identityForDataProvider:(BBDataProvider *)dataProvider;
+
+@property (nonatomic, retain) NSString *sectionIdentifier;
+@property (nonatomic, retain) NSString *sectionDisplayName;
+
+@property (nonatomic, retain) BBSectionInfo *defaultSectionInfo;
+@property (nonatomic, retain) NSArray <BBSectionInfo *> *defaultSubsectionInfos;
+
+@property (nonatomic, retain) BBSectionParameters *sectionParameters;
 
 @end

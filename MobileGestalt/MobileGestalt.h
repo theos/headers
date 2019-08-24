@@ -11,15 +11,30 @@
 
 #include <CoreFoundation/CoreFoundation.h>
 
+typedef enum {
+    MGDeviceClassInvalid = -1,
+    /* 0 is intentionally not in this enum */
+    MGDeviceClassiPhone  = 1,
+    MGDeviceClassiPod    = 2,
+    MGDeviceClassiPad    = 3,
+    MGDeviceClassAppleTV = 4,
+    /* 5 is intentionally not in this enum */
+    MGDeviceClassWatch   = 6,
+} MGDeviceClass;
+
 #if __cplusplus
 extern "C" {
 #endif
 
 #pragma mark - API
 
-    CFPropertyListRef MGCopyAnswer(CFStringRef property);
+    CFTypeRef MGCopyAnswer(CFStringRef question, CFDictionaryRef options);
 
-    Boolean MGGetBoolAnswer(CFStringRef property);
+    bool MGGetBoolAnswer(CFStringRef question);
+
+    SInt32 MGGetSInt32Answer(CFStringRef question, SInt32 defaultValue);
+
+    Float32 MGGetFloat32Answer(CFStringRef question, Float32 defaultValue);
 
     /*
      * Arguments are still a mistery.
@@ -67,7 +82,7 @@ extern "C" {
 
 #pragma mark - Baseband Information
 
-static const CFStringRef kMGBasebandSerialNumber = CFSTR("BasebandSerialNumber");
+    static const CFStringRef kMGBasebandSerialNumber = CFSTR("BasebandSerialNumber");
     static const CFStringRef kMGBasebandCertId = CFSTR("BasebandCertId");
     static const CFStringRef kMGBasebandChipId = CFSTR("BasebandChipId");
     static const CFStringRef kMGBasebandFirmwareManifestData = CFSTR("BasebandFirmwareManifestData");

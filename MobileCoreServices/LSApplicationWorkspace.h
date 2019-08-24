@@ -4,9 +4,21 @@
 
 + (instancetype)defaultWorkspace;
 
+- (void)openApplicationWithBundleID:(NSString *)bundleID;
+- (void)enumerateBundlesOfType:(NSInteger)type block:(void (^)(LSBundleProxy *))block;
+
 - (NSArray *)applicationsAvailableForHandlingURLScheme:(NSString *)urlScheme;
+- (NSArray *)applicationsAvailableForOpeningURL:(NSURL *)url;
+- (NSArray *)applicationsAvailableForOpeningURL:(NSURL *)url legacySPI:(BOOL)legacySPI;
+
 - (NSURL *)URLOverrideForURL:(NSURL *)url;
 
-- (void)enumerateBundlesOfType:(NSInteger)type block:(void (^)(LSBundleProxy *))block;
+- (BOOL)registerApplication:(NSURL *)url;
+- (BOOL)registerPlugin:(NSURL *)url;
+
+- (BOOL)unregisterApplication:(NSURL *)url;
+- (BOOL)unregisterPlugin:(NSURL *)url;
+
+- (NSArray *)pluginsWithIdentifiers:(NSArray *)identifiers protocols:(NSArray *)protocols version:(id)version;
 
 @end

@@ -3,7 +3,7 @@
 @class PSRootController, PSSpecifier, PSTableCell;
 
 @interface PSListController : PSViewController <UITableViewDelegate, UITableViewDataSource, UIAppearance> {
-	NSArray *_specifiers;
+	NSMutableArray *_specifiers;
 }
 
 + (BOOL)displaysButtonBar;
@@ -24,7 +24,7 @@
 - (NSArray *)specifiersForIDs:(NSArray *)identifiers;
 - (NSArray *)specifiersInGroup:(NSInteger)group;
 
-@property (nonatomic, retain) NSArray *specifiers;
+@property (nonatomic, retain) NSMutableArray *specifiers;
 @property (nonatomic, retain) PSSpecifier *specifier;
 @property (nonatomic, retain) NSString *specifierID;
 @property (nonatomic, retain) NSString *specifierIDPendingPush;

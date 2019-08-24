@@ -15,15 +15,21 @@
 
 @interface UIView (Contraints)
 
-// iOS 8+
-- (BOOL)cam_hasConstraintForKey:(NSString *)key;
-- (void)cam_addConstraints:(NSArray *)constraints forKey:(NSString *)key;
-- (void)cam_removeAllConstraintsForKey:(NSString *)key;
-- (NSArray *)cam_constraintsForKey:(NSString *)key;
+- (BOOL)cam_hasConstraintForKey:(NSString *)key NS_AVAILABLE_IOS(8_0);
+- (void)cam_addConstraints:(NSArray *)constraints forKey:(NSString *)key NS_AVAILABLE_IOS(8_0);
+- (void)cam_removeAllConstraintsForKey:(NSString *)key NS_AVAILABLE_IOS(8_0);
+- (NSArray *)cam_constraintsForKey:(NSString *)key NS_AVAILABLE_IOS(8_0);
 
 @end
 
 @interface UIView (Private)
-- (UIKBRenderConfig *)_inheritedRenderConfig; // iOS 7+
-- (void)_setRenderConfig:(UIKBRenderConfig *)renderConfig; // iOS 7+
+
+- (UIViewController *)_viewControllerForAncestor;
+
+- (UIKBRenderConfig *)_inheritedRenderConfig NS_AVAILABLE_IOS(7_0);
+
+- (void)layoutBelowIfNeeded;
+
+- (void)_setRenderConfig:(UIKBRenderConfig *)renderConfig NS_AVAILABLE_IOS(7_0);
+
 @end

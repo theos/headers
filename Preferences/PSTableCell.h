@@ -1,3 +1,5 @@
+#import <UIKit/UIKit.h>
+
 @class PSSpecifier;
 
 typedef NS_ENUM(NSInteger, PSCellType) {

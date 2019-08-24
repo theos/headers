@@ -3,7 +3,7 @@
 // (example: `/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk`
 // or `/` on an actual iOS device
 #ifdef __cplusplus
-    extern "C" {
+extern "C" {
 #endif
 
 NSString *UISystemRootDirectory();

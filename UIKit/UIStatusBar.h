@@ -17,6 +17,6 @@ typedef NS_ENUM(NSInteger, UIStatusBarPosition) {
 
 + (UIStatusBarForegroundStyleAttributes *)_styleAttributesForStatusBarStyle:(UIStatusBarStyle)style legacy:(BOOL)legacy;
 
-@property (nonatomic,retain) UIColor *foregroundColor;
+@property (nonatomic, retain) UIColor *foregroundColor;
 
 @end

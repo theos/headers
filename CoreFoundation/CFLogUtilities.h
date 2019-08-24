@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 Apple Inc. All rights reserved.
+ * Copyright (c) 2015 Apple Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  *
@@ -61,4 +61,3 @@ CF_EXPORT void CFLog(int32_t level, CFStringRef format, ...);
 CF_EXTERN_C_END
 
 #endif /* ! __COREFOUNDATION_CFLOGUTILITIES__ */
-

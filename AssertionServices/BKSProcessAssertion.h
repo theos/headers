@@ -25,7 +25,13 @@ typedef NS_ENUM(NSUInteger, BKSProcessAssertionReason) {
 	BKSProcessAssertionReasonVOiP = 12,
 	BKSProcessAssertionReasonExtension = 13,
 	BKSProcessAssertionReasonContinuityStreams = 14,
-	// 15-9999 unknown
+	BKSProcessAssertionReasonHealthKit = 15,
+	BKSProcessAssertionReasonWatchConnectivity = 16,
+	BKSProcessAssertionReasonSnapshot = 17,
+	BKSProcessAssertionReasonComplicationUpdate = 18,
+	BKSProcessAssertionReasonWorkoutProcessing = 19,
+	BKSProcessAssertionReasonComplicationPushUpdate = 20,
+	// 21-9999 unknown
 	BKSProcessAssertionReasonActivation = 10000,
 	BKSProcessAssertionReasonSuspend = 10001,
 	BKSProcessAssertionReasonTransientWakeup = 10002,
@@ -35,12 +41,14 @@ typedef NS_ENUM(NSUInteger, BKSProcessAssertionReason) {
 	BKSProcessAssertionReasonContinuous = 10005,
 	BKSProcessAssertionReasonBackgroundContentFetching = 10006,
 	BKSProcessAssertionReasonNotificationAction = 10007,
-	// 10008-49999 unknown
+	BKSProcessAssertionReasonPIP = 10008,
+	// 10009-49999 unknown
 	BKSProcessAssertionReasonFinishTaskAfterBackgroundContentFetching = 50000,
 	BKSProcessAssertionReasonFinishTaskAfterBackgroundDownload = 50001,
 	BKSProcessAssertionReasonFinishTaskAfterPeriodicTask = 50002,
-	BKSProcessAssertionReasonAFterNoficationAction = 50003,
-	// 50004+ unknown
+	BKSProcessAssertionReasonAfterNoficationAction = 50003,
+	BKSProcessAssertionReasonFinishTaskAfterWatchConnectivity = 50004,
+	// 50005+ unknown
 };
 
 typedef NS_ENUM(NSUInteger, ProcessAssertionFlags) {
@@ -55,8 +63,11 @@ typedef NS_ENUM(NSUInteger, ProcessAssertionFlags) {
 
 - (instancetype)initWithPID:(NSInteger)pid flags:(NSUInteger)flags reason:(NSUInteger)reason name:(NSString *)name withHandler:(id)handler;
 
+- (instancetype)initWithBundleIdentifier:(NSString *)identifier flags:(NSUInteger)flags reason:(NSUInteger)reason name:(NSString *)name withHandler:(id)handler;
+
 + (NSString *)NameForReason:(NSUInteger)reason;
 
 - (BOOL)valid;
+- (void)invalidate;
 
 @end

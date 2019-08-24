@@ -54,4 +54,6 @@ typedef NS_ENUM(NSUInteger, _UIBackdropViewStyle) {
 @property (retain, nonatomic) CABackdropLayer *backdropLayer;
 @property (nonatomic) float zoom;
 
+@property (nonatomic, retain) _UIBackdropViewSettings *inputSettings;
+
 @end

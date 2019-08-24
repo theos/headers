@@ -130,6 +130,9 @@ __END_DECLS
 @property (nonatomic, retain) NSString *identifier;
 
 @property (nonatomic) PSCellType cellType;
+
+@property (nonatomic) Class detailControllerClass;
+
 @property (nonatomic) SEL buttonAction;
 @property (nonatomic) SEL confirmationAction;
 @property (nonatomic) SEL confirmationCancelAction;
