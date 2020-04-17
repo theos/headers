@@ -2,6 +2,6 @@
 
 __BEGIN_DECLS
 
-extern NSString *FBSystemAppBundleID();
+NSString *FBSystemAppBundleID();
 
 __END_DECLS

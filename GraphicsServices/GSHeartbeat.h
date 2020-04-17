@@ -35,54 +35,50 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <CoreGraphics/CoreGraphics.h>
 
-#if __cplusplus
-extern "C" {
-#endif	
-	
-	/*!
-	 @file GSHeartbeat.h
-	 @brief Calls function when display updates
-	 @author Kenny TM~
-	 @date 2009 Sept 24
-	 
-	 GSHeartbeat is an API that allows you to register a callback function when the display is updated. It has the same
-	 purpose as CADisplayLink, but have different origin.
-	 
-	 */	
-	
-	typedef struct __GSHeartbeat* GSHeartbeatRef;
-	typedef double GSHeartbeatTime;
-	typedef void (*GSHeartbeatCallback)(void* context, GSHeartbeatTime time);
-	
-	/*
-	 struct __GSHeartbeat {
-		 arg0 // 8
-		 arg3 // c
-		 Boolean isPaused;	// 10
-		 CFRunLoopRef runloop // 14
-		 CFStringRef mode; // 18
-		 void* framebuffer; // 1c
-		 CFRunLoopSourceRef source;	// 20
-	 }
-	 */
-	
+__BEGIN_DECLS
 
-	GSHeartbeatTime GSHeartbeatGetCurrentTime();
-	
-	CFTypeID GSHeartbeatGetTypeID();
-	
-	GSHeartbeatRef GSHeartbeatCreate(GSHeartbeatCallback callback, CFStringRef runloopMode, Boolean useTVOut, void* context);
-	
-	Boolean GSHeartbeatIsPaused(GSHeartbeatRef heartbeat);
-	void GSHeartbeatPause(GSHeartbeatRef heartbeat, Boolean pause_on);
-	
-	void GSHeartbeatSetRunLoopMode(GSHeartbeatRef heartbeat, CFStringRef mode);
-	void GSHeartbeatTickle(GSHeartbeatRef heartbeat, CFRunLoopRef runloop);
-	
-	void GSHeartbeatInvalidate(GSHeartbeatRef heartbeat);
-	
-#if __cplusplus
+/*!
+ @file GSHeartbeat.h
+ @brief Calls function when display updates
+ @author Kenny TM~
+ @date 2009 Sept 24
+ 
+ GSHeartbeat is an API that allows you to register a callback function when the display is updated. It has the same
+ purpose as CADisplayLink, but have different origin.
+ 
+ */
+
+typedef struct __GSHeartbeat *GSHeartbeatRef;
+typedef double GSHeartbeatTime;
+typedef void (*GSHeartbeatCallback)(void *context, GSHeartbeatTime time);
+
+/*
+struct __GSHeartbeat {
+    arg0 // 8
+    arg3 // c
+    Boolean isPaused;	// 10
+    CFRunLoopRef runloop // 14
+    CFStringRef mode; // 18
+    void *framebuffer; // 1c
+    CFRunLoopSourceRef source;	// 20
 }
-#endif
+*/
+
+
+GSHeartbeatTime GSHeartbeatGetCurrentTime();
+
+CFTypeID GSHeartbeatGetTypeID();
+
+GSHeartbeatRef GSHeartbeatCreate(GSHeartbeatCallback callback, CFStringRef runloopMode, Boolean useTVOut, void *context);
+
+Boolean GSHeartbeatIsPaused(GSHeartbeatRef heartbeat);
+void GSHeartbeatPause(GSHeartbeatRef heartbeat, Boolean pause_on);
+
+void GSHeartbeatSetRunLoopMode(GSHeartbeatRef heartbeat, CFStringRef mode);
+void GSHeartbeatTickle(GSHeartbeatRef heartbeat, CFRunLoopRef runloop);
+
+void GSHeartbeatInvalidate(GSHeartbeatRef heartbeat);
+
+__END_DECLS
 
 #endif

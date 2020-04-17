@@ -33,23 +33,19 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef GSHICCUPS_H
 #define GSHICCUPS_H
 
-#if __cplusplus
-extern "C" {
-#endif
+__BEGIN_DECLS
 
-	void GSDisallowSpinTrace();
-	void GSAllowSpinTrace();
-	void GSStopWatchingForHiccups();
-	void GSStartWatchingForHiccups();
-	
-	void GSSampleSelfWithThreads(int r0, int* r1, Boolean threads);
-	void GSSampleSelf(int r0, int* r1);	///< Calls *r1 = 0; GSSampleSelfWithThreads(r0, r1, true);
-	
-	// which is a capability.
-	extern CFStringRef kGSHiccoughInterval;
-	
-#if __cplusplus
-}
-#endif
+void GSDisallowSpinTrace();
+void GSAllowSpinTrace();
+void GSStopWatchingForHiccups();
+void GSStartWatchingForHiccups();
+
+void GSSampleSelfWithThreads(int r0, int *r1, Boolean threads);
+void GSSampleSelf(int r0, int *r1); ///< Calls *r1 = 0; GSSampleSelfWithThreads(r0, r1, true);
+
+// which is a capability.
+CFStringRef kGSHiccoughInterval;
+
+__END_DECLS
 
 #endif

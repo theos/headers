@@ -39,29 +39,23 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <CoreFoundation/CoreFoundation.h>
 
-#if __cplusplus
-extern "C" {
-#endif
+__BEGIN_DECLS
+/// Synchronize the com.apple.GMM preferences.
+void GSUpdateMapsVisibilityPrefs();
 
-	/// Synchronize the com.apple.GMM preferences.
-	void GSUpdateMapsVisibilityPrefs();
-	
-	/// Returns the MapKitUserShifting[Non]GreenTea setting from com.apple.GMM.
-	Boolean GSMapKitUserShifting();
-	/// Returns the MapsUserShifting[Non]GreenTea setting from com.apple.GMM.
-	Boolean GSMapsUserShifting();
-	/// Return true, or MapKitAvailableGreenTea setting from com.apple.GMM if the system has green-tea capability.
-	Boolean GSMapKitAvailable();
-	/// Returns true, or MapsVisibleGreenTea from com.apple.GMM if the system has green-tea capability.
-	/// This value will be refreshed when the carrier changes.
-	Boolean GSMapsVisible();
-	
-	extern CFStringRef kGSMapsVisibilityChangedNotification;
+/// Returns the MapKitUserShifting[Non]GreenTea setting from com.apple.GMM.
+Boolean GSMapKitUserShifting();
+/// Returns the MapsUserShifting[Non]GreenTea setting from com.apple.GMM.
+Boolean GSMapsUserShifting();
+/// Return true, or MapKitAvailableGreenTea setting from com.apple.GMM if the system has green-tea capability.
+Boolean GSMapKitAvailable();
+/// Returns true, or MapsVisibleGreenTea from com.apple.GMM if the system has green-tea capability.
+/// This value will be refreshed when the carrier changes.
+Boolean GSMapsVisible();
 
+CFStringRef kGSMapsVisibilityChangedNotification;
 
-#if __cplusplus
-}
-#endif
+__END_DECLS
 
 #endif
 

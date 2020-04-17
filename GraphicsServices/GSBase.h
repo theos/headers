@@ -35,16 +35,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <CoreFoundation/CoreFoundation.h>
 
-#if __cplusplus
-extern "C" {
-#endif
+__BEGIN_DECLS
 
-	void GSLog(CFStringRef format, ...);
-	void GSInitialize();
-	
-#if __cplusplus
-}
-#endif
+void GSLog(CFStringRef format, ...);
+void GSInitialize();
+
+__END_DECLS
 
 #endif
-

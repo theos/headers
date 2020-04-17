@@ -41,14 +41,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
  */
 
-#if __cplusplus
-extern "C" {
-#endif
-
-	typedef void* GSWindowRef;
-	
-#if __cplusplus
-}
-#endif
+typedef void *GSWindowRef;
 
 #endif
