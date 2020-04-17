@@ -3,6 +3,16 @@ The headers that HASHBANG Productions uses. Headers are only created for classes
 ## Code rules
 * Create headers only for what you use.
 * Follow the existing coding style.
+    * Objective-C properties should be in the style of `@property (attributes) type name;`
+    * Objective-C methods should be in the style of `- (type)methodName:(type)variableName parameter:(type)name;`
+    * Objective-C generics should be in the style of `NSDictionary<NSString *, NSArray<NSObject *> *> *variable`
+    * C-style functions and variables (all symbols) shoule be declared between `__BEGIN_DECLS` and `__END_DECLS` macros
+        ```c
+        __BEGIN_DECLS
+        int ExternalVariable;
+        void ExternalFunction(int);
+        __END_DECLS
+        ```
 * Singleton (`sharedInstance`) methods should return `instancetype`.
 * Don't just copy and paste lines from class-dumps - replace `id` with the appropriate class. Also change `arg1` and the like, or in some cases class-dump-z's guessed argument names, to something more appropriate. Cycript is helpful here:
 
