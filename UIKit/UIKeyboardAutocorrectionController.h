@@ -1,31 +1,10 @@
-// TODO: move all TI* classes
-
-@interface TIKeyboardCandidate : NSObject
-@end
-
-@interface TIKeyboardCandidateSingle : TIKeyboardCandidate
-
-@property (assign, nonatomic) NSString *candidate;
-@property (assign, nonatomic) NSString *input;
-
-@end
-
-@interface TIZephyrCandidate : TIKeyboardCandidateSingle
-@end
-
-@interface TIAutocorrectionList : NSObject
-
-+ (TIAutocorrectionList *)listWithAutocorrection:(TIZephyrCandidate *)autocorrection predictions:(NSArray *)predictions;
-- (TIAutocorrectionList *)autocorrection;
-- (NSArray *)predictions;
-
-@end
+#import <TextInput/TextInput.h>
 
 @interface UIKeyboardAutocorrectionController : NSObject
 
-@property BOOL needsAutocorrection;
-@property BOOL deferredAutocorrection;
-@property BOOL requestedAutocorrection;
+@property (assign) BOOL needsAutocorrection;
+@property (assign) BOOL deferredAutocorrection;
+@property (assign) BOOL requestedAutocorrection;
 
 @property (retain, nonatomic) TIAutocorrectionList *autocorrectionList;
 
