@@ -1,31 +1,33 @@
+#import <QuartzCore/CALayer.h>
+
 @interface CABackdropLayer : CALayer
 
-+ (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
++ (BOOL)CA_automaticallyNotifiesObservers:(Class)cls;
 + (BOOL)_hasRenderLayerSubclass;
-+ (id)defaultValueForKey:(id)arg1;
++ (id)defaultValueForKey:(id)key;
 
 @property (copy) NSString *statisticsType;
 @property (copy) NSString *groupName;
 
 @property (copy) NSArray *groupFilters;
 
-@property double statisticsInterval;
-@property float marginWidth;
-@property float scale;
+@property (assign) NSTimeInterval statisticsInterval;
+@property (assign) CGFloat marginWidth;
+@property (assign) CGFloat scale;
 
-@property struct CGRect backdropRect;
+@property (assign) CGRect backdropRect;
 
 @property (getter = isEnabled) BOOL enabled;
 
-- (NSUInteger)_renderLayerPropertyAnimationFlags:(NSUInteger)arg1;
+- (NSUInteger)_renderLayerPropertyAnimationFlags:(NSUInteger)animationFlags;
 
-- (BOOL)_renderLayerDefinesProperty:(NSUInteger)arg1;
+- (BOOL)_renderLayerDefinesProperty:(NSUInteger)property;
 
-- (CALayer *)_copyRenderLayer:(CATransaction *)arg1 layerFlags:(NSUInteger)arg2 commitFlags:(NSUInteger *)arg3;
+- (CALayer *)_copyRenderLayer:(CATransaction *)transaction layerFlags:(NSUInteger)layerFlags commitFlags:(NSUInteger *)commitFlags;
 
 - (id)statisticsValues;
 
-- (void)didChangeValueForKey:(id)arg1;
-- (void)layerDidBecomeVisible:(BOOL)arg1;
+- (void)didChangeValueForKey:(id)key;
+- (void)layerDidBecomeVisible:(bool)shouldCommitTransaction;
 
 @end
