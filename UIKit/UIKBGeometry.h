@@ -1,12 +1,12 @@
-#import <UIKit/UIKit.h>
+#import <UIKit/UIKit+Structs.h>
 
 @interface UIKBGeometry : NSObject
 
-@property float x;
-@property float y;
-@property float w;
-@property float h;
-@property CGRect frame;
-@property CGRect paddedFrame;
+@property (assign) UIKBGeometryUnit x;
+@property (assign) UIKBGeometryUnit y;
+@property (assign) UIKBGeometryUnit w;
+@property (assign) UIKBGeometryUnit h;
+@property (assign) CGRect frame;
+@property (assign) CGRect paddedFrame;
 
 @end
