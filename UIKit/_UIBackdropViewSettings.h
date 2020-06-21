@@ -1,4 +1,4 @@
-@class _UIBackdropView;
+#import "_UIBackdropView.h"
 
 @interface _UIBackdropViewSettings : NSObject
 
@@ -73,7 +73,7 @@
 @property (retain) UIColor *combinedTintColor;
 @property (retain) UIColor *legibleColor;
 
-@property double statisticsInterval;
+@property NSTimeInterval statisticsInterval;
 
 @property NSInteger graphicsQuality;
 @property NSInteger blurHardEdges;

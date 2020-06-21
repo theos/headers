@@ -1,4 +1,4 @@
-#import <UIKit/UIKit+Structs.h>
+#import <UIKit/UIKit-Structs.h>
 
 @interface UIKBGeometry : NSObject
 

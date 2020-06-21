@@ -1,4 +1,4 @@
-#import <TextInput/TextInput.h>
+#import <TextInput/TIAutocorrectionList.h>
 
 @interface UIKeyboardAutocorrectionController : NSObject
 
