@@ -1,8 +1,10 @@
+#import <CoreGraphics/CoreGraphics.h>
+
 API_AVAILABLE(ios(7.0))
 @interface BiometricKitEnrollProgressCoordinates : NSObject
 
-@property (assign, nonatomic) double x;
-@property (assign, nonatomic) double y;
-@property (assign, nonatomic) double angle;
+@property (assign, nonatomic) CGFloat x;
+@property (assign, nonatomic) CGFloat y;
+@property (assign, nonatomic) CGFloat angle;
 
 @end
