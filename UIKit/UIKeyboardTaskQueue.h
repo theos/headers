@@ -4,6 +4,6 @@
 
 @property (retain, nonatomic) UIKeyboardTaskExecutionContext *executionContext;
 
-- (void)addTask:(id)task;
+- (void)addTask:(void (^)(void))task;
 
 @end
