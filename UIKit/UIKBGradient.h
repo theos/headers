@@ -1,4 +1,4 @@
-#import <UIKit/UIKit.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 @interface UIKBGradient : NSObject
 
