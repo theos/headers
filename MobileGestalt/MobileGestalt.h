@@ -39,7 +39,7 @@ extern "C" {
 
     Float32 MGGetFloat32Answer(CFStringRef question, Float32 defaultValue);
 
-    /* Use 0 for __unknown0. */
+    /* Use NULL for __unknown0. */
     CFPropertyListRef MGCopyMultipleAnswers(CFArrayRef questions, CFDictionaryRef __unknown0);
 
     CFStringRef MGGetStringAnswer(CFStringRef question);
