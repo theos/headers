@@ -29,7 +29,7 @@ extern "C" {
 #pragma mark - API
 
     CFTypeRef MGCopyAnswer(CFStringRef question, CFDictionaryRef options);
-    CFTypeRef MGCopyAnswerWithError(CFStringRef question, int *error);
+    CFTypeRef MGCopyAnswerWithError(CFStringRef question, int unk, int *error);
 
     bool MGGetBoolAnswer(CFStringRef question);
     bool MGIsQuestionValid(CFStringRef question);
