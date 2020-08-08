@@ -1,6 +1,6 @@
 @class UIKBRenderConfig;
 
-@interface UIKeyboardLayout : NSObject
+@interface UIKeyboardLayout : UIView
 
 @property (nonatomic, retain) UIKBRenderConfig *renderConfig;
 @property CGFloat passcodeOutlineAlpha;
