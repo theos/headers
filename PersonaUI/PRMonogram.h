@@ -10,7 +10,7 @@ API_AVAILABLE(ios(10.0))
 + (instancetype)monogram;
 + (instancetype)monogramWithData:(NSData *)data;
 
-+ (NSArray<UIColor *> *)monogramColors;
++ (NSArray <UIColor *> *)monogramColors;
 
 /**** font info ****/
 + (NSUInteger)countOfFonts;
@@ -36,6 +36,6 @@ API_AVAILABLE(ios(10.0))
 - (UIImage *)snapshotWithSize:(CGSize)size scale:(CGFloat)scale options:(id)options;
 - (UIImage *)snapshotWithOptions:(id)options;
 
-- (NSDictionary<NSString *, id> *)stringAttributesForDiameter:(CGFloat)diameter API_AVAILABLE(ios(11.4));
+- (NSDictionary <NSString *, id> *)stringAttributesForDiameter:(CGFloat)diameter API_AVAILABLE(ios(11.4));
 
 @end

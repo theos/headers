@@ -16,7 +16,7 @@
 @property BOOL cachesInputImage;
 // ["multiplyColor","multiplyGradient","gaussianBlur","pageCurl","fog","lighting","clear","copy",
 //  "sourceOver","sourceIn","sourceOut","sourceAtop","destOver","destIn","destOut","destAtop","xor","plusL","multiply"]
-+ (NSArray<NSString *> *)filterTypes;
++ (NSArray <NSString *> *)filterTypes;
 + (CAFilter *)filterWithType:(NSString *)type;
 + (CAFilter *)filterWithName:(NSString *)name;
 

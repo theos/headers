@@ -18,11 +18,11 @@
 @property (nonatomic, readonly) NSString *bundleIdentifier;
 @property (nonatomic, readonly) NSString *bundleType;
 
-@property (nonatomic, readonly) NSDictionary<NSString *, NSString *> *entitlements;
-@property (nonatomic, readonly) NSDictionary<NSString *, NSString *> *environmentVariables;
-@property (nonatomic, readonly) NSDictionary<NSString *, NSURL *> *groupContainerURLs;
+@property (nonatomic, readonly) NSDictionary <NSString *, NSString *> *entitlements;
+@property (nonatomic, readonly) NSDictionary <NSString *, NSString *> *environmentVariables;
+@property (nonatomic, readonly) NSDictionary <NSString *, NSURL *> *groupContainerURLs;
 
-@property (nonatomic, copy) NSArray<NSUUID *> *machOUUIDs;
+@property (nonatomic, copy) NSArray <NSUUID *> *machOUUIDs;
 @property (nonatomic, readonly) NSString *signerIdentity;
 @property (nonatomic, readonly) BOOL isContainerized;
 @property (nonatomic, readonly) BOOL profileValidated;

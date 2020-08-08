@@ -13,9 +13,9 @@
 @property (nonatomic, readonly) NSString *vendorName;
 @property (nonatomic, readonly) NSDate *registeredDate;
 
-@property (nonatomic, readonly) NSArray<LSPlugInKitProxy *> *plugInKitPlugins;
-@property (nonatomic, readonly) NSArray<NSNumber *> *deviceFamily;
-@property (nonatomic, readonly) NSArray<NSString *> *activityTypes;
+@property (nonatomic, readonly) NSArray <LSPlugInKitProxy *> *plugInKitPlugins;
+@property (nonatomic, readonly) NSArray <NSNumber *> *deviceFamily;
+@property (nonatomic, readonly) NSArray <NSString *> *activityTypes;
 
 @property (nonatomic, readonly) BOOL isAdHocCodeSigned;
 @property (nonatomic, readonly) BOOL isAppUpdate;
