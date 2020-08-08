@@ -29,10 +29,10 @@ There is no particular license on this repo. Files in this repo come from many s
 
 ### Ryan Petrich
 * AppList: [GNU LGPL v2.1](https://github.com/rpetrich/AppList/blob/master/LICENSE)
-* CaptainHook (submodule): [MIT License](http://mit-license.org/)
-* libactivator (submodule): [GNU LGPL v2.1](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
-* LightMessaging (submodule): ?
-* RocketBootstrap (submodule): ?
+* CaptainHook: [MIT License](http://mit-license.org/)
+* libactivator: [GNU LGPL v2.1](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
+* LightMessaging: ?
+* RocketBootstrap: ?
 
 ### SaurikIT
 * Cydia Substrate: [3-Clause BSD License](http://opensource.org/licenses/BSD-3-Clause)
