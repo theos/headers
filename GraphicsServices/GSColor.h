@@ -34,6 +34,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define GSCOLOR_H
 
 #include <CoreGraphics/CoreGraphics.h>
+#include <sys/cdefs.h>
 
 /*!
  @file GSColor.h
@@ -48,72 +49,68 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
  */
 
-#if __cplusplus
-extern "C" {
-#endif
+__BEGIN_DECLS
 
-	// Returns the gAdditionalSystemColorTable.
-	// void _GSColorRegisterAdditionalSystemColors(?);
-	
-	/// Set both stroke and fill color of the context to the specified color.
-	void GSColorSetColor(CGContextRef context, CGColorRef color);
-	
-	/// Get the RGBA components (in [0, 1]) of the color.
-	void GSColorGetRGBAComponents(CGColorRef color, CGFloat* r, CGFloat* g, CGFloat* b, CGFloat* a);
-	
-	CGFloat GSColorGetAlphaComponent(CGColorRef color);	///< Get the alpha component.
-	CGFloat GSColorGetBlueComponent(CGColorRef color);	///< Get the blue component.
-	CGFloat GSColorGetGreenComponent(CGColorRef color);	///< Get the green component.
-	CGFloat GSColorGetRedComponent(CGColorRef color);	///< Get the red component.
-	
-	typedef enum GSSystemColor {
-		kGSBlackColor,
-		kGSWhiteColor,
-		kGSGrayColor,	// 50%
-		kGSLightGrayColor,	// 70% 
-		kGSDarkGrayColor,	// 30%
-		kGSRedColor,
-		kGSGreenColor,
-		kGSBlueColor,
-		kGSCyanColor,
-		kGSMagentaColor,
-		kGSYellowColor,
-		kGSOrangeColor,	// #FF8000
-		kGSPurpleColor,	// #800080
-		kGSBrownColor,	// #996633
-		kGSClearColor
-	} GSSystemColor;
-	
-	/// Get a "system color". The color will be cached by the system.
-	CGColorRef GSColorForSystemColor(GSSystemColor colorType);
-	
-	CGColorRef GSColorGetShadowColor();	///< Get the shadow color, i.e. black.
-	CGColorRef GSColorGetHighlightColor();	///< Get the highlight color, i.e. white.
-	
-	/// Set the fill and stroke color of the context to the specified system color.
-	void GSColorSetSystemColor(CGContextRef context, GSSystemColor colorType);
-	
-	/// Create a CGColor. Additionally, if the colorSpace is Device Gray or Device RGB, the color will be cached.
-	CGColorRef GSColorCreate(CGColorSpaceRef colorSpace, CGFloat components[]);
-	
-	/// Create a grayscale cached CGColor.
-	CGColorRef GSColorCreateWithDeviceWhite(CGFloat white, CGFloat alpha);
-	
-	/// Create an RGBA cached CGColor.
-	CGColorRef GSColorCreateColorWithDeviceRGBA(CGFloat r, CGFloat g, CGFloat b, CGFloat a);
-	
-	/// Create a new color by blending two colors together.
-	/// The resulting color = first * (1 - fraction) + second * fraction.
-	CGColorRef GSColorCreateBlendedColorWithFraction(CGColorRef first, CGColorRef second, CGFloat fraction);
-	
-	/// Create a shadowed color. Equivalent to GSColorCreateBlendedColorWithFraction(color, GSColorGetShadowColor(), level).
-	CGColorRef GSColorCreateShadowWithLevel(CGColorRef color, CGFloat level);
-	
-	/// Create a highlighted color. Equivalent to GSColorCreateBlendedColorWithFraction(color, GSColorGetHighlightColor(), level).
-	CGColorRef GSColorCreateHighlightWithLevel(CGColorRef color, CGFloat level);
-	
-#if __cplusplus
-}
-#endif
+// Returns the gAdditionalSystemColorTable.
+// void _GSColorRegisterAdditionalSystemColors(?);
+
+/// Set both stroke and fill color of the context to the specified color.
+void GSColorSetColor(CGContextRef context, CGColorRef color);
+
+/// Get the RGBA components (in [0, 1]) of the color.
+void GSColorGetRGBAComponents(CGColorRef color, CGFloat *r, CGFloat *g, CGFloat *b, CGFloat *a);
+
+CGFloat GSColorGetAlphaComponent(CGColorRef color); ///< Get the alpha component.
+CGFloat GSColorGetBlueComponent(CGColorRef color);  ///< Get the blue component.
+CGFloat GSColorGetGreenComponent(CGColorRef color); ///< Get the green component.
+CGFloat GSColorGetRedComponent(CGColorRef color);   ///< Get the red component.
+
+typedef enum GSSystemColor {
+    kGSBlackColor,
+    kGSWhiteColor,
+    kGSGrayColor,      // 50%
+    kGSLightGrayColor, // 70%
+    kGSDarkGrayColor,  // 30%
+    kGSRedColor,
+    kGSGreenColor,
+    kGSBlueColor,
+    kGSCyanColor,
+    kGSMagentaColor,
+    kGSYellowColor,
+    kGSOrangeColor, // #FF8000
+    kGSPurpleColor, // #800080
+    kGSBrownColor,  // #996633
+    kGSClearColor
+} GSSystemColor;
+
+/// Get a "system color". The color will be cached by the system.
+CGColorRef GSColorForSystemColor(GSSystemColor colorType);
+
+CGColorRef GSColorGetShadowColor();    ///< Get the shadow color, i.e. black.
+CGColorRef GSColorGetHighlightColor(); ///< Get the highlight color, i.e. white.
+
+/// Set the fill and stroke color of the context to the specified system color.
+void GSColorSetSystemColor(CGContextRef context, GSSystemColor colorType);
+
+/// Create a CGColor. Additionally, if the colorSpace is Device Gray or Device RGB, the color will be cached.
+CGColorRef GSColorCreate(CGColorSpaceRef colorSpace, CGFloat components[]);
+
+/// Create a grayscale cached CGColor.
+CGColorRef GSColorCreateWithDeviceWhite(CGFloat white, CGFloat alpha);
+
+/// Create an RGBA cached CGColor.
+CGColorRef GSColorCreateColorWithDeviceRGBA(CGFloat r, CGFloat g, CGFloat b, CGFloat a);
+
+/// Create a new color by blending two colors together.
+/// The resulting color = first * (1 - fraction) + second * fraction.
+CGColorRef GSColorCreateBlendedColorWithFraction(CGColorRef first, CGColorRef second, CGFloat fraction);
+
+/// Create a shadowed color. Equivalent to GSColorCreateBlendedColorWithFraction(color, GSColorGetShadowColor(), level).
+CGColorRef GSColorCreateShadowWithLevel(CGColorRef color, CGFloat level);
+
+/// Create a highlighted color. Equivalent to GSColorCreateBlendedColorWithFraction(color, GSColorGetHighlightColor(), level).
+CGColorRef GSColorCreateHighlightWithLevel(CGColorRef color, CGFloat level);
+
+__END_DECLS
 
 #endif

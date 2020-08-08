@@ -1,7 +1,5 @@
 #include <sys/cdefs.h>
 
-__BEGIN_DECLS
-
 @class FBSDisplay;
 
 @interface FBSystemGestureManager : NSObject <UIGestureRecognizerDelegate>
@@ -11,6 +9,8 @@ __BEGIN_DECLS
 - (void)addGestureRecognizer:(UIGestureRecognizer *)recognizer toDisplay:(FBSDisplay *)display;
 
 @end
+
+__BEGIN_DECLS
 
 // Minor but SB uses these functions to get location / translation / velocity
 CGPoint FBSystemGestureLocationInView(UIGestureRecognizer *recognizer, UIView *view);

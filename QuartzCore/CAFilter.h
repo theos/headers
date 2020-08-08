@@ -6,61 +6,53 @@
  */
 
 #import "QuartzCore-Structs.h"
-#import <Foundation/NSObject.h>
+#import <QuartzCore/CABase.h>
 
-@class NSString;
+@interface CAFilter : NSObject <NSCopying, NSMutableCopying, NSCoding>
 
-@interface CAFilter : NSObject <NSCopying, NSMutableCopying> {
-@private
-	unsigned _type;
-	NSString *_name;
-	unsigned _flags;
-	CAAttrListRef _attr;
-	void *_cache;
-}
-@property (assign) BOOL cachesInputImage;
-@property (assign, getter=isEnabled) BOOL enabled;
+@property (readonly) NSString *type;
 @property (copy) NSString *name;
-@property (readonly, assign) NSString *type;
+@property (getter=isEnabled) BOOL enabled;
+@property BOOL cachesInputImage;
 // ["multiplyColor","multiplyGradient","gaussianBlur","pageCurl","fog","lighting","clear","copy",
 //  "sourceOver","sourceIn","sourceOut","sourceAtop","destOver","destIn","destOut","destAtop","xor","plusL","multiply"]
-+ (NSArray *)filterTypes;
++ (NSArray <NSString *> *)filterTypes;
 + (CAFilter *)filterWithType:(NSString *)type;
 + (CAFilter *)filterWithName:(NSString *)name;
+
 - (instancetype)initWithType:(NSString *)type;
-- ( instancetype)initWithName:(NSString *)name;
+- (instancetype)initWithName:(NSString *)name;
+
 - (BOOL)enabled;
 - (void)setValue:(id)value forKey:(id)key;
 - (id)valueForKey:(id)key;
 - (void)setDefaults;
-// inherited: - (void)dealloc;
-- (Object*)CA_copyRenderValue;
-// in a protocol: - (id)copyWithZone:(NSZone *)zone;
-// in a protocol: - (id)mutableCopyWithZone:(NSZone *)zone;
+- (Object *)CA_copyRenderValue;
 - (void)willChangeValueForKey:(id)key;
 - (void)didChangeValueForKey:(id)key;
+
 @end
 
-extern NSString * const kCAFilterClear;
-extern NSString * const kCAFilterCopy;
-extern NSString * const kCAFilterDestAtop;
-extern NSString * const kCAFilterDestIn;
-extern NSString * const kCAFilterDestOut;
-extern NSString * const kCAFilterDestOver;
-extern NSString * const kCAFilterFog;
-extern NSString * const kCAFilterGaussianBlur;
-extern NSString * const kCAFilterLanczos;
-extern NSString * const kCAFilterLighting;
-extern NSString * const kCAFilterLinear;
-extern NSString * const kCAFilterMultiply;
-extern NSString * const kCAFilterMultiplyColor;
-extern NSString * const kCAFilterMultiplyGradient;
-extern NSString * const kCAFilterNearest;
-extern NSString * const kCAFilterPageCurl;
-extern NSString * const kCAFilterPlusL;
-extern NSString * const kCAFilterSourceAtop;
-extern NSString * const kCAFilterSourceIn;
-extern NSString * const kCAFilterSourceOut;
-extern NSString * const kCAFilterSourceOver;
-extern NSString * const kCAFilterTrilinear;
-extern NSString * const kCAFilterXor;
+CA_EXTERN NSString *const kCAFilterClear;
+CA_EXTERN NSString *const kCAFilterCopy;
+CA_EXTERN NSString *const kCAFilterDestAtop;
+CA_EXTERN NSString *const kCAFilterDestIn;
+CA_EXTERN NSString *const kCAFilterDestOut;
+CA_EXTERN NSString *const kCAFilterDestOver;
+CA_EXTERN NSString *const kCAFilterFog;
+CA_EXTERN NSString *const kCAFilterGaussianBlur;
+CA_EXTERN NSString *const kCAFilterLanczos;
+CA_EXTERN NSString *const kCAFilterLighting;
+CA_EXTERN NSString *const kCAFilterLinear;
+CA_EXTERN NSString *const kCAFilterMultiply;
+CA_EXTERN NSString *const kCAFilterMultiplyColor;
+CA_EXTERN NSString *const kCAFilterMultiplyGradient;
+CA_EXTERN NSString *const kCAFilterNearest;
+CA_EXTERN NSString *const kCAFilterPageCurl;
+CA_EXTERN NSString *const kCAFilterPlusL;
+CA_EXTERN NSString *const kCAFilterSourceAtop;
+CA_EXTERN NSString *const kCAFilterSourceIn;
+CA_EXTERN NSString *const kCAFilterSourceOut;
+CA_EXTERN NSString *const kCAFilterSourceOver;
+CA_EXTERN NSString *const kCAFilterTrilinear;
+CA_EXTERN NSString *const kCAFilterXor;

@@ -47,9 +47,9 @@ API_AVAILABLE(ios(5.0))
 - (BOOL)isDiscoverable;
 - (void)setDiscoverable:(BOOL)discoverable;
 
-- (NSArray<BluetoothDevice *> *)pairedDevices;
-- (NSArray<BluetoothDevice *> *)connectedDevices;
-- (NSArray<BluetoothDevice *> *)connectingDevices;
+- (NSArray <BluetoothDevice *> *)pairedDevices;
+- (NSArray <BluetoothDevice *> *)connectedDevices;
+- (NSArray <BluetoothDevice *> *)connectingDevices;
 
 - (void)disconnectDevice:(BluetoothDevice *)device;
 - (void)unpairDevice:(BluetoothDevice *)device;

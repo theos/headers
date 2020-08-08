@@ -35,22 +35,19 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <CoreGraphics/CoreGraphics.h>
 #include <CoreFoundation/CoreFoundation.h>
+#include <sys/cdefs.h>
 
-#if __cplusplus
-extern "C" {
-#endif
+__BEGIN_DECLS
 
-	CGAffineTransform GSGeometryGetTransformFromRectToRect(CGRect from, CGRect to);
+CGAffineTransform GSGeometryGetTransformFromRectToRect(CGRect from, CGRect to);
 
-	/// Create a string representing the affine transform, in the form "[%f %f %f %f %f %f]"
-	CFStringRef CFStringCreateWithCGAffineTransform(CGAffineTransform tx);
-	
-	CFStringRef CFStringCreateWithCGSize(CGSize size);
-	CFStringRef CFStringCreateWithCGPoint(CGPoint pt);
-	CFStringRef CFStringCreateWithCGRect(CGRect rect);
-	
-#if __cplusplus
-}
-#endif
+/// Create a string representing the affine transform, in the form "[%f %f %f %f %f %f]"
+CFStringRef CFStringCreateWithCGAffineTransform(CGAffineTransform tx);
+
+CFStringRef CFStringCreateWithCGSize(CGSize size);
+CFStringRef CFStringCreateWithCGPoint(CGPoint pt);
+CFStringRef CFStringCreateWithCGRect(CGRect rect);
+
+__END_DECLS
 
 #endif

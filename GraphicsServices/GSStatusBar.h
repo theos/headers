@@ -35,20 +35,17 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <CoreGraphics/CoreGraphics.h>
 #include <Availability2.h>
+#include <sys/cdefs.h>
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
 
-#if __cplusplus
-extern "C" {
-#endif	
+__BEGIN_DECLS
 
-	CGFloat GSStatusBarHeight();
-	CGFloat GSDefaultStatusBarHeight();	// = 20
-	CGFloat GSSetStatusBarHeight(CGFloat newHeight);
-	
-#if __cplusplus
-}
-#endif
+CGFloat GSStatusBarHeight();
+CGFloat GSDefaultStatusBarHeight(); // = 20
+CGFloat GSSetStatusBarHeight(CGFloat newHeight);
+
+__END_DECLS
 
 #endif
 

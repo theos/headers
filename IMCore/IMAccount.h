@@ -12,6 +12,6 @@
 
 __BEGIN_DECLS
 
-extern "C" IMAccount *IMPreferredSendingAccountForAddressesWithFallbackService(NSArray *addresses, IMServiceImpl *service);
+IMAccount *IMPreferredSendingAccountForAddressesWithFallbackService(NSArray *addresses, IMServiceImpl *service);
 
 __END_DECLS

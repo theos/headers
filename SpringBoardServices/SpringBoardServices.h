@@ -13,6 +13,6 @@ int SBSLaunchApplicationWithIdentifierAndURLAndLaunchOptions(NSString *bundleIde
 int SBSLaunchApplicationWithIdentifierAndLaunchOptions(NSString *bundleIdentifier, NSDictionary *appOptions, NSDictionary *launchOptions, BOOL suspended);
 bool SBSOpenSensitiveURLAndUnlock(CFURLRef url, char flags);
 
-extern NSString *const SBSApplicationLaunchOptionUnlockDeviceKey;
+NSString *const SBSApplicationLaunchOptionUnlockDeviceKey;
 
 __END_DECLS
