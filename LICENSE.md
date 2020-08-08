@@ -5,7 +5,7 @@ There is no particular license on this repo. Files in this repo come from many s
 ### Apple
 * IOKit headers: [Apple Public Source License](https://opensource.apple.com/license/apsl/)
 * MediaPlayer, Celestial headers: [2-Clause BSD License](https://github.com/WebKit/webkit/blob/master/Source/WebCore/LICENSE-APPLE)
-* launch.h: [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
+* launch.h: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 ### ashikase
 * IconSupport: ?
@@ -19,7 +19,7 @@ There is no particular license on this repo. Files in this repo come from many s
 * libprefs: [GNU LGPL v3](https://github.com/DHowett/preferenceloader/blob/master/LICENSE)
 
 ### KennyTM
-* GraphicsServices, IOSurface, substrate2.h headers: [3-Clause BSD License](http://opensource.org/licenses/BSD-3-Clause)
+* GraphicsServices, IOSurface, substrate2.h headers: [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause)
 
 ### OpenSSL
 * OpenSSL: [OpenSSL](https://www.openssl.org/source/license.html)
@@ -29,13 +29,13 @@ There is no particular license on this repo. Files in this repo come from many s
 
 ### Ryan Petrich
 * AppList: [GNU LGPL v2.1](https://github.com/rpetrich/AppList/blob/master/LICENSE)
-* CaptainHook: [MIT License](http://mit-license.org/)
+* CaptainHook: [MIT License](https://mit-license.org/)
 * libactivator: [GNU LGPL v2.1](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
 * LightMessaging: ?
 * RocketBootstrap: ?
 
 ### SaurikIT
-* Cydia Substrate: [3-Clause BSD License](http://opensource.org/licenses/BSD-3-Clause)
+* Cydia Substrate: [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause)
 
 ### Other headers
 Headers that aren't from elsewhere are released into the Public Domain.
@@ -65,4 +65,4 @@ OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
-For more information, please refer to <http://unlicense.org/>
+For more information, please refer to <https://unlicense.org/>
