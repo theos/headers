@@ -9,6 +9,7 @@
 #define MEDIAREMOTE_H_
 
 #include <CoreFoundation/CoreFoundation.h>
+#include <sys/cdefs.h>
 
 __BEGIN_DECLS
 

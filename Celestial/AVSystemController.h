@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#include <sys/cdefs.h>
 
 typedef NSString *AVSystemControllerKey;
 

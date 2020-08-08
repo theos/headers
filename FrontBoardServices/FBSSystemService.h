@@ -1,3 +1,5 @@
+#include <sys/cdefs.h>
+
 typedef void (^FBSSystemServiceResultCallback)(NSError *error);
 
 __BEGIN_DECLS

@@ -35,6 +35,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <CoreFoundation/CoreFoundation.h>
 #include <Availability2.h>
+#include <sys/cdefs.h>
 
 __BEGIN_DECLS
 

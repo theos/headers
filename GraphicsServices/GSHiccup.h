@@ -33,6 +33,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef GSHICCUPS_H
 #define GSHICCUPS_H
 
+#include <sys/cdefs.h>
+
 __BEGIN_DECLS
 
 void GSDisallowSpinTrace();

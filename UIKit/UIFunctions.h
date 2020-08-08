@@ -1,3 +1,5 @@
+#include <sys/cdefs.h>
+
 __BEGIN_DECLS
 
 // Strangely there is no info to find about this function by searching on Google

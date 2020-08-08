@@ -10,6 +10,7 @@
 #define LIBMOBILEGESTALT_H_
 
 #include <CoreFoundation/CoreFoundation.h>
+#include <sys/cdefs.h>
 
 typedef enum {
     MGDeviceClassInvalid = -1,

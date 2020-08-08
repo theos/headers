@@ -34,6 +34,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define GSBASE_H
 
 #include <CoreFoundation/CoreFoundation.h>
+#include <sys/cdefs.h>
 
 __BEGIN_DECLS
 

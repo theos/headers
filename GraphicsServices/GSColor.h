@@ -34,6 +34,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define GSCOLOR_H
 
 #include <CoreGraphics/CoreGraphics.h>
+#include <sys/cdefs.h>
 
 /*!
  @file GSColor.h

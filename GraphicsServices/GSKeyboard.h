@@ -34,6 +34,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define GSKEYBOARD_H
 
 #include <Availability2.h>
+#include <sys/cdefs.h>
+
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 
 #include <CoreFoundation/CoreFoundation.h>
