@@ -25,6 +25,8 @@ __END_DECLS
 
 - (BOOL)writeToCPBitmapFile:(NSString *)filename flags:(NSInteger)flags; // TODO: make this an enum
 
+- (BOOL)_isResizable;
+
 @property CGFloat scale;
 
 @end
