@@ -1,5 +1,6 @@
 #import "LSBundleProxy.h"
-#import "LSPlugInKitProxy.h"
+
+@class LSPlugInKitProxy;
 
 @interface LSApplicationProxy : LSBundleProxy
 

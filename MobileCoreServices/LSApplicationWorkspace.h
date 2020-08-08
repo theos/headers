@@ -1,6 +1,6 @@
-#import "LSApplicationProxy.h"
-#import "LSDocumentProxy.h"
-#import "LSPlugInKitProxy.h"
+#import <Foundation/Foundation.h>
+
+@class LSApplicationProxy, LSDocumentProxy, LSPlugInKitProxy;
 
 API_AVAILABLE(ios(5.0))
 @interface LSApplicationWorkspace : NSObject
@@ -13,7 +13,7 @@ API_AVAILABLE(ios(5.0))
 - (NSArray <LSApplicationProxy *> *)unrestrictedApplications API_AVAILABLE(ios(7.0));
 
 - (NSArray <NSString *> *)removedSystemApplications    API_AVAILABLE(ios(9.3));
-- (BOOL)restoreSystemApplication:(NSString *)bundleID API_AVAILABLE(ios(9.3));
+- (BOOL)restoreSystemApplication:(NSString *)bundleID  API_AVAILABLE(ios(9.3));
 
 - (NSArray <LSApplicationProxy *> *)applicationsAvailableForHandlingURLScheme:(NSString *)urlScheme;
 - (NSArray <LSApplicationProxy *> *)applicationsAvailableForOpeningDocument:(LSDocumentProxy *)document;
