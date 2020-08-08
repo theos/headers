@@ -2,7 +2,7 @@
 
 @protocol SBAppSwitcherPeopleDataSource <NSObject>
 
-@property(assign, nonatomic) id<SBAppSwitcherPeopleDataSourceConsumer> consumer;
+@property (assign, nonatomic) id<SBAppSwitcherPeopleDataSourceConsumer> consumer;
 
 - (void)cachedMonogramImageForPersonID:(NSInteger)personID ofSize:(CGFloat)size generatingIfNecessaryWithResult:(id)result;
 - (id)contactItemForIndexPath:(NSIndexPath *)indexPath;
