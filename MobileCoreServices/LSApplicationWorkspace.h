@@ -1,3 +1,5 @@
+@class LSBundleProxy;
+
 @interface LSApplicationWorkspace : NSObject
 
 + (instancetype)defaultWorkspace;
@@ -17,5 +19,7 @@
 - (BOOL)unregisterPlugin:(NSURL *)url;
 
 - (NSArray *)pluginsWithIdentifiers:(NSArray *)identifiers protocols:(NSArray *)protocols version:(id)version;
+
+- (void)enumerateBundlesOfType:(NSInteger)type block:(void (^)(LSBundleProxy *))block;
 
 @end
