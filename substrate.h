@@ -1,23 +1,39 @@
 /* Cydia Substrate - Powerful Code Insertion Platform
- * Copyright (C) 2008-2012  Jay Freeman (saurik)
+ * Copyright (C) 2008-2019  Jay Freeman (saurik)
 */
 
-/* GNU Lesser General Public License, Version 3 {{{ */
 /*
- * Substrate is free software: you can redistribute it and/or modify it under
- * the terms of the GNU Lesser General Public License as published by the
- * Free Software Foundation, either version 3 of the License, or (at your
- * option) any later version.
+ *        Redistribution and use in source and binary
+ * forms, with or without modification, are permitted
+ * provided that the following conditions are met:
  *
- * Substrate is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
- * License for more details.
+ * 1. Redistributions of source code must retain the
+ *    above copyright notice, this list of conditions
+ *    and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the
+ *    above copyright notice, this list of conditions
+ *    and the following disclaimer in the documentation
+ *    and/or other materials provided with the
+ *    distribution.
+ * 3. The name of the author may not be used to endorse
+ *    or promote products derived from this software
+ *    without specific prior written permission.
  *
- * You should have received a copy of the GNU Lesser General Public License
- * along with Substrate.  If not, see <http://www.gnu.org/licenses/>.
-**/
-/* }}} */
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS''
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+ * BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE
+ * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ * TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
 
 #ifndef SUBSTRATE_H_
 #define SUBSTRATE_H_
@@ -35,16 +51,15 @@ extern "C" {
 #include <objc/message.h>
 #endif
 
-#include <dlfcn.h>
+#include <stdbool.h>
 #include <stdlib.h>
+
+#include <sys/types.h>
 
 #define _finline \
     inline __attribute__((__always_inline__))
 #define _disused \
     __attribute__((__unused__))
-
-#define _extern \
-    extern "C" __attribute__((__visibility__("default")))
 
 #ifdef __cplusplus
 #define _default(value) = value
@@ -56,14 +71,29 @@ extern "C" {
 extern "C" {
 #endif
 
-bool MSHookProcess(pid_t pid, const char *library);
+typedef const struct MSImage *MSImageRef;
 
-typedef const void *MSImageRef;
+#ifdef __APPLE__
+#ifndef __LP64__
+typedef struct mach_header MSImageHeader;
+#else
+typedef struct mach_header_64 MSImageHeader;
+#endif
+#else
+typedef void MSImageHeader;
+#endif
+
+MSImageRef MSMapImage(const char *file);
+const MSImageHeader *MSImageAddress(MSImageRef image);
+void MSCloseImage(MSImageRef);
 
 MSImageRef MSGetImageByName(const char *file);
+
 void *MSFindSymbol(MSImageRef image, const char *name);
+char *MSFindAddress(MSImageRef image, void **address);
 
 void MSHookFunction(void *symbol, void *replace, void **result);
+void MSHookMemory(void *target, const void *data, size_t size);
 
 #ifdef __APPLE__
 #ifdef __arm__
@@ -71,54 +101,44 @@ __attribute__((__deprecated__))
 IMP MSHookMessage(Class _class, SEL sel, IMP imp, const char *prefix _default(NULL));
 #endif
 void MSHookMessageEx(Class _class, SEL sel, IMP imp, IMP *result);
-#endif
-
-#ifdef SubstrateInternal
-typedef void *SubstrateAllocatorRef;
-typedef struct __SubstrateProcess *SubstrateProcessRef;
-typedef struct __SubstrateMemory *SubstrateMemoryRef;
-
-SubstrateProcessRef SubstrateProcessCreate(SubstrateAllocatorRef allocator, pid_t pid);
-void SubstrateProcessRelease(SubstrateProcessRef process);
-
-SubstrateMemoryRef SubstrateMemoryCreate(SubstrateAllocatorRef allocator, SubstrateProcessRef process, void *data, size_t size);
-void SubstrateMemoryRelease(SubstrateMemoryRef memory);
+void MSHookClassPair(Class target, Class hook, Class old);
 #endif
 
 #ifdef __ANDROID__
 #include <jni.h>
-_extern void MSJavaHookClassLoad(JNIEnv *jni, const char *name, void (*callback)(JNIEnv *, jclass, void *), void *data _default(NULL));
-_extern void MSJavaHookMethod(JNIEnv *jni, jclass _class, jmethodID methodID, void *function, void **result);
-_extern void MSJavaBlessClassLoader(JNIEnv *jni, jobject loader);
+void MSJavaHookClassLoad(JNIEnv *jni, const char *name, void (*callback)(JNIEnv *, jclass, void *), void *data _default(NULL));
+void MSJavaHookMethod(JNIEnv *jni, jclass _class, jmethodID methodID, void *function, void **result);
+void MSJavaBlessClassLoader(JNIEnv *jni, jobject loader);
 
 typedef struct MSJavaObjectKey_ *MSJavaObjectKey;
-_extern MSJavaObjectKey MSJavaNewObjectKey();
-_extern void MSJavaDeleteObjectKey(MSJavaObjectKey key);
-_extern void *MSJavaGetObjectKey(JNIEnv *jni, jobject object, MSJavaObjectKey key);
-_extern void MSJavaSetObjectKey(JNIEnv *jni, jobject object, MSJavaObjectKey key, void *value, void (*clean)(void *, JNIEnv *, void *) _default(NULL), void *data _default(NULL));
+MSJavaObjectKey MSJavaCreateObjectKey();
+void MSJavaReleaseObjectKey(MSJavaObjectKey key);
+void *MSJavaGetObjectKey(JNIEnv *jni, jobject object, MSJavaObjectKey key);
+void MSJavaSetObjectKey(JNIEnv *jni, jobject object, MSJavaObjectKey key, void *value, void (*clean)(void *, JNIEnv *, void *) _default(NULL), void *data _default(NULL));
 #endif
 
 #ifdef __cplusplus
 }
 #endif
 
-#ifdef __cplusplus
+#ifdef __APPLE__
 
-#ifdef SubstrateInternal
-struct SubstrateHookMemory {
-    SubstrateMemoryRef handle_;
+#define MSHookInterface(target, hook, base) \
+@class target; \
+@interface $ ## hook : base { target *$self; } @end \
+@implementation $ ## hook \
++ (void) initialize {} \
+@end \
+@interface hook : $ ## hook @end \
+@implementation hook (MS) + (void) load { \
+    MSHookClassPair(objc_getClass(#target), self, class_getSuperclass(self)); \
+} @end
 
-    SubstrateHookMemory(SubstrateProcessRef process, void *data, size_t size) :
-        handle_(SubstrateMemoryCreate(NULL, NULL, data, size))
-    {
-    }
+#define MSSelf ((__typeof__($self)) self)
 
-    ~SubstrateHookMemory() {
-        if (handle_ != NULL)
-            SubstrateMemoryRelease(handle_);
-    }
-};
 #endif
+
+#ifdef __cplusplus
 
 #ifdef __APPLE__
 
@@ -165,11 +185,11 @@ static inline void MSHookMessage(Class _class, SEL sel, Type_ *imp, Type_ **resu
 template <typename Type_>
 static inline Type_ &MSHookIvar(id self, const char *name) {
     Ivar ivar(class_getInstanceVariable(object_getClass(self), name));
+    void *pointer(ivar == NULL ? NULL : reinterpret_cast<char *>(
 #if __has_feature(objc_arc)
-    void *pointer(ivar == NULL ? NULL : reinterpret_cast<char *>((__bridge void *)self) + ivar_getOffset(ivar));
-#else
-    void *pointer(ivar == NULL ? NULL : reinterpret_cast<char *>(self) + ivar_getOffset(ivar));
+        (__bridge void *)
 #endif
+    self) + ivar_getOffset(ivar));
     return *reinterpret_cast<Type_ *>(pointer);
 }
 
@@ -218,13 +238,19 @@ static inline Type_ &MSHookIvar(id self, const char *name) {
 
 #define MSIgnore_(name, dollar, colon)
 
+#ifdef __arm64__
+#define MS_objc_msgSendSuper_stret objc_msgSendSuper
+#else
+#define MS_objc_msgSendSuper_stret objc_msgSendSuper_stret
+#endif
+
 #define MSMessage_(extra, type, _class, name, dollar, colon, call, args...) \
     static type _$ ## name ## $ ## dollar(Class _cls, type (*_old)(_class, SEL, ## args, ...), type (*_spr)(struct objc_super *, SEL, ## args, ...), _class self, SEL _cmd, ## args); \
     MSHook(type, name ## $ ## dollar, _class self, SEL _cmd, ## args) { \
         Class const _cls($ ## name); \
         type (* const _old)(_class, SEL, ## args, ...) = reinterpret_cast<type (* const)(_class, SEL, ## args, ...)>(_ ## name ## $ ## dollar); \
         typedef type (*msgSendSuper_t)(struct objc_super *, SEL, ## args, ...); \
-        msgSendSuper_t const _spr(::etl::IsClass<type>::value ? reinterpret_cast<msgSendSuper_t>(&objc_msgSendSuper_stret) : reinterpret_cast<msgSendSuper_t>(&objc_msgSendSuper)); \
+        msgSendSuper_t const _spr(::etl::IsClass<type>::value ? reinterpret_cast<msgSendSuper_t>(&MS_objc_msgSendSuper_stret) : reinterpret_cast<msgSendSuper_t>(&objc_msgSendSuper)); \
         return _$ ## name ## $ ## dollar call; \
     } \
     extra(name, dollar, colon) \
@@ -294,7 +320,7 @@ static inline Type_ &MSHookIvar(id self, const char *name) {
 #define MSOldCall(args...) \
     _old(self, _cmd, ## args)
 #define MSSuperCall(args...) \
-    _spr(& (struct objc_super) {self, class_getSuperclass(_cls)}, _cmd, ## args)
+    _spr((struct objc_super[1]) {{self, class_getSuperclass(_cls)}}, _cmd, ## args)
 
 #define MSIvarHook(type, name) \
     type &name(MSHookIvar<type>(self, #name))
@@ -341,13 +367,20 @@ static inline void MSHookFunction(MSImageRef image, const char *name, Type_ *rep
     return MSHookFunction(symbol, replace, result);
 }
 
+template <typename Type_>
+static inline void MSHookMemory(Type_ *target, const void *data, size_t size) {
+    return MSHookMemory(reinterpret_cast<void *>(target), data, size);
+}
+
 #endif
+
+// g++ versions before 4.7 define __cplusplus to 1
+// http://gcc.gnu.org/bugzilla/show_bug.cgi?id=1773
+#if __cplusplus >= 201103L || defined(__GXX_EXPERIMENTAL_CXX0X__)
 
 #ifdef __ANDROID__
 
-#ifdef __cplusplus
-
-template <typename Type_, typename Kind_, typename ...Args_>
+template <typename Type_, typename Kind_, typename... Args_>
 static inline void MSJavaHookMethod(JNIEnv *jni, jclass _class, jmethodID method, Type_ (*replace)(JNIEnv *, Kind_, Args_...), Type_ (**result)(JNIEnv *, Kind_, ...)) {
     return MSJavaHookMethod(
         jni, _class, method,
@@ -357,6 +390,12 @@ static inline void MSJavaHookMethod(JNIEnv *jni, jclass _class, jmethodID method
 }
 
 #endif
+
+#endif
+
+#ifdef __ANDROID__
+
+#ifdef __cplusplus
 
 static inline void MSAndroidGetPackage(JNIEnv *jni, jobject global, const char *name, jobject &local, jobject &loader) {
     jclass Context(jni->FindClass("android/content/Context"));
@@ -374,8 +413,11 @@ static inline jclass MSJavaFindClass(JNIEnv *jni, jobject loader, const char *na
 
     jstring string(jni->NewStringUTF(name));
     jobject _class(jni->CallStaticObjectMethod(Class, Class$forName, string, JNI_TRUE, loader));
-    if (jni->ExceptionCheck())
+
+    if (jni->ExceptionCheck()) {
+        jni->ExceptionClear();
         return NULL;
+    }
 
     return reinterpret_cast<jclass>(_class);
 }
@@ -383,6 +425,8 @@ static inline jclass MSJavaFindClass(JNIEnv *jni, jobject loader, const char *na
 _disused static void MSJavaCleanWeak(void *data, JNIEnv *jni, void *value) {
     jni->DeleteWeakGlobalRef(reinterpret_cast<jweak>(value));
 }
+
+#endif
 
 #endif
 
@@ -407,6 +451,9 @@ _disused static void MSJavaCleanWeak(void *data, JNIEnv *jni, void *value) {
 #define SubstrateConcat(lhs, rhs) \
     SubstrateConcat_(lhs, rhs)
 
+#define SubstrateStringize(value) \
+    #value
+
 #ifdef __APPLE__
     #define SubstrateSection \
         __attribute__((__section__("__TEXT, __substrate")))
@@ -420,22 +467,35 @@ _disused static void MSJavaCleanWeak(void *data, JNIEnv *jni, void *value) {
 #define MSFilterObjC_Class "Filter:ObjC.Class"
 #endif
 
+#ifdef __ANDROID__
 #define MSFilterLibrary "Filter:Library"
+#endif
+
+#define MSFilterCFVersion "Filter:CFVersion"
 #define MSFilterExecutable "Filter:Executable"
 
 #define MSConfig(name, value) \
-    extern const char SubstrateConcat(_substrate_, __LINE__)[] SubstrateSection = name "=" value;
+    extern const char SubstrateConcat(_substrate_, __LINE__)[] SubstrateSection; \
+    const char SubstrateConcat(_substrate_, __LINE__)[] SubstrateSection = name "=" value;
+
+#define MSConfigValue(name, value) \
+    char SubstrateConcat(_substrate_MSConfigValue_Invalid_, __LINE__)[((double)value, 0)]; \
+    const char SubstrateConcat(_substrate_, __LINE__)[] SubstrateSection = name "=" SubstrateStringize(value);
+
+#define MSConfigRange(name, lo, hi) \
+    char SubstrateConcat(_substrate_MSConfigRange_Invalid_, __LINE__)[(double)lo <= (double)hi ? 0 : -1]; \
+    MSConfig(name, SubstrateStringize(lo) "," SubstrateStringize(hi))
 
 #ifdef __cplusplus
 #define MSInitialize \
-    static void _MSInitialize(void); \
-    namespace { static class $MSInitialize { public: _finline $MSInitialize() { \
-        _MSInitialize(); \
-    } } $MSInitialize; } \
-    static void _MSInitialize()
+    static void SubstrateConcat(_MSInitialize, __LINE__)(void); \
+    namespace { static class SubstrateConcat($MSInitialize, __LINE__) { public: _finline SubstrateConcat($MSInitialize, __LINE__)() { \
+        SubstrateConcat(_MSInitialize, __LINE__)(); \
+    } } SubstrateConcat($MSInitialize, __LINE__); } \
+    static void SubstrateConcat(_MSInitialize, __LINE__)()
 #else
 #define MSInitialize \
-    __attribute__((__constructor__)) static void _MSInitialize(void)
+    __attribute__((__constructor__)) static void SubstrateConcat(_MSInitialize, __LINE__)(void)
 #endif
 
 #define Foundation_f "/System/Library/Frameworks/Foundation.framework/Foundation"
