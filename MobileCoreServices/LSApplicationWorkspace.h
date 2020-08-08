@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@class LSApplicationProxy, LSDocumentProxy, LSPlugInKitProxy;
+@class LSApplicationProxy, LSBundleProxy, LSDocumentProxy, LSPlugInKitProxy;
 
 API_AVAILABLE(ios(5.0))
 @interface LSApplicationWorkspace : NSObject
@@ -50,5 +50,7 @@ API_AVAILABLE(ios(5.0))
 // version unused as of iOS 10.2
 // returns the union of matches. pass empty arrays to get all plugins
 - (NSArray <LSPlugInKitProxy *> *)pluginsWithIdentifiers:(NSArray <NSString *> *)identifiers protocols:(NSArray <NSString *> *)protocols version:(id)version API_AVAILABLE(ios(8.0));
+
+- (void)enumerateBundlesOfType:(NSInteger)type block:(void (^)(LSBundleProxy *))block;
 
 @end

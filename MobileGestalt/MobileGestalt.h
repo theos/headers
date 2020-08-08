@@ -28,20 +28,20 @@ __BEGIN_DECLS
 #pragma mark - API
 
 CFTypeRef MGCopyAnswer(CFStringRef question, CFDictionaryRef options);
+CFTypeRef MGCopyAnswerWithError(CFStringRef question, int unk, int *error);
 
 bool MGGetBoolAnswer(CFStringRef question);
+bool MGIsQuestionValid(CFStringRef question);
 
 SInt32 MGGetSInt32Answer(CFStringRef question, SInt32 defaultValue);
+SInt64 MGGetSInt64Answer(CFStringRef question, SInt64 defaultValue);
 
 Float32 MGGetFloat32Answer(CFStringRef question, Float32 defaultValue);
 
-/*
- * Arguments are still a mistery.
- * CFPropertyListRef MGCopyAnswerWithError(CFStringRef question, int *error, ...);
- */
+/* Use NULL for __unknown0. */
+CFPropertyListRef MGCopyMultipleAnswers(CFArrayRef questions, CFDictionaryRef __unknown0);
 
-/* Use 0 for __unknown0. */
-CFPropertyListRef MGCopyMultipleAnswers(CFArrayRef questions, int __unknown0);
+CFStringRef MGGetStringAnswer(CFStringRef question);
 
 /*
  * Not all questions are assignable.

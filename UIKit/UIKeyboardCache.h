@@ -2,4 +2,6 @@
 
 + (instancetype)sharedInstance;
 
+- (void)clearNonPersistentCache;
+
 @end
