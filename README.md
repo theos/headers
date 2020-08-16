@@ -10,7 +10,7 @@ Please send us headers you’ve put together that would be useful to the wider c
 * Objective-C properties should be in the style of `@property (attributes) type name;`
 * Objective-C methods should be in the style of `- (type)methodName:(type)variableName parameter:(type)name;`
 * Objective-C generics should be in the style of `NSDictionary <NSString *, NSArray <NSObject *> *> *variable`
-* C-style functions and variables (all symbols) shoule be declared between `__BEGIN_DECLS` and `__END_DECLS` macros
+* C-style functions and variables (all symbols) should be declared between `__BEGIN_DECLS` and `__END_DECLS` macros
 
     ```c
     #include <sys/cdefs.h>
