@@ -4,40 +4,55 @@
  * by HASHBANG Productions
  * Public Domain
  *
- * 2.0		478.23
- * 2.1		478.26
- * 2.2		478.29
- * 3.0		478.47
- * 3.1		478.52
- * 3.2		478.61
- * 4.0		550.32
- * 4.1		550.38
- * 4.2		550.52
- * 4.3		550.58
- * 5.0		675.00
- * 5.1		690.10
- * 6.x		793.00
- * 7.0		847.20
- * 7.0.3	847.21
- * 7.1		847.26
- * 8.0		1140.10
- * 8.1		1141.14
- * 8.2		1142.16
- * 8.3		1144.17
- * 8.4		1145.15
- * 9.0		1240.1
- * 9.1		1241.11
- * 9.2		1242.13
- * 9.3		1280.30
- * 10.0		1348.00
- * 10.1		1348.00
- * 10.2		1348.22
- * 10.3		1349.56
- * 11.0		1443.00
- * 11.1		1445.32
- * 11.2		1450.14
+ * 2.0      478.23
+ * 2.1      478.26
+ * 2.2      478.29
+ * 3.0      478.47
+ * 3.1      478.52
+ * 3.2      478.61
+ * 4.0      550.32
+ * 4.1      550.38
+ * 4.2      550.52
+ * 4.3      550.58
+ * 5.0      675.00
+ * 5.1      690.10
+ * 6.x      793.00
+ * 7.0      847.20
+ * 7.0.3    847.21
+ * 7.1      847.26
+ * 8.0      1140.10
+ * 8.1      1141.14
+ * 8.2      1142.16
+ * 8.3      1144.17
+ * 8.4      1145.15
+ * 9.0      1240.1
+ * 9.1      1241.11
+ * 9.2      1242.13
+ * 9.3      1280.30
+ * 10.0     1348.00
+ * 10.1     1348.00
+ * 10.2     1348.22
+ * 10.3     1349.56
+ * 11.0     1443.00
+ * 11.1     1445.32
+ * 11.2     1450.14
+ * 11.3     1452.23
+ * 11.4     1452.23
+ * 12.0     1556.00
+ * 12.1     1560.10
+ * 12.2     1570.15
+ * 12.3     1575.13
+ * 12.4     1575.17
+ * 13.0     1665.15
+ * 13.1     1671.101
+ * 13.2     1673.126
+ * 13.3     1674.102
+ * 13.4     1675.129
+ * 13.5     1676.104
+ * 14.0     1740.00
  *
- * Reference: http://iphonedevwiki.net/index.php/CoreFoundation.framework#Versions
+ * Reference:
+ * http://iphonedevwiki.net/index.php/CoreFoundation.framework#Versions
  */
 
 // iOS 2.0 – 4.2 are defined in <CoreFoundation/CFBase.h>. The format prior to 4.0 is
@@ -144,6 +159,62 @@
 
 #ifndef kCFCoreFoundationVersionNumber_iOS_11_2
 #define kCFCoreFoundationVersionNumber_iOS_11_2 1450.14
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_11_3
+#define kCFCoreFoundationVersionNumber_iOS_11_3 1452.23
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_11_4
+#define kCFCoreFoundationVersionNumber_iOS_11_4 kCFCoreFoundationVersionNumber_iOS_11_3
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_12_0
+#define kCFCoreFoundationVersionNumber_iOS_12_0 1556.00
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_12_1
+#define kCFCoreFoundationVersionNumber_iOS_12_1 1560.10
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_12_2
+#define kCFCoreFoundationVersionNumber_iOS_12_2 1570.15
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_12_3
+#define kCFCoreFoundationVersionNumber_iOS_12_3 1575.13
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_12_4
+#define kCFCoreFoundationVersionNumber_iOS_12_4 1575.17
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_13_0
+#define kCFCoreFoundationVersionNumber_iOS_13_0 1665.15
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_13_1
+#define kCFCoreFoundationVersionNumber_iOS_13_1 1671.101
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_13_2
+#define kCFCoreFoundationVersionNumber_iOS_13_2 1673.126
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_13_3
+#define kCFCoreFoundationVersionNumber_iOS_13_3 1674.102
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_13_4
+#define kCFCoreFoundationVersionNumber_iOS_13_4 1675.129
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_13_5
+#define kCFCoreFoundationVersionNumber_iOS_13_5 1676.104
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_14_0
+#define kCFCoreFoundationVersionNumber_iOS_14_0 1740.00
 #endif
 
 #ifndef kCFCoreFoundationVersionNumber10_10
