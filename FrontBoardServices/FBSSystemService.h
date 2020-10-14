@@ -4,8 +4,8 @@ typedef void (^FBSSystemServiceResultCallback)(NSError *error);
 
 __BEGIN_DECLS
 
-NSString *const FBSOpenApplicationOptionKeyUnlockDevice;
-NSString *const FBSOpenApplicationOptionKeyActivateSuspended;
+extern NSString *const FBSOpenApplicationOptionKeyUnlockDevice;
+extern NSString *const FBSOpenApplicationOptionKeyActivateSuspended;
 
 __END_DECLS
 

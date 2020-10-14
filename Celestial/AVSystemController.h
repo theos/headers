@@ -5,73 +5,73 @@ typedef NSString *AVSystemControllerKey;
 
 __BEGIN_DECLS
 
-AVSystemControllerKey const AVSystemController_ActiveAudioRouteDidChangeNotification;
-AVSystemControllerKey const AVSystemController_ActiveInputRouteForPlayAndRecordNoBluetoothDidChangeNotification;
-AVSystemControllerKey const AVSystemController_CallIsActiveDidChangeNotification;
-AVSystemControllerKey const AVSystemController_CarPlayIsConnectedDidChangeNotification;
-AVSystemControllerKey const AVSystemController_CurrentRouteHasVolumeControlDidChangeNotification;
-AVSystemControllerKey const AVSystemController_EUVolumeLimitDidChangeNotification;
-AVSystemControllerKey const AVSystemController_EUVolumeLimitEnforcedDidChangeNotification;
-AVSystemControllerKey const AVSystemController_EffectiveVolumeDidChangeNotification;
-AVSystemControllerKey const AVSystemController_ExternalScreenDidChangeNotification;
-AVSystemControllerKey const AVSystemController_FullMuteDidChangeNotification;
-AVSystemControllerKey const AVSystemController_HeadphoneJackIsConnectedDidChangeNotification;
-AVSystemControllerKey const AVSystemController_MutedDidChangeNotification;
-AVSystemControllerKey const AVSystemController_NowPlayingAppDidChangeNotification;
-AVSystemControllerKey const AVSystemController_NowPlayingAppIsPlayingDidChangeNotification;
-AVSystemControllerKey const AVSystemController_NowPlayingAppPIDDidChangeNotification;
-AVSystemControllerKey const AVSystemController_PickableRoutesDidChangeNotification;
-AVSystemControllerKey const AVSystemController_PortStatusDidChangeNotification;
-AVSystemControllerKey const AVSystemController_PreferredExternalRouteDidChangeNotification;
-AVSystemControllerKey const AVSystemController_RecordingStateDidChangeNotification;
-AVSystemControllerKey const AVSystemController_ServerConnectionDiedNotification;
-AVSystemControllerKey const AVSystemController_SoftMuteDidChangeNotification;
-AVSystemControllerKey const AVSystemController_SomeClientIsPlayingDidChangeNotification;
-AVSystemControllerKey const AVSystemController_SystemHasAudioInputDeviceDidChangeNotification;
-AVSystemControllerKey const AVSystemController_SystemHasAudioInputDeviceExcludingBluetoothDidChangeNotification;
-AVSystemControllerKey const AVSystemController_SystemVolumeDidChangeNotification;
-AVSystemControllerKey const AVSystemController_UnusuallyMutedAudioIsPlayingNotification;
-AVSystemControllerKey const AVSystemController_UplinkMuteDidChangeNotification;
-AVSystemControllerKey const AVSystemController_VibeIntensityDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_ActiveAudioRouteDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_ActiveInputRouteForPlayAndRecordNoBluetoothDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_CallIsActiveDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_CarPlayIsConnectedDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_CurrentRouteHasVolumeControlDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_EUVolumeLimitDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_EUVolumeLimitEnforcedDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_EffectiveVolumeDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_ExternalScreenDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_FullMuteDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_HeadphoneJackIsConnectedDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_MutedDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_NowPlayingAppDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_NowPlayingAppIsPlayingDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_NowPlayingAppPIDDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_PickableRoutesDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_PortStatusDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_PreferredExternalRouteDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_RecordingStateDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_ServerConnectionDiedNotification;
+extern AVSystemControllerKey const AVSystemController_SoftMuteDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_SomeClientIsPlayingDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_SystemHasAudioInputDeviceDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_SystemHasAudioInputDeviceExcludingBluetoothDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_SystemVolumeDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_UnusuallyMutedAudioIsPlayingNotification;
+extern AVSystemControllerKey const AVSystemController_UplinkMuteDidChangeNotification;
+extern AVSystemControllerKey const AVSystemController_VibeIntensityDidChangeNotification;
 
 /* these attributes can be reliably accessed from any process */
 /* comments on the right of an attribute represent the corresponding value type */
-AVSystemControllerKey const AVSystemController_ActiveAudioRouteAttribute;
-AVSystemControllerKey const AVSystemController_ActiveInputRouteForPlayAndRecordNoBluetoothAttribute; /* NSString */
-AVSystemControllerKey const AVSystemController_AllowAppToInitiatePlaybackTemporarilyAttribute;
-AVSystemControllerKey const AVSystemController_AppWantsVolumeChangesAttribute;                       /* NSNumber, BOOL */
-AVSystemControllerKey const AVSystemController_AudioIsPlayingSomewhereAttribute;                     /* NSNumber, BOOL */
-AVSystemControllerKey const AVSystemController_CanBeNowPlayingAppAttribute;                          /* NSNumber, BOOL */
-AVSystemControllerKey const AVSystemController_CarPlayIsConnectedAttribute;                          /* NSNumber, BOOL */
-AVSystemControllerKey const AVSystemController_CurrentExternalScreenAttribute;                       /* NSString */
-AVSystemControllerKey const AVSystemController_CurrentlyActiveCategoryAttribute;                     /* NSString */
-AVSystemControllerKey const AVSystemController_CurrentlyActiveModeAttribute;                         /* NSString */
-AVSystemControllerKey const AVSystemController_DisableAutoPauseOnHeadphoneJackDisconnectAttribute;   /* NSNumber, BOOL */
-AVSystemControllerKey const AVSystemController_DiscoveryModeAttribute;                               /* NSString */
-AVSystemControllerKey const AVSystemController_DownlinkMuteAttribute;                                /* NSNumber, BOOL */
-AVSystemControllerKey const AVSystemController_EUVolumeLimitAttribute;                               /* NSNumber, float */
-AVSystemControllerKey const AVSystemController_EUVolumeLimitEnforcedAttribute;                       /* NSNumber, BOOL */
-AVSystemControllerKey const AVSystemController_FullMuteAttribute;                                    /* NSNumber, BOOL */
-AVSystemControllerKey const AVSystemController_HeadphoneJackHasInputAttribute;                       /* NSNumber, BOOL */
-AVSystemControllerKey const AVSystemController_HeadphoneJackIsConnectedAttribute;                    /* NSNumber, BOOL */
-AVSystemControllerKey const AVSystemController_HeadphoneVolumeLimitAttribute;                        /* NSNumber, float */
-AVSystemControllerKey const AVSystemController_IAmTheiPodAppAttribute;
-AVSystemControllerKey const AVSystemController_IsSomeoneRecordingAttribute;                          /* NSNumber, int */
-AVSystemControllerKey const AVSystemController_NowPlayingAppDisplayIDAttribute;                      /* NSString */
-AVSystemControllerKey const AVSystemController_NowPlayingAppIsInterruptedAttribute;
-AVSystemControllerKey const AVSystemController_NowPlayingAppIsPlayingAttribute;                      /* NSNumber, BOOL */
-AVSystemControllerKey const AVSystemController_NowPlayingAppPIDAttribute;                            /* NSNumber, pid_t */
-AVSystemControllerKey const AVSystemController_NowPlayingAppShouldPlayOnCarPlayConnectAttribute;     /* NSNumber, BOOL */
-AVSystemControllerKey const AVSystemController_ParentalVolumeCappedToEUVolumeLimitAttribute;         /* NSNumber, BOOL */
-AVSystemControllerKey const AVSystemController_PickableRoutesAttribute;
-AVSystemControllerKey const AVSystemController_PickedRouteAttribute;
-AVSystemControllerKey const AVSystemController_RouteAwayFromAirPlayAttribute;
-AVSystemControllerKey const AVSystemController_RouteAwayFromWirelessRouteAttribute;
-AVSystemControllerKey const AVSystemController_ShouldIgnorePlayCommandsFromAccessoryAttribute;       /* NSNumber, BOOL */
-AVSystemControllerKey const AVSystemController_SomeClientIsPlayingLongFormAudioAttribute;            /* NSNumber, BOOL */
-AVSystemControllerKey const AVSystemController_SystemHasAudioInputDeviceExcludingBluetoothAttribute; /* NSNumber, BOOL */
-AVSystemControllerKey const AVSystemController_SystemSoundVolumeMultiplierAttribute;                 /* NSNumber, float */
-AVSystemControllerKey const AVSystemController_UplinkMuteAttribute;                                  /* NSNumber, BOOL */
+extern AVSystemControllerKey const AVSystemController_ActiveAudioRouteAttribute;
+extern AVSystemControllerKey const AVSystemController_ActiveInputRouteForPlayAndRecordNoBluetoothAttribute; /* NSString */
+extern AVSystemControllerKey const AVSystemController_AllowAppToInitiatePlaybackTemporarilyAttribute;
+extern AVSystemControllerKey const AVSystemController_AppWantsVolumeChangesAttribute;                       /* NSNumber, BOOL */
+extern AVSystemControllerKey const AVSystemController_AudioIsPlayingSomewhereAttribute;                     /* NSNumber, BOOL */
+extern AVSystemControllerKey const AVSystemController_CanBeNowPlayingAppAttribute;                          /* NSNumber, BOOL */
+extern AVSystemControllerKey const AVSystemController_CarPlayIsConnectedAttribute;                          /* NSNumber, BOOL */
+extern AVSystemControllerKey const AVSystemController_CurrentExternalScreenAttribute;                       /* NSString */
+extern AVSystemControllerKey const AVSystemController_CurrentlyActiveCategoryAttribute;                     /* NSString */
+extern AVSystemControllerKey const AVSystemController_CurrentlyActiveModeAttribute;                         /* NSString */
+extern AVSystemControllerKey const AVSystemController_DisableAutoPauseOnHeadphoneJackDisconnectAttribute;   /* NSNumber, BOOL */
+extern AVSystemControllerKey const AVSystemController_DiscoveryModeAttribute;                               /* NSString */
+extern AVSystemControllerKey const AVSystemController_DownlinkMuteAttribute;                                /* NSNumber, BOOL */
+extern AVSystemControllerKey const AVSystemController_EUVolumeLimitAttribute;                               /* NSNumber, float */
+extern AVSystemControllerKey const AVSystemController_EUVolumeLimitEnforcedAttribute;                       /* NSNumber, BOOL */
+extern AVSystemControllerKey const AVSystemController_FullMuteAttribute;                                    /* NSNumber, BOOL */
+extern AVSystemControllerKey const AVSystemController_HeadphoneJackHasInputAttribute;                       /* NSNumber, BOOL */
+extern AVSystemControllerKey const AVSystemController_HeadphoneJackIsConnectedAttribute;                    /* NSNumber, BOOL */
+extern AVSystemControllerKey const AVSystemController_HeadphoneVolumeLimitAttribute;                        /* NSNumber, float */
+extern AVSystemControllerKey const AVSystemController_IAmTheiPodAppAttribute;
+extern AVSystemControllerKey const AVSystemController_IsSomeoneRecordingAttribute;                          /* NSNumber, int */
+extern AVSystemControllerKey const AVSystemController_NowPlayingAppDisplayIDAttribute;                      /* NSString */
+extern AVSystemControllerKey const AVSystemController_NowPlayingAppIsInterruptedAttribute;
+extern AVSystemControllerKey const AVSystemController_NowPlayingAppIsPlayingAttribute;                      /* NSNumber, BOOL */
+extern AVSystemControllerKey const AVSystemController_NowPlayingAppPIDAttribute;                            /* NSNumber, pid_t */
+extern AVSystemControllerKey const AVSystemController_NowPlayingAppShouldPlayOnCarPlayConnectAttribute;     /* NSNumber, BOOL */
+extern AVSystemControllerKey const AVSystemController_ParentalVolumeCappedToEUVolumeLimitAttribute;         /* NSNumber, BOOL */
+extern AVSystemControllerKey const AVSystemController_PickableRoutesAttribute;
+extern AVSystemControllerKey const AVSystemController_PickedRouteAttribute;
+extern AVSystemControllerKey const AVSystemController_RouteAwayFromAirPlayAttribute;
+extern AVSystemControllerKey const AVSystemController_RouteAwayFromWirelessRouteAttribute;
+extern AVSystemControllerKey const AVSystemController_ShouldIgnorePlayCommandsFromAccessoryAttribute;       /* NSNumber, BOOL */
+extern AVSystemControllerKey const AVSystemController_SomeClientIsPlayingLongFormAudioAttribute;            /* NSNumber, BOOL */
+extern AVSystemControllerKey const AVSystemController_SystemHasAudioInputDeviceExcludingBluetoothAttribute; /* NSNumber, BOOL */
+extern AVSystemControllerKey const AVSystemController_SystemSoundVolumeMultiplierAttribute;                 /* NSNumber, float */
+extern AVSystemControllerKey const AVSystemController_UplinkMuteAttribute;                                  /* NSNumber, BOOL */
 
 __END_DECLS
 

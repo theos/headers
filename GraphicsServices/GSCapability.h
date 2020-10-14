@@ -62,100 +62,100 @@ Boolean GSSystemGetTelephonyCapability(void);    ///< Returns if the device has 
 CFPropertyListRef GSSystemCopySubcapability(CFStringRef capability, CFStringRef subcapability);
 CFPropertyListRef GSSystemCopyCapability(CFStringRef capability); ///< Copy the value of a capability.
 
-CFStringRef kGSCapabilityChangedNotification;
+extern CFStringRef kGSCapabilityChangedNotification;
 
-CFStringRef kGSCameraRestriction;
-CFStringRef kGSInAppPurchasesRestriction;
-CFStringRef kGSVolumeLimitRestriction;
+extern CFStringRef kGSCameraRestriction;
+extern CFStringRef kGSInAppPurchasesRestriction;
+extern CFStringRef kGSVolumeLimitRestriction;
 
-CFStringRef kGSDeviceNameString;
-CFStringRef kGSLocalizedDeviceNameString;
+extern CFStringRef kGSDeviceNameString;
+extern CFStringRef kGSLocalizedDeviceNameString;
 
-CFStringRef kGSTelephonyMaximumGeneration;
+extern CFStringRef kGSTelephonyMaximumGeneration;
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
-CFStringRef kGSARMV6ExecutionCapability;
-CFStringRef kGSARMV7ExecutionCapability;
+extern CFStringRef kGSARMV6ExecutionCapability;
+extern CFStringRef kGSARMV7ExecutionCapability;
 #endif
-CFStringRef kGSAccelerometerCapability;
-CFStringRef kGSAccessibilityCapability;
-CFStringRef kGSAppleInternalInstallCapability;
-CFStringRef kGSApplicationInstallationCapability;
-CFStringRef kGSAutoFocusCameraCapability;
-CFStringRef kGSBluetoothCapability;
-CFStringRef kGSCameraCapability;
-CFStringRef kGSDelaySleepForHeadsetClickCapability;
-CFStringRef kGSDisplayFCCLogosViaSoftwareCapability;
-CFStringRef kGSDisplayIdentifiersCapability;
-CFStringRef kGSEncodeAACCapability;
-CFStringRef kGSEncryptedDataPartitionCapability;
-CFStringRef kGSExplicitContentRestriction;
-CFStringRef kGSGPSCapability;
-CFStringRef kGSGasGaugeBatteryCapability;
-CFStringRef kGSGreenTeaDeviceCapability;
-CFStringRef kGSHasAllFeaturesCapability;
-CFStringRef kGSInternationalSettingsCapability;
-CFStringRef kGSLaunchApplicationsWhileAnimatingCapability;
-CFStringRef kGSLoadThumbnailsWhileScrollingCapability;
-CFStringRef kGSLocationServicesCapability;
-CFStringRef kGSMMSCapability;
-CFStringRef kGSMagnetometerCapability;
+extern CFStringRef kGSAccelerometerCapability;
+extern CFStringRef kGSAccessibilityCapability;
+extern CFStringRef kGSAppleInternalInstallCapability;
+extern CFStringRef kGSApplicationInstallationCapability;
+extern CFStringRef kGSAutoFocusCameraCapability;
+extern CFStringRef kGSBluetoothCapability;
+extern CFStringRef kGSCameraCapability;
+extern CFStringRef kGSDelaySleepForHeadsetClickCapability;
+extern CFStringRef kGSDisplayFCCLogosViaSoftwareCapability;
+extern CFStringRef kGSDisplayIdentifiersCapability;
+extern CFStringRef kGSEncodeAACCapability;
+extern CFStringRef kGSEncryptedDataPartitionCapability;
+extern CFStringRef kGSExplicitContentRestriction;
+extern CFStringRef kGSGPSCapability;
+extern CFStringRef kGSGasGaugeBatteryCapability;
+extern CFStringRef kGSGreenTeaDeviceCapability;
+extern CFStringRef kGSHasAllFeaturesCapability;
+extern CFStringRef kGSInternationalSettingsCapability;
+extern CFStringRef kGSLaunchApplicationsWhileAnimatingCapability;
+extern CFStringRef kGSLoadThumbnailsWhileScrollingCapability;
+extern CFStringRef kGSLocationServicesCapability;
+extern CFStringRef kGSMMSCapability;
+extern CFStringRef kGSMagnetometerCapability;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
-CFStringRef kGSMarketingNameString;
+extern CFStringRef kGSMarketingNameString;
 #endif
-CFStringRef kGSMicrophoneCapability;
-CFStringRef kGSNikeIpodCapability;
-CFStringRef kGSNotGreenTeaDeviceCapability;
-CFStringRef kGSOpenGLES1Capability;
-CFStringRef kGSOpenGLES2Capability;
+extern CFStringRef kGSMicrophoneCapability;
+extern CFStringRef kGSNikeIpodCapability;
+extern CFStringRef kGSNotGreenTeaDeviceCapability;
+extern CFStringRef kGSOpenGLES1Capability;
+extern CFStringRef kGSOpenGLES2Capability;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_1
-CFStringRef kGSPeer2PeerCapability;
+extern CFStringRef kGSPeer2PeerCapability;
 #endif
-CFStringRef kGSPiezoClickerCapability;
-CFStringRef kGSPlatformStandAloneContactsCapability;
-CFStringRef kGSProximitySensorCapability;
-CFStringRef kGSRingerSwitchCapability;
-CFStringRef kGSSMSCapability;
-CFStringRef kGSScreenDimensionsCapability;
-CFStringRef kGSSensitiveUICapability;
-CFStringRef kGSTVOutSettingsCapability;
-CFStringRef kGSTelephonyCapability;
-CFStringRef kGSUnifiedIPodCapability;
-CFStringRef kGSVideoCameraCapability;
-CFStringRef kGSVoiceControlCapability;
-CFStringRef kGSVolumeButtonCapability;
-CFStringRef kGSWiFiCapability;
-CFStringRef kGSYouTubeCapability;
-CFStringRef kGSYouTubePluginCapability;
+extern CFStringRef kGSPiezoClickerCapability;
+extern CFStringRef kGSPlatformStandAloneContactsCapability;
+extern CFStringRef kGSProximitySensorCapability;
+extern CFStringRef kGSRingerSwitchCapability;
+extern CFStringRef kGSSMSCapability;
+extern CFStringRef kGSScreenDimensionsCapability;
+extern CFStringRef kGSSensitiveUICapability;
+extern CFStringRef kGSTVOutSettingsCapability;
+extern CFStringRef kGSTelephonyCapability;
+extern CFStringRef kGSUnifiedIPodCapability;
+extern CFStringRef kGSVideoCameraCapability;
+extern CFStringRef kGSVoiceControlCapability;
+extern CFStringRef kGSVolumeButtonCapability;
+extern CFStringRef kGSWiFiCapability;
+extern CFStringRef kGSYouTubeCapability;
+extern CFStringRef kGSYouTubePluginCapability;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
-CFStringRef kGS720pPlaybackCapability;
-CFStringRef kGSCellularDataCapability;
-CFStringRef kGSContainsCellularRadioCapability;
-CFStringRef kGSDataPlanCapability;
-CFStringRef kGSDisplayPortCapability;
-CFStringRef kGSH264EncoderCapability;
-CFStringRef kGSHideNonDefaultApplicationsCapability;
-CFStringRef kGSWildcatCapability;
+extern CFStringRef kGS720pPlaybackCapability;
+extern CFStringRef kGSCellularDataCapability;
+extern CFStringRef kGSContainsCellularRadioCapability;
+extern CFStringRef kGSDataPlanCapability;
+extern CFStringRef kGSDisplayPortCapability;
+extern CFStringRef kGSH264EncoderCapability;
+extern CFStringRef kGSHideNonDefaultApplicationsCapability;
+extern CFStringRef kGSWildcatCapability;
 #endif
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_4_0
-CFStringRef kGSCameraFlashCapability;
-CFStringRef kGSCanRasterizeEfficientlyCapability;
-CFStringRef kGSFrontFacingCameraCapability;
-CFStringRef kGSHiDPICapability;
-CFStringRef kGSIOSurfaceBackedImagesCapability;
-CFStringRef kGSMultitaskingCapability;
-CFStringRef kGSVeniceCapability;
+extern CFStringRef kGSCameraFlashCapability;
+extern CFStringRef kGSCanRasterizeEfficientlyCapability;
+extern CFStringRef kGSFrontFacingCameraCapability;
+extern CFStringRef kGSHiDPICapability;
+extern CFStringRef kGSIOSurfaceBackedImagesCapability;
+extern CFStringRef kGSMultitaskingCapability;
+extern CFStringRef kGSVeniceCapability;
 #endif
 
 /// Subcapabilities
-CFStringRef kGSMainScreenHeight;
-CFStringRef kGSMainScreenOrientation;
-CFStringRef kGSMainScreenScale;
-CFStringRef kGSMainScreenWidth;
+extern CFStringRef kGSMainScreenHeight;
+extern CFStringRef kGSMainScreenOrientation;
+extern CFStringRef kGSMainScreenScale;
+extern CFStringRef kGSMainScreenWidth;
 
-CFStringRef kGSEnforceGoogleMail;
+extern CFStringRef kGSEnforceGoogleMail;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
-CFStringRef kGSEnforceCameraShutterClick;
+extern CFStringRef kGSEnforceCameraShutterClick;
 #endif
 
 __END_DECLS

@@ -16,7 +16,7 @@ Please send us headers you’ve put together that would be useful to the wider c
     #include <sys/cdefs.h>
 
     __BEGIN_DECLS
-    int ExternalVariable;
+    extern int ExternalVariable;
     void ExternalFunction(int);
     __END_DECLS
     ```
