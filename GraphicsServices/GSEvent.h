@@ -430,7 +430,7 @@ void GSEventStopVibrator(); ///< Equivalent to GSEventVibrateForDuration(0)
 #pragma mark -
 #pragma mark Hardware keyboard events
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
-const char *kGSEventHardwareKeyboardAvailabilityChangedNotification; // "GSEventHardwareKeyboardAttached"
+extern const char *kGSEventHardwareKeyboardAvailabilityChangedNotification; // "GSEventHardwareKeyboardAttached"
 Boolean GSEventIsHardwareKeyboardAttached(void);
 void GSEventSetHardwareKeyboardAttached(Boolean attached);
 

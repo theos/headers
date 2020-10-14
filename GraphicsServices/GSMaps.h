@@ -54,7 +54,7 @@ Boolean GSMapKitAvailable();
 /// This value will be refreshed when the carrier changes.
 Boolean GSMapsVisible();
 
-CFStringRef kGSMapsVisibilityChangedNotification;
+extern CFStringRef kGSMapsVisibilityChangedNotification;
 
 __END_DECLS
 
