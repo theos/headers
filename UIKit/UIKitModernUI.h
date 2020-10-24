@@ -1,7 +1,3 @@
-#include <sys/cdefs.h>
+#import <Foundation/Foundation.h>
 
-__BEGIN_DECLS
-
-BOOL _UIApplicationUsesLegacyUI();
-
-__END_DECLS
+FOUNDATION_EXPORT BOOL _UIApplicationUsesLegacyUI();

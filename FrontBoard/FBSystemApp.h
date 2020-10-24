@@ -1,7 +1,3 @@
-#import <sys/cdefs.h>
+#import <Foundation/Foundation.h>
 
-__BEGIN_DECLS
-
-NSString *FBSystemAppBundleID();
-
-__END_DECLS
+FOUNDATION_EXPORT NSString *FBSystemAppBundleID();

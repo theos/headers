@@ -1,4 +1,4 @@
-#include <sys/cdefs.h>
+#import <Foundation/Foundation.h>
 
 @class BBBulletinRequest;
 @protocol BBDataProvider;
@@ -9,9 +9,5 @@
 
 @end
 
-__BEGIN_DECLS
-
-void BBDataProviderAddBulletin(BBDataProvider *dataProvider, BBBulletinRequest *bulletinRequest);
-void BBDataProviderWithdrawBulletinsWithRecordID(BBDataProvider *dataProvider, NSString *recordID);
-
-__END_DECLS
+FOUNDATION_EXPORT void BBDataProviderAddBulletin(BBDataProvider *dataProvider, BBBulletinRequest *bulletinRequest);
+FOUNDATION_EXPORT void BBDataProviderWithdrawBulletinsWithRecordID(BBDataProvider *dataProvider, NSString *recordID);

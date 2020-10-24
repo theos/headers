@@ -1,4 +1,4 @@
-#include <sys/cdefs.h>
+#import <Foundation/Foundation.h>
 
 @class IMHandle, IMServiceImpl;
 
@@ -10,8 +10,4 @@
 
 @end
 
-__BEGIN_DECLS
-
-IMAccount *IMPreferredSendingAccountForAddressesWithFallbackService(NSArray *addresses, IMServiceImpl *service);
-
-__END_DECLS
+FOUNDATION_EXPORT IMAccount *IMPreferredSendingAccountForAddressesWithFallbackService(NSArray *addresses, IMServiceImpl *service);

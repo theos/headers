@@ -1,10 +1,4 @@
-#include <sys/cdefs.h>
-
-__BEGIN_DECLS
-
-CGImageRef LICreateDefaultIcon(NSInteger a, NSInteger b, NSInteger c);
-
-__END_DECLS
+#import <Foundation/Foundation.h>
 
 #if __IPHONE_7_0
 typedef NS_ENUM(NSUInteger, MIIconVariant) {
@@ -47,3 +41,5 @@ typedef NS_ENUM(NSUInteger, MIIconVariant) {
 	MIIconVariantDocumentLarge,    // 31x37   320x320
 };
 #endif
+
+FOUNDATION_EXPORT CGImageRef LICreateDefaultIcon(MIIconVariant variant);

@@ -1,7 +1,3 @@
-#include <sys/cdefs.h>
+#import <Foundation/Foundation.h>
 
-__BEGIN_DECLS
-
-NSString *PLLocalizedFrameworkString(NSString *key, NSString *comment);
-
-__END_DECLS
+FOUNDATION_EXPORT NSString *PLLocalizedFrameworkString(NSString *key, NSString *comment);

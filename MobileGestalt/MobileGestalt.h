@@ -9,7 +9,7 @@
 #ifndef LIBMOBILEGESTALT_H_
 #define LIBMOBILEGESTALT_H_
 
-#include <CoreFoundation/CoreFoundation.h>
+#include <Foundation/Foundation.h>
 #include <sys/cdefs.h>
 
 typedef enum {
@@ -23,32 +23,30 @@ typedef enum {
     MGDeviceClassWatch   = 6,
 } MGDeviceClass;
 
-__BEGIN_DECLS
-
 #pragma mark - API
 
-CFTypeRef MGCopyAnswer(CFStringRef question, CFDictionaryRef options);
-CFTypeRef MGCopyAnswerWithError(CFStringRef question, int unk, int *error);
+FOUNDATION_EXPORT CFTypeRef MGCopyAnswer(CFStringRef question, CFDictionaryRef options);
+FOUNDATION_EXPORT CFTypeRef MGCopyAnswerWithError(CFStringRef question, int unk, int *error);
 
-bool MGGetBoolAnswer(CFStringRef question);
-bool MGIsQuestionValid(CFStringRef question);
+FOUNDATION_EXPORT bool MGGetBoolAnswer(CFStringRef question);
+FOUNDATION_EXPORT bool MGIsQuestionValid(CFStringRef question);
 
-SInt32 MGGetSInt32Answer(CFStringRef question, SInt32 defaultValue);
-SInt64 MGGetSInt64Answer(CFStringRef question, SInt64 defaultValue);
+FOUNDATION_EXPORT SInt32 MGGetSInt32Answer(CFStringRef question, SInt32 defaultValue);
+FOUNDATION_EXPORT SInt64 MGGetSInt64Answer(CFStringRef question, SInt64 defaultValue);
 
-Float32 MGGetFloat32Answer(CFStringRef question, Float32 defaultValue);
+FOUNDATION_EXPORT Float32 MGGetFloat32Answer(CFStringRef question, Float32 defaultValue);
 
 /* Use NULL for __unknown0. */
-CFPropertyListRef MGCopyMultipleAnswers(CFArrayRef questions, CFDictionaryRef __unknown0);
+FOUNDATION_EXPORT CFPropertyListRef MGCopyMultipleAnswers(CFArrayRef questions, CFDictionaryRef __unknown0);
 
-CFStringRef MGGetStringAnswer(CFStringRef question);
+FOUNDATION_EXPORT CFStringRef MGGetStringAnswer(CFStringRef question);
 
 /*
  * Not all questions are assignable.
  * For example, kMGUserAssignedDeviceName is assignable but
  * kMGProductType is not.
  */
-int MGSetAnswer(CFStringRef question, CFTypeRef answer);
+FOUNDATION_EXPORT int MGSetAnswer(CFStringRef question, CFTypeRef answer);
 
 #pragma mark - Identifying Information
 

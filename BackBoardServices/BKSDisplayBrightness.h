@@ -1,12 +1,8 @@
-#include <sys/cdefs.h>
+#import <Foundation/Foundation.h>
 
 typedef struct BKSDisplayBrightnessTransaction *BKSDisplayBrightnessTransactionRef;
 
-__BEGIN_DECLS
+FOUNDATION_EXPORT BKSDisplayBrightnessTransactionRef BKSDisplayBrightnessTransactionCreate(CFAllocatorRef allocator);
 
-BKSDisplayBrightnessTransactionRef BKSDisplayBrightnessTransactionCreate(CFAllocatorRef allocator);
-
-float BKSDisplayBrightnessGetCurrent();
-void BKSDisplayBrightnessSet(float brightness, NSInteger unknown);
-
-__END_DECLS
+FOUNDATION_EXPORT float BKSDisplayBrightnessGetCurrent();
+FOUNDATION_EXPORT void BKSDisplayBrightnessSet(float brightness, NSInteger unknown);

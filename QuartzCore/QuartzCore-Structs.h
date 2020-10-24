@@ -9,7 +9,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import <IOSurface/IOSurface.h>
 #include <pthread.h>
-#include <sys/cdefs.h>
 
 typedef struct {
 	int x;
@@ -273,19 +272,15 @@ typedef struct {
 	int _field2;
 } XXStruct_K5nmsA;
 
-__BEGIN_DECLS
-
-NSString* CAAtomGetString(unsigned atomNum);
-unsigned CAInternAtom(NSString* atomStr);
+FOUNDATION_EXPORT NSString *CAAtomGetString(unsigned atomNum);
+FOUNDATION_EXPORT unsigned CAInternAtom(NSString *atomStr);
 
 // log CA object to stdout.
 typedef void* CARenderObjectRef;
 
-void CARenderShow(CARenderObjectRef object);
-CARenderObjectRef CARenderRetain(CARenderObjectRef object);
-void CARenderRelease(CARenderObjectRef object);
+FOUNDATION_EXPORT void CARenderShow(CARenderObjectRef object);
+FOUNDATION_EXPORT CARenderObjectRef CARenderRetain(CARenderObjectRef object);
+FOUNDATION_EXPORT void CARenderRelease(CARenderObjectRef object);
 
-unsigned CAGetDebugFlags();
-void CASetDebugFlags(unsigned flags);
-
-__END_DECLS
+FOUNDATION_EXPORT unsigned CAGetDebugFlags();
+FOUNDATION_EXPORT void CASetDebugFlags(unsigned flags);

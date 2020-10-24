@@ -1,13 +1,9 @@
+#import <UIKit/UIKit.h>
 #import <MobileIcons/MobileIcons.h>
-#include <sys/cdefs.h>
 
 @class LSApplicationProxy;
 
-__BEGIN_DECLS
-
-UIImage *_UIImageWithName(NSString *name);
-
-__END_DECLS
+FOUNDATION_EXPORT UIImage *_UIImageWithName(NSString *name);
 
 @interface UIImage (Private)
 

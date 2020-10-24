@@ -1,4 +1,4 @@
-#include <sys/cdefs.h>
+#import <Foundation/Foundation.h>
 
 @class FBSDisplay;
 
@@ -10,11 +10,7 @@
 
 @end
 
-__BEGIN_DECLS
-
 // Minor but SB uses these functions to get location / translation / velocity
-CGPoint FBSystemGestureLocationInView(UIGestureRecognizer *recognizer, UIView *view);
-CGPoint FBSystemGestureVelocityInView(UIGestureRecognizer *recognizer, UIView *view);
-CGPoint FBSystemGestureTranslationInView(UIGestureRecognizer *recognizer, UIView *view);
-
-__END_DECLS
+FOUNDATION_EXPORT CGPoint FBSystemGestureLocationInView(UIGestureRecognizer *recognizer, UIView *view);
+FOUNDATION_EXPORT CGPoint FBSystemGestureVelocityInView(UIGestureRecognizer *recognizer, UIView *view);
+FOUNDATION_EXPORT CGPoint FBSystemGestureTranslationInView(UIGestureRecognizer *recognizer, UIView *view);

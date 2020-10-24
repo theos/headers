@@ -1,18 +1,14 @@
-#include <sys/cdefs.h>
+#import <Foundation/Foundation.h>
 
-__BEGIN_DECLS
+FOUNDATION_EXPORT mach_port_t SBSSpringBoardServerPort();
 
-mach_port_t SBSSpringBoardServerPort();
-
-void SBFrontmostApplicationDisplayIdentifier(mach_port_t port, char *result);
+FOUNDATION_EXPORT void SBFrontmostApplicationDisplayIdentifier(mach_port_t port, char *result);
 NSString *SBSCopyFrontmostApplicationDisplayIdentifier();
-void SBGetScreenLockStatus(mach_port_t port, BOOL *lockStatus, BOOL *passcodeEnabled);
-void SBSUndimScreen();
+FOUNDATION_EXPORT void SBGetScreenLockStatus(mach_port_t port, BOOL *lockStatus, BOOL *passcodeEnabled);
+FOUNDATION_EXPORT void SBSUndimScreen();
 
-int SBSLaunchApplicationWithIdentifierAndURLAndLaunchOptions(NSString *bundleIdentifier, NSURL *url, NSDictionary *appOptions, NSDictionary *launchOptions, BOOL suspended);
-int SBSLaunchApplicationWithIdentifierAndLaunchOptions(NSString *bundleIdentifier, NSDictionary *appOptions, NSDictionary *launchOptions, BOOL suspended);
-bool SBSOpenSensitiveURLAndUnlock(CFURLRef url, char flags);
+FOUNDATION_EXPORT int SBSLaunchApplicationWithIdentifierAndURLAndLaunchOptions(NSString *bundleIdentifier, NSURL *url, NSDictionary *appOptions, NSDictionary *launchOptions, BOOL suspended);
+FOUNDATION_EXPORT int SBSLaunchApplicationWithIdentifierAndLaunchOptions(NSString *bundleIdentifier, NSDictionary *appOptions, NSDictionary *launchOptions, BOOL suspended);
+FOUNDATION_EXPORT bool SBSOpenSensitiveURLAndUnlock(CFURLRef url, char flags);
 
-NSString *const SBSApplicationLaunchOptionUnlockDeviceKey;
-
-__END_DECLS
+FOUNDATION_EXPORT NSString *const SBSApplicationLaunchOptionUnlockDeviceKey;
