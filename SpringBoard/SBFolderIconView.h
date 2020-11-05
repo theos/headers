@@ -1,4 +1,6 @@
-@class SBIconView, SBFolder;
+#import "SBIconView.h"
+
+@class SBFolder;
 
 @interface SBFolderIconView : SBIconView
 

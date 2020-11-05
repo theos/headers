@@ -6,6 +6,8 @@ typedef NS_OPTIONS(NSUInteger, PSSystemPolicyOptions) {
 	PSSystemPolicyOptionsPhotos = 1 << 5
 };
 
+@class PSSpecifier;
+
 @interface PSSystemPolicyForApp : NSObject
 
 - (instancetype)initWithBundleIdentifier:(NSString *)bundleIdentifier;

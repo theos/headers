@@ -7,7 +7,6 @@
 
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
-#import <IOSurface/IOSurface.h>
 #include <pthread.h>
 
 typedef struct {

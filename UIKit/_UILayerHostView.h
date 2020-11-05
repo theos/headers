@@ -1,5 +1,7 @@
 #import <UIKit/UIView.h>
 
+@class CALayerHost;
+
 API_AVAILABLE(ios(9.0))
 @interface _UILayerHostView : UIView
 

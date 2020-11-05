@@ -1,5 +1,5 @@
 #import <Preferences/PSListController.h>
-#import <Preferences/DevicePINControllerDelegate.h>
+#import <PreferencesUI/DevicePINControllerDelegate.h>
 
 @interface PSUIPrefsListController : PSListController <DevicePINControllerDelegate>
 
