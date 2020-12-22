@@ -1,0 +1,8 @@
+module AppList {
+  umbrella header "AppList.h"
+
+  link "applist"
+
+  export *
+  module * { export * }
+}

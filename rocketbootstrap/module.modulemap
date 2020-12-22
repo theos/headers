@@ -1,0 +1,8 @@
+module RocketBootstrap {
+  umbrella header "rocketbootstrap.h"
+
+  link "rocketbootstrap"
+
+  export *
+  module * { export * }
+}
