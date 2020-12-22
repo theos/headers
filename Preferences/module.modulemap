@@ -1,0 +1,8 @@
+module Preferences {
+  umbrella header "Preferences.h"
+
+  link framework "Preferences"
+
+  export *
+  module * { export * }
+}

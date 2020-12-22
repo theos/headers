@@ -1,0 +1,8 @@
+module Flipswitch {
+  umbrella header "Flipswitch.h"
+
+  link "flipswitch"
+
+  export *
+  module * { export * }
+}
