@@ -226,7 +226,7 @@ static inline void LMResponseBufferFree(LMResponseBuffer *responseBuffer)
 }
 
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-static inline kern_return_t LMStartServiceWithUserInfo(name_t serverName, CFRunLoopRef runLoop, CFMachPortCallBack callback, void *userInfo)
+static inline kern_return_t LMStartServiceWithUserInfo(const name_t serverName, CFRunLoopRef runLoop, CFMachPortCallBack callback, void *userInfo)
 {
 	// TODO: Figure out what the real interface is, implement service stopping, handle failures correctly
 	mach_port_t bootstrap = MACH_PORT_NULL;
@@ -243,12 +243,12 @@ static inline kern_return_t LMStartServiceWithUserInfo(name_t serverName, CFRunL
 }
 #pragma GCC diagnostic warning "-Wdeprecated-declarations"
 
-static inline kern_return_t LMStartService(name_t serverName, CFRunLoopRef runLoop, CFMachPortCallBack callback)
+static inline kern_return_t LMStartService(const name_t serverName, CFRunLoopRef runLoop, CFMachPortCallBack callback)
 {
 	return LMStartServiceWithUserInfo(serverName, runLoop, callback, NULL);
 }
 
-static inline kern_return_t LMCheckInService(name_t serverName, CFRunLoopRef runLoop, CFMachPortCallBack callback, void *userInfo)
+static inline kern_return_t LMCheckInService(const name_t serverName, CFRunLoopRef runLoop, CFMachPortCallBack callback, void *userInfo)
 {
 	// TODO: Figure out what the real interface is, implement service stopping, handle failures correctly
 	mach_port_t bootstrap = MACH_PORT_NULL;
