@@ -269,7 +269,7 @@ kern_return_t bootstrap_parent(
  */
 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5
 kern_return_t
-bootstrap_register(mach_port_t bp, name_t service_name, mach_port_t sp);
+bootstrap_register(mach_port_t bp, const name_t service_name, mach_port_t sp);
 
 /*
  * bootstrap_create_service()
