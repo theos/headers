@@ -1,8 +1,8 @@
 // app
 
-@class WorldClockView;
+#import <UIKit/UICollectionViewCell.h>
 
-#import <UIkit/UICollectionViewCell.h>
+@class WorldClockView;
 
 @interface WorldClockCollectionCell : UICollectionViewCell
 

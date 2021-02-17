@@ -1,7 +1,7 @@
 #import <UIKit/UIViewController.h>
 #import "SBApplicationHosting.h"
 
-@class SBApplication, SBAppView, SBWorkspaceApplication. SBApplicationSceneEntity;
+@class SBApplication, SBAppView, SBWorkspaceApplication, SBApplicationSceneEntity;
 
 @interface SBAppViewController : UIViewController <SBApplicationHosting>
 @property (nonatomic, copy, readonly) NSString *bundleIdentifier;
