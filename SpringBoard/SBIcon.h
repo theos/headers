@@ -1,4 +1,6 @@
 #import <MobileIcons/MobileIcons.h>
+#import <UIKit/UIKit.h>
+#import "SBIconImageInfo.h"
 
 @class SBApplication;
 
@@ -12,6 +14,7 @@
 - (NSString *)applicationBundleID;
 
 - (BOOL)isApplicationIcon;
+- (BOOL)isWidgetIcon API_AVAILABLE(ios(14.0));
 - (BOOL)isBeta;
 
 - (NSString *)leafIdentifier;
@@ -19,7 +22,8 @@
 
 @property (nonatomic, assign) BOOL isFolderIcon;
 
-- (UIImage *)generateIconImage:(NSInteger)type;
+- (UIImage *)generateIconImage:(NSInteger)type API_DEPRECATED_WITH_REPLACEMENT("generateIconImageWithInfo:", ios(3.0, 13.0));
+- (UIImage *)generateIconImageWithInfo:(SBIconImageInfo)iconImageInfo API_AVAILABLE(ios(13.0));
 
 - (UIImage *)getIconImage:(MIIconVariant)variant;
 - (UIImage *)getUnmaskedIconImage:(MIIconVariant)variant;

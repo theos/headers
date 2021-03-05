@@ -1,3 +1,7 @@
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
+
 @class _UIBackdropViewSettings, _UIBackdropEffectView, CABackdropLayer;
 
 /*
@@ -35,7 +39,7 @@ _UIBackdropViewSettingsPasscodePaddle	3900	iOS 7.1+
 _UIBackdropViewSettingsLightLeopard		3901	iOS 7.1+
 */
 
-typedef NS_ENUM(NSUInteger, _UIBackdropViewStyle) {
+typedef NS_ENUM(NSInteger, _UIBackdropViewStyle) {
 	_UIBackdropViewStyleNone = -2,
 	_UIBackdropViewStyleLight = 0,
 	_UIBackdropViewStyleDark,
