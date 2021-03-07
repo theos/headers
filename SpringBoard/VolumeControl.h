@@ -1,4 +1,4 @@
-API_DEPRECATED("Use SBVolumeControl", ios(2.0, 13.0))
+API_DEPRECATED_WITH_REPLACEMENT("SBVolumeControl", ios(2.0, 13.0))
 @interface VolumeControl : NSObject
 
 + (instancetype)sharedVolumeControl;
