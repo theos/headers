@@ -11,7 +11,7 @@ API_AVAILABLE(ios(2.0))
 
 + (NSArray <NSString *> *)filterTypes;
 + (CAFilter *)filterWithType:(NSString *)type;
-+ (CAFilter *)filterWithName:(NSString *)name; // alias for filterWithName:
++ (CAFilter *)filterWithName:(NSString *)name; // alias for filterWithType:
 
 - (instancetype)initWithType:(NSString *)type;
 - (instancetype)initWithName:(NSString *)name; // alias for initWithType:
@@ -24,7 +24,7 @@ API_AVAILABLE(ios(2.0))
 // only some of the below strings are used for
 // filter types.
 // it's best to use +[CAFilter filterTypes] to
-// detemine the available filters.
+// determine the available filters.
 // creating and applying a filter that is not
 // available, or does not exist, should have
 // no effect (per testing on iOS 14: the filter
