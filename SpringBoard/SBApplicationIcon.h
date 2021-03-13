@@ -1,12 +1,7 @@
 #import "SBLeafIcon.h"
+#import "SBIconImageInfo.h"
 
 @class SBApplication;
-
-typedef struct SBIconImageInfo {
-	CGSize size;
-	CGFloat scale;
-	CGFloat continuousCornerRadius;
-} SBIconImageInfo;
 
 API_AVAILABLE(ios(3.0)) @interface SBApplicationIcon : SBLeafIcon
 

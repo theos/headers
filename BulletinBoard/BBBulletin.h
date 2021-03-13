@@ -25,7 +25,7 @@ API_AVAILABLE(ios(5.0))  @interface BBBulletin : NSObject
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, copy) NSString *message;
-@property (nonatomic, retain) BBContent * content;
+@property (nonatomic, retain) BBContent *content;
 @property (nonatomic, copy) NSDate *date;
 @property (nonatomic, copy) NSDate *lastInterruptDate;
 @property (nonatomic, copy) NSString *unlockActionLabelOverride;
