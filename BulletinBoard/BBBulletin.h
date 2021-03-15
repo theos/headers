@@ -11,7 +11,7 @@ typedef NS_ENUM(NSInteger, BBAttachmentMetadataType) {
 	BBAttachmentMetadataTypeImage = 1
 };
 
-@interface BBBulletin : NSObject
+API_AVAILABLE(ios(5.0))  @interface BBBulletin : NSObject
 
 @property (nonatomic, copy) NSString *bulletinID;
 @property (nonatomic, copy) NSString *sectionID;
@@ -25,14 +25,15 @@ typedef NS_ENUM(NSInteger, BBAttachmentMetadataType) {
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, copy) NSString *message;
+@property (nonatomic, retain) BBContent *content;
 @property (nonatomic, copy) NSDate *date;
 @property (nonatomic, copy) NSDate *lastInterruptDate;
 @property (nonatomic, copy) NSString *unlockActionLabelOverride;
 @property (nonatomic, copy) NSString *section;
 
 @property (nonatomic, copy) BBAction *defaultAction;
-@property (nonatomic, copy, readonly) NSArray *supplementaryActions;
-@property (nonatomic) BBBulletinAccessoryStyle accessoryStyle;
+@property (nonatomic, copy, readonly) NSArray *supplementaryActions API_AVAILABLE(ios(8.0));
+@property (nonatomic) BBBulletinAccessoryStyle accessoryStyle NS_DEPRECATED_IOS(6_0, 7_0);
 
 @property (nonatomic, retain) BBSectionIcon *icon;
 
@@ -40,7 +41,7 @@ typedef NS_ENUM(NSInteger, BBAttachmentMetadataType) {
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-@property ABRecordID addressBookRecordID;
+@property ABRecordID addressBookRecordID NS_DEPRECATED_IOS(7_0, 13_0);
 #pragma clang diagnostic pop
 
 @property BOOL turnsOnDisplay;
