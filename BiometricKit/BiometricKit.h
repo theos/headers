@@ -23,7 +23,7 @@ API_AVAILABLE(ios(7.0))
 - (NSUUID *)getIdentitiesDatabaseUUIDForUser:(uid_t)user API_AVAILABLE(ios(10.0));
 - (NSData *)getIdentitiesDatabaseHashForUser:(uid_t)user API_AVAILABLE(ios(10.0));
 
-- (NSUUID *)getIdentitiesDatabaseUUID API_DEPRECATED("getIdentitiesDatabaseUUIDForUser:", ios(9.0, 10.0));
-- (NSData *)getIdentitiesDatabaseHash API_DEPRECATED("getIdentitiesDatabaseHashForUser:", ios(9.0, 10.0));
+- (NSUUID *)getIdentitiesDatabaseUUID API_DEPRECATED_WITH_REPLACEMENT("getIdentitiesDatabaseUUIDForUser:", ios(9.0, 10.0));
+- (NSData *)getIdentitiesDatabaseHash API_DEPRECATED_WITH_REPLACEMENT("getIdentitiesDatabaseHashForUser:", ios(9.0, 10.0));
 
 @end

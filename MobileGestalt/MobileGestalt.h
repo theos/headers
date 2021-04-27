@@ -197,6 +197,4 @@ static const CFStringRef kMGDeviceSupports3DMaps = CFSTR("DeviceSupports3DMaps")
 static const CFStringRef kMGDeviceSupports3DImagery = CFSTR("DeviceSupports3DImagery");
 static const CFStringRef kMGDeviceSupports1080p = CFSTR("DeviceSupports1080p");
 
-__END_DECLS
-
 #endif /* LIBMOBILEGESTALT_H_ */

@@ -1,4 +1,4 @@
-@class PTHViewController;
+#import "PTHViewController.h"
 
 @interface PTHAlertViewController : PTHViewController
 

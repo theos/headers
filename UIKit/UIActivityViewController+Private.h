@@ -1,3 +1,5 @@
+@class _UIActivityGroupListViewController;
+
 @interface UIActivityViewController (Private)
 
 @property (nonatomic, retain) _UIActivityGroupListViewController *activityGroupListViewController;

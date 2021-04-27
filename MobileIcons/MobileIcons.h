@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 #if __IPHONE_7_0
 typedef NS_ENUM(NSUInteger, MIIconVariant) {
