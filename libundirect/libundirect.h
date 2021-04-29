@@ -25,6 +25,12 @@ void libundirect_rebind(void* directPtr, Class _class, SEL selector, const char*
 // find a direct method by searching for unique memory bytes
 void* libundirect_find(NSString* imageName, unsigned char* bytesToSearch, size_t byteCount, unsigned char startByte);
 
+// find a direct method inside dyld_shared_cache by it's name
+void* libundirect_dsc_find(NSString* imageName, Class _class, SEL selector);
+
+// find a direct method inside dyld_shared_cache by it's name and rebind it (convenience)
+void libundirect_dsc_rebind(NSString* imageName, Class _class, SEL selector, const char* format);
+
 // selectors that failed to be added
 NSArray* libundirect_failedSelectors();
 
