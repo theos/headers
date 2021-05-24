@@ -6,7 +6,7 @@ API_AVAILABLE(ios(3.0))  @interface SBIconController : NSObject {
 
 + (SBIconController *)sharedInstance;
 
-@property (nonatomic, retain) SBIconModel *model API_AVAILABLE(ios(11.0));
+@property (nonatomic, retain) SBIconModel *model API_AVAILABLE(ios(6.0));
 
 @property (nonatomic, readonly) SBIconViewMap *homescreenIconViewMap API_AVAILABLE(ios(6.0));
 
