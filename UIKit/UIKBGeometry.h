@@ -1,3 +1,6 @@
+#import <CoreGraphics/CoreGraphics.h>
+#import <Foundation/Foundation.h>
+
 typedef struct UIKBGeometryUnit {
     CGFloat amount;
     int unit;
