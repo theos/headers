@@ -12,6 +12,7 @@ API_AVAILABLE(ios(5.0))
 - (NSArray <LSApplicationProxy *> *)directionsApplications   API_AVAILABLE(ios(6.0));
 - (NSArray <LSApplicationProxy *> *)unrestrictedApplications API_AVAILABLE(ios(7.0));
 
+- (NSArray <NSString *> *)installedApplications        API_AVAILABLE(ios(6.0));
 - (NSArray <NSString *> *)removedSystemApplications    API_AVAILABLE(ios(9.3));
 - (BOOL)restoreSystemApplication:(NSString *)bundleID  API_AVAILABLE(ios(9.3));
 
