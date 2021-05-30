@@ -8,13 +8,6 @@ API_AVAILABLE(ios(11.0))
 @property (assign, nonatomic) BOOL flipsForRightToLeftLayoutDirection;
 
 + (instancetype)descriptionForPackageNamed:(NSString *)name inBundle:(NSBundle *)bundle;
-
-- (BOOL)flipsForRightToLeftLayoutDirection;
-
-- (CCUICAPackageDescription *)initWithPackageName:(NSString *)name inBundle:(NSBundle *)bundle;
-
-- (void)setFlipsForRightToLeftLayoutDirection:(BOOL)flips;
-
-- (NSURL *)packageURL;
+- (instancetype)initWithPackageName:(NSString *)name inBundle:(NSBundle *)bundle;
 
 @end
