@@ -1,3 +1,5 @@
+#import <UIKit/UIKit.h>
+
 @interface UIColor (Private)
 
 + (instancetype)__halfTransparentBlackColor;
