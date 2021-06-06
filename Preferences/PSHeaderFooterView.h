@@ -1,3 +1,6 @@
+#import <CoreGraphics/CoreGraphics.h>
+#import <UIKit/UIKit.h>
+
 @class PSSpecifier, UITableView;
 
 @protocol PSHeaderFooterView

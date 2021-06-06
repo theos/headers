@@ -1,4 +1,5 @@
 #import <UIKit/UIImage.h>
+#import <Foundation/Foundation.h>
 
 /** Not clear if these enums are ABI stable, reversed from iOS 10.2 */
 

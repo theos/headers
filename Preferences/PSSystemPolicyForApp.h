@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 typedef NS_OPTIONS(NSUInteger, PSSystemPolicyOptions) {
 	PSSystemPolicyOptionsNotifications = 1 << 0,
 	PSSystemPolicyOptionsContacts = 1 << 2,

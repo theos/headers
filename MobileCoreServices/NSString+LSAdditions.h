@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @interface NSString (LSAdditions)
 
 - (instancetype)iTunesStoreURL;

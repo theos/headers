@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 @class PSSpecifier;
 

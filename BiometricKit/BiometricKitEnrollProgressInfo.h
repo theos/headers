@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @interface BiometricKitEnrollProgressInfo : NSObject
 
 @property (nonatomic, assign) NSInteger progress;

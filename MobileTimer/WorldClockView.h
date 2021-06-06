@@ -1,5 +1,7 @@
 // app
 
+#import <UIKit/UIView.h>
+
 @class WorldClockCity;
 
 @interface WorldClockView : UIView

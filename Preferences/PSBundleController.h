@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @class PSListController, PSSpecifier;
 
 @interface PSBundleController : NSObject
