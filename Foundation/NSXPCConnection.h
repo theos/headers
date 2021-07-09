@@ -59,6 +59,8 @@ typedef NS_OPTIONS(NSUInteger, NSXPCConnectionOptions) { NSXPCConnectionPrivileg
 
 + (NSXPCListener *)serviceListener;
 + (NSXPCListener *)anonymousListener;
+- (instancetype)initWithServiceName:(NSString *)name;
+- (instancetype)initWithMachServiceName:(NSString *)name;
 
 - (void)resume;
 - (void)suspend;
