@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 @interface UITextInputController : NSObject
 - (NSRange)selectedRange;

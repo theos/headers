@@ -1,3 +1,6 @@
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
 @interface UIAlertView (Private)
 
 @property (nonatomic, retain) NSString *context;

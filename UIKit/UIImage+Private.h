@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import <MobileIcons/MobileIcons.h>
 
 @class LSApplicationProxy;

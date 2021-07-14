@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 typedef NS_ENUM(NSUInteger, SBActivationSetting) {
 	SBActivationSettingNotASetting = 0,
 	SBActivationSettingNoAnimate = 3,

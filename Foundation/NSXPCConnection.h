@@ -1,4 +1,6 @@
 #import <bsm/audit.h>
+#import <Foundation/NSString.h>
+#import <Foundation/NSCoder.h>
 
 @class NSXPCConnection, NSXPCListener, NSXPCInterface, NSXPCListenerEndpoint;
 @protocol NSXPCListenerDelegate;

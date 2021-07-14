@@ -1,3 +1,5 @@
+#import <UIKit/UIKit.h>
+
 @class UIKBRenderConfig;
 
 @interface UIView (Private)
@@ -6,7 +8,7 @@
 
 - (void)layoutBelowIfNeeded;
 
-- (UIKBRenderConfig *)_inheritedRenderConfig; // iOS 7+
-- (void)_setRenderConfig:(UIKBRenderConfig *)renderConfig; // iOS 7+
+- (UIKBRenderConfig *)_inheritedRenderConfig API_AVAILABLE(ios(7.0));
+- (void)_setRenderConfig:(UIKBRenderConfig *)renderConfig API_AVAILABLE(ios(7.0));
 
 @end

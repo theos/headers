@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @class XBApplicationSnapshot;
 
 @interface _SBAppSwitcherSnapshotContext : NSObject

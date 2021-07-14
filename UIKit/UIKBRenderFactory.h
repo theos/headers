@@ -9,6 +9,6 @@
 - (UIKBRenderConfig *)renderConfig;
 
 - (NSString *)deleteKeyImageName;
-- (NSString *)deleteOnKeyImageName NS_AVAILABLE_IOS(9_0);
+- (NSString *)deleteOnKeyImageName API_AVAILABLE(ios(9.0));
 
 @end

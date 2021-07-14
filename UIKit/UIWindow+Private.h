@@ -1,3 +1,6 @@
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 #define UIWindowLevelNotificationCenter 1056.f
 #define UIWindowLevelStatusBarLockScreen 1052.f
 #define UIWindowLevelAlertReal 1996.f
