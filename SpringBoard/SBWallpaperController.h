@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @class SBWallpaperPreviewSnapshotCache, SBFStaticWallpaperView;
 
 @interface SBWallpaperController : NSObject {

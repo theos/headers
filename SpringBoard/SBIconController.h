@@ -1,10 +1,12 @@
+#import <Foundation/Foundation.h>
+
 @class SBDockIconListView, SBIconModel, SBRootIconListView, SBRootFolderController, SBIconViewMap, SBIconContentView, SBRootFolder, SBIconListView, SBFolder;
 
 API_AVAILABLE(ios(3.0))  @interface SBIconController : NSObject {
 	SBIconModel *_iconModel;
 }
 
-+ (SBIconController *)sharedInstance;
++ (instancetype)sharedInstance;
 
 @property (nonatomic, retain) SBIconModel *model API_AVAILABLE(ios(6.0));
 

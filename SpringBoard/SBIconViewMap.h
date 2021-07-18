@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @class SBIconModel, SBIconView, SBIcon;
 
 @interface SBIconViewMap : NSObject

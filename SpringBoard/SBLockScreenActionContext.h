@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @class BBBulletin;
 
 @interface SBLockScreenActionContext : NSObject
