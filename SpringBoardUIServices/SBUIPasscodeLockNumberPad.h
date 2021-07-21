@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @interface SBUIPasscodeLockNumberPad : NSObject
 
 @property (nonatomic, readonly) NSArray *buttons;

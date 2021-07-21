@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @class FBScene, FBSSceneSettings, FBSSceneSettingsDiff, FBSSceneTransitionContext;
 
 @protocol FBSceneClient <NSObject>

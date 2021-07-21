@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @class UIStatusBarForegroundStyleAttributes, UIStatusBarForegroundView;
 
 typedef NS_ENUM(NSInteger, UIStatusBarPosition) {
