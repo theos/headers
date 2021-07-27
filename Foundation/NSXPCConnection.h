@@ -87,11 +87,6 @@ typedef NS_OPTIONS(NSUInteger, NSXPCConnectionOptions) { NSXPCConnectionPrivileg
 - (nullable NSXPCInterface *)interfaceForSelector:(SEL)selector argumentIndex:(NSUInteger)index ofReply:(BOOL)ofReply;
 - (void)setInterface:(NSXPCInterface *)interface forSelector:(SEL)selector argumentIndex:(NSUInteger)index ofReply:(BOOL)ofReply;
 
-#if __has_include(<xpc/xpc.h>)
-- (void)setXPCType:(xpc_type_t)type forSelector:(SEL)selector argumentIndex:(NSUInteger)index ofReply:(BOOL)ofReply API_AVAILABLE(ios(13.0));
-- (nullable xpc_type_t)XPCTypeForSelector:(SEL)selector argumentIndex:(NSUInteger)index ofReply:(BOOL)ofReply API_AVAILABLE(ios(13.0));
-#endif
-
 @end
 
 // -- //
@@ -103,10 +98,5 @@ typedef NS_OPTIONS(NSUInteger, NSXPCConnectionOptions) { NSXPCConnectionPrivileg
 
 @property (nullable, retain) id <NSObject> userInfo;
 @property (nullable, readonly, strong) NSXPCConnection *connection API_AVAILABLE(ios(10.0));
-
-#if __has_include(<xpc/xpc.h>)
-- (nullable xpc_object_t)decodeXPCObjectOfType:(xpc_type_t)type forKey:(NSString *)key API_AVAILABLE(ios(7.0));
-- (void)encodeXPCObject:(xpc_object_t)xpcObject forKey:(NSString *)key;
-#endif
 
 @end
