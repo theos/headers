@@ -6,7 +6,7 @@
 @protocol PSHeaderFooterView
 
 @required
-- (UIView<PSHeaderFooterView> *)initWithSpecifier:(PSSpecifier *)specifier;
+- (UIView <PSHeaderFooterView> *)initWithSpecifier:(PSSpecifier *)specifier;
 
 @optional
 - (CGFloat)preferredHeightForWidth:(CGFloat)width inTableView:(UITableView *)tableView;

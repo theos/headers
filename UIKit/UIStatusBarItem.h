@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 // this enum was reversed out of iOS 10.2, not clear if it's ABI stable
 typedef enum {
     UIStatusBarItemTypeTime,           // this Time has a centerOrder of 1

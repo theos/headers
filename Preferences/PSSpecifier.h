@@ -120,7 +120,7 @@ FOUNDATION_EXPORT NSString *const PSValuesDataSourceKey; // @"valuesDataSource"
 + (instancetype)preferenceSpecifierNamed:(NSString *)identifier target:(id)target set:(SEL)set get:(SEL)get detail:(Class)detail cell:(PSCellType)cellType edit:(Class)edit;
 + (instancetype)emptyGroupSpecifier;
 + (instancetype)groupSpecifierWithName:(NSString *)name;
-+ (instancetype)groupSpecifierWithID:(NSString *)ID NS_AVAILABLE_IOS(8_0);
++ (instancetype)groupSpecifierWithID:(NSString *)ID API_AVAILABLE(ios(8.0));
 
 @property (nonatomic, retain) id target;
 @property (nonatomic, retain) NSString *name;

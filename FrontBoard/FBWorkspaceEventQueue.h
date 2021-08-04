@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @interface FBWorkspaceEventQueue : NSObject
 
 + (instancetype)sharedInstance;

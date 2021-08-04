@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @class FBScene;
 
 @interface FBSceneManager : NSObject

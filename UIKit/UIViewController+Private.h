@@ -1,3 +1,5 @@
+#import <UIKit/UIKit.h>
+
 @interface UIViewController (Private)
 
 + (instancetype)viewControllerForView:(UIView *)view;

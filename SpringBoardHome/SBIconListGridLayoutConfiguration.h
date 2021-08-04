@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import <SpringBoard/SBIconImageInfo.h>
 
-NS_CLASS_AVAILABLE_IOS(13_0) @interface SBIconListGridLayoutConfiguration : NSObject
+API_AVAILABLE(ios(13.0))
+@interface SBIconListGridLayoutConfiguration : NSObject
 
 @property (assign, nonatomic) NSUInteger numberOfLandscapeRows;
 @property (assign, nonatomic) NSUInteger numberOfLandscapeColumns;

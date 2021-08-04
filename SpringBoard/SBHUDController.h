@@ -1,8 +1,10 @@
+#import <Foundation/Foundation.h>
+
 @class SBHUDView;
 
 @interface SBHUDController : NSObject
 
-+ (SBHUDController *)sharedHUDController;
++ (instancetype)sharedHUDController;
 
 - (void)presentHUDView:(SBHUDView *)hud autoDismissWithDelay:(double)delay;
 

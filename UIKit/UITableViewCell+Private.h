@@ -1,3 +1,5 @@
+#import <UIKit/UIKit.h>
+
 @interface UITableViewCell (Private)
 
 @property (setter=_setDrawsSeparatorAtTopOfSection:) BOOL _drawsSeparatorAtTopOfSection;

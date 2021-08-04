@@ -1,4 +1,6 @@
 #if TARGET_OS_IPHONE
+#import <Foundation/Foundation.h>
+
 @interface NSDistributedNotificationCenter : NSNotificationCenter
 
 #ifdef __IPHONE_8_0

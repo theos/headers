@@ -1,3 +1,4 @@
+#import <Foundation/Foundation.h>
 #import "_SBAlertController.h"
 
 @interface SBAlertItem : NSObject

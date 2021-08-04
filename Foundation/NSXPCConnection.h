@@ -98,5 +98,4 @@ typedef NS_OPTIONS(NSUInteger, NSXPCConnectionOptions) { NSXPCConnectionPrivileg
 
 @property (nullable, retain) id <NSObject> userInfo;
 @property (nullable, readonly, strong) NSXPCConnection *connection API_AVAILABLE(ios(10.0));
-
 @end

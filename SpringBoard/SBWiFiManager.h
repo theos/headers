@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @interface SBWiFiManager : NSObject
 
 + (instancetype)sharedInstance;

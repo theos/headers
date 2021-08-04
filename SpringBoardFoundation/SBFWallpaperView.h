@@ -1,3 +1,5 @@
+#import <UIKit/UIKit.h>
+
 @interface SBFWallpaperView : UIView
 
 @property (nonatomic, readonly) UIImage *wallpaperImage;

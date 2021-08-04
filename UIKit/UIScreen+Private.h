@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 @interface UIScreen (Private)
 
@@ -9,6 +10,6 @@
 - (CGRect)applicationFrame;
 - (NSInteger)_interfaceOrientation;
 
-- (UIEdgeInsets)_sceneSafeAreaInsets NS_AVAILABLE_IOS(11_0);
+- (UIEdgeInsets)_sceneSafeAreaInsets API_AVAILABLE(ios(11.0));
 
 @end

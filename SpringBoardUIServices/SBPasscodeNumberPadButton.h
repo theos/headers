@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @class TPRevealingRingView;
 
 @interface SBPasscodeNumberPadButton : UIView

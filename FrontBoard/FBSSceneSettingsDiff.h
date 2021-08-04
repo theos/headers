@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @class FBSSceneSettings;
 
 @interface FBSSceneSettingsDiff : NSObject
