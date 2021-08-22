@@ -9,6 +9,7 @@
 #ifndef LIBMOBILEGESTALT_H_
 #define LIBMOBILEGESTALT_H_
 
+#include <CoreFoundation/CoreFoundation.h>
 #include <Foundation/Foundation.h>
 #include <sys/cdefs.h>
 
@@ -26,7 +27,7 @@ typedef enum {
 #pragma mark - API
 
 FOUNDATION_EXPORT CFTypeRef MGCopyAnswer(CFStringRef question, CFDictionaryRef options);
-FOUNDATION_EXPORT CFTypeRef MGCopyAnswerWithError(CFStringRef question, int unk, int *error);
+FOUNDATION_EXPORT CFTypeRef CFTypeRef MGCopyAnswerWithError(CFStringRef question, CFDictionaryRef options, int *error);
 
 FOUNDATION_EXPORT bool MGGetBoolAnswer(CFStringRef question);
 FOUNDATION_EXPORT bool MGIsQuestionValid(CFStringRef question);
@@ -36,10 +37,9 @@ FOUNDATION_EXPORT SInt64 MGGetSInt64Answer(CFStringRef question, SInt64 defaultV
 
 FOUNDATION_EXPORT Float32 MGGetFloat32Answer(CFStringRef question, Float32 defaultValue);
 
-/* Use NULL for __unknown0. */
-FOUNDATION_EXPORT CFPropertyListRef MGCopyMultipleAnswers(CFArrayRef questions, CFDictionaryRef __unknown0);
+FOUNDATION_EXPORT CFPropertyListRef MGCopyMultipleAnswers(CFArrayRef questions, CFDictionaryRef options);
 
-FOUNDATION_EXPORT CFStringRef MGGetStringAnswer(CFStringRef question);
+FOUNDATION_EXPORT CF_RETURNS_RETAINED CFStringRef MGGetStringAnswer(CFStringRef question);
 
 /*
  * Not all questions are assignable.
