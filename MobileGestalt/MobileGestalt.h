@@ -27,7 +27,7 @@ typedef enum {
 #pragma mark - API
 
 FOUNDATION_EXPORT CFTypeRef MGCopyAnswer(CFStringRef question, CFDictionaryRef options);
-FOUNDATION_EXPORT CFTypeRef CFTypeRef MGCopyAnswerWithError(CFStringRef question, CFDictionaryRef options, int *error);
+FOUNDATION_EXPORT CFTypeRef MGCopyAnswerWithError(CFStringRef question, CFDictionaryRef options, int *error);
 
 FOUNDATION_EXPORT bool MGGetBoolAnswer(CFStringRef question);
 FOUNDATION_EXPORT bool MGIsQuestionValid(CFStringRef question);

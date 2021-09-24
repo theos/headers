@@ -1,0 +1,13 @@
+#import "MIGlobalConfiguration.h"
+
+@interface MIDaemonConfiguration : MIGlobalConfiguration
+
+@property (nonatomic,readonly) BOOL skipDeviceFamilyCheck; 
+@property (nonatomic,readonly) BOOL skipThinningCheck; 
+@property (nonatomic,readonly) BOOL allowPatchWithoutSinf; 
+
+- (BOOL)skipDeviceFamilyCheck;
+- (BOOL)skipThinningCheck;
+- (BOOL)allowPatchWithoutSinf;
+
+@end
