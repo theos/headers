@@ -7,8 +7,4 @@ API_AVAILABLE(ios(13.0))
 @property (nonatomic, readonly) BOOL skipThinningCheck; 
 @property (nonatomic, readonly) BOOL allowPatchWithoutSinf; 
 
-- (BOOL)skipDeviceFamilyCheck;
-- (BOOL)skipThinningCheck;
-- (BOOL)allowPatchWithoutSinf;
-
 @end
