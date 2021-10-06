@@ -1,4 +1,4 @@
-#import "UIImageConfiguration.h"
+#import <UIKit/UIKit.h>
 
 API_AVAILABLE(ios(7.0))
 @interface _UIAssetManager : NSObject
