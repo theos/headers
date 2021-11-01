@@ -78,6 +78,22 @@ static void* libundirect_seek_back(void* startPtr, unsigned char toByte, unsigne
 }
 
 __attribute__((unused))
+static void* libundirect_find_with_options_and_mask(NSString* imageName, unsigned char* bytesToSearch, unsigned char* byteMask, size_t byteCount, unsigned char startByte, unsigned int seekbackMax, libundirect_find_options_t options)
+{
+	static void* (*impl_libundirect_find_with_options_and_mask)(NSString*, unsigned char*, unsigned char*, size_t, unsigned char, unsigned int, libundirect_find_options_t);
+	if(!impl_libundirect_find_with_options_and_mask)
+	{
+		void* handle = dlopen("/usr/lib/libundirect.dylib", RTLD_LAZY);
+		impl_libundirect_find_with_options_and_mask = (void* (*)(NSString*, unsigned char*, unsigned char*, size_t, unsigned char, unsigned int, libundirect_find_options_t))dlsym(handle, "libundirect_find_with_options_and_mask");
+	}
+	if(impl_libundirect_find_with_options_and_mask)
+	{
+		return impl_libundirect_find_with_options_and_mask(imageName, bytesToSearch, byteMask, byteCount, startByte, seekbackMax, options);
+	}
+	return NULL;
+}
+
+__attribute__((unused))
 static void* libundirect_find_with_options(NSString* imageName, unsigned char* bytesToSearch, size_t byteCount, unsigned char startByte, unsigned int seekbackMax, libundirect_find_options_t options)
 {
 	static void* (*impl_libundirect_find_with_options)(NSString*, unsigned char*, size_t, unsigned char, unsigned int, libundirect_find_options_t);
