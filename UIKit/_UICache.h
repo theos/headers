@@ -1,14 +1,12 @@
 #import <Foundation/NSObject.h>
 
-NS_CLASS_AVAILABLE_IOS(7_0) @interface _UICache : NSObject
-
-- (instancetype)init;
+API_AVAILABLE(ios(7.0))
 
 - (void)setObject:(id)object forKey:(id <NSCopying>)key;
 - (id)objectForKey:(id)key;
 - (void)removeObjectForKey:(id)key;
 - (void)removeAllObjects;
-- (NSArray *)cacheKeys NS_AVAILABLE_IOS(8_2);
+- (NSArray *)cacheKeys API_AVAILABLE(ios(8.2));
 
 @property (nonatomic, readwrite) BOOL clearsCacheOnLowMemoryWarnings;
 
