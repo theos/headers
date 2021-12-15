@@ -1,6 +1,7 @@
 #import <Foundation/NSObject.h>
 
 API_AVAILABLE(ios(7.0))
+@interface _UICache : NSObject
 
 - (void)setObject:(id)object forKey:(id <NSCopying>)key;
 - (id)objectForKey:(id)key;
