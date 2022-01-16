@@ -37,6 +37,10 @@ There is no particular license on this repo. Files in this repo come from many s
 ### SaurikIT
 * Cydia Substrate: [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause)
 
+### SparkDev
+* libSparkAppList: [WTFPL v2.0](https://github.com/SparkDev97/libSparkAppList/blob/master/LICENSE.md)
+* libSparkColourPicker: [WTFPL v2.0](https://github.com/SparkDev97/libSparkColourPicker/blob/master/LICENSE.md)
+
 ### Other headers
 Headers that aren't from elsewhere are released into the Public Domain.
 
