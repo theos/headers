@@ -9,7 +9,7 @@ API_AVAILABLE(ios(7.0))
 - (void)removeAllObjects;
 - (NSArray *)cacheKeys API_AVAILABLE(ios(8.2));
 
-@property (nonatomic, readwrite) BOOL clearsCacheOnLowMemoryWarnings;
+@property (nonatomic, assign, readwrite) BOOL clearsCacheOnLowMemoryWarnings;
 
 @property (nonatomic, assign, readwrite) BOOL clearsCacheOnApplicationBackground;
 
