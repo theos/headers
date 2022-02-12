@@ -2,6 +2,10 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSCoder.h>
 
+#if __has_include(<xpc/xpc.h>)
+    #import <xpc/xpc.h>
+#endif
+
 @class NSXPCConnection, NSXPCListener, NSXPCInterface, NSXPCListenerEndpoint;
 @protocol NSXPCListenerDelegate;
 
