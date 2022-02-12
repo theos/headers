@@ -11,6 +11,6 @@ API_AVAILABLE(ios(7.0))
 
 @property (nonatomic, readwrite) BOOL clearsCacheOnLowMemoryWarnings;
 
-@property (nonatomic, readwrite) BOOL clearsCacheOnApplicationBackground;
+@property (nonatomic, assign, readwrite) BOOL clearsCacheOnApplicationBackground;
 
 @end
