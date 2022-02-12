@@ -1,3 +1,5 @@
+#import <Foundation/NSString.h>
+
 #ifndef HB_LOG_USE_COLOR
 	#if defined(__DEBUG__) || defined(__IPHONE_10_0)
 		#define HB_LOG_USE_COLOR 0
