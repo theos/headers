@@ -255,6 +255,22 @@
 #define kCFCoreFoundationVersionNumber_iOS_14_5 1775.118
 #endif
 
+#ifndef kCFCoreFoundationVersionNumber_iOS_15_0
+#define kCFCoreFoundationVersionNumber_iOS_15_0 1854
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_15_1
+#define kCFCoreFoundationVersionNumber_iOS_15_1 1855.105
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_15_2
+#define kCFCoreFoundationVersionNumber_iOS_15_2 1856.105
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_15_3
+#define kCFCoreFoundationVersionNumber_iOS_15_3 1856.105
+#endif
+
 #ifndef kCFCoreFoundationVersionNumber10_10
 #define kCFCoreFoundationVersionNumber10_10 1151.16
 #endif
