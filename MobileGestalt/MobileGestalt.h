@@ -14,14 +14,18 @@
 #include <sys/cdefs.h>
 
 typedef enum {
-    MGDeviceClassInvalid = -1,
+    MGDeviceClassInvalid        = -1,
     /* 0 is intentionally not in this enum */
-    MGDeviceClassiPhone  = 1,
-    MGDeviceClassiPod    = 2,
-    MGDeviceClassiPad    = 3,
-    MGDeviceClassAppleTV = 4,
+    MGDeviceClassiPhone         = 1,
+    MGDeviceClassiPod           = 2,
+    MGDeviceClassiPad           = 3,
+    MGDeviceClassAppleTV        = 4,
     /* 5 is intentionally not in this enum */
-    MGDeviceClassWatch   = 6,
+    MGDeviceClassWatch          = 6,
+    MGDeviceClassAudioAccessory = 7,
+    MGDeviceClassiBridge        = 8,
+    MGDeviceClassMac            = 9,
+    MGDeviceClassAppleDisplay   = 10,
 } MGDeviceClass;
 
 #pragma mark - API
