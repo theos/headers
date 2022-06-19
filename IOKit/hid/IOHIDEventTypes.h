@@ -362,7 +362,7 @@ typedef struct _IOHID3DPoint {
     IOHIDFloat  x;
     IOHIDFloat  y;
     IOHIDFloat  z;
-} IOHID3DPoint; 
+} IOHID3DPoint;
 #endif
 
 #endif /* _IOKIT_HID_IOHIDEVENTTYPES_H */

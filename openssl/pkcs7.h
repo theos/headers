@@ -320,7 +320,7 @@ int PKCS7_add_certificate(PKCS7 *p7, X509 *x509);
 int PKCS7_add_crl(PKCS7 *p7, X509_CRL *x509);
 int PKCS7_content_new(PKCS7 *p7, int nid);
 int PKCS7_dataVerify(X509_STORE *cert_store, X509_STORE_CTX *ctx,
-	BIO *bio, PKCS7 *p7, PKCS7_SIGNER_INFO *si); 
+	BIO *bio, PKCS7 *p7, PKCS7_SIGNER_INFO *si);
 int PKCS7_signatureVerify(BIO *bio, PKCS7 *p7, PKCS7_SIGNER_INFO *si,
 								X509 *x509);
 
