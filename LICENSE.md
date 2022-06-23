@@ -3,23 +3,23 @@ There is no particular license on this repo. Files in this repo come from many s
 
 ## By Author
 ### Apple
-* IOKit headers: [Apple Public Source License](https://opensource.apple.com/license/apsl/)
-* MediaPlayer, Celestial headers: [2-Clause BSD License](https://github.com/WebKit/webkit/blob/master/Source/WebCore/LICENSE-APPLE)
+* IOKit: [Apple Public Source License](https://opensource.apple.com/license/apsl/)
+* MediaPlayer, Celestial: [2-Clause BSD License](https://github.com/WebKit/webkit/blob/master/Source/WebCore/LICENSE-APPLE)
 * launch.h: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 ### ashikase
-* IconSupport: ?
+* IconSupport: Unknown
 * libpackageinfo: [GNU GPL v3](https://github.com/ashikase/libpackageinfo/blob/master/LICENSE)
 * TechSupport: [GNU LGPL v3, Apache License 2](https://github.com/ashikase/TechSupport/blob/master/LICENSE)
 
 ### Cykey
-* MediaRemote, MobileGestalt headers: [GNU GPL v3](https://github.com/Cykey/ios-reversed-headers/blob/master/LICENSE.txt)
+* MediaRemote, MobileGestalt: [GNU GPL v3](https://github.com/Cykey/ios-reversed-headers/blob/master/LICENSE.txt)
 
 ### Dustin Howett
 * libprefs: [GNU LGPL v3](https://github.com/DHowett/preferenceloader/blob/master/LICENSE)
 
 ### KennyTM
-* GraphicsServices, IOSurface, substrate2.h headers: [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause)
+* GraphicsServices, IOSurface, substrate2.h: [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause)
 
 ### libarchive
 * libarchive: [2-Clause BSD License](https://opensource.org/licenses/BSD-2-Clause)
