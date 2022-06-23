@@ -21,6 +21,9 @@ There is no particular license on this repo. Files in this repo come from many s
 ### KennyTM
 * GraphicsServices, IOSurface, substrate2.h headers: [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause)
 
+### libarchive
+* libarchive: [2-Clause BSD License](https://opensource.org/licenses/BSD-2-Clause)
+
 ### OpenSSL
 * OpenSSL: [OpenSSL](https://www.openssl.org/source/license.html)
 
