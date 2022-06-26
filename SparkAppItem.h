@@ -2,5 +2,5 @@
 @property (nonatomic, retain) NSString* bundleIdentifier;
 @property (nonatomic, retain) NSString* displayName;
 
--(UIImage*)icon;
+- (UIImage*)icon;
 @end
