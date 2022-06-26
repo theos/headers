@@ -23,7 +23,7 @@ API_AVAILABLE(ios(11.0))
 @property (nonatomic, retain) CCUICAPackageDescription *glyphPackageDescription;
 
 @property (nonatomic, copy) NSString *glyphState;
-@property (nonatomic, copy) NSString *title; 
+@property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
 
 - (instancetype)initWithGlyphImage:(UIImage *)glyphImage highlightColor:(UIColor *)highlightColor;

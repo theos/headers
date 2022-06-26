@@ -3,9 +3,9 @@
 API_AVAILABLE(ios(7.0))
 @interface _UIAssetManager : NSObject
 
-@property (assign, nonatomic) CGFloat preferredScale;   
+@property (assign, nonatomic) CGFloat preferredScale;
 @property (nonatomic, retain) UITraitCollection *preferredTraitCollection;
-@property (nonatomic, readonly) NSString *carFileName; 
+@property (nonatomic, readonly) NSString *carFileName;
 @property (nonatomic, readonly) NSBundle *bundle;
 
 + (instancetype)assetManagerForBundle:(NSBundle *)bundle;

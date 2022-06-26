@@ -233,7 +233,7 @@
  *              <ul>
  *              <li> Apple-defined power sources will publish this key.
  *              <li> For power source creators: Providing this key is REQUIRED.
- *              <li> <code>@link kIOPSBatteryPowerValue @/link</code> indicates power source is drawing internal power; 
+ *              <li> <code>@link kIOPSBatteryPowerValue @/link</code> indicates power source is drawing internal power;
  *                   <code>@link kIOPSACPowerValue@/link</code> indicates power source is connected to an external power source.
  *              <li> Type CFString, value is <code>@link kIOPSACPowerValue@/link</code>, <code>@link kIOPSBatteryPowerValue@/link</code>, or <code>@link kIOPSOffLineValue@/link</code>.
  *              </ul>

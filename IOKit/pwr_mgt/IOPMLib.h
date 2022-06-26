@@ -173,7 +173,7 @@ io_connect_t IORegisterForSystemPower ( void * refcon,
                                         IONotificationPortRef * thePortRef,
                                         IOServiceInterestCallback callback,
                                         io_object_t * notifier )
-                                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;                                        
+                                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 /*! @function           IODeregisterApp
     @abstract           Disconnects the caller from an IOService after receiving power state change notifications from the IOService. (Caller must also release IORegisterApp's return io_connect_t and returned IONotificationPortRef for complete clean-up).
     @param notifier     An object from IORegisterApp.
@@ -251,7 +251,7 @@ IOReturn IOPMCancelScheduledPowerEvent(CFDateRef time_to_wake, CFStringRef my_id
     @discussion Returns a CFArray of CFDictionaries of power events. Each CFDictionary  contains keys for CFSTR(kIOPMPowerEventTimeKey), CFSTR(kIOPMPowerEventAppNameKey), and CFSTR(kIOPMPowerEventTypeKey).
     @result A CFArray of CFDictionaries of power events. The CFArray must be released by the caller. NULL if there are no scheduled events.
 */
-CFArrayRef IOPMCopyScheduledPowerEvents(void); 
+CFArrayRef IOPMCopyScheduledPowerEvents(void);
 
 
 
@@ -873,7 +873,7 @@ IOReturn IOPMAssertionCreateWithName(
                         IOPMAssertionLevel   AssertionLevel,
                         CFStringRef          AssertionName,
                         IOPMAssertionID      *AssertionID)
-                        AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER;                           
+                        AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER;
                            
 
 /*!
@@ -989,7 +989,7 @@ CFDictionaryRef IOCopySystemLoadAdvisoryDetailed(void);
  *                  - kIOPMCPUPowerLimitProcessorSpeedKey
  *                  - kIOPMCPUPowerLimitProcessorCountKey
  *                  - kIOPMCPUPowerLimitSchedulerTimeKey        
- * @param       cpuPowerStatus Upon success, a pointer to a dictionary defining CPU power; 
+ * @param       cpuPowerStatus Upon success, a pointer to a dictionary defining CPU power;
  *              otherwise NULL. Pointer will be populated with a newly created dictionary 
  *              upon successful return. Caller must release dictionary.
  * @result      kIOReturnSuccess, or other error report. Returns kIOReturnNotFound if 

@@ -138,7 +138,7 @@ typedef UInt32 IOMessage;
 
 /*!
  * @defined         kIOMessageSystemWillNotSleep
- * @discussion      Announces that the system has retracted a previous attempt to sleep; 
+ * @discussion      Announces that the system has retracted a previous attempt to sleep;
  *                  it follows <code>kIOMessageCanSystemSleep</code>.
  *                  Delivered to in-kernel IOKit drivers via <code>kIOGeneralInterest</code>
  *                  and <code>kIOPriorityPowerStateInterest</code>.
@@ -187,7 +187,7 @@ typedef UInt32 IOMessage;
 
 /*! 
  * @defined         kIOMessageDeviceWillNotPowerOff
- * @discussion      This IOKit interest notification is largely unused; 
+ * @discussion      This IOKit interest notification is largely unused;
  *                  it's not very interesting.
  */
 #define kIOMessageDeviceWillNotPowerOff    iokit_common_msg(0x220)

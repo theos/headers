@@ -126,12 +126,12 @@ typedef struct _IOHIDAmbientLightSensorEventData {
 } IOHIDAmbientLightSensorEventData;
 
 typedef struct _IOHIDTemperatureEventData {
-    IOHIDEVENT_BASE;                            
+    IOHIDEVENT_BASE;
     IOFixed        level;
 } IOHIDTemperatureEventData;
 
 typedef struct _IOHIDProximityEventData {
-    IOHIDEVENT_BASE;                            
+    IOHIDEVENT_BASE;
     uint32_t        detectionMask;
 } IOHIDProximityEventData;
 
@@ -166,7 +166,7 @@ typedef struct _IOHIDDigitizerEventData {
     IOHIDEVENT_BASE;                            // options = kIOHIDTransducerRange, kHIDTransducerTouch, kHIDTransducerInvert
     IOHIDAXISEVENT_BASE;						// 3c, 40, 44
 
-    uint32_t        transducerIndex;   
+    uint32_t        transducerIndex;
     uint32_t        transducerType;				// could overload this to include that both the hand and finger id.
     uint32_t        identity;                   // Specifies a unique ID of the current transducer action.
     uint32_t        eventMask;                  // the type of event that has occurred: range, touch, position
@@ -199,7 +199,7 @@ typedef struct _IOHIDDigitizerEventData {
 } IOHIDDigitizerEventData;
 
 typedef struct _IOHIDSwipeEventData {
-    IOHIDEVENT_BASE;                            
+    IOHIDEVENT_BASE;
     IOHIDSwipeMask swipeMask;
 } IOHIDSwipeEventData;
 
@@ -226,7 +226,7 @@ typedef struct _IOHIDSystemQueueElement {
     uint32_t        options;
     uint32_t        eventCount;
     IOHIDEventData  events[];
-} IOHIDSystemQueueElement; 
+} IOHIDSystemQueueElement;
 
 //******************************************************************************
 // MACROS
