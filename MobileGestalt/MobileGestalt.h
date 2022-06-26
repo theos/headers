@@ -20,7 +20,7 @@ typedef enum {
     MGDeviceClassiPod           = 2,
     MGDeviceClassiPad           = 3,
     MGDeviceClassAppleTV        = 4,
-    /* 5 is intentionally not in this enum */
+    MGDeviceClassiFPGA           = 5,
     MGDeviceClassWatch          = 6,
     MGDeviceClassAudioAccessory = 7,
     MGDeviceClassiBridge        = 8,
