@@ -9,7 +9,6 @@
 
 @property (nonatomic, assign) int maxEnabled;
 
--(id)initWithIdentifier:(NSString*)identifier andKey:(NSString*)key;
--(void)addCustomExclusion:(NSString*)bundleIdentifier;
-
+- (id)initWithIdentifier:(NSString*)identifier andKey:(NSString*)key;
+- (void)addCustomExclusion:(NSString*)bundleIdentifier;
 @end
