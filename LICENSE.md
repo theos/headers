@@ -12,6 +12,9 @@ There is no particular license on this repo. Files in this repo come from many s
 * libpackageinfo: [GNU GPL v3](https://github.com/ashikase/libpackageinfo/blob/master/LICENSE)
 * TechSupport: [GNU LGPL v3, Apache License 2](https://github.com/ashikase/TechSupport/blob/master/LICENSE)
 
+### CoolStar
+* libhooker & libblackjack: [3-Clause BSD License](http://opensource.org/licenses/BSD-3-Clause)
+
 ### Cykey
 * MediaRemote, MobileGestalt: [GNU GPL v3](https://github.com/Cykey/ios-reversed-headers/blob/master/LICENSE.txt)
 
