@@ -1,0 +1,16 @@
+module libhooker {
+  umbrella header "libhooker.h"
+
+  link "hooker"
+
+  export *
+  module * { export * }
+  
+  module libblackjack {
+      header "libblackjack.h"
+      
+      link "blackjack"
+      
+      export *
+  }
+}
