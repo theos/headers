@@ -1,6 +1,8 @@
+#import <Foundation/Foundation.h>
+
 @interface SBWorkspaceTransitionContext : NSObject
 
 @property (nonatomic, copy, readonly) NSSet *entities;
-@property (nonatomic, assign) BOOL animationDisabled; 
+@property (nonatomic, assign) BOOL animationDisabled;
 
 @end

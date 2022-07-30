@@ -1,3 +1,5 @@
+#import <CoreGraphics/CoreGraphics.h>
+
 @class UIKBRenderConfig;
 
 @interface UIKeyboardLayout : UIView

@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 @class PSSpecifier;
 
@@ -48,5 +49,9 @@ typedef NS_ENUM(NSInteger, PSCellType) {
 @property (nonatomic, retain, readonly) NSString *lazyIconAppID;
 
 @property (nonatomic, retain, readonly) UILabel *titleLabel;
+
+- (BOOL)isChecked API_AVAILABLE(ios(6.0));
+
+- (void)setChecked:(BOOL)checked API_AVAILABLE(ios(6.0));
 
 @end

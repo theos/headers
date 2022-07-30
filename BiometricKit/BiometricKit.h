@@ -4,7 +4,7 @@
 API_AVAILABLE(ios(7.0))
 @interface BiometricKit : NSObject
 
-+ (BiometricKit *)manager;
++ (instancetype)manager;
 
 @property (nonatomic, assign) id<BiometricKitDelegate> delegate;
 @property (assign) BOOL inUse;

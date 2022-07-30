@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 API_DEPRECATED_WITH_REPLACEMENT("SBVolumeControl", ios(2.0, 13.0))
 @interface VolumeControl : NSObject
 

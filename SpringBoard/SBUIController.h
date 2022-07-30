@@ -1,3 +1,6 @@
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 @class SBWallpaperView;
 
 @interface SBUIController : NSObject <UIGestureRecognizerDelegate>

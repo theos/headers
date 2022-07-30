@@ -2,5 +2,5 @@
 
 @protocol FSSwitchSettingsViewController <NSObject> // Must be a UIViewController subclass
 @optional
-- (id)initWithSwitchIdentifier:(NSString *)switchIdentifier;
+- (instancetype)initWithSwitchIdentifier:(NSString *)switchIdentifier;
 @end

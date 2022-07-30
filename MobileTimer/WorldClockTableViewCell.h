@@ -1,5 +1,7 @@
 // app
 
+#import <UIKit/UITableViewCell.h>
+
 @class WorldClockCity;
 
 @interface WorldClockTableViewCell : UITableViewCell

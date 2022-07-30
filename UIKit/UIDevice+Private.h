@@ -1,9 +1,12 @@
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 @interface UIDevice (Private)
 
-@property (nonatomic, readonly) BOOL _supportsForceTouch NS_AVAILABLE_IOS(8_0);
+@property (nonatomic, readonly) BOOL _supportsForceTouch API_AVAILABLE(ios(8.0));
 
 + (NSString *)modelSpecificLocalizedStringKeyForKey:(NSString *)key;
 
-- (NSInteger)_graphicsQuality NS_AVAILABLE_IOS(7_0);
+- (NSInteger)_graphicsQuality API_AVAILABLE(ios(7.0));
 
 @end

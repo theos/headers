@@ -2,6 +2,7 @@
 
 @class FBApplicationDefaults;
 
+API_AVAILABLE(ios(8.0))
 @interface FBApplicationInfo : FBBundleInfo
 
 @property (nonatomic, readonly, copy) NSString *applicationIdentifierEntitlement;

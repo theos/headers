@@ -3,23 +3,29 @@ There is no particular license on this repo. Files in this repo come from many s
 
 ## By Author
 ### Apple
-* IOKit headers: [Apple Public Source License](https://opensource.apple.com/license/apsl/)
-* MediaPlayer, Celestial headers: [2-Clause BSD License](https://github.com/WebKit/webkit/blob/master/Source/WebCore/LICENSE-APPLE)
+* IOKit: [Apple Public Source License](https://opensource.apple.com/license/apsl/)
+* MediaPlayer, Celestial: [2-Clause BSD License](https://github.com/WebKit/webkit/blob/master/Source/WebCore/LICENSE-APPLE)
 * launch.h: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 ### ashikase
-* IconSupport: ?
+* IconSupport: Unknown
 * libpackageinfo: [GNU GPL v3](https://github.com/ashikase/libpackageinfo/blob/master/LICENSE)
 * TechSupport: [GNU LGPL v3, Apache License 2](https://github.com/ashikase/TechSupport/blob/master/LICENSE)
 
+### CoolStar
+* libhooker & libblackjack: [3-Clause BSD License](http://opensource.org/licenses/BSD-3-Clause)
+
 ### Cykey
-* MediaRemote, MobileGestalt headers: [GNU GPL v3](https://github.com/Cykey/ios-reversed-headers/blob/master/LICENSE.txt)
+* MediaRemote, MobileGestalt: [GNU GPL v3](https://github.com/Cykey/ios-reversed-headers/blob/master/LICENSE.txt)
 
 ### Dustin Howett
 * libprefs: [GNU LGPL v3](https://github.com/DHowett/preferenceloader/blob/master/LICENSE)
 
 ### KennyTM
-* GraphicsServices, IOSurface, substrate2.h headers: [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause)
+* GraphicsServices, IOSurface, substrate2.h: [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause)
+
+### libarchive
+* libarchive: [2-Clause BSD License](https://opensource.org/licenses/BSD-2-Clause)
 
 ### OpenSSL
 * OpenSSL: [OpenSSL](https://www.openssl.org/source/license.html)
@@ -31,11 +37,15 @@ There is no particular license on this repo. Files in this repo come from many s
 * AppList: [GNU LGPL v2.1](https://github.com/rpetrich/AppList/blob/master/LICENSE)
 * CaptainHook: [MIT License](https://mit-license.org/)
 * libactivator: [GNU LGPL v2.1](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
-* LightMessaging: ?
-* RocketBootstrap: ?
+* LightMessaging: Unknown - used with permission
+* RocketBootstrap: Unknown - used with permission
 
 ### SaurikIT
 * Cydia Substrate: [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause)
+
+### SparkDev
+* libSparkAppList: [WTFPL v2.0](https://github.com/SparkDev97/libSparkAppList/blob/master/LICENSE.md)
+* libSparkColourPicker: [WTFPL v2.0](https://github.com/SparkDev97/libSparkColourPicker/blob/master/LICENSE.md)
 
 ### Other headers
 Headers that aren't from elsewhere are released into the Public Domain.

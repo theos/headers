@@ -292,7 +292,7 @@ static inline Class CHLoadClass_(CHClassDeclaration_ *declaration, Class value)
 	__builtin_memcpy(&sig[return_len+2+type1_len+type2_len+type3_len+type4_len+type5_len+type6_len+type7_len], type8_, type8_len); \
 	__builtin_memcpy(&sig[return_len+2+type1_len+type2_len+type3_len+type4_len+type5_len+type6_len+type7_len+type8_len], type9_, type9_len); \
 	sig[return_len+type1_len+type2_len+type3_len+type4_len+type5_len+type6_len+type7_len+type8_len+type9_len+2] = '\0';
-	
+
 #ifdef CHUseSubstrate
 #import <substrate.h>
 #define CHMethod_(return_type, class_type, class_name, class_val, super_class_val, name, sel, sigdef, supercall, args...) \
@@ -717,7 +717,7 @@ static void *CHIvar_(id object, const char *name)
 __attribute__((unused)) CHInline
 static void CHScopeReleased(id *sro)
 {
-    [*sro release];
+	[*sro release];
 }
 #define CHScopeReleased \
 	__attribute__((cleanup(CHScopeReleased)))

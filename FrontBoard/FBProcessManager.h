@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @class FBApplicationProcess, FBProcess;
 
 @interface FBProcessManager : NSObject

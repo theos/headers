@@ -1,4 +1,5 @@
 #import <CoreGraphics/CoreGraphics.h>
+#import <Foundation/Foundation.h>
 
 API_AVAILABLE(ios(7.0))
 @interface BiometricKitEnrollProgressCoordinates : NSObject

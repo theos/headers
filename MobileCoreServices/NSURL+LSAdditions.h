@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @interface NSURL (LSAdditions)
 
 - (nullable NSURL *)fmfURL;

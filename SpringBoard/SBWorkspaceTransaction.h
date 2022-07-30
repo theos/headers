@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @class SBWorkspaceTransitionRequest, FBSDisplay;
 
 @interface SBWorkspaceTransaction : NSObject

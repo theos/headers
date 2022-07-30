@@ -16,13 +16,23 @@
 extern "C" {
 #endif
 
+typedef enum 
+{ 
+    OPTION_DO_NOT_SEEK_BACK = 1 << 0
+} libundirect_find_options_t;
+
 // wrapper around to MSHookMessageEx to support hooking applied methods, accessed by theos directly if libundirect_hookoverwrite.h is included
 void libundirect_MSHookMessageEx(Class _class, SEL message, IMP hook, IMP *old);
 
 // readds a direct method back to the class, requiring the pointer to it
 void libundirect_rebind(void* directPtr, Class _class, SEL selector, const char* format);
 
+// seek back to byte
+void* libundirect_seek_back(void* startPtr, unsigned char toByte, unsigned int maxSearch);
+
 // find a direct method by searching for unique memory bytes
+void* libundirect_find_with_options_and_mask(NSString* imageName, unsigned char* bytesToSearch, unsigned char* byteMask, size_t byteCount, unsigned char startByte, unsigned int seekbackMax, libundirect_find_options_t options);
+void* libundirect_find_with_options(NSString* imageName, unsigned char* bytesToSearch, size_t byteCount, unsigned char startByte, unsigned int seekbackMax, libundirect_find_options_t options);
 void* libundirect_find(NSString* imageName, unsigned char* bytesToSearch, size_t byteCount, unsigned char startByte);
 
 // find a direct method inside dyld_shared_cache by it's name

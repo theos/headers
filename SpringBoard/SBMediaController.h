@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @class SBApplication;
 
 static NSString *const kSBNowPlayingInfoArtworkDataKey = @"artworkData";

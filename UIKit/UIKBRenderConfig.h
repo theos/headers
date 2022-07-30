@@ -4,10 +4,10 @@
 
 + (instancetype)darkConfig;
 + (instancetype)defaultConfig;
-+ (instancetype)defaultEmojiConfig NS_AVAILABLE_IOS(8_3);
++ (instancetype)defaultEmojiConfig API_AVAILABLE(ios(8.3));
 
-+ (instancetype)configForAppearance:(NSInteger)appearance NS_DEPRECATED_IOS(7_0, 8_3);
-+ (instancetype)configForAppearance:(NSInteger)appearance inputMode:(UIKeyboardInputMode *)inputMode NS_AVAILABLE_IOS(8_3);
++ (instancetype)configForAppearance:(NSInteger)appearance API_DEPRECATED("Removed in iOS 9", ios(7.0, 8.3));
++ (instancetype)configForAppearance:(NSInteger)appearance inputMode:(UIKeyboardInputMode *)inputMode API_AVAILABLE(ios(8.3));
 
 @property (assign) CGFloat keycapOpacity;
 

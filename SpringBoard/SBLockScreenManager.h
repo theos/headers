@@ -1,4 +1,6 @@
-@class SBLockScreenViewController;
+#import <Foundation/Foundation.h>
+
+@class SBLockScreenViewController, CSCoverSheetViewController;
 
 API_AVAILABLE(ios(7.0)) @interface SBLockScreenManager : NSObject
 

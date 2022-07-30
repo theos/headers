@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @class BiometricKitEnrollProgressInfo, BiometricKitIdentity;
 
 @protocol BiometricKitDelegate <NSObject>

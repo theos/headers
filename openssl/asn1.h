@@ -370,7 +370,7 @@ TYPEDEF_D2I2D_OF(void);
  *      ...
  *      ASN1_ITEM_EXP *iptr;
  *      ...
- * } SOMETHING; 
+ * } SOMETHING;
  *
  * It would be initialised as e.g.:
  *

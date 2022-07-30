@@ -2,6 +2,6 @@
 
 @interface FBSMutableSceneSettings : FBSSceneSettings
 
-@property (nonatomic, assign, getter=isBackgrounded) BOOL backgrounded; 
+@property (nonatomic, assign, getter=isBackgrounded) BOOL backgrounded;
 
 @end

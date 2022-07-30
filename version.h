@@ -56,9 +56,17 @@
  * 14.3     1770.300
  * 14.4     1774.101
  * 14.5     1775.118
+ * 14.6     1776.103
+ * 14.7     1777.103
+ * 14.8     1778.101
+ * 15.0     1854
+ * 15.1     1855.105
+ * 15.2     1856.105
+ * 15.3     1856.105
+ * 15.4     1858.112
  *
  * Reference:
- * http://iphonedevwiki.net/index.php/CoreFoundation.framework#Versions
+ * https://iphonedev.wiki/index.php/CoreFoundation.framework#Versions
  */
 
 // iOS 2.0 – 4.2 are defined in <CoreFoundation/CFBase.h>. The format prior to 4.0 is
@@ -253,6 +261,38 @@
 
 #ifndef kCFCoreFoundationVersionNumber_iOS_14_5
 #define kCFCoreFoundationVersionNumber_iOS_14_5 1775.118
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_14_6
+#define kCFCoreFoundationVersionNumber_iOS_14_6 1776.103
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_14_7
+#define kCFCoreFoundationVersionNumber_iOS_14_7 1777.103
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_14_8
+#define kCFCoreFoundationVersionNumber_iOS_14_8 1778.101
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_15_0
+#define kCFCoreFoundationVersionNumber_iOS_15_0 1854
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_15_1
+#define kCFCoreFoundationVersionNumber_iOS_15_1 1855.105
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_15_2
+#define kCFCoreFoundationVersionNumber_iOS_15_2 1856.105
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_15_3
+#define kCFCoreFoundationVersionNumber_iOS_15_3 1856.105
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_15_4
+#define kCFCoreFoundationVersionNumber_iOS_15_4 1858.112
 #endif
 
 #ifndef kCFCoreFoundationVersionNumber10_10

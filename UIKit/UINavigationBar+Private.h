@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @interface UINavigationBar (Private)
 
 @property (nonatomic, retain) NSArray *navigationItems;

@@ -1,4 +1,4 @@
-#import <UIKit/UIControl.h>
+#import <UIKit/UIKit.h>
 #import "FSSwitchState.h"
 #import "FSSwitchSettingsViewController.h"
 
@@ -6,7 +6,7 @@
 
 @interface FSSwitchPanel : NSObject
 
-+ (FSSwitchPanel *)sharedPanel;
++ (instancetype)sharedPanel;
 
 @property (nonatomic, readonly, copy) NSArray *switchIdentifiers;
 // Returns a list of identifying all switches installed on the device
