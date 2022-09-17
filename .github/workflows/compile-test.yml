@@ -5,12 +5,13 @@ on:
 
 jobs:
   compile-headers:
-    runs-on: macos-latest
     strategy:
       fail-fast: false
       matrix:
+        runner: ["ubuntu-latest", "macos-latest"]
         language: ["objective-c", "objective-c++"]
         cflags: ["", "-fobjc-arc"]
+    runs-on: ${{ matrix.runner }}
     steps:
       - name: Checkout theos/sdks
         uses: actions/checkout@v3
