@@ -1,0 +1,43 @@
+name: Compile Test
+
+on:
+  push:
+
+jobs:
+  compile-headers:
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ["objective-c", "objective-c++"]
+        cflags: ["", "-fobjc-arc"]
+    steps:
+      - name: Checkout theos/sdks
+        uses: actions/checkout@v3
+        with:
+          repository: theos/sdks
+          ref: fd931ca723ee46994ad9f73c2f0929d1ab9732ca # pinned, should be updated as appropriate
+          path: sdks
+
+      - name: Checkout theos/headers
+        uses: actions/checkout@v3
+        with:
+          path: headers
+
+      - name: Compile All
+        run: |
+          HEADER_DIR="headers"
+          # cut to drop the leading directory
+          for HEADER in $(find "${HEADER_DIR}" -name "*.h" | cut -c"$(( ${#HEADER_DIR} + 2))"-); do
+            COMPILE_FILE="a.m"
+            {
+              # Eventually we want to not require UIKit, but we're not there yet
+              echo "#import <UIKit/UIKit.h>"
+              echo "#import <${HEADER}>"
+              echo "int main() {}"
+            } > "${COMPILE_FILE}"
+            clang -I "${HEADER_DIR}" -isysroot sdks/iPhoneOS14.5.sdk \
+              -target arm64-apple-ios15.4 -arch arm64 \
+              -x "${{ matrix.language }}" ${{ matrix.cflags }} \
+              -fsyntax-only "${COMPILE_FILE}"
+          done
