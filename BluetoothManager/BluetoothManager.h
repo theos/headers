@@ -54,6 +54,8 @@ API_AVAILABLE(ios(5.0))
 - (void)disconnectDevice:(BluetoothDevice *)device;
 - (void)unpairDevice:(BluetoothDevice *)device;
 
+- (void)postNotification:(NSString *)notification;
+
 - (NSString *)localAddress;
 
 @end
