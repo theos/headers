@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <SpringBoard/SBIconImageInfo.h>
 
 API_AVAILABLE(ios(13.0))
