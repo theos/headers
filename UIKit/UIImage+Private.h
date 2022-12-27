@@ -18,7 +18,7 @@ FOUNDATION_EXPORT UIImage *_UIImageWithName(NSString *name);
 
 - (instancetype)_applicationIconImageForFormat:(MIIconVariant)format precomposed:(BOOL)precomposed scale:(CGFloat)scale;
 
-- (instancetype)_flatImageWithColor:(UIColor *)color;
+- (instancetype)_flatImageWithColor:(UIColor *)color API_AVAILABLE(ios(7.0));
 
 - (BOOL)writeToCPBitmapFile:(NSString *)filename flags:(NSInteger)flags; // TODO: make this an enum
 
