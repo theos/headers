@@ -1,4 +1,4 @@
-// Copyright (c) 2020-2021 Lars Fröder
+// Copyright (c) 2020-2022 Lars Fröder
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -40,6 +40,15 @@ void* libundirect_dsc_find(NSString* imageName, Class _class, SEL selector);
 
 // find a direct method inside dyld_shared_cache by it's name and rebind it (convenience)
 void libundirect_dsc_rebind(NSString* imageName, Class _class, SEL selector, const char* format);
+
+// instead of directly hooking, make all libundirect_MSHookMessageEx calls add to a batch queue
+void libundirect_startBatchHooks(void);
+
+// apply all hooks in batch queue in one shot using libhooker API if it exists
+void libundirect_applyBatchHooks(void);
+
+// apply all hooks in batch queue in one shot together with passed additional ones using libhooker API if it exists
+void libundirect_applyBatchHooksAndAdditional(const struct LHFunctionHook* additionalHooks, NSUInteger additionalCount);
 
 // selectors that failed to be added
 NSArray* libundirect_failedSelectors();
