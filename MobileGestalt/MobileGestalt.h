@@ -52,7 +52,7 @@ FOUNDATION_EXPORT CF_RETURNS_RETAINED CFStringRef MGGetStringAnswer(CFStringRef 
  */
 FOUNDATION_EXPORT int MGSetAnswer(CFStringRef question, CFTypeRef answer);
 
-#pragma mark - Keys 
+#pragma mark - Keys
 
 static const CFStringRef kMG3GProximityCapability = CFSTR("3GProximityCapability");
 static const CFStringRef kMG3GVeniceCapability = CFSTR("3Gvenice");
