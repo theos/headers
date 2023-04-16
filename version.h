@@ -64,6 +64,9 @@
  * 15.2     1856.105
  * 15.3     1856.105
  * 15.4     1858.112
+ * 16.0     1946.102
+ * 16.1     1953.1
+ * 16.4     1971
  *
  * Reference:
  * https://iphonedev.wiki/index.php/CoreFoundation.framework#Versions
