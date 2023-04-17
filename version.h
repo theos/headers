@@ -64,6 +64,9 @@
  * 15.2     1856.105
  * 15.3     1856.105
  * 15.4     1858.112
+ * 16.0     1946.102
+ * 16.1     1953.1
+ * 16.4     1971
  *
  * Reference:
  * https://iphonedev.wiki/index.php/CoreFoundation.framework#Versions
@@ -293,6 +296,18 @@
 
 #ifndef kCFCoreFoundationVersionNumber_iOS_15_4
 #define kCFCoreFoundationVersionNumber_iOS_15_4 1858.112
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_16_0
+#define kCFCoreFoundationVersionNumber_iOS_16_0 1946.102
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_16_1
+#define kCFCoreFoundationVersionNumber_iOS_16_1 1953.1
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_16_4
+#define kCFCoreFoundationVersionNumber_iOS_16_4 1971
 #endif
 
 #ifndef kCFCoreFoundationVersionNumber10_10
