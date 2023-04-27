@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: theos/sdks
-          ref: fd931ca723ee46994ad9f73c2f0929d1ab9732ca # pinned, should be updated as appropriate
+          ref: bb425abf3acae8eac328b828628b82df544d2774 # pinned, should be updated as appropriate
           path: sdks
 
       - name: Checkout theos/headers
@@ -38,7 +38,7 @@ jobs:
               echo "int main() {}"
             } > "${COMPILE_FILE}"
             clang -I "${HEADER_DIR}" -isysroot sdks/iPhoneOS14.5.sdk \
-              -target arm64-apple-ios15.4 -arch arm64 \
+              -target arm64-apple-ios14.5 -arch arm64 \
               -x "${{ matrix.language }}" ${{ matrix.cflags }} \
               -fsyntax-only "${COMPILE_FILE}"
           done
