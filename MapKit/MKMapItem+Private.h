@@ -1,3 +1,5 @@
+#import <MapKit/MKMapItem.h>
+
 @class MKPlacemark;
 
 typedef void (^MKMapItemItemsFromHandleCompletion)(NSArray <NSURL *> *items);

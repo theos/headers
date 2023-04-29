@@ -1,6 +1,6 @@
 #import <AddressBook/AddressBook.h>
 
-@class BBAction, BBSectionIcon, BBSectionParameters, BBSectionSubtypeParameters;
+@class BBAction, BBContent, BBSectionIcon, BBSectionParameters, BBSectionSubtypeParameters;
 
 typedef NS_ENUM(NSUInteger, BBBulletinAccessoryStyle) {
 	BBBulletinAccessoryStyleNone,

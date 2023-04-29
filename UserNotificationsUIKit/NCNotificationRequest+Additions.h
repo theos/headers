@@ -1,3 +1,5 @@
+#import <UserNotificationsKit/NCNotificationRequest.h>
+
 @class BBBulletin;
 
 @interface NCNotificationRequest (Additions)
