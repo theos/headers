@@ -27,9 +27,37 @@ jobs:
 
       - name: Compile All
         run: |
+          UNCHECKED_DIRECTORIES=(
+              "IOKit"
+              "openssl"
+          )
+          UNCHECKED_FILES=(
+              "QuartzCore/QuartzCore-Structs.h" # known to not work
+              "rocketbootstrap/rocketbootstrap_dynamic.h" # noted to not include directly
+              "libundirect/libundirect_hookoverwrite.h" # user's responsibility to include either the base or dynamic header
+          )
+
           HEADER_DIR="headers"
           # cut to drop the leading directory
           for HEADER in $(find "${HEADER_DIR}" -name "*.h" | cut -c"$(( ${#HEADER_DIR} + 2))"-); do
+            IS_UNCHECKED="false"
+            
+            for UNCHECKED_DIRECTORY in "${UNCHECKED_DIRECTORIES[@]}"; do
+                if [[ "${HEADER}" == "${UNCHECKED_DIRECTORY}"/* ]]; then
+                        IS_UNCHECKED="true"
+                        break
+                fi
+            done
+            for UNCHECKED_FILE in "${UNCHECKED_FILES[@]}"; do
+                if [[ "${HEADER}" == "${UNCHECKED_FILE}" ]]; then
+                        IS_UNCHECKED="true"
+                        break
+                fi
+            done
+            if [[ "${IS_UNCHECKED}" == "true" ]]; then
+                continue
+            fi
+            
             COMPILE_FILE="a.m"
             {
               # Eventually we want to not require UIKit, but we're not there yet
