@@ -1,6 +1,5 @@
-#import <UIKit/UKit.h>
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import <CoreHaptics/CoreGraphics.h>
 #import "CCUICAPackageDescription.h"
 #import "CCUIRoundButton.h"
 

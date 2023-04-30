@@ -1,4 +1,6 @@
-@class CNEmailAddressContactPredicate, CNPhoneNumberContactPredicate;
+#import <Contacts/CNContact.h>
+
+@class CNEmailAddressContactPredicate, CNPhoneNumberContactPredicate, CNPhoneNumber;
 
 @interface CNContact (Private)
 

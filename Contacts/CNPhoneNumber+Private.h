@@ -1,3 +1,5 @@
+#import <Contacts/CNPhoneNumber.h>
+
 @interface CNPhoneNumber (Private)
 
 @property (nonatomic, readonly, copy) NSString *countryCode;
