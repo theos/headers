@@ -16,7 +16,7 @@ FOUNDATION_EXPORT NSString *const FBSOpenApplicationOptionKeyActivateSuspended;
 - (void)sendActions:(NSSet <BSAction *> *)actions withResult:(FBSSystemServiceResultCallback)result;
 - (void)openURL:(NSURL *)url application:(NSString *)bundleIdentifier options:(NSDictionary <NSString *, id> *)options clientPort:(mach_port_t)clientPort withResult:(FBSSystemServiceResultCallback)callback;
 - (void)openApplication:(NSString *)app options:(NSDictionary *)options withResult:(void (^)(void))result;
-- (void)shutdown;
-- (void)reboot;
+- (void)shutdown API_AVAILABLE(ios(8.0));
+- (void)reboot API_AVAILABLE(ios(8.0));
 
 @end
