@@ -53,15 +53,13 @@ jobs:
               fi
             done
             
-            COMPILE_FILE="source"
             {
               # Eventually we want to not require UIKit, but we're not there yet
               echo "#import <UIKit/UIKit.h>"
               echo "#import <${HEADER}>"
               echo "int main() {}"
-            } > "${COMPILE_FILE}"
-            clang -I "${HEADER_DIR}" -isysroot sdks/iPhoneOS14.5.sdk \
+            } | clang -I "${HEADER_DIR}" -isysroot sdks/iPhoneOS14.5.sdk \
               -target arm64-apple-ios14.5 -arch arm64 \
               -x "${{ matrix.language }}" ${{ matrix.cflags }} \
-              -fsyntax-only "${COMPILE_FILE}"
+              -fsyntax-only -
           done
