@@ -4,7 +4,7 @@
 #ifdef XINA_SUPPORT // Only define this for rootful compilations that need support for xina
 #define ROOT_PATH(cPath) !access("/var/LIY", F_OK) ? "/var/jb" cPath : cPath
 #define ROOT_PATH_NS(path) !access("/var/LIY", F_OK) ? @"/var/jb" path : path
-#define ROOT_PATH_NS_VAR !access("/var/LIY", F_OK) ? [@"/var/jb" stringByAppendingPathComponent:path] : path
+#define ROOT_PATH_NS_VAR(path) !access("/var/LIY", F_OK) ? [@"/var/jb" stringByAppendingPathComponent:path] : path
 #define ROOT_PATH_VAR(path) !access("/var/LIY", F_OK) ? ({ \
 	char outPath[PATH_MAX]; \
 	strlcpy(outPath, "/var/jb", PATH_MAX); \
