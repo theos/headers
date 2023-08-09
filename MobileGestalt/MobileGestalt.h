@@ -3,6 +3,7 @@
  * Mobile gestalt functions as a QA system. You ask it a question, and it gives you the answer! :)
  *
  * Copyright (c) 2013-2014 Cykey (David Murray)
+ * Rewrite by Daniel Levi (2023)
  * All rights reserved.
  */
 
