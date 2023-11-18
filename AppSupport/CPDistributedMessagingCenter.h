@@ -1,3 +1,8 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSString.h>
+#import <Foundation/NSDictionary.h>
+#import <Foundation/NSError.h>
+
 @interface CPDistributedMessagingCenter : NSObject
 
 + (instancetype)centerNamed:(NSString *)name;
