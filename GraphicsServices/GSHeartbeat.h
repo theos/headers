@@ -1,5 +1,5 @@
 /*
- 
+
 FILE_NAME ... FILE_DESCRIPTION
 
 Copyright (c) 2009  KennyTM~ <kennytm@gmail.com>
@@ -10,7 +10,7 @@ are permitted provided that the following conditions are met:
 
 * Redistributions of source code must retain the above copyright notice, this
   list of conditions and the following disclaimer.
-* Redistributions in binary form must reproduce the above copyright notice, 
+* Redistributions in binary form must reproduce the above copyright notice,
   this list of conditions and the following disclaimer in the documentation
   and/or other materials provided with the distribution.
 * Neither the name of the KennyTM~ nor the names of its contributors may be
@@ -35,6 +35,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <CoreGraphics/CoreGraphics.h>
 #include <sys/cdefs.h>
+#include <CoreFoundation/CoreFoundation.h>
 
 __BEGIN_DECLS
 
@@ -43,10 +44,10 @@ __BEGIN_DECLS
  @brief Calls function when display updates
  @author Kenny TM~
  @date 2009 Sept 24
- 
+
  GSHeartbeat is an API that allows you to register a callback function when the display is updated. It has the same
  purpose as CADisplayLink, but have different origin.
- 
+
  */
 
 typedef struct __GSHeartbeat *GSHeartbeatRef;

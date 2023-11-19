@@ -1,4 +1,5 @@
 #import "UIKeyboardInputMode.h"
+#import <UIKit/UIInputViewController.h>
 
 @interface UICompatibilityInputViewController : UIInputViewController
 

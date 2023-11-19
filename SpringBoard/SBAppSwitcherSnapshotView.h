@@ -1,3 +1,6 @@
+#import <UIKit/UIView.h>
+#import <UIKit/UIImage.h>
+
 @class SBDisplayItem, _SBAppSwitcherSnapshotContext, XBApplicationSnapshot;
 
 @interface SBAppSwitcherSnapshotView : UIView

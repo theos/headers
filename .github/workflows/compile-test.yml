@@ -18,6 +18,7 @@ jobs:
         with:
           repository: theos/sdks
           ref: bb425abf3acae8eac328b828628b82df544d2774 # pinned, should be updated as appropriate
+          sparse-checkout: iPhoneOS14.5.sdk
           path: sdks
 
       - name: Checkout theos/headers
@@ -36,30 +37,25 @@ jobs:
             "rocketbootstrap/rocketbootstrap_dynamic.h" # noted to not include directly
             "libundirect/libundirect_hookoverwrite.h" # user's responsibility to include either the base or dynamic header
           )
-          
+
           HEADER_DIR="headers"
           # cut to drop the leading directory
           for HEADER in $(find "${HEADER_DIR}" -name "*.h" | cut -c"$(( ${#HEADER_DIR} + 2))"-); do
-            
+
             for UNCHECKED_DIRECTORY in "${UNCHECKED_DIRECTORIES[@]}"; do
               if [[ "${HEADER}" == "${UNCHECKED_DIRECTORY}"/* ]]; then
                 continue 2
               fi
             done
-            
+
             for UNCHECKED_FILE in "${UNCHECKED_FILES[@]}"; do
               if [[ "${HEADER}" == "${UNCHECKED_FILE}" ]]; then
                 continue 2
               fi
             done
-            
-            {
-              # Eventually we want to not require UIKit, but we're not there yet
-              echo "#import <UIKit/UIKit.h>"
-              echo "#import <${HEADER}>"
-              echo "int main() {}"
-            } | clang -I "${HEADER_DIR}" -isysroot sdks/iPhoneOS14.5.sdk \
-              -target arm64-apple-ios14.5 -arch arm64 \
-              -x "${{ matrix.language }}" ${{ matrix.cflags }} \
-              -fsyntax-only -
+
+            clang -I "${HEADER_DIR}" -isysroot sdks/iPhoneOS14.5.sdk \
+                -target arm64-apple-ios14.5 -arch arm64 \
+                -x "${{ matrix.language }}" ${{ matrix.cflags }} \
+                -stdlib=libc++ -fsyntax-only "${HEADER_DIR}/${HEADER}"
           done

@@ -1,3 +1,5 @@
+#import <QuartzCore/CALayer.h>
+
 @interface CKTypingIndicatorLayer : CALayer
 
 - (void)startGrowAnimation;

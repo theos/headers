@@ -1,4 +1,5 @@
 #import <UIKit/UIView.h>
+#import <UIKit/UIApplication.h>
 
 @class SBApplication, FBSDisplay;
 

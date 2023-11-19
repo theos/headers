@@ -1,3 +1,6 @@
+#import <Foundation/NSObjCRuntime.h>
+#import <Foundation/NSObject.h>
+
 @class SBApplication, SBAppViewController;
 
 @protocol SBAppViewControllerDelegate <NSObject>

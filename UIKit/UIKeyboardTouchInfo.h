@@ -1,4 +1,5 @@
 #import "UIKBTree.h"
+#import <UIKit/UITouch.h>
 
 @interface UIKeyboardTouchInfo : NSObject
 

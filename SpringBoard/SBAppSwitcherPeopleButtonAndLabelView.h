@@ -1,3 +1,6 @@
+#import <UIKit/UIView.h>
+#import <UIKit/UIImage.h>
+
 @interface SBAppSwitcherPeopleButtonAndLabelView : UIView
 
 - (instancetype)initWithFrame:(CGRect)frame forMonogramSize:(CGFloat)monogramSize compact:(BOOL)compact;

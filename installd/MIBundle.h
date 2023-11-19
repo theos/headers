@@ -1,3 +1,11 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSError.h>
+#import <Foundation/NSURL.h>
+#import <Foundation/NSString.h>
+#import <Foundation/NSObjCRuntime.h>
+#import <Foundation/NSArray.h>
+#import <Foundation/NSDictionary.h>
+
 typedef NS_ENUM(NSInteger, MIBundleType) {
 	MIBundleTypeSystemApp = 1,
 	MIBundleTypeInternalApp,

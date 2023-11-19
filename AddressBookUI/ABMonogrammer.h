@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import <UIKit/UIImage.h>
 
 typedef NS_ENUM(NSUInteger, ABMonogrammerStyle) {
 	ABMonogrammerStyleLightGray,

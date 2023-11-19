@@ -1,4 +1,5 @@
 #import "SBAppSwitcherScrollingViewDelegate.h"
+#import <UIKit/UIViewController.h>
 
 @class SBAppSwitcherPageViewController;
 

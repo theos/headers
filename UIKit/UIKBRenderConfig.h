@@ -1,4 +1,5 @@
 #import "UIKeyboardInputMode.h"
+#import <CoreGraphics/CoreGraphics.h>
 
 @interface UIKBRenderConfig : NSObject
 

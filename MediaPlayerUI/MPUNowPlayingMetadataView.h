@@ -1,3 +1,5 @@
+#import <UIKit/UIView.h>
+
 @interface MPUNowPlayingMetadataView : UIView
 
 @property (nonatomic, copy) NSAttributedString *attributedText;

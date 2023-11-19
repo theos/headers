@@ -1,3 +1,5 @@
+#import <Foundation/NSObject.h>
+
 @class SBControlColorSettings;
 
 @interface SBNotificationControlColorSettings : NSObject

@@ -1,4 +1,5 @@
 #import "UICompatibilityInputViewController.h"
+#import <UIKit/UIInputViewController.h>
 
 @interface UIInputViewController (Private)
 

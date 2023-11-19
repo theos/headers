@@ -1,3 +1,5 @@
+#import <UIKit/UITableViewController.h>
+
 @class CKConversation;
 
 @interface CKTranscriptRecipientsController : UITableViewController

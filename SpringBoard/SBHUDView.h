@@ -1,3 +1,6 @@
+#import <UIKit/UIView.h>
+#import <UIKit/UIImage.h>
+
 @interface SBHUDView : UIView
 
 + (CGFloat)progressIndicatorStep;

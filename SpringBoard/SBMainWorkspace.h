@@ -1,4 +1,5 @@
 #import "SBWorkspace.h"
+#import <CoreGraphics/CoreGraphics.h>
 
 @class FBSceneManager;
 

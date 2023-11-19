@@ -1,3 +1,6 @@
+#import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
+
 @protocol SBAppSwitcherPeopleDataSourceConsumer;
 
 @protocol SBAppSwitcherPeopleDataSource <NSObject>

@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-#import <CoreGraphics/CoreGraphics.h>
 
 @interface UIColor (Private)
 

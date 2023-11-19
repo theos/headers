@@ -1,3 +1,5 @@
+#import <UIKit/UITableViewController.h>
+
 @class SBNotificationsBulletinInfo, SBNotificationCenterSectionInfo;
 
 @interface SBBulletinViewController : UITableViewController

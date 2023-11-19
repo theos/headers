@@ -1,3 +1,5 @@
+#import <UIKit/UIViewController.h>
+
 @class ABMonogrammer;
 @protocol SBAppSwitcherPeopleDataSource;
 

@@ -1,4 +1,5 @@
-#import <Foundation/Foundation.h>
+#import <UIKit/UIView.h>
+#import <UIKit/UIImage.h>
 
 @class TPRevealingRingView;
 

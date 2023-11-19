@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import <UIKit/UIDevice.h>
 
 // this enum was reversed out of iOS 10.2, not clear if it's ABI stable
 typedef enum {

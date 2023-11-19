@@ -1,3 +1,6 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSString.h>
+
 @interface SBDisplayItem : NSObject
 
 @property (nonatomic, retain, readonly) NSString *type;

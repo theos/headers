@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import <UIKit/UIView.h>
 
 typedef NS_ENUM(NSUInteger, SBWallpaperVariant) {
 	SBWallpaperVariantStaticWallpaper

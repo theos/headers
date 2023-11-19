@@ -1,3 +1,5 @@
+#include <stdbool.h>
+
 @class SBAppSwitcherPageViewController, SBDisplayItem, SBDisplayLayout;
 
 @protocol SBAppSwitcherScrollingViewDelegate

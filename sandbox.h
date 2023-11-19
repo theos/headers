@@ -1,5 +1,7 @@
-#include_next <sandbox.h>
+// #include_next <sandbox.h>
 #include <mach/message.h>
+#include <stdio.h>
+#include <unistd.h>
 
 // courtesy of clang
 // https://github.com/applesrc/clang/blob/bb8f644/src/projects/compiler-rt/lib/sanitizer_common/sanitizer_mac_spi.cc

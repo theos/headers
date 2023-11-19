@@ -1,3 +1,7 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSString.h>
+#import <Foundation/NSObjCRuntime.h>
+
 @class BSMachPortTaskNameRight;
 
 @interface BSProcessHandle : NSObject

@@ -1,4 +1,3 @@
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 #define UIWindowLevelNotificationCenter 1056.f

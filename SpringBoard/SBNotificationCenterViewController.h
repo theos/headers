@@ -1,3 +1,5 @@
+#import <UIKit/UIViewController.h>
+
 @class SBBulletinObserverViewController;
 
 @interface SBNotificationCenterViewController : UIViewController

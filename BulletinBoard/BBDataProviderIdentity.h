@@ -1,3 +1,7 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSString.h>
+#import <Foundation/NSArray.h>
+
 @class BBDataProvider, BBSectionInfo, BBSectionParameters;
 
 @interface BBDataProviderIdentity : NSObject

@@ -1,4 +1,6 @@
-#import <Foundation/Foundation.h>
+#import <Foundation/NSObject.h>
+#import <Foundation/NSString.h>
+#import <Foundation/NSObjCRuntime.h>
 
 typedef NS_ENUM(NSUInteger, BSDeviceClass) {
 	BSDeviceClassIPhone,

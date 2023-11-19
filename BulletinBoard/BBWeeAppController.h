@@ -1,3 +1,6 @@
+#import <UIKit/UIView.h>
+#import <UIKit/UIApplication.h>
+
 @protocol BBWeeAppController
 
 - (UIView *)view;

@@ -1,3 +1,5 @@
+#import <Foundation/NSObjCRuntime.h>
+
 @class SBAppSliderScrollingViewController;
 
 @protocol SBAppSliderScrollingViewDelegate

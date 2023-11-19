@@ -1,3 +1,5 @@
+#import <UIKit/UIView.h>
+
 @protocol SBLockScreenNotificationModel;
 
 @interface SBLockScreenNotificationListView : UIView

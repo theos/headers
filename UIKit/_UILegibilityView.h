@@ -1,4 +1,5 @@
 #import "_UILegibilitySettings.h"
+#import <UIKit/UIView.h>
 
 @interface _UILegibilityView : UIView
 

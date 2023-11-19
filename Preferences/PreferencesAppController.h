@@ -1,3 +1,5 @@
+#import <UIKit/UIApplication.h>
+
 @class PSUIPrefsRootController;
 
 @interface PreferencesAppController : UIApplication/*this is from Preferences.app, not framework*/

@@ -1,3 +1,6 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSObjCRuntime.h>
+
 @class BBObserver, BBBulletinRequest, BBBulletin;
 
 @interface SBBulletinBannerController : NSObject

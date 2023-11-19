@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
 #import "CCUICAPackageDescription.h"
 #import "CCUIRoundButton.h"
 

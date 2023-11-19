@@ -1,4 +1,5 @@
-#import <Foundation/Foundation.h>
+#import <Foundation/NSBundle.h>
+#import <CoreFoundation/CoreFoundation.h>
 
 @interface NSBundle (Private)
 

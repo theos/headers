@@ -1,3 +1,6 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSObjCRuntime.h>
+
 typedef NS_OPTIONS(NSUInteger, BBSectionInfoPushSettings) {
 	BBSectionInfoPushSettingsBadges = 1 << 0,
 	BBSectionInfoPushSettingsSounds = 1 << 1,

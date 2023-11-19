@@ -1,3 +1,5 @@
+#import <Foundation/NSObject.h>
+
 @interface BBSectionSubtypeParameters : NSObject
 
 @property (nonatomic) BOOL allowsAddingToLockScreenWhenUnlocked;

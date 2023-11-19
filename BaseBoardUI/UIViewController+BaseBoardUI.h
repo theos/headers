@@ -1,3 +1,5 @@
+#import <UIKit/UIViewController.h>
+
 @interface UIViewController (BaseBoardUI)
 
 - (BOOL)bs_addChildViewController:(UIViewController *)childController;

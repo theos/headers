@@ -1,3 +1,8 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSDictionary.h>
+#import <Foundation/NSString.h>
+#import <Foundation/NSObjCRuntime.h>
+
 @interface APSMessage : NSObject <NSCoding>
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;

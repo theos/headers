@@ -1,3 +1,5 @@
+#import <UIKit/UIView.h>
+
 @interface CKTranscriptTypingIndicatorCell : UIView
 
 - (void)startPulseAnimation;

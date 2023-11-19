@@ -1,3 +1,5 @@
+#import <Foundation/NSObject.h>
+
 @protocol BBDataProvider;
 
 @interface BBLocalDataProviderStore : NSObject

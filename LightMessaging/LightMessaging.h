@@ -324,7 +324,7 @@ static inline kern_return_t LMSendCFDataReply(mach_port_t replyPort, CFDataRef d
 }
 
 #ifdef __OBJC__
-
+#import <Foundation/Foundation.h>
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 static inline id LMPropertyListForData(NSData *data)
 {

@@ -1,3 +1,6 @@
+#import <Foundation/NSObject.h>
+#import <CoreGraphics/CoreGraphics.h>
+
 @interface BBThumbnailSizeConstraints : NSObject
 
 @property (nonatomic) CGFloat fixedWidth;

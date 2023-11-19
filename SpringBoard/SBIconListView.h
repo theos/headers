@@ -1,6 +1,6 @@
 #import <SpringBoardHome/SBHIconGridSize.h>
 #import <SpringBoardHome/SBHIconGridSizeClass.h>
-#import <CoreGraphics/CoreGraphics.h>
+#import <UIKit/UIView.h>
 
 API_AVAILABLE(ios(4.0))
 @interface SBIconListView : UIView

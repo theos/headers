@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import <UIKit/UIScreen.h>
 
 @interface UIKBScreenTraits : NSObject
 

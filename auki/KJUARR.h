@@ -1,3 +1,6 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSArray.h>
+
 @class BBBulletin;
 
 @interface KJUARR : NSObject

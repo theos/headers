@@ -1,3 +1,5 @@
+#import <UIKit/UIWindow.h>
+
 @interface UIDebuggingInformationOverlay : UIWindow
 
 + (instancetype)overlay;

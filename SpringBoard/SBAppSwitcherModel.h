@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @class SBDisplayItem, SBDisplayLayout;
 
 @interface SBAppSwitcherModel : NSObject

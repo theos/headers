@@ -1,4 +1,5 @@
 #import "SBAppSliderScrollingViewDelegate.h"
+#import <UIKit/UIViewController.h>
 
 @class SBAppSliderScrollingViewController;
 

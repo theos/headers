@@ -1,3 +1,5 @@
+#import <UIKit/UIViewController.h>
+
 @class BBObserver, BBBulletin;
 
 @interface SBLockScreenNotificationListController : UIViewController

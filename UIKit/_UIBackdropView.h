@@ -1,6 +1,4 @@
 #import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
 
 @class _UIBackdropViewSettings, _UIBackdropEffectView, CABackdropLayer;
 

@@ -1,3 +1,5 @@
+#import <UIKit/UIActivityViewController.h>
+
 @class _UIActivityGroupListViewController;
 
 @interface UIActivityViewController (Private)

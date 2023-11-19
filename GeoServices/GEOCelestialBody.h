@@ -1,3 +1,5 @@
+#import <Foundation/NSObjCRuntime.h>
+
 typedef NS_ENUM(NSInteger, GEOCelestialBody) {
     GEOCelestialBodySun,
     GEOCelestialBodyMercury,

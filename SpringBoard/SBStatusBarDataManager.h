@@ -1,3 +1,5 @@
+#import <Foundation/NSObject.h>
+
 typedef struct {
     char timeString[64];
 } SBStatusBarData;
