@@ -11,7 +11,6 @@ jobs:
         runner: ["ubuntu-latest", "macos-latest"]
         language: ["objective-c", "objective-c++"]
         cflags: ["", "-fobjc-arc"]
-        cxxflags: ["", "-stdlib=libc++"]
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Checkout theos/sdks
@@ -39,6 +38,11 @@ jobs:
             "libundirect/libundirect_hookoverwrite.h" # user's responsibility to include either the base or dynamic header
           )
 
+          ADDITIONAL_FLAGS=""
+          if [[ "${{ matrix.language }}" == *"++"* ]]; then
+            ADDITIONAL_FLAGS="-stdlib=libc++"
+          fi
+
           HEADER_DIR="headers"
           # cut to drop the leading directory
           for HEADER in $(find "${HEADER_DIR}" -name "*.h" | cut -c"$(( ${#HEADER_DIR} + 2))"-); do
@@ -57,7 +61,6 @@ jobs:
 
             clang -I "${HEADER_DIR}" -isysroot sdks/iPhoneOS14.5.sdk \
                 -target arm64-apple-ios14.5 -arch arm64 \
-                -x "${{ matrix.language }}" ${{ matrix.cflags }} \
-                $( [[ "${{ matrix.language }}" == *"++"* ]] && echo "${{ matrix.cxxflags }}" ) \
-                -fsyntax-only "${HEADER_DIR}/${HEADER}"
+                -x "${{ matrix.language }}" "${{ matrix.cflags }}" \
+                "${ADDITIONAL_FLAGS}" -fsyntax-only "${HEADER_DIR}/${HEADER}"
           done
