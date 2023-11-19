@@ -1,4 +1,4 @@
-// #include_next <sandbox.h>
+#include_next <sandbox.h>
 #include <mach/message.h>
 #include <stdio.h>
 #include <unistd.h>
