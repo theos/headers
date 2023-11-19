@@ -1,4 +1,6 @@
-#include_next <sandbox.h>
+#if __has_include_next(<sandbox.h>)
+#   include_next <sandbox.h>
+#endif
 #include <mach/message.h>
 #include <stdio.h>
 #include <unistd.h>
