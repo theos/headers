@@ -64,6 +64,6 @@ jobs:
               echo "int main() {}"
             } | clang -I "${HEADER_DIR}" -isysroot sdks/iPhoneOS14.5.sdk \
               -target arm64-apple-ios14.5 -arch arm64 \
-              -x "${{ matrix.language }}" "${{ matrix.cflags }}" \
-              "${ADDITIONAL_FLAGS}" -fsyntax-only -
+              -x "${{ matrix.language }}" ${{ matrix.cflags }} \
+              ${ADDITIONAL_FLAGS} -fsyntax-only -
           done
