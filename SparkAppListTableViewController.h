@@ -1,3 +1,5 @@
+#import <UIKit/UITableViewController.h>
+
 @interface SparkAppListTableViewController : UITableViewController
 @property (nonatomic, retain) NSArray* appList;
 

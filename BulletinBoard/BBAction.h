@@ -1,3 +1,7 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSString.h>
+#import <Foundation/NSURL.h>
+
 typedef void (^BBActionCallblock)();
 
 @class BBAppearance;

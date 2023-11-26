@@ -1,3 +1,5 @@
+#import <Foundation/NSObject.h>
+
 @interface FBSSceneSettings : NSObject
 
 @property (getter=isBackgrounded, nonatomic, readonly) BOOL backgrounded;

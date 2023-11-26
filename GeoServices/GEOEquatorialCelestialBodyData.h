@@ -1,4 +1,6 @@
 #import "GEOCelestialBody.h"
+#import <Foundation/NSObject.h>
+#import <Foundation/NSDate.h>
 
 @interface GEOEquatorialCelestialBodyData : NSObject
 

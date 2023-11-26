@@ -1,4 +1,5 @@
 #import <PassKitUI/PKGlyphViewDelegate.h>
+#import <UIKit/UIView.h>
 
 @interface PKGlyphView : UIView
 

@@ -1,3 +1,6 @@
+#import <UIKit/UIView.h>
+#import <UIKit/UIScrollView.h>
+
 @class SBAppSwitcherPeopleScrollView, SBScrollViewItemWrapper;
 
 @protocol SBAppSwitcherPeopleScrollViewDelegate <UIScrollViewDelegate>

@@ -1,3 +1,8 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSString.h>
+#import <Foundation/NSDate.h>
+#import <Foundation/NSDictionary.h>
+
 @interface IMItem : NSObject
 
 @property (nonatomic) long long type;

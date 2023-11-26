@@ -1,3 +1,6 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSObjCRuntime.h>
+
 @interface SBBannerController : NSObject
 
 + (instancetype)sharedInstance;

@@ -1,3 +1,6 @@
+#import <UIKit/UITableViewCell.h>
+#import <UIKit/UIView.h>
+
 @interface CKDetailsCell : UITableViewCell
 
 @property (nonatomic, retain) UIView *topSeperator;

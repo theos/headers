@@ -1,5 +1,6 @@
 #import "SBLeafIcon.h"
 #import "SBIconImageInfo.h"
+#import <UIKit/UIImage.h>
 
 @class SBApplication;
 

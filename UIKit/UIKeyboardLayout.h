@@ -1,4 +1,4 @@
-#import <CoreGraphics/CoreGraphics.h>
+#import <UIKit/UIView.h>
 
 @class UIKBRenderConfig;
 

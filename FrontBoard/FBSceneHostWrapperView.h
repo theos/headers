@@ -1,3 +1,5 @@
+#import <UIKit/UIView.h>
+
 @class FBScene;
 
 @interface FBSceneHostWrapperView : UIView

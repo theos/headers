@@ -1,3 +1,5 @@
+#import <UIKit/UIView.h>
+
 typedef NS_ENUM(NSUInteger, MTLumaDodgePillStyle) {
 	MTLumaDodgePillStyleNone,
 	MTLumaDodgePillStyleThin,

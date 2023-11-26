@@ -1,3 +1,5 @@
+#import <UIKit/UIView.h>
+
 @class SBChevronView;
 
 @interface SBLockScreenView : UIView

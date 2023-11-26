@@ -1,5 +1,6 @@
 #import "UIKBTree.h"
 #import "UIKBRenderConfig.h"
+#import <UIKit/UIView.h>
 
 @interface UIKBKeyView : UIView {
     UIKBTree *m_key;

@@ -1,3 +1,5 @@
+#import <UIKit/UITableViewHeaderFooterView.h>
+
 @interface CKTranscriptRecipientsHeaderFooterView : UITableViewHeaderFooterView
 
 + (NSString *)identifier;

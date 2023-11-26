@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import <UIKit/UIViewController.h>
 
 @protocol _SBUIWidgetHost
 

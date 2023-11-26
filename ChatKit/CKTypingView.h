@@ -1,4 +1,5 @@
 #import "CKTypingIndicatorLayer.h"
+#import <UIKit/UIView.h>
 
 @interface CKTypingView : UIView
 

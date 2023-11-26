@@ -1,3 +1,6 @@
+#import <UIKit/UITableViewCell.h>
+#import <UIKit/UIView.h>
+
 typedef enum {
 	SBBulletinListCellAccessoryStyleNone = 0,
 	SBBulletinListCellAccessoryStyleDot = 1

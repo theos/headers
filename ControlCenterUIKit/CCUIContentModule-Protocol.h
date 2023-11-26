@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
 #import "CCUIContentModuleContentViewController-Protocol.h"
 
 @protocol CCUIContentModule <NSObject>

@@ -1,3 +1,5 @@
+#import <Foundation/NSObject.h>
+
 @interface SBControlCenterController : NSObject
 
 + (instancetype)sharedInstance;

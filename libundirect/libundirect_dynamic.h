@@ -11,8 +11,9 @@
 // copies or substantial portions of the Software.
 
 #import <objc/objc.h>
-#import <sys/unistd.h>
+#import <unistd.h>
 #import <dlfcn.h>
+#import <Foundation/NSString.h>
 #import <substrate.h>
 #import <libhooker/libhooker.h>
 
@@ -25,8 +26,8 @@ extern "C" {
 // dynamic header for when you don't want to link against libundirect
 // for documentation, check out the non-dynamic header
 
-typedef enum 
-{ 
+typedef enum
+{
     OPTION_DO_NOT_SEEK_BACK = 1 << 0
 } libundirect_find_options_t;
 

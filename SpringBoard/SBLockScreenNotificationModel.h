@@ -1,3 +1,5 @@
+#import <Foundation/NSIndexPath.h>
+
 @class SBAwayBulletinListItem;
 
 @protocol SBLockScreenNotificationModel

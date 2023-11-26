@@ -1,3 +1,5 @@
+#import <UIKit/UITableViewController.h>
+
 @class CKConversationList;
 
 @interface CKConversationListController : UITableViewController

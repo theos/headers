@@ -1,3 +1,6 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSDictionary.h>
+
 @class BBSectionSubtypeParameters;
 
 @interface BBSectionParameters : NSObject

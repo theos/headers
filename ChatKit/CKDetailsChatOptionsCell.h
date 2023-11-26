@@ -1,4 +1,5 @@
 #import "CKDetailsCell.h"
+#import <UIKit/UISwitch.h>
 
 @interface CKDetailsChatOptionsCell : CKDetailsCell
 

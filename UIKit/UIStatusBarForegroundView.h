@@ -1,3 +1,5 @@
+#import <UIKit/UIView.h>
+
 @class UIStatusBarForegroundStyleAttributes;
 
 @interface UIStatusBarForegroundView : UIView

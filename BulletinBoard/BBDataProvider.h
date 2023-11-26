@@ -1,3 +1,6 @@
+#import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
+
 @class BBActionResponse, BBBulletinRequestParameters, BBDataProviderIdentity, BBSectionIcon, BBSectionInfo, BBSectionParameters, BBThumbnailSizeConstraints;
 
 @protocol BBSectionIdentity <NSObject>

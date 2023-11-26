@@ -1,3 +1,7 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSObjCRuntime.h>
+#import <Foundation/NSString.h>
+
 #define kBKSBackgroundModeUnboundedTaskCompletion @"unboundedTaskCompletion"
 #define kBKSBackgroundModeContinuous              @"continuous"
 #define kBKSBackgroundModeFetch                   @"fetch"

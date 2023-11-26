@@ -1,3 +1,5 @@
+#import <UIKit/UIView.h>
+
 @interface SBDefaultBannerTextView : UIView
 
 - (BOOL)textWillWrapForWidth:(CGFloat)width;

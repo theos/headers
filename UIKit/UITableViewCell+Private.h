@@ -1,4 +1,4 @@
-#import <UIKit/UIKit.h>
+#import <UIKit/UITableViewCell.h>
 
 @interface UITableViewCell (Private)
 

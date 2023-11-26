@@ -1,6 +1,7 @@
 // app
 
 #import <UIKit/UIView.h>
+#import <UIKit/UILabel.h>
 
 @class WorldClockCity;
 

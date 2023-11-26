@@ -1,4 +1,5 @@
-#import <QuartzCore/CALayer.h>
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface CABackdropLayer : CALayer
 

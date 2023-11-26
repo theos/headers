@@ -1,3 +1,5 @@
+#import <CoreGraphics/CoreGraphics.h>
+
 @protocol VeloxFolderViewProtocol
 
 + (int)folderHeight;

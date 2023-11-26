@@ -1,3 +1,6 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSString.h>
+
 @class CKMadridEntity;
 
 // 5.x

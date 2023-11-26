@@ -1,3 +1,5 @@
+#import <UIKit/UIColor.h>
+
 @interface SBControlColorSettings : NSObject
 
 + (instancetype)settingsWithTintColor:(UIColor *)tintColor selectedTintColor:(UIColor *)selectedTextColor textColor:(UIColor *)textColor selectedTextColor:(UIColor *)selectedTextColor;

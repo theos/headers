@@ -1,3 +1,5 @@
+#import <UIKit/UIImage.h>
+
 @class MPUNowPlayingController, MPUNowPlayingMetadata;
 
 @protocol MPUNowPlayingDelegate <NSObject>

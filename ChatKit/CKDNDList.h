@@ -1,3 +1,7 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSDate.h>
+#import <Foundation/NSString.h>
+
 @interface CKDNDList : NSObject
 
 + (instancetype)sharedList;

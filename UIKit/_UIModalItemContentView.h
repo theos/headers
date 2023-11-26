@@ -1,3 +1,5 @@
+#import <UIKit/UILabel.h>
+
 @interface _UIModalItemContentView : UIView
 
 @property (readonly, nonatomic) UILabel *messageLabel;

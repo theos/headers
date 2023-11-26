@@ -1,4 +1,5 @@
 #import "VotableElement.h"
+#import <Foundation/NSString.h>
 
 @interface Post : VotableElement
 

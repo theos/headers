@@ -1,3 +1,6 @@
+#import <UIKit/UIViewController.h>
+#import <UIKit/UIView.h>
+
 @class NCNotificationRequest;
 @protocol NCNotificationStaticContentProviding;
 

@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import <Foundation/NSCache.h>
 
 @interface NSCache (Private)
 

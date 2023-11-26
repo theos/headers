@@ -1,3 +1,7 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSObjCRuntime.h>
+#import <CoreGraphics/CoreGraphics.h>
+
 @interface FBSDisplay : NSObject
 
 @property (nonatomic, readonly) NSUInteger displayID;

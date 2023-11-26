@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @class SBApplication, FBUIApplicationService;
 
 @interface SBApplicationController : NSObject

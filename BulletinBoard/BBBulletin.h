@@ -1,4 +1,5 @@
 #import <AddressBook/AddressBook.h>
+#import <Foundation/Foundation.h>
 
 @class BBAction, BBContent, BBSectionIcon, BBSectionParameters, BBSectionSubtypeParameters;
 

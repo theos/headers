@@ -1,3 +1,7 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSDictionary.h>
+#import <Foundation/NSArray.h>
+#import <Foundation/NSString.h>
 
 @class IMDHandle;
 

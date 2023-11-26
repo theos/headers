@@ -1,3 +1,6 @@
+#import <Foundation/NSObject.h>
+#import <Foundation/NSString.h>
+
 @interface SBBulletinWindowController : NSObject
 
 + (instancetype)sharedInstance;

@@ -1,3 +1,5 @@
+#import <Foundation/NSObject.h>
+
 @interface FBSSceneSettings : NSObject <NSCopying, NSMutableCopying>
 
 @property (nonatomic, readonly, getter=isBackgrounded) BOOL backgrounded;

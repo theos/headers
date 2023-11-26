@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
 #import <libkern/OSAtomic.h>
 
 @class ALApplicationList;

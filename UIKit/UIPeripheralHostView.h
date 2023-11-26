@@ -1,4 +1,5 @@
 #import "UIInputViewSet.h"
+#import <UIKit/UIKit.h>
 
 @interface UIPeripheralHostView : UIView
 

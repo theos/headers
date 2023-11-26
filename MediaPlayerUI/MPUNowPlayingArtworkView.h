@@ -1,3 +1,5 @@
+#import <UIKit/UIKit.h>
+
 @interface MPUNowPlayingArtworkView : UIView
 
 @property (nonatomic, retain) UIImage *artworkImage;

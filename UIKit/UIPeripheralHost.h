@@ -1,4 +1,5 @@
 #import "UIKBRenderConfig.h"
+#import <UIKit/UIKit.h>
 
 @interface UIPeripheralHost : NSObject
 

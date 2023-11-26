@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 API_AVAILABLE(ios(7.0))
 @interface _UIHostedWindowHostingHandle : NSObject <NSSecureCoding>

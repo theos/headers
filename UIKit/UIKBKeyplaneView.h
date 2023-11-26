@@ -1,4 +1,5 @@
 #import "UIKBTree.h"
+#import <UIKit/UIView.h>
 
 @interface UIKBKeyplaneView : UIView
 
