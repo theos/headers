@@ -50,3 +50,4 @@ Please send us headers you’ve put together that would be useful to the wider c
 
     If modules are supported by the compiler, `#import` of headers from a module will be translated to equivalent `@import` statements.
 * Any headers under an [OSI-approved license](https://opensource.org/licenses) can be included here. Please add its license to [LICENSE.md](LICENSE.md).
+  * That being said, please try to avoid including headers that are vended by their respective authors in separate, cross-platform "dev" packages (e.g., `openssl`, `libarchive`, etc)
