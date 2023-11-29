@@ -30,7 +30,6 @@ jobs:
         run: |
           UNCHECKED_DIRECTORIES=(
             "IOKit"
-            "openssl"
           )
           UNCHECKED_FILES=(
             "QuartzCore/QuartzCore-Structs.h" # known to not work
