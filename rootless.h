@@ -14,6 +14,12 @@
 // use the `THEOS_PACKAGE_INSTALL_PREFIX` directly.
 // In C, `strlcpy` and `strlcat` may be used to first copy `THEOS_PACKAGE_INSTALL_PREFIX`
 // into a buffer, followed by the path variable.
+// For example:
+//   const char *inputPath;    // the file path
+//   char *outputPath;         // the file path with the prefix prepended
+//   const size_t outputSize;  // size of the outputPath
+//   strlcpy(outputPath, THEOS_PACKAGE_INSTALL_PREFIX, outputSize);
+//   strlcat(outputPath, inputPath, outputSize);
 
 #ifdef XINA_SUPPORT // Only define this for rootful compilations that need support for xina
 #include <unistd.h> /* for access(2) */
