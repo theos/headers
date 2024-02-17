@@ -1,10 +1,10 @@
 #include <sys/syslimits.h>
 
-const char *libroot_dyn_get_root_prefix(void);
-const char *libroot_dyn_get_jbroot_prefix(void);
-const char *libroot_dyn_get_boot_uuid(void);
-char *libroot_dyn_rootfspath(const char *path, char *resolvedPath);
-char *libroot_dyn_jbrootpath(const char *path, char *resolvedPath);
+const char *_Nonnull libroot_dyn_get_root_prefix(void);
+const char *_Nonnull libroot_dyn_get_jbroot_prefix(void);
+const char *_Nonnull libroot_dyn_get_boot_uuid(void);
+char *_Nullable libroot_dyn_rootfspath(const char *_Nullable path, char *_Nullable resolvedPath);
+char *_Nullable libroot_dyn_jbrootpath(const char *_Nullable path, char *_Nullable resolvedPath);
 
 #ifdef __OBJC__
 
