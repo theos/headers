@@ -24,6 +24,9 @@ There is no particular license on this repo. Files in this repo come from many s
 ### KennyTM
 * GraphicsServices, IOSurface, substrate2.h: [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause)
 
+### Opa334
+* libroot: [MIT](https://github.com/opa334/libroot/blob/main/LICENSE.md)
+
 ### PixelFire
 * libcolorpicker: [MIT License](https://github.com/atomikpanda/libcolorpicker/blob/master/LICENSE.md)
 

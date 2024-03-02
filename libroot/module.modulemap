@@ -1,0 +1,6 @@
+module libroot {
+  umbrella header "libroot.h"
+  link "root"
+
+  export *
+}
