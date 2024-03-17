@@ -5,14 +5,10 @@ import Foundation
 import Swift
 @_exported import libroot
 @_alwaysEmitIntoClient public func jbRootPath(_ cPath: Swift.UnsafePointer<Swift.CChar>?) -> Swift.String {
-    let stringElements: [String.Element] = .init(unsafeUninitializedCapacity: Int(PATH_MAX)) { buffer, initializedCount in
-        if let resolved = libroot_dyn_jbrootpath(cPath, buffer.baseAddress) {
-            initializedCount = strlen(resolved)
-        } else {
-            initializedCount = 0
-        }
-    }
-    return String(stringElements)
+    guard let resolved = libroot_dyn_jbrootpath(cPath, nil) else { return "" }
+    let result = String(cString: resolved)
+    free(resolved)
+    return result
 }
 @_alwaysEmitIntoClient @_disfavoredOverload public func jbRootPath<S>(_ path: S) -> Swift.String where S : Swift.StringProtocol {
     path.withCString { cPath in
@@ -20,14 +16,10 @@ import Swift
     }
 }
 @_alwaysEmitIntoClient public func rootFsPath(_ cPath: Swift.UnsafePointer<Swift.CChar>?) -> Swift.String {
-    let stringElements: [String.Element] = .init(unsafeUninitializedCapacity: Int(PATH_MAX)) { buffer, initializedCount in
-        if let resolved = libroot_dyn_rootfspath(cPath, buffer.baseAddress) {
-            initializedCount = strlen(resolved)
-        } else {
-            initializedCount = 0
-        }
-    }
-    return String(stringElements)
+    guard let resolved = libroot_dyn_rootfspath(cPath, nil) else { return "" }
+    let result = String(cString: resolved)
+    free(resolved)
+    return result
 }
 @_alwaysEmitIntoClient @_disfavoredOverload public func rootFsPath<S>(_ path: S) -> Swift.String where S : Swift.StringProtocol {
     path.withCString { cPath in
