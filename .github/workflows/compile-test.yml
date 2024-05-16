@@ -14,15 +14,22 @@ jobs:
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Checkout theos/sdks
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: theos/sdks
           ref: bb425abf3acae8eac328b828628b82df544d2774 # pinned, should be updated as appropriate
           sparse-checkout: iPhoneOS14.5.sdk
           path: sdks
 
+      - name: Checkout theos/lib
+        uses: actions/checkout@v4
+        with:
+          repository: theos/lib
+          ref: master # always check out latest
+          path: lib
+
       - name: Checkout theos/headers
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: headers
 
@@ -61,7 +68,7 @@ jobs:
             {
               echo "#import <${HEADER}>"
               echo "int main() {}"
-            } | clang -I "${HEADER_DIR}" -isysroot sdks/iPhoneOS14.5.sdk \
+            } | clang -I "${HEADER_DIR}" -F "lib" -isysroot sdks/iPhoneOS14.5.sdk \
               -target arm64-apple-ios14.5 -arch arm64 \
               -x "${{ matrix.language }}" ${{ matrix.cflags }} \
               ${ADDITIONAL_FLAGS} -fsyntax-only -
