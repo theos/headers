@@ -1,1 +1,1 @@
-#include <CydiaSubstrate/CydiaSubstrate.h>
+CydiaSubstrate.h
