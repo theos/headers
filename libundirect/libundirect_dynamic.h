@@ -10,7 +10,10 @@
 // The above copyright notice and this permission notice shall be included in all
 // copies or substantial portions of the Software.
 
+#import <objc/objc.h>
+#import <unistd.h>
 #import <dlfcn.h>
+#import <Foundation/NSString.h>
 #import <substrate.h>
 #import <libhooker/libhooker.h>
 #import <rootless.h>
