@@ -11,8 +11,8 @@
 // copies or substantial portions of the Software.
 
 #import <dlfcn.h>
-#import "substrate.h"
-#import <libhooker.h>
+#import <substrate.h>
+#import <libhooker/libhooker.h>
 #import <rootless.h>
 #define LIBUNDIRECT_PATH ROOT_PATH("/usr/lib/libundirect.dylib")
 
