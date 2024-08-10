@@ -13,7 +13,11 @@
 
 	#define HB_LOG_INTERNAL(level, type, ...) os_log_with_type(OS_LOG_DEFAULT, level, "[%{public}s:%{public}d] %{public}@", __BASE_FILE__, __LINE__, [NSString stringWithFormat:__VA_ARGS__])
 
-	#define HBLogDebug(...) HB_LOG_INTERNAL(OS_LOG_TYPE_DEBUG, "DEBUG", __VA_ARGS__)
+	#ifdef __DEBUG__
+		#define HBLogDebug(...) HB_LOG_INTERNAL(OS_LOG_TYPE_DEBUG, "DEBUG", __VA_ARGS__)
+	#else
+		#define HBLogDebug(...)
+	#endif
 	#define HBLogInfo(...) HB_LOG_INTERNAL(OS_LOG_TYPE_INFO, "INFO", __VA_ARGS__)
 	#define HBLogWarn(...) HB_LOG_INTERNAL(OS_LOG_TYPE_DEFAULT, "WARN", __VA_ARGS__)
 	#define HBLogError(...) HB_LOG_INTERNAL(OS_LOG_TYPE_ERROR, "ERROR", __VA_ARGS__)
