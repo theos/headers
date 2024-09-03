@@ -1,0 +1,8 @@
+module UserNotificationsKit {
+  umbrella header "UserNotificationsKit.h"
+
+  link framework "UserNotificationsKit"
+
+  export *
+  module * { export * }
+}
