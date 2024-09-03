@@ -1,0 +1,11 @@
+#import <MobileCoreServices/LSAppLink.h>
+#import <MobileCoreServices/LSApplicationProxy.h>
+#import <MobileCoreServices/LSApplicationWorkspace.h>
+#import <MobileCoreServices/LSBundleProxy.h>
+#import <MobileCoreServices/LSDocumentProxy.h>
+#import <MobileCoreServices/LSOpenOperation.h>
+#import <MobileCoreServices/LSPlugInKitProxy.h>
+#import <MobileCoreServices/LSResourceProxy.h>
+#import <MobileCoreServices/NSString+LSAdditions.h>
+#import <MobileCoreServices/NSURL+LSAdditions.h>
+#import <MobileCoreServices/_LSQueryResult.h>
