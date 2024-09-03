@@ -1,0 +1,8 @@
+module IMDaemonCore {
+  umbrella header "IMDaemonCore.h"
+
+  link framework "IMDaemonCore"
+
+  export *
+  module * { export * }
+}
