@@ -1,0 +1,8 @@
+module CameraUI {
+  umbrella header "CameraUI.h"
+
+  link framework "CameraUI"
+
+  export *
+  module * { export * }
+}
