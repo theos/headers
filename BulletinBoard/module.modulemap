@@ -1,0 +1,8 @@
+module BulletinBoard {
+  umbrella header "BulletinBoard.h"
+
+  link framework "BulletinBoard"
+
+  export *
+  module * { export * }
+}
