@@ -1,0 +1,8 @@
+module IMFoundation {
+  umbrella header "IMFoundation.h"
+
+  link framework "IMFoundation"
+
+  export *
+  module * { export * }
+}
