@@ -1,0 +1,8 @@
+module StoreKitUI {
+  umbrella header "StoreKitUI.h"
+
+  link framework "StoreKitUI"
+
+  export *
+  module * { export * }
+}
