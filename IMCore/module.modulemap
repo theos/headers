@@ -1,0 +1,8 @@
+module IMCore {
+  umbrella header "IMCore.h"
+
+  link framework "IMCore"
+
+  export *
+  module * { export * }
+}

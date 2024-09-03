@@ -1,0 +1,8 @@
+module ApplePushService {
+  umbrella header "ApplePushService.h"
+
+  link framework "ApplePushService"
+
+  export *
+  module * { export * }
+}

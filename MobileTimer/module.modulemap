@@ -1,0 +1,8 @@
+module MobileTimer {
+  umbrella header "MobileTimer.h"
+
+  link framework "MobileTimer"
+
+  export *
+  module * { export * }
+}

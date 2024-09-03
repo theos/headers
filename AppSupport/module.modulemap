@@ -1,0 +1,8 @@
+module AppSupport {
+  umbrella header "AppSupport.h"
+
+  link framework "AppSupport"
+
+  export *
+  module * { export * }
+}

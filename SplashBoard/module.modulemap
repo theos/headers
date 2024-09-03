@@ -1,0 +1,8 @@
+module SplashBoard {
+  umbrella header "SplashBoard.h"
+
+  link framework "SplashBoard"
+
+  export *
+  module * { export * }
+}

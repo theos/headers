@@ -1,0 +1,1 @@
+#import <PassKitCore/PKPaymentDevice.h>

@@ -1,0 +1,8 @@
+module MaterialKit {
+  umbrella header "MaterialKit.h"
+
+  link framework "MaterialKit"
+
+  export *
+  module * { export * }
+}

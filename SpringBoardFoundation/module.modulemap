@@ -1,0 +1,8 @@
+module SpringBoardFoundation {
+  umbrella header "SpringBoardFoundation.h"
+
+  link framework "SpringBoardFoundation"
+
+  export *
+  module * { export * }
+}

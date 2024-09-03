@@ -1,0 +1,8 @@
+module PhotoLibraryServices {
+  umbrella header "PhotoLibraryServices.h"
+
+  link framework "PhotoLibraryServices"
+
+  export *
+  module * { export * }
+}

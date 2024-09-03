@@ -1,0 +1,8 @@
+module PersistentConnection {
+  umbrella header "PersistentConnection.h"
+
+  link framework "PersistentConnection"
+
+  export *
+  module * { export * }
+}

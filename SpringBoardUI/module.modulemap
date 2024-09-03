@@ -1,0 +1,8 @@
+module SpringBoardUI {
+  umbrella header "SpringBoardUI.h"
+
+  link framework "SpringBoardUI"
+
+  export *
+  module * { export * }
+}

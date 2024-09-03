@@ -1,0 +1,8 @@
+module TextInput {
+  umbrella header "TextInput.h"
+
+  link framework "TextInput"
+
+  export *
+  module * { export * }
+}

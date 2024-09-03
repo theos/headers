@@ -1,0 +1,8 @@
+module GeoServices {
+  umbrella header "GeoServices.h"
+
+  link framework "GeoServices"
+
+  export *
+  module * { export * }
+}

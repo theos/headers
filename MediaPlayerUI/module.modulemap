@@ -1,0 +1,8 @@
+module MediaPlayerUI {
+  umbrella header "MediaPlayerUI.h"
+
+  link framework "MediaPlayerUI"
+
+  export *
+  module * { export * }
+}

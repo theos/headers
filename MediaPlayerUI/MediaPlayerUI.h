@@ -1,0 +1,10 @@
+#import <MediaPlayerUI/MPUControlCenterMediaControlsView.h>
+#import <MediaPlayerUI/MPUControlCenterMediaControlsViewController.h>
+#import <MediaPlayerUI/MPUControlCenterMetadataView.h>
+#import <MediaPlayerUI/MPUMediaRemoteControlsView.h>
+#import <MediaPlayerUI/MPUMediaRemoteViewController.h>
+#import <MediaPlayerUI/MPUNowPlayingArtworkView.h>
+#import <MediaPlayerUI/MPUNowPlayingController.h>
+#import <MediaPlayerUI/MPUNowPlayingMetadata.h>
+#import <MediaPlayerUI/MPUNowPlayingMetadataView.h>
+#import <MediaPlayerUI/MPUTransportControlsView.h>

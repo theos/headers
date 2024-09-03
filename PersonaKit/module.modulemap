@@ -1,0 +1,8 @@
+module PersonaKit {
+  umbrella header "PersonaKit.h"
+
+  link framework "PersonaKit"
+
+  export *
+  module * { export * }
+}

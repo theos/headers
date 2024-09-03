@@ -1,0 +1,8 @@
+module OnBoardingKit {
+  umbrella header "OnBoardingKit.h"
+
+  link framework "OnBoardingKit"
+
+  export *
+  module * { export * }
+}

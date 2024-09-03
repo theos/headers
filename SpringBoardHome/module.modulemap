@@ -1,0 +1,8 @@
+module SpringBoardHome {
+  umbrella header "SpringBoardHome.h"
+
+  link framework "SpringBoardHome"
+
+  export *
+  module * { export * }
+}
