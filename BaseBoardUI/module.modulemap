@@ -1,0 +1,8 @@
+module BaseBoardUI {
+  umbrella header "BaseBoardUI.h"
+
+  link framework "BaseBoardUI"
+
+  export *
+  module * { export * }
+}
