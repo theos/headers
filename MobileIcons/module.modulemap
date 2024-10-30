@@ -1,0 +1,8 @@
+module MobileIcons {
+	umbrella header "MobileIcons.h"
+
+	link framework "MobileIcons"
+
+	export *
+	module * { export * }
+}
