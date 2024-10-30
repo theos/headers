@@ -1,0 +1,8 @@
+module TelephonyUI {
+  umbrella header "TelephonyUI.h"
+
+  link framework "TelephonyUI"
+
+  export *
+  module * { export * }
+}

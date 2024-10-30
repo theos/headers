@@ -1,0 +1,8 @@
+module AssistantServices {
+  umbrella header "AssistantServices.h"
+
+  link framework "AssistantServices"
+
+  export *
+  module * { export * }
+}

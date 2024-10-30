@@ -1,0 +1,8 @@
+module BatteryCenter {
+  umbrella header "BatteryCenter.h"
+
+  link framework "BatteryCenter"
+
+  export *
+  module * { export * }
+}

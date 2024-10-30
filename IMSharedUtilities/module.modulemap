@@ -1,0 +1,8 @@
+module IMSharedUtilities {
+  umbrella header "IMSharedUtilities.h"
+
+  link framework "IMSharedUtilities"
+
+  export *
+  module * { export * }
+}

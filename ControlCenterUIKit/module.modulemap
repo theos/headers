@@ -1,0 +1,8 @@
+module ControlCenterUIKit {
+  umbrella header "ControlCenterUIKit.h"
+
+  link framework "ControlCenterUIKit"
+
+  export *
+  module * { export * }
+}

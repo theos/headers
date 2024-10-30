@@ -1,0 +1,8 @@
+module FrontBoard {
+  umbrella header "FrontBoard.h"
+
+  link framework "FrontBoard"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,8 @@
+module MediaRemote {
+  umbrella header "MediaRemote.h"
+
+  link framework "MediaRemote"
+
+  export *
+  module * { export * }
+}

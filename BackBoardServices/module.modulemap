@@ -1,0 +1,8 @@
+module BackBoardServices {
+  umbrella header "BackBoardServices.h"
+
+  link framework "BackBoardServices"
+
+  export *
+  module * { export * }
+}

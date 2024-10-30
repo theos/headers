@@ -1,0 +1,8 @@
+module LowPowerMode {
+  umbrella header "LowPowerMode.h"
+
+  link framework "LowPowerMode"
+
+  export *
+  module * { export * }
+}

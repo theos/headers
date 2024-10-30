@@ -1,0 +1,8 @@
+module PassKitUIFoundation {
+  umbrella header "PassKitUIFoundation.h"
+
+  link framework "PassKitUIFoundation"
+
+  export *
+  module * { export * }
+}

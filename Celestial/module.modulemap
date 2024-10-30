@@ -1,0 +1,8 @@
+module Celestial {
+  umbrella header "Celestial.h"
+
+  link framework "Celestial"
+
+  export *
+  module * { export * }
+}

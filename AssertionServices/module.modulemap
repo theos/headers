@@ -1,0 +1,8 @@
+module AssertionServices {
+  umbrella header "AssertionServices.h"
+
+  link framework "AssertionServices"
+
+  export *
+  module * { export * }
+}

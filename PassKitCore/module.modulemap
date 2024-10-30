@@ -1,0 +1,8 @@
+module PassKitCore {
+  umbrella header "PassKitCore.h"
+
+  link framework "PassKitCore"
+
+  export *
+  module * { export * }
+}

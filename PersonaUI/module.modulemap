@@ -1,0 +1,8 @@
+module PersonaUI {
+  umbrella header "PersonaUI.h"
+
+  link framework "PersonaUI"
+
+  export *
+  module * { export * }
+}
