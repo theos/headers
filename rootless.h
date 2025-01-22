@@ -1,6 +1,6 @@
 #include <TargetConditionals.h>
 
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IPHONE && !TARGET_OS_SIMULATOR
 
 #include <libroot/libroot.h>
 
