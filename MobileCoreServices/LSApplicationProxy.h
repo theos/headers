@@ -5,7 +5,7 @@
 API_AVAILABLE(ios(4.0))
 @interface LSApplicationProxy : LSBundleProxy
 
-+ (instancetype)applicationProxyForIdentifier:(NSString *)identifier;
++ (instancetype)applicationProxyForIdentifier:(NSString *)identifier NS_SWIFT_NAME(applicationProxy(forIdentifier:));
 
 @property (nonatomic, readonly) NSString *applicationIdentifier;
 @property (nonatomic, readonly) NSString *vendorName   API_AVAILABLE(ios(7.0));
