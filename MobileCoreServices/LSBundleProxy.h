@@ -4,7 +4,7 @@ API_AVAILABLE(ios(8.0))
 @interface LSBundleProxy : LSResourceProxy
 
 + (instancetype)bundleProxyForCurrentProcess API_AVAILABLE(ios(10.0));
-+ (instancetype)bundleProxyForIdentifier:(NSString *)identifier;
++ (instancetype)bundleProxyForIdentifier:(NSString *)identifier NS_SWIFT_NAME(bundleProxy(forIdentifier:));
 + (instancetype)bundleProxyForURL:(NSURL *)url;
 
 @property (nonatomic, readonly) NSUUID *cacheGUID;
@@ -20,7 +20,7 @@ API_AVAILABLE(ios(8.0))
 @property (nonatomic, readonly) NSString *bundleType;
 @property (nonatomic, readonly) NSString *canonicalExecutablePath API_AVAILABLE(ios(10.3));
 
-@property (nonatomic, readonly) NSDictionary <NSString *, NSString *> *entitlements;
+@property (nonatomic, readonly) NSDictionary <NSString *, id> *entitlements;
 @property (nonatomic, readonly) NSDictionary <NSString *, NSString *> *environmentVariables;
 @property (nonatomic, readonly) NSDictionary <NSString *, NSURL *> *groupContainerURLs;
 
