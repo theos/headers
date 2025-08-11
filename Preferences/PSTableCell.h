@@ -17,7 +17,8 @@ typedef NS_ENUM(NSInteger, PSCellType) {
 	PSGiantCell,
 	PSSecureEditTextCell,
 	PSButtonCell,
-	PSEditTextViewCell
+	PSEditTextViewCell,
+	PSSpinnerCell
 };
 
 @interface PSTableCell : UITableViewCell
