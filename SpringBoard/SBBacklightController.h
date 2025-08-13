@@ -3,7 +3,7 @@
 
 @interface SBBacklightController : NSObject
 
-+ (SBBacklightController *)sharedInstance;
++ (instancetype)sharedInstance;
 
 @property (readonly, nonatomic) BOOL screenIsOn;
 
