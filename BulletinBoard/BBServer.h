@@ -5,6 +5,7 @@
 @interface BBServer : NSObject
 
 - (void)_addDataProvider:(BBDataProvider *)dataProvider sortSectionsNow:(BOOL)sortSections;
+- (void)publishBulletin:(BBBulletin *)bulletin destinations:(unsigned long long)destinations;
 
 @end
 
