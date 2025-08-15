@@ -10,10 +10,11 @@ typedef void (^BBActionCallblock)();
 
 + (instancetype)action;
 
++ (instancetype)actionWithIdentifier:(NSString *)identifier;
 + (instancetype)actionWithLaunchBundleID:(NSString *)bundleID callblock:(BBActionCallblock)callblock;
++ (instancetype)actionWithLaunchURL:(NSURL *)url;
 + (instancetype)actionWithLaunchURL:(NSURL *)url callblock:(BBActionCallblock)callblock;
 + (instancetype)actionWithCallblock:(BBActionCallblock)callblock;
-
 + (instancetype)actionWithAppearance:(BBAppearance *)appearance;
 
 @property (nonatomic, copy) NSString *identifier;

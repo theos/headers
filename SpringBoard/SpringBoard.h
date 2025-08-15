@@ -3,6 +3,7 @@
 @class SBApplication, SBActivationSettings;
 
 @interface SpringBoard : UIApplication
++ (instancetype)sharedApplication;
 
 - (void)applicationOpenURL:(NSURL *)url publicURLsOnly:(BOOL)publicOnly;
 

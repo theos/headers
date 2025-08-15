@@ -1,7 +1,7 @@
 #import <AddressBook/AddressBook.h>
 #import <Foundation/Foundation.h>
 
-@class BBAction, BBContent, BBSectionIcon, BBSectionParameters, BBSectionSubtypeParameters;
+@class BBAction, BBContent, BBSectionIcon, BBSectionParameters, BBSectionSubtypeParameters, BBImage;
 
 typedef NS_ENUM(NSUInteger, BBBulletinAccessoryStyle) {
 	BBBulletinAccessoryStyleNone,
@@ -14,28 +14,35 @@ typedef NS_ENUM(NSInteger, BBAttachmentMetadataType) {
 
 API_AVAILABLE(ios(5.0))  @interface BBBulletin : NSObject
 
-@property (nonatomic, copy) NSString *bulletinID;
+@property (nonatomic, copy) NSString *section;
 @property (nonatomic, copy) NSString *sectionID;
-@property (nonatomic, copy) NSString *parentSectionID;
-@property (nonatomic, copy) NSSet *subsectionIDs;
+@property (nonatomic, copy) NSString *bulletinID;
+@property (nonatomic, copy) NSString *bulletinVersionID;
 @property (nonatomic, copy) NSString *publisherBulletinID;
 @property (nonatomic, copy) NSString *recordID;
+@property (nonatomic, copy) NSString *parentSectionID;
+@property (nonatomic, copy) NSSet *subsectionIDs;
 @property (nonatomic, copy) NSString *categoryID;
 @property BOOL showsUnreadIndicator;
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSString *header;
+@property (nonatomic, copy) NSString *footer API_AVAILABLE(ios(15.0));
 @property (nonatomic, retain) BBContent *content;
-@property (nonatomic, copy) NSDate *date;
 @property (nonatomic, copy) NSDate *lastInterruptDate;
 @property (nonatomic, copy) NSString *unlockActionLabelOverride;
-@property (nonatomic, copy) NSString *section;
 
-@property (nonatomic, copy) BBAction *defaultAction;
+@property (nonatomic, copy) NSDate *date;
+@property (nonatomic, copy) NSDate *publicationDate;
+@property (nonatomic, copy) NSDate *expirationDate;
+
 @property (nonatomic, copy, readonly) NSArray *supplementaryActions API_AVAILABLE(ios(8.0));
 @property (nonatomic) BBBulletinAccessoryStyle accessoryStyle NS_DEPRECATED_IOS(6_0, 7_0);
 
+@property (nonatomic, copy) BBAction *defaultAction;
+@property (nonatomic, retain) BBImage *accessoryImage;
 @property (nonatomic, retain) BBSectionIcon *icon;
 
 @property (nonatomic, retain) NSDictionary *context;
@@ -45,7 +52,10 @@ API_AVAILABLE(ios(5.0))  @interface BBBulletin : NSObject
 @property ABRecordID addressBookRecordID NS_DEPRECATED_IOS(7_0, 13_0);
 #pragma clang diagnostic pop
 
-@property BOOL turnsOnDisplay;
+@property (nonatomic) BOOL turnsOnDisplay;
+@property (nonatomic) BOOL ignoresDowntime;
+@property (nonatomic) BOOL ignoresQuietMode;
+@property (nonatomic) BOOL clearable;
 
 @property (nonatomic) BBAttachmentMetadataType primaryAttachmentType;
 

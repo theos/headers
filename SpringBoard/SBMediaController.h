@@ -8,6 +8,8 @@ static NSString *const kSBNowPlayingInfoArtworkDataKey = @"artworkData";
 
 + (instancetype)sharedInstance;
 
+- (void)_registerForNotifications;
+
 - (NSDictionary *)_nowPlayingInfo;
 - (SBApplication *)nowPlayingApplication;
 - (NSString *)nowPlayingTitle;
