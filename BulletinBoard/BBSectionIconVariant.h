@@ -1,6 +1,4 @@
-#import <Foundation/NSObject.h>
-#import <Foundation/NSObjCRuntime.h>
-#import <Foundation/NSData.h>
+#import <Foundation/Foundation.h>
 
 @interface BBSectionIconVariant : NSObject
 
