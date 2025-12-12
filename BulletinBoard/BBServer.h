@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@class BBBulletinRequest, BBDataProvider;
+@class BBBulletinRequest, BBDataProvider, BBBulletin;
 
 @interface BBServer : NSObject
 
