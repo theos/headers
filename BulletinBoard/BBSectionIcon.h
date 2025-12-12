@@ -5,6 +5,6 @@
 @interface BBSectionIcon : NSObject
 
 - (void)addVariant:(BBSectionIconVariant *)variant;
-- (void)setVariants:(NSSet <BBSectionIconVariant *>*)variants;
+- (void)setVariants:(NSSet <BBSectionIconVariant *> *)variants;
 
 @end
