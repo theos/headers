@@ -5,6 +5,6 @@ API_AVAILABLE(ios(12.0))
 
 + (instancetype)serviceForClientIdentifier:(NSString *)identifier;
 
-- (DNDState *)queryCurrentStateWithError:(NSError *)error;
+- (DNDState *)queryCurrentStateWithError:(NSError **)error;
 
 @end
