@@ -1,0 +1,8 @@
+module OSAnalytics {
+  umbrella header "OSAnalytics.h"
+
+  link framework "OSAnalytics"
+
+  export *
+  module * { export * }
+}
