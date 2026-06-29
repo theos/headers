@@ -7,8 +7,8 @@
 + (instancetype)sharedKeyboardFactory;
 + (NSString *)layoutsFileName;
 
-@property(readonly, nonatomic) void *layoutsLibraryHandle;
-@property(retain) NSMutableDictionary *internalCache;
+@property (readonly, nonatomic) void *layoutsLibraryHandle;
+@property (retain) NSMutableDictionary *internalCache;
 
 - (UIKBTree *)keyboardWithName:(NSString *)name inCache:(NSMutableDictionary *)cache;
 

@@ -1,10 +1,10 @@
 #import <UIKit/UIImage.h>
 
 typedef NS_ENUM(NSUInteger, ABMonogrammerStyle) {
-	ABMonogrammerStyleLightGray,
-	ABMonogrammerStyleWhite,
-	ABMonogrammerStyleDarkGraySemitransparent,
-	ABMonogrammerStyleLightGraySemitransparent,
+    ABMonogrammerStyleLightGray,
+    ABMonogrammerStyleWhite,
+    ABMonogrammerStyleDarkGraySemitransparent,
+    ABMonogrammerStyleLightGraySemitransparent,
 };
 
 /* Removed in iOS 11

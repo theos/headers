@@ -3,12 +3,12 @@
 
 @class ALApplicationList;
 
-@interface ALApplicationTableDataSource : NSObject <UITableViewDataSource> {
+@interface ALApplicationTableDataSource : NSObject<UITableViewDataSource> {
 @private
-	NSMutableArray *_sectionDescriptors;
-	UITableView *_tableView;
-	NSBundle *_localizationBundle;
-	BOOL _loadsAsynchronously;
+    NSMutableArray *_sectionDescriptors;
+    UITableView *_tableView;
+    NSBundle *_localizationBundle;
+    BOOL _loadsAsynchronously;
 }
 
 + (NSArray *)standardSectionDescriptors;

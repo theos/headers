@@ -6,6 +6,6 @@
 @interface BBSectionParameters : NSObject
 
 @property (nonatomic, retain) BBSectionSubtypeParameters *defaultSubtypeParameters;
-@property (nonatomic, retain) NSMutableDictionary <NSNumber *, BBSectionSubtypeParameters *> *allSubtypeParameters;
+@property (nonatomic, retain) NSMutableDictionary<NSNumber *, BBSectionSubtypeParameters *> *allSubtypeParameters;
 
 @end

@@ -2,7 +2,7 @@
 
 @class MKPlacemark;
 
-typedef void (^MKMapItemItemsFromHandleCompletion)(NSArray <NSURL *> *items);
+typedef void (^MKMapItemItemsFromHandleCompletion)(NSArray<NSURL *> *items);
 
 @interface MKMapItem (Private)
 

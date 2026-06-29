@@ -2,7 +2,7 @@
 #import <Foundation/NSArray.h>
 
 @interface CKConversationList : NSObject {
-	NSMutableArray *_trackedConversations;
+    NSMutableArray *_trackedConversations;
 }
 
 @end

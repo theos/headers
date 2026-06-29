@@ -7,7 +7,7 @@ typedef NS_ENUM(NSUInteger, PRLikenessScope) {
 };
 
 API_AVAILABLE(ios(10.0))
-@interface PRLikeness : NSObject <NSSecureCoding>
+@interface PRLikeness : NSObject<NSSecureCoding>
 
 @property (assign, setter=setCurrent:, nonatomic) BOOL isCurrent;
 
@@ -50,7 +50,6 @@ API_AVAILABLE(ios(10.0))
 + (instancetype)photoWithImage:(CGImageRef)image;
 
 + (instancetype)likenessWithPropagatedData:(NSData *)data;
-
 
 + (NSString *)descriptionForScope:(PRLikenessScope)scope;
 

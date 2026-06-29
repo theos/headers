@@ -3,7 +3,7 @@
 
 @protocol SBAppSwitcherPeopleDataSourceConsumer;
 
-@protocol SBAppSwitcherPeopleDataSource <NSObject>
+@protocol SBAppSwitcherPeopleDataSource<NSObject>
 
 @property (assign, nonatomic) id<SBAppSwitcherPeopleDataSourceConsumer> consumer;
 

@@ -5,6 +5,6 @@
 
 + (instancetype)sharedManager;
 
-@property (nonatomic, retain, readonly) NSArray <NSString *> *themeSettings;
+@property (nonatomic, retain, readonly) NSArray<NSString *> *themeSettings;
 
 @end

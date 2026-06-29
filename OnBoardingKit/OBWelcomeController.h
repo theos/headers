@@ -2,7 +2,7 @@
 #import "OBBaseWelcomeController.h"
 
 API_AVAILABLE(ios(13.0))
-@interface OBWelcomeController : OBBaseWelcomeController <UIScrollViewDelegate>
+@interface OBWelcomeController : OBBaseWelcomeController<UIScrollViewDelegate>
 
 @property (nonatomic, retain) UIView *viewIfLoaded;
 @property (nonatomic, strong) UIColor *backgroundColor;

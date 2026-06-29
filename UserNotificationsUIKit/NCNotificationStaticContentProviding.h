@@ -1,6 +1,6 @@
 #import <UIKit/UIImage.h>
 
-@protocol NCNotificationStaticContentProviding <NSObject>
+@protocol NCNotificationStaticContentProviding<NSObject>
 
 - (UIImage *)icon;
 

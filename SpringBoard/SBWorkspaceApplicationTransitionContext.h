@@ -1,9 +1,9 @@
 #import "SBWorkspaceTransitionContext.h"
 
 typedef NS_ENUM(NSInteger, SBLayoutRole) {
-	SBLayoutRoleUnknown,
-	SBLayoutRoleMainApp,
-	SBLayoutRoleSideApp
+    SBLayoutRoleUnknown,
+    SBLayoutRoleMainApp,
+    SBLayoutRoleSideApp
 };
 
 @class SBWorkspaceApplication, SBWorkspaceEntity;

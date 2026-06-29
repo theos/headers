@@ -27,7 +27,7 @@
 
 #include <IOKit/IOTypes.h>
 
-#define IOHIDEventTypeMask(type) (1<<type)
+#define IOHIDEventTypeMask(type) (1 << type)
 #define IOHIDEventFieldBase(type) (type << 16)
 /*!
     @typedef IOHIDEventType
@@ -59,7 +59,7 @@ enum {
     kIOHIDEventTypeNULL,
     kIOHIDEventTypeVendorDefined,
     kIOHIDEventTypeButton,
-    kIOHIDEventTypeKeyboard, 
+    kIOHIDEventTypeKeyboard,
     kIOHIDEventTypeTranslation,
     kIOHIDEventTypeRotation,
     kIOHIDEventTypeScroll,
@@ -96,7 +96,7 @@ enum {
     kIOHIDEventFieldVendorDefinedData
 };
 
-enum  {
+enum {
     kIOHIDEventFieldButtonMask = IOHIDEventFieldBase(kIOHIDEventTypeButton),
     kIOHIDEventFieldButtonNumber,
     kIOHIDEventFieldButtonClickCount,
@@ -142,8 +142,8 @@ enum {
 	@constant kIOHIDAccelerometerTypeShake
 */
 enum {
-    kIOHIDAccelerometerTypeNormal   = 0,
-    kIOHIDAccelerometerTypeShake    = 1
+    kIOHIDAccelerometerTypeNormal = 0,
+    kIOHIDAccelerometerTypeShake = 1
 };
 typedef uint32_t IOHIDAccelerometerType;
 
@@ -179,9 +179,8 @@ enum {
     kIOHIDEventFieldProximityDetectionMask = IOHIDEventFieldBase(kIOHIDEventTypeProximity)
 };
 
-
 enum {
-    kIOHIDEventFieldOrientationRadius   = IOHIDEventFieldBase(kIOHIDEventTypeOrientation),
+    kIOHIDEventFieldOrientationRadius = IOHIDEventFieldBase(kIOHIDEventTypeOrientation),
     kIOHIDEventFieldOrientationAzimuth,
     kIOHIDEventFieldOrientationAltitude
 };
@@ -202,7 +201,7 @@ enum {
     kIOHIDEventFieldDigitizerIndex,
     kIOHIDEventFieldDigitizerIdentity,
     kIOHIDEventFieldDigitizerEventMask,
-    kIOHIDEventFieldDigitizerRange,   
+    kIOHIDEventFieldDigitizerRange,
     kIOHIDEventFieldDigitizerTouch,
     kIOHIDEventFieldDigitizerPressure,
     kIOHIDEventFieldDigitizerBarrelPressure,
@@ -247,13 +246,12 @@ typedef uint32_t IOHIDEventField;
     @constant kIOHIDProximityDetectionReceiverCrude
 */
 enum {
-    kIOHIDSwipeUp                             = 0x00000001,
-    kIOHIDSwipeDown                           = 0x00000002,
-    kIOHIDSwipeLeft                           = 0x00000004,
-    kIOHIDSwipeRight                          = 0x00000008,
+    kIOHIDSwipeUp = 0x00000001,
+    kIOHIDSwipeDown = 0x00000002,
+    kIOHIDSwipeLeft = 0x00000004,
+    kIOHIDSwipeRight = 0x00000008,
 };
 typedef uint32_t IOHIDSwipeMask;
-
 
 /*!
 	@typedef IOHIDProximityDetectionMask
@@ -270,15 +268,15 @@ typedef uint32_t IOHIDSwipeMask;
     @constant kIOHIDProximityDetectionReceiverCrude
 */
 enum {
-    kIOHIDProximityDetectionLargeBodyContact                = 0x0001,
-    kIOHIDProximityDetectionLargeBodyFarField               = 0x0002,
-    kIOHIDProximityDetectionIrregularObjects                = 0x0004,
-    kIOHIDProximityDetectionEdgeStraddling                  = 0x0008,
-    kIOHIDProximityDetectionFlatFingerClasp                 = 0x0010,
-    kIOHIDProximityDetectionFingerTouch                     = 0x0020,
-    kIOHIDProximityDetectionReceiver                        = 0x0040,
-    kIOHIDProximityDetectionSmallObjectsHovering            = 0x0080,
-    kIOHIDProximityDetectionReceiverCrude                   = 0x0100
+    kIOHIDProximityDetectionLargeBodyContact = 0x0001,
+    kIOHIDProximityDetectionLargeBodyFarField = 0x0002,
+    kIOHIDProximityDetectionIrregularObjects = 0x0004,
+    kIOHIDProximityDetectionEdgeStraddling = 0x0008,
+    kIOHIDProximityDetectionFlatFingerClasp = 0x0010,
+    kIOHIDProximityDetectionFingerTouch = 0x0020,
+    kIOHIDProximityDetectionReceiver = 0x0040,
+    kIOHIDProximityDetectionSmallObjectsHovering = 0x0080,
+    kIOHIDProximityDetectionReceiverCrude = 0x0100
 };
 typedef uint32_t IOHIDProximityDetectionMask;
 
@@ -290,8 +288,8 @@ typedef uint32_t IOHIDProximityDetectionMask;
     @constant kIOHIDDigitizerTypePuck
     @constant kIOHIDDigitizerTypeFinger
 */
-enum {   
-    kIOHIDDigitizerTransducerTypeStylus  = 0x20,
+enum {
+    kIOHIDDigitizerTransducerTypeStylus = 0x20,
     kIOHIDDigitizerTransducerTypePuck,
     kIOHIDDigitizerTransducerTypeFinger,
     kIOHIDDigitizerTransducerTypeHand
@@ -321,28 +319,28 @@ typedef uint32_t IOHIDDigitizerTransducerType;
     @constant kIOHIDDigitizerEventSwipeMask Mask used to gather swipe events.
 */
 enum {
-    kIOHIDDigitizerEventRange                               = 0x00000001,
-    kIOHIDDigitizerEventTouch                               = 0x00000002,
-    kIOHIDDigitizerEventPosition                            = 0x00000004,
-    kIOHIDDigitizerEventStop                                = 0x00000008,
-    kIOHIDDigitizerEventPeak                                = 0x00000010,
-    kIOHIDDigitizerEventIdentity                            = 0x00000020,
-    kIOHIDDigitizerEventAttribute                           = 0x00000040,
-    kIOHIDDigitizerEventCancel                              = 0x00000080,
-    kIOHIDDigitizerEventStart                               = 0x00000100,
-    kIOHIDDigitizerEventResting                             = 0x00000200,
-    kIOHIDDigitizerEventSwipeUp                             = 0x01000000,
-    kIOHIDDigitizerEventSwipeDown                           = 0x02000000,
-    kIOHIDDigitizerEventSwipeLeft                           = 0x04000000,
-    kIOHIDDigitizerEventSwipeRight                          = 0x08000000,
-    kIOHIDDigitizerEventSwipeMask                           = 0xFF000000,
+    kIOHIDDigitizerEventRange = 0x00000001,
+    kIOHIDDigitizerEventTouch = 0x00000002,
+    kIOHIDDigitizerEventPosition = 0x00000004,
+    kIOHIDDigitizerEventStop = 0x00000008,
+    kIOHIDDigitizerEventPeak = 0x00000010,
+    kIOHIDDigitizerEventIdentity = 0x00000020,
+    kIOHIDDigitizerEventAttribute = 0x00000040,
+    kIOHIDDigitizerEventCancel = 0x00000080,
+    kIOHIDDigitizerEventStart = 0x00000100,
+    kIOHIDDigitizerEventResting = 0x00000200,
+    kIOHIDDigitizerEventSwipeUp = 0x01000000,
+    kIOHIDDigitizerEventSwipeDown = 0x02000000,
+    kIOHIDDigitizerEventSwipeLeft = 0x04000000,
+    kIOHIDDigitizerEventSwipeRight = 0x08000000,
+    kIOHIDDigitizerEventSwipeMask = 0xFF000000,
 };
 typedef uint32_t IOHIDDigitizerEventMask;
 
 enum {
-    kIOHIDEventOptionIsAbsolute                             = 0x00000001,
-    kIOHIDEventOptionIsCollection                           = 0x00000002,
-    kIOHIDEventOptionPixelUnits                             = 0x00000004
+    kIOHIDEventOptionIsAbsolute = 0x00000001,
+    kIOHIDEventOptionIsCollection = 0x00000002,
+    kIOHIDEventOptionPixelUnits = 0x00000004
 };
 typedef uint32_t IOHIDEventOptionBits;
 
@@ -359,9 +357,9 @@ typedef float IOHIDFloat;
 	@typedef IOHID3DPoint
 */
 typedef struct _IOHID3DPoint {
-    IOHIDFloat  x;
-    IOHIDFloat  y;
-    IOHIDFloat  z;
+    IOHIDFloat x;
+    IOHIDFloat y;
+    IOHIDFloat z;
 } IOHID3DPoint;
 #endif
 

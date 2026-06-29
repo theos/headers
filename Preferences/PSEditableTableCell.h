@@ -1,9 +1,9 @@
 #import "PSTableCell.h"
 
 @interface PSEditableTableCell : PSTableCell {
-	id _userInfo;
-	SEL _targetSetter;
-	id _realTarget;
+    id _userInfo;
+    SEL _targetSetter;
+    id _realTarget;
 }
 
 - (void)controlChanged:(id)changed;

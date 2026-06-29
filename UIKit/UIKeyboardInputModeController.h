@@ -5,7 +5,7 @@
 + (UIKeyboardInputModeController *)sharedInputModeController;
 
 @property (atomic, strong, readwrite) NSArray *normalizedInputModes;
-@property ( retain, nonatomic) UIKeyboardInputMode *lastUsedInputMode;
+@property (retain, nonatomic) UIKeyboardInputMode *lastUsedInputMode;
 @property (retain, nonatomic) UIKeyboardInputMode *currentInputMode;
 
 - (NSArray *)activeInputModes;

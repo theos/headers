@@ -3,13 +3,13 @@
 @class UIStatusBarForegroundStyleAttributes, UIStatusBarForegroundView;
 
 typedef NS_ENUM(NSInteger, UIStatusBarPosition) {
-	UIStatusBarPositionLeft,
-	UIStatusBarPositionRight,
-	UIStatusBarPositionCenter
+    UIStatusBarPositionLeft,
+    UIStatusBarPositionRight,
+    UIStatusBarPositionCenter
 };
 
 @interface UIStatusBar : UIView {
-	UIStatusBarForegroundView *_foregroundView;
+    UIStatusBarForegroundView *_foregroundView;
 }
 
 + (UIStatusBarStyle)defaultStatusBarStyle;

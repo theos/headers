@@ -43,8 +43,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #if __cplusplus
 extern "C" {
 #endif
-			
-	typedef struct __IOHIDService
+
+typedef struct __IOHIDService
 #if 0
 	{
 		CFRuntimeBase _base;	// 0, 4
@@ -63,11 +63,11 @@ extern "C" {
 		uint32_t previousButtonMask;	// 3c
 	}
 #endif
-	* IOHIDServiceRef;
+    *IOHIDServiceRef;
 
-	typedef void(*IOHIDServiceEventCallback)(void* target, void* refcon, IOHIDServiceRef service, IOHIDEventRef event);
-	
-	/*
+typedef void (*IOHIDServiceEventCallback)(void *target, void *refcon, IOHIDServiceRef service, IOHIDEventRef event);
+
+/*
 	 metaObject->
 	 [0] = NULL
 	 [4] = IOHIDIUnknown::genericQueryInterface(void*, CFUUIDBytes, void**)
@@ -81,42 +81,40 @@ extern "C" {
 	 [0x24] = IOHIDEventServiceClass::_scheduleWithRunLoop(void*, __CFRunLoop*, __CFString const*)
 	 [0x28] = IOHIDEventServiceClass::_unscheduleFromRunLoop(void*, __CFRunLoop*, __CFString const*)
 	 [0x2c] = IOHIDEventServiceClass::_copyEvent(void*, unsigned int, __IOHIDEvent*, unsigned long)
-	 */	
-	
+	 */
+
 #pragma mark -
 #pragma mark Creators
-		
-	CFTypeID IOHIDServiceGetTypeID(void);
-	IOHIDServiceRef _IOHIDServiceCreate(CFAllocatorRef allocator, io_service_t service);
-	
+
+CFTypeID IOHIDServiceGetTypeID(void);
+IOHIDServiceRef _IOHIDServiceCreate(CFAllocatorRef allocator, io_service_t service);
+
 #pragma mark -
 #pragma mark Accessors
-			
-	CFTypeRef IOHIDServiceGetProperty(IOHIDServiceRef service, CFStringRef property);
-	Boolean IOHIDServiceSetProperty(IOHIDServiceRef service, CFStringRef property, CFTypeRef value);
-	
-	CFTypeRef _IOHIDServiceGetClient(IOHIDServiceRef service);
-	Boolean _IOHIDServiceMatchPropertyTable(IOHIDServiceRef service, CFDictionaryRef propertyTable);
-	
-	IOHIDEventRef IOHIDServiceCopyEvent(IOHIDServiceRef service, IOHIDEventType type, IOHIDEventRef event, IOOptionBits options);
-	
-	void _IOHIDServiceSetEventCallback(IOHIDServiceRef service, IOHIDServiceEventCallback eventCallback, void* target, void* refcon);
-	
+
+CFTypeRef IOHIDServiceGetProperty(IOHIDServiceRef service, CFStringRef property);
+Boolean IOHIDServiceSetProperty(IOHIDServiceRef service, CFStringRef property, CFTypeRef value);
+
+CFTypeRef _IOHIDServiceGetClient(IOHIDServiceRef service);
+Boolean _IOHIDServiceMatchPropertyTable(IOHIDServiceRef service, CFDictionaryRef propertyTable);
+
+IOHIDEventRef IOHIDServiceCopyEvent(IOHIDServiceRef service, IOHIDEventType type, IOHIDEventRef event, IOOptionBits options);
+
+void _IOHIDServiceSetEventCallback(IOHIDServiceRef service, IOHIDServiceEventCallback eventCallback, void *target, void *refcon);
+
 #pragma mark -
 #pragma mark Actions
-	
-	void _IOHIDServiceScheduleWithRunLoop(IOHIDServiceRef service, CFRunLoopRef runloop, CFStringRef mode);
-	void _IOHIDServiceUnscheduleWithRunLoop(IOHIDServiceRef service);
-	
-	IOHIDNotificationRef IOHIDServiceCreateRemovalNotification(IOHIDServiceRef display, IOHIDNotificationCallback callback, void* target, void* refcon);
-	
-	Boolean _IOHIDServiceOpen(IOHIDServiceRef service, CFTypeRef client, IOOptionBits options);
-	Boolean _IOHIDServiceClose(IOHIDServiceRef service, CFTypeRef client, IOOptionBits options);
-	
-	
+
+void _IOHIDServiceScheduleWithRunLoop(IOHIDServiceRef service, CFRunLoopRef runloop, CFStringRef mode);
+void _IOHIDServiceUnscheduleWithRunLoop(IOHIDServiceRef service);
+
+IOHIDNotificationRef IOHIDServiceCreateRemovalNotification(IOHIDServiceRef display, IOHIDNotificationCallback callback, void *target, void *refcon);
+
+Boolean _IOHIDServiceOpen(IOHIDServiceRef service, CFTypeRef client, IOOptionBits options);
+Boolean _IOHIDServiceClose(IOHIDServiceRef service, CFTypeRef client, IOOptionBits options);
+
 #if __cplusplus
 }
 #endif
 
 #endif
-

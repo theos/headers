@@ -46,9 +46,9 @@ extern "C" {
     @param master_device_port  Just pass in MACH_PORT_NULL for master device port.
     @result Returns a io_connect_t handle on the root domain. Must be released with IOServiceClose() when done.
  */
-io_connect_t IOPMFindPowerManagement( mach_port_t master_device_port )
-                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-    
+io_connect_t IOPMFindPowerManagement(mach_port_t master_device_port)
+    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
 /*! @function IOPMSetAggressiveness
     @abstract Sets one of the aggressiveness factors in IOKit Power Management.
     @param fb  Representation of the Root Power Domain from IOPMFindPowerManagement.
@@ -56,9 +56,9 @@ io_connect_t IOPMFindPowerManagement( mach_port_t master_device_port )
     @param aggressiveness New value of the aggressiveness factor.
     @result Returns kIOReturnSuccess or an error condition if request failed.
 */
-IOReturn IOPMSetAggressiveness (io_connect_t fb, unsigned long type, unsigned long aggressiveness )
-                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-                            
+IOReturn IOPMSetAggressiveness(io_connect_t fb, unsigned long type, unsigned long aggressiveness)
+    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
 /*! @function IOPMGetAggressiveness
     @abstract Retrieves the current value of one of the aggressiveness factors in IOKit Power Management.
     @param fb  Representation of the Root Power Domain from IOPMFindPowerManagement.
@@ -66,14 +66,14 @@ IOReturn IOPMSetAggressiveness (io_connect_t fb, unsigned long type, unsigned lo
     @param aggressiveness Points to where to store the retrieved value of the aggressiveness factor.
     @result Returns kIOReturnSuccess or an error condition if request failed. 
  */
-IOReturn IOPMGetAggressiveness ( io_connect_t fb, unsigned long type, unsigned long * aggressiveness )
-                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+IOReturn IOPMGetAggressiveness(io_connect_t fb, unsigned long type, unsigned long *aggressiveness)
+    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 /*! @function IOPMSleepEnabled
     @abstract Tells whether the system supports full sleep, or just doze
     @result Returns true if the system supports sleep, false if some hardware prevents full sleep.
  */
-boolean_t IOPMSleepEnabled ( void ) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+boolean_t IOPMSleepEnabled(void) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 /*! @function IOPMSleepSystem
     @abstract Request that the system initiate sleep.
@@ -81,7 +81,7 @@ boolean_t IOPMSleepEnabled ( void ) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
     @param fb  Port used to communicate to the kernel,  from IOPMFindPowerManagement.
     @result Returns kIOReturnSuccess or an error condition if request failed.
  */
-IOReturn IOPMSleepSystem ( io_connect_t fb ) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+IOReturn IOPMSleepSystem(io_connect_t fb) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 /*! @function IOPMCopyBatteryInfo
     @abstract Request raw battery data from the system. 
@@ -90,15 +90,12 @@ IOReturn IOPMSleepSystem ( io_connect_t fb ) AVAILABLE_MAC_OS_X_VERSION_10_0_AND
     @param info A CFArray of CFDictionaries containing raw battery data. 
     @result Returns kIOReturnSuccess or an error condition if request failed.
  */
-IOReturn IOPMCopyBatteryInfo( mach_port_t masterPort, CFArrayRef * info )
-                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-
+IOReturn IOPMCopyBatteryInfo(mach_port_t masterPort, CFArrayRef *info)
+    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 /*!
     @functiongroup Notifications
-*/    
-
+*/
 
 /*! @function IORegisterApp
     @abstract Connects the caller to an IOService for the purpose of receiving power state change notifications for the device controlled by the IOService.
@@ -110,12 +107,12 @@ IOReturn IOPMCopyBatteryInfo( mach_port_t masterPort, CFArrayRef * info )
     @param notifier  Pointer to a notifier which caller must keep and pass to subsequent call to IODeregisterApp.
     @result Returns a io_connect_t session for the IOService or MACH_PORT_NULL if request failed. Caller must close return value via IOServiceClose() after calling IODeregisterApp on the notifier argument.
 */
-io_connect_t IORegisterApp( void * refcon,
-                            io_service_t theDriver,
-                            IONotificationPortRef * thePortRef,
-                            IOServiceInterestCallback callback,
-                            io_object_t * notifier )
-                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+io_connect_t IORegisterApp(void *refcon,
+    io_service_t theDriver,
+    IONotificationPortRef *thePortRef,
+    IOServiceInterestCallback callback,
+    io_object_t *notifier)
+    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 /*! @function       IORegisterForSystemPower
     @abstract       Connects the caller to the Root Power Domain IOService for the purpose of receiving sleep & wake notifications for the system.
@@ -169,26 +166,26 @@ io_connect_t IORegisterApp( void * refcon,
     @result             Returns a io_connect_t session for the IOPMrootDomain or MACH_PORT_NULL if request failed. 
                         Caller must close return value via IOServiceClose() after calling IODeregisterForSystemPower on the notifier argument.
  */
-io_connect_t IORegisterForSystemPower ( void * refcon,
-                                        IONotificationPortRef * thePortRef,
-                                        IOServiceInterestCallback callback,
-                                        io_object_t * notifier )
-                                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+io_connect_t IORegisterForSystemPower(void *refcon,
+    IONotificationPortRef *thePortRef,
+    IOServiceInterestCallback callback,
+    io_object_t *notifier)
+    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 /*! @function           IODeregisterApp
     @abstract           Disconnects the caller from an IOService after receiving power state change notifications from the IOService. (Caller must also release IORegisterApp's return io_connect_t and returned IONotificationPortRef for complete clean-up).
     @param notifier     An object from IORegisterApp.
     @result             Returns kIOReturnSuccess or an error condition if request failed.
  */
-IOReturn IODeregisterApp ( io_object_t * notifier ) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+IOReturn IODeregisterApp(io_object_t *notifier) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 /*! @function           IODeregisterForSystemPower
     @abstract           Disconnects the caller from the Root Power Domain IOService after receiving system power state change notifications. (Caller must also destroy the IONotificationPortRef returned from IORegisterForSystemPower.)
     @param notifier     The object returned from IORegisterForSystemPower.
     @result             Returns kIOReturnSuccess or an error condition if request failed.
 */
-IOReturn IODeregisterForSystemPower ( io_object_t * notifier )
-                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-                            
+IOReturn IODeregisterForSystemPower(io_object_t *notifier)
+    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
 /*! @function           IOAllowPowerChange
     @abstract           The caller acknowledges notification of a power state change on a device it has registered for notifications for via IORegisterForSystemPower or IORegisterApp.
     @discussion         Must be used when handling kIOMessageCanSystemSleep and kIOMessageSystemWillSleep messages from IOPMrootDomain system power. The caller should not call IOAllowPowerChange in response to any messages 
@@ -197,8 +194,8 @@ IOReturn IODeregisterForSystemPower ( io_object_t * notifier )
     @param notificationID A copy of the notification ID which came as part of the power state change notification being acknowledged.
     @result             Returns kIOReturnSuccess or an error condition if request failed.
 */
-IOReturn IOAllowPowerChange ( io_connect_t kernelPort, long notificationID )
-                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+IOReturn IOAllowPowerChange(io_connect_t kernelPort, long notificationID)
+    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 /*! @function IOCancelPowerChange
     @abstract The caller denies an idle system sleep power state change.
@@ -213,12 +210,12 @@ IOReturn IOAllowPowerChange ( io_connect_t kernelPort, long notificationID )
     @param notificationID A copy of the notification ID which came as part of the power state change notification being acknowledged.
     @result Returns kIOReturnSuccess or an error condition if request failed.
  */
-IOReturn IOCancelPowerChange ( io_connect_t kernelPort, long notificationID )
-                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+IOReturn IOCancelPowerChange(io_connect_t kernelPort, long notificationID)
+    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 /*!
     @functiongroup ScheduledEvents
-*/    
+*/
 
 /*! @function IOPMSchedulePowerEvent
     @abstract Schedule the machine to wake from sleep, power on, go to sleep, or shutdown. 
@@ -253,8 +250,6 @@ IOReturn IOPMCancelScheduledPowerEvent(CFDateRef time_to_wake, CFStringRef my_id
 */
 CFArrayRef IOPMCopyScheduledPowerEvents(void);
 
-
-
 /*! 
  * @defineblock    IOPMAssertionDictionaryKeys
  *
@@ -276,8 +271,7 @@ CFArrayRef IOPMCopyScheduledPowerEvents(void);
  *
  *                  This key may be present in the dictionary returned from <code>@link IOPMAssertionCopyProperties@/link</code>.
  */
-#define kIOPMAssertionTimeoutKey                CFSTR("TimeoutSeconds")
-
+#define kIOPMAssertionTimeoutKey CFSTR("TimeoutSeconds")
 
 /*!
  * @define          kIOPMAssertionTimeoutActionKey
@@ -291,7 +285,7 @@ CFArrayRef IOPMCopyScheduledPowerEvents(void);
  *
  *                  This key may be present in the dictionary returned from <code>@link IOPMAssertionCopyProperties@/link</code>.
  */
-#define kIOPMAssertionTimeoutActionKey          CFSTR("TimeoutAction")
+#define kIOPMAssertionTimeoutActionKey CFSTR("TimeoutAction")
 
 /*!
  * @define          kIOPMAssertionTimeoutActionLog
@@ -302,7 +296,7 @@ CFArrayRef IOPMCopyScheduledPowerEvents(void);
  *                  but will not turn off or affect the setting of the assertion in any way.
  *
  */
-#define kIOPMAssertionTimeoutActionLog          CFSTR("TimeoutActionLog")
+#define kIOPMAssertionTimeoutActionLog CFSTR("TimeoutActionLog")
 
 /*! 
  * @define          kIOPMAssertionTimeoutActionTurnOff
@@ -310,7 +304,7 @@ CFArrayRef IOPMCopyScheduledPowerEvents(void);
  * @discussion      When a timeout expires with this action, Power Management will log the timeout event,
  *                  and will set the assertion's level to <code>@link kIOPMAssertionLevelOff@/link</code>.
  */
-#define kIOPMAssertionTimeoutActionTurnOff      CFSTR("TimeoutActionTurnOff")
+#define kIOPMAssertionTimeoutActionTurnOff CFSTR("TimeoutActionTurnOff")
 
 /*! 
  * @define          kIOPMAssertionTimeoutActionRelease
@@ -318,8 +312,8 @@ CFArrayRef IOPMCopyScheduledPowerEvents(void);
  * @discussion      When a timeout expires with this action, Power Management will log the timeout event,
  *                  and will release the assertion.
  */
-#define kIOPMAssertionTimeoutActionRelease      CFSTR("TimeoutActionRelease")
-    
+#define kIOPMAssertionTimeoutActionRelease CFSTR("TimeoutActionRelease")
+
 /*!
  * @define          kIOPMAssertionRetainCountKey
  *
@@ -330,7 +324,7 @@ CFArrayRef IOPMCopyScheduledPowerEvents(void);
  *
  * This key can be found in the dictionary returned from <code>@link IOPMAssertionCopyProperties@/link</code>.
  */
-#define kIOPMAssertionRetainCountKey            CFSTR("RetainCount")
+#define kIOPMAssertionRetainCountKey CFSTR("RetainCount")
 
 /*!
  * @define          kIOPMAssertionNameKey
@@ -351,7 +345,7 @@ CFArrayRef IOPMCopyScheduledPowerEvents(void);
  *                   OPTIONAL <code>@link kIOPMAssertionHumanReadableReasonKey @/link</code>
  *                   OPTIONAL <code>@link kIOPMAssertionLocalizationBundlePathKey@/link</code>
  */
-#define kIOPMAssertionNameKey                  CFSTR("AssertName")
+#define kIOPMAssertionNameKey CFSTR("AssertName")
 
 /*!
  * @define          kIOPMAssertionDetailsKey
@@ -374,8 +368,8 @@ CFArrayRef IOPMCopyScheduledPowerEvents(void);
  *                   OPTIONAL <code>@link kIOPMAssertionHumanReadableReasonKey @/link</code>
  *                   OPTIONAL <code>@link kIOPMAssertionLocalizationBundlePathKey@/link</code>
  */
-#define kIOPMAssertionDetailsKey             CFSTR("Details")
-    
+#define kIOPMAssertionDetailsKey CFSTR("Details")
+
 /*!
  * @define          kIOPMAssertionHumanReadableReasonKey
  *
@@ -398,7 +392,7 @@ CFArrayRef IOPMCopyScheduledPowerEvents(void);
  *                   REQUIRED <code>@link kIOPMAssertionNameKey@/link</code>
  *                   OPTIONAL <code>@link kIOPMAssertionDetailsKey @/link</code>
  */
-#define kIOPMAssertionHumanReadableReasonKey    CFSTR("HumanReadableReason")
+#define kIOPMAssertionHumanReadableReasonKey CFSTR("HumanReadableReason")
 
 /*!
  * @define          kIOPMAssertionLocalizationBundlePathKey
@@ -413,7 +407,7 @@ CFArrayRef IOPMCopyScheduledPowerEvents(void);
  *
  *                  This key may be present in the dictionary returned from <code>@link IOPMAssertionCopyProperties@/link</code>.
  */
-#define kIOPMAssertionLocalizationBundlePathKey   CFSTR("BundlePath")
+#define kIOPMAssertionLocalizationBundlePathKey CFSTR("BundlePath")
 
 /*!
  * @define          kIOPMAssertionFrameworkIDKey
@@ -428,7 +422,7 @@ CFArrayRef IOPMCopyScheduledPowerEvents(void);
  *
  *                  This key may be present in the dictionary returned from <code>@link IOPMAssertionCopyProperties@/link</code>.
  */
-#define kIOPMAssertionFrameworkIDKey            CFSTR("FrameworkBundleID")
+#define kIOPMAssertionFrameworkIDKey CFSTR("FrameworkBundleID")
 
 /*!
  * @define          kIOPMAssertionPlugInIDKey
@@ -443,7 +437,7 @@ CFArrayRef IOPMCopyScheduledPowerEvents(void);
  *
  *                  This key may be present in the dictionary returned from <code>@link IOPMAssertionCopyProperties@/link</code>.
  */
-#define kIOPMAssertionPlugInIDKey               CFSTR("PlugInBundleID")
+#define kIOPMAssertionPlugInIDKey CFSTR("PlugInBundleID")
 
 /*!
  * @define          kIOPMAssertionTypeKey
@@ -456,7 +450,7 @@ CFArrayRef IOPMCopyScheduledPowerEvents(void);
  *                  specifies a deprecated assertion type; in that case the value for this key could
  *                  differ from the caller-provided assertion type.
  */
-#define kIOPMAssertionTypeKey                   CFSTR("AssertType")
+#define kIOPMAssertionTypeKey CFSTR("AssertType")
 
 /*!
  * @define          kIOPMAssertionLevelKey
@@ -468,7 +462,7 @@ CFArrayRef IOPMCopyScheduledPowerEvents(void);
  *                  The level reflects the assertion's level set at creation, or adjusted via
  *                  <code>@link IOPMAssertionSetLevel@/link</code>
  */
-#define kIOPMAssertionLevelKey                  CFSTR("AssertLevel")
+#define kIOPMAssertionLevelKey CFSTR("AssertLevel")
 
 /*! @/defineblock   IOPMAssertionDictionary Keys*/
 
@@ -480,13 +474,10 @@ CFArrayRef IOPMCopyScheduledPowerEvents(void);
  */
 typedef uint32_t IOPMAssertionID;
 
-    
-
 /*! 
  * @defineblock     IOPMAssertionTypes 
  */
-     
-    
+
 /*!
  * @define          kIOPMAssertionTypePreventUserIdleSystemSleep
  *
@@ -508,8 +499,7 @@ typedef uint32_t IOPMAssertionID;
  *                  <code>@link kIOPMAssertionLevelOff@/link</code> or <code>@link kIOPMAssertionLevelOn@/link</code>.
  */
 
-#define kIOPMAssertionTypePreventUserIdleSystemSleep    CFSTR("PreventUserIdleSystemSleep")
-
+#define kIOPMAssertionTypePreventUserIdleSystemSleep CFSTR("PreventUserIdleSystemSleep")
 
 /*!
  * @define          kIOPMAssertionTypePreventUserIdleDisplaySleep
@@ -531,8 +521,7 @@ typedef uint32_t IOPMAssertionID;
  *                  <code>@link kIOPMAssertionLevelOff@/link</code> or <code>@link kIOPMAssertionLevelOn@/link</code>.
  */
 
-#define kIOPMAssertionTypePreventUserIdleDisplaySleep    CFSTR("PreventUserIdleDisplaySleep")
-
+#define kIOPMAssertionTypePreventUserIdleDisplaySleep CFSTR("PreventUserIdleDisplaySleep")
 
 /*!
  * @define          kIOPMAssertionTypePreventSystemSleep
@@ -554,9 +543,8 @@ typedef uint32_t IOPMAssertionID;
  *                  <code>@link kIOPMAssertionLevelOff@/link</code> or <code>@link kIOPMAssertionLevelOn@/link</code>.
  */
 
-#define kIOPMAssertionTypePreventSystemSleep            CFSTR("PreventSystemSleep")
+#define kIOPMAssertionTypePreventSystemSleep CFSTR("PreventSystemSleep")
 
- 
 /*!
  * @define          kIOPMAssertionTypeNoIdleSleep
  *
@@ -567,7 +555,7 @@ typedef uint32_t IOPMAssertionID;
  *                  for other reasons.
  *
  */
-#define kIOPMAssertionTypeNoIdleSleep                 CFSTR("NoIdleSleepAssertion")
+#define kIOPMAssertionTypeNoIdleSleep CFSTR("NoIdleSleepAssertion")
 
 /*!
  * @define          kIOPMAssertionTypeNoDisplaySleep
@@ -577,8 +565,7 @@ typedef uint32_t IOPMAssertionID;
  * @abstract        Use as AssertionType argument to <code>@link IOPMAssertionCreate@/link</code>. 
  *                  The idle display will not sleep when enabled, and consequently the system will not idle sleep.
  */
-#define kIOPMAssertionTypeNoDisplaySleep              CFSTR("NoDisplaySleepAssertion")
-
+#define kIOPMAssertionTypeNoDisplaySleep CFSTR("NoDisplaySleepAssertion")
 
 /*!
  * @enum            kIOPMNullAssertionID
@@ -618,15 +605,13 @@ enum {
      * @constant    kIOPMAssertionLevelOn
      * @abstract    Level for an enabled assertion, passed as an argument to IOPMAssertionCreate.
     */
-    kIOPMAssertionLevelOn  = 255
- };
-
+    kIOPMAssertionLevelOn = 255
+};
 
 /*!
  * @functiongroup   Assertions
- */    
+ */
 
-    
 /*! @function           IOPMAssertionCreateWithDescription
  *
  * @description         Creates an IOPMAssertion. This is the preferred API to call to create an assertion.
@@ -665,18 +650,16 @@ enum {
  *
  * @result              kIOReturnSuccess, or another IOKit return code on error.
  */
-IOReturn	IOPMAssertionCreateWithDescription(
-                                           CFStringRef  AssertionType, 
-                                           CFStringRef  Name, 
-                                           CFStringRef  Details,
-                                           CFStringRef  HumanReadableReason,
-                                           CFStringRef  LocalizationBundlePath,
-                                           CFTimeInterval   Timeout,
-                                           CFStringRef  TimeoutAction,
-                                           IOPMAssertionID  *AssertionID)
-__OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_4_3);
-    
-
+IOReturn IOPMAssertionCreateWithDescription(
+    CFStringRef AssertionType,
+    CFStringRef Name,
+    CFStringRef Details,
+    CFStringRef HumanReadableReason,
+    CFStringRef LocalizationBundlePath,
+    CFTimeInterval Timeout,
+    CFStringRef TimeoutAction,
+    IOPMAssertionID *AssertionID)
+    __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_4_3);
 
 /*!
  * @function                    IOPMAssertionCreateWithProperties
@@ -720,9 +703,9 @@ __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_4_3);
  *      </ul>
  */
 IOReturn IOPMAssertionCreateWithProperties(
-                             CFDictionaryRef      AssertionProperties,
-                             IOPMAssertionID      *AssertionID)
-                            __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_3_2);
+    CFDictionaryRef AssertionProperties,
+    IOPMAssertionID *AssertionID)
+    __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_3_2);
 
 /*!
  * @function            IOPMAssertionRetain
@@ -732,9 +715,9 @@ IOReturn IOPMAssertionCreateWithProperties(
  *                      Retain count can be inspected in the assertion's info dictionary at
  *                      key <code>@link kIOPMAssertionRetainCountKey@/link</code>
  * @param theAssertion  The assertion ID to retain.
- */    
+ */
 void IOPMAssertionRetain(IOPMAssertionID theAssertion)
-                            __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_3_2);
+    __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_3_2);
 
 /*!
  * @function            IOPMAssertionRelease
@@ -752,8 +735,7 @@ void IOPMAssertionRetain(IOPMAssertionID theAssertion)
  * @result              Returns kIOReturnSuccess on success.
  */
 IOReturn IOPMAssertionRelease(IOPMAssertionID AssertionID)
-                            AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
-    
+    AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
 
 /*!
  * @function            IOPMAssertionCopyProperties
@@ -764,7 +746,7 @@ IOReturn IOPMAssertionRelease(IOPMAssertionID AssertionID)
  *                      It's the caller's responsibility to release this dictionary.
  */
 CFDictionaryRef IOPMAssertionCopyProperties(IOPMAssertionID theAssertion)
-                            __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_3_2);
+    __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_3_2);
 
 /*!
  * @function            IOPMAssertionSetProperty
@@ -780,7 +762,7 @@ CFDictionaryRef IOPMAssertionCopyProperties(IOPMAssertionID theAssertion)
  *                      Returns <code>@link kIOReturnSuccess@/link</code> otherwise.
  */
 IOReturn IOPMAssertionSetProperty(IOPMAssertionID theAssertion, CFStringRef theProperty, CFTypeRef theValue)
-                            __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_3_2);
+    __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_3_2);
 
 /*!
  * @function            IOPMCopyAssertionsByProcess
@@ -800,7 +782,7 @@ IOReturn IOPMAssertionSetProperty(IOPMAssertionID theAssertion, CFStringRef theP
  * @result              Returns kIOReturnSuccess on success.
  */
 IOReturn IOPMCopyAssertionsByProcess(CFDictionaryRef *AssertionsByPID)
-                            AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+    AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
 
 /*!
  * @function            IOPMCopyAssertionsStatus
@@ -816,10 +798,7 @@ IOReturn IOPMCopyAssertionsByProcess(CFDictionaryRef *AssertionsByPID)
  * @result Returns      kIOReturnSuccess on success.
  */
 IOReturn IOPMCopyAssertionsStatus(CFDictionaryRef *AssertionsStatus)
-                            AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
-
-    
-    
+    AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
 
 /*!
  * @function            IOPMAssertionCreate
@@ -839,11 +818,10 @@ IOReturn IOPMCopyAssertionsStatus(CFDictionaryRef *AssertionsStatus)
  * @result              Returns kIOReturnSuccess on success, any other return indicates
  *                          PM could not successfully activate the specified assertion.
  */
-IOReturn IOPMAssertionCreate(CFStringRef        AssertionType, 
-                           IOPMAssertionLevel   AssertionLevel,
-                           IOPMAssertionID      *AssertionID)
-                            __OSX_AVAILABLE_BUT_DEPRECATED
-                            (__MAC_10_5,__MAC_10_6,__IPHONE_2_0, __IPHONE_2_1);
+IOReturn IOPMAssertionCreate(CFStringRef AssertionType,
+    IOPMAssertionLevel AssertionLevel,
+    IOPMAssertionID *AssertionID)
+    __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_5, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_1);
 
 /*!
  * @function            IOPMAssertionCreateWithName
@@ -869,12 +847,11 @@ IOReturn IOPMAssertionCreate(CFStringRef        AssertionType,
  *                          PM could not successfully activate the specified assertion.
  */
 IOReturn IOPMAssertionCreateWithName(
-                        CFStringRef          AssertionType, 
-                        IOPMAssertionLevel   AssertionLevel,
-                        CFStringRef          AssertionName,
-                        IOPMAssertionID      *AssertionID)
-                        AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER;
-                           
+    CFStringRef AssertionType,
+    IOPMAssertionLevel AssertionLevel,
+    CFStringRef AssertionName,
+    IOPMAssertionID *AssertionID)
+    AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER;
 
 /*!
  * @functiongroup IOSystemLoadAdvisory
@@ -887,7 +864,7 @@ IOReturn IOPMAssertionCreateWithName(
             fires - this is more efficient than calling IOGetSystemLoadAdvisory(), and returns
             an identical combined SystemLoadAdvisory value.
  */
-#define kIOSystemLoadAdvisoryNotifyName   "com.apple.system.powermanagement.SystemLoadAdvisory"
+#define kIOSystemLoadAdvisoryNotifyName "com.apple.system.powermanagement.SystemLoadAdvisory"
 
 /*! @typedef IOSystemLoadAdvisoryLevel
    @abstract Return type for IOGetSystemLoadAdvisory
@@ -897,28 +874,28 @@ IOReturn IOPMAssertionCreateWithName(
 typedef int IOSystemLoadAdvisoryLevel;
 
 enum {
-    kIOSystemLoadAdvisoryLevelBad       = 1,
-    kIOSystemLoadAdvisoryLevelOK        = 2,
-    kIOSystemLoadAdvisoryLevelGreat     = 3
+    kIOSystemLoadAdvisoryLevelBad = 1,
+    kIOSystemLoadAdvisoryLevelOK = 2,
+    kIOSystemLoadAdvisoryLevelGreat = 3
 };
 
 /*! @define kIOSystemLoadAdvisoryUserLevelKey
    @abstract Key for dictionary returned by IOCopySystemLoadAdvisoryDetailed
    @discussion Indicates user activity constraints on the current SystemLoadAdvisory level.
  */
-#define kIOSystemLoadAdvisoryUserLevelKey             CFSTR("UserLevel")
+#define kIOSystemLoadAdvisoryUserLevelKey CFSTR("UserLevel")
 
 /*! @define kIOSystemLoadAdvisoryBatteryLevelKey
    @abstract Key for dictionary returned by IOCopySystemLoadAdvisoryDetailed
    @discussion Indicates battery constraints on the current SystemLoadAdvisory level.
  */
-#define kIOSystemLoadAdvisoryBatteryLevelKey          CFSTR("BatteryLevel")
+#define kIOSystemLoadAdvisoryBatteryLevelKey CFSTR("BatteryLevel")
 
 /*! @define kIOSystemLoadAdvisoryThermalLevelKey
    @abstract Key for dictionary returned by IOCopySystemLoadAdvisoryDetailed
    @discussion Indicates thermal constraints on the current SystemLoadAdvisory level.
  */
-#define kIOSystemLoadAdvisoryThermalLevelKey          CFSTR("ThermalLevel")
+#define kIOSystemLoadAdvisoryThermalLevelKey CFSTR("ThermalLevel")
 
 /*! @define kIOSystemLoadAdvisoryCombinedLevelKey
    @abstract Key for dictionary returned by IOCopySystemLoadAdvisoryDetailed
@@ -927,7 +904,7 @@ enum {
         In the future, this combined level may represent new levels as well.
         The combined level is identical to the value returned by IOGetSystemLoadAdvisory().
  */
-#define kIOSystemLoadAdvisoryCombinedLevelKey         CFSTR("CombinedLevel")
+#define kIOSystemLoadAdvisoryCombinedLevelKey CFSTR("CombinedLevel")
 
 /*! @function IOGetSystemLoadAdvisory
    @abstract Returns a hint about whether now would be a good time to perform time-insensitive 
@@ -952,8 +929,8 @@ enum {
         kIOSystemLoadAdvisoryLevelOK - An OK time to perform time-insensitive work.
         kIOSystemLoadAdvisoryLevelBad - A Bad time to perform time-insensitive work.
  */
-   
-IOSystemLoadAdvisoryLevel IOGetSystemLoadAdvisory( void );
+
+IOSystemLoadAdvisoryLevel IOGetSystemLoadAdvisory(void);
 
 /*! @function IOCopySystemLoadAdvisoryDetailed
    @abstract Indicates how user activity, battery level, and thermal level each 
@@ -965,7 +942,6 @@ IOSystemLoadAdvisoryLevel IOGetSystemLoadAdvisory( void );
  */
 CFDictionaryRef IOCopySystemLoadAdvisoryDetailed(void);
 
-
 /*!
  * @functiongroup CPU Power & Thermal
  */
@@ -974,13 +950,13 @@ CFDictionaryRef IOCopySystemLoadAdvisoryDetailed(void);
  * @abstract    Key to register for BSD style notifications on CPU power or thermal change.
  */
 
-#define kIOPMCPUPowerNotificationKey            "com.apple.system.power.CPU"
+#define kIOPMCPUPowerNotificationKey "com.apple.system.power.CPU"
 /*! 
  * @define      kIOPMThermalWarningNotificationKey
  * @abstract    Key to register for BSD style notifications on system thermal warnings.
  */
-#define kIOPMThermalWarningNotificationKey      "com.apple.system.power.thermal_warning"
-    
+#define kIOPMThermalWarningNotificationKey "com.apple.system.power.thermal_warning"
+
 /*!
  * @function    IOPMCopyCPUPowerStatus
  * @abstract    Copy status of all current CPU power levels.
@@ -996,7 +972,7 @@ CFDictionaryRef IOCopySystemLoadAdvisoryDetailed(void);
  *              CPU PowerStatus has not been published.
  */
 IOReturn IOPMCopyCPUPowerStatus(CFDictionaryRef *cpuPowerStatus);
-    
+
 /*! 
  * @function    IOPMGetThermalWarningLevel
  * @abstract    Get thermal warning level of the system.
@@ -1011,8 +987,6 @@ IOReturn IOPMCopyCPUPowerStatus(CFDictionaryRef *cpuPowerStatus);
  *              thermal warning level has not been published.
  */
 IOReturn IOPMGetThermalWarningLevel(uint32_t *thermalLevel);
-    
-
 
 #ifdef __cplusplus
 }

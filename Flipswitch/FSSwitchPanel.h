@@ -56,10 +56,10 @@
 - (NSString *)descriptionOfState:(FSSwitchState)state forSwitchIdentifier:(NSString *)switchIdentifier;
 // Requests a description of a specific state, in the context of a specific switch identifier (1.0.3 or later)
 
-- (Class <FSSwitchSettingsViewController>)settingsViewControllerClassForSwitchIdentifier:(NSString *)switchIdentifier;
+- (Class<FSSwitchSettingsViewController>)settingsViewControllerClassForSwitchIdentifier:(NSString *)switchIdentifier;
 // Retrieves the settings view controller class for a specific switch identifier (1.0.3 or later)
 
-- (UIViewController <FSSwitchSettingsViewController> *)settingsViewControllerForSwitchIdentifier:(NSString *)switchIdentifier;
+- (UIViewController<FSSwitchSettingsViewController> *)settingsViewControllerForSwitchIdentifier:(NSString *)switchIdentifier;
 // Retrieves a settings view controller for a specific switch identifier (1.0.3 or later)
 
 - (BOOL)switchWithIdentifierIsSimpleAction:(NSString *)switchIdentifier;
@@ -89,12 +89,12 @@
 // Informs the system when a switch changes its state. This will trigger any switch buttons to update their style
 @end
 
-extern NSString * const FSSwitchPanelSwitchesChangedNotification;
+extern NSString *const FSSwitchPanelSwitchesChangedNotification;
 
-extern NSString * const FSSwitchPanelSwitchStateChangedNotification;
-extern NSString * const FSSwitchPanelSwitchIdentifierKey;
+extern NSString *const FSSwitchPanelSwitchStateChangedNotification;
+extern NSString *const FSSwitchPanelSwitchIdentifierKey;
 
-extern NSString * const FSSwitchPanelSwitchWillOpenURLNotification;
+extern NSString *const FSSwitchPanelSwitchWillOpenURLNotification;
 
 @interface FSSwitchPanel (LayerEffects)
 - (void)applyEffectsToLayer:(CALayer *)layer forSwitchState:(FSSwitchState)state controlState:(UIControlState)controlState usingTemplate:(NSBundle *)templateBundle;

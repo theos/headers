@@ -3,6 +3,6 @@
 #import "BSXPCCoding.h"
 #import <Foundation/Foundation.h>
 
-@interface BSAction : NSObject <BSDescriptionProviding, BSSettingDescriptionProvider, BSXPCCoding>
+@interface BSAction : NSObject<BSDescriptionProviding, BSSettingDescriptionProvider, BSXPCCoding>
 
 @end

@@ -16,8 +16,7 @@
 extern "C" {
 #endif
 
-typedef enum 
-{ 
+typedef enum {
     OPTION_DO_NOT_SEEK_BACK = 1 << 0
 } libundirect_find_options_t;
 
@@ -25,21 +24,21 @@ typedef enum
 void libundirect_MSHookMessageEx(Class _class, SEL message, IMP hook, IMP *old);
 
 // readds a direct method back to the class, requiring the pointer to it
-void libundirect_rebind(void* directPtr, Class _class, SEL selector, const char* format);
+void libundirect_rebind(void *directPtr, Class _class, SEL selector, const char *format);
 
 // seek back to byte
-void* libundirect_seek_back(void* startPtr, unsigned char toByte, unsigned int maxSearch);
+void *libundirect_seek_back(void *startPtr, unsigned char toByte, unsigned int maxSearch);
 
 // find a direct method by searching for unique memory bytes
-void* libundirect_find_with_options_and_mask(NSString* imageName, unsigned char* bytesToSearch, unsigned char* byteMask, size_t byteCount, unsigned char startByte, unsigned int seekbackMax, libundirect_find_options_t options);
-void* libundirect_find_with_options(NSString* imageName, unsigned char* bytesToSearch, size_t byteCount, unsigned char startByte, unsigned int seekbackMax, libundirect_find_options_t options);
-void* libundirect_find(NSString* imageName, unsigned char* bytesToSearch, size_t byteCount, unsigned char startByte);
+void *libundirect_find_with_options_and_mask(NSString *imageName, unsigned char *bytesToSearch, unsigned char *byteMask, size_t byteCount, unsigned char startByte, unsigned int seekbackMax, libundirect_find_options_t options);
+void *libundirect_find_with_options(NSString *imageName, unsigned char *bytesToSearch, size_t byteCount, unsigned char startByte, unsigned int seekbackMax, libundirect_find_options_t options);
+void *libundirect_find(NSString *imageName, unsigned char *bytesToSearch, size_t byteCount, unsigned char startByte);
 
 // find a direct method inside dyld_shared_cache by it's name
-void* libundirect_dsc_find(NSString* imageName, Class _class, SEL selector);
+void *libundirect_dsc_find(NSString *imageName, Class _class, SEL selector);
 
 // find a direct method inside dyld_shared_cache by it's name and rebind it (convenience)
-void libundirect_dsc_rebind(NSString* imageName, Class _class, SEL selector, const char* format);
+void libundirect_dsc_rebind(NSString *imageName, Class _class, SEL selector, const char *format);
 
 // instead of directly hooking, make all libundirect_MSHookMessageEx calls add to a batch queue
 void libundirect_startBatchHooks(void);
@@ -48,10 +47,10 @@ void libundirect_startBatchHooks(void);
 void libundirect_applyBatchHooks(void);
 
 // apply all hooks in batch queue in one shot together with passed additional ones using libhooker API if it exists
-void libundirect_applyBatchHooksAndAdditional(const struct LHFunctionHook* additionalHooks, NSUInteger additionalCount);
+void libundirect_applyBatchHooksAndAdditional(const struct LHFunctionHook *additionalHooks, NSUInteger additionalCount);
 
 // selectors that failed to be added
-NSArray* libundirect_failedSelectors();
+NSArray *libundirect_failedSelectors();
 
 #ifdef __cplusplus
 }
@@ -60,5 +59,9 @@ NSArray* libundirect_failedSelectors();
 // macros to readd setters and getters for ivars, these can't be hooked as the application still calls the original direct getters and setters
 // mainly useful to get existing code to just work without having to change everything to use the ivar instead
 // can only be used from xmi files
-#define LIBUNDIRECT_CLASS_ADD_GETTER(classname, type, ivarname, gettername) %hook classname %new - (type)gettername { return [self valueForKey:[NSString stringWithUTF8String:#ivarname]]; } %end
-#define LIBUNDIRECT_CLASS_ADD_SETTER(classname, type, ivarname, settername) %hook classname %new - (void)settername:(type)toset { [self setValue:toset forKey:[NSString stringWithUTF8String:#ivarname]]; } %end
+#define LIBUNDIRECT_CLASS_ADD_GETTER(classname, type, ivarname, gettername)                                            \
+    % hook classname % new - (type)gettername { return [self valueForKey:[NSString stringWithUTF8String:#ivarname]]; } \
+    % end
+#define LIBUNDIRECT_CLASS_ADD_SETTER(classname, type, ivarname, settername)                                                             \
+    % hook classname % new - (void)settername : (type)toset { [self setValue:toset forKey:[NSString stringWithUTF8String:#ivarname]]; } \
+    % end

@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TSHTMLViewController : UIViewController
-@property(nonatomic, readonly) UIWebView *webView;
+@property (nonatomic, readonly) UIWebView *webView;
 - (id)initWithHTMLContent:(NSString *)content;
 - (id)initWithHTMLContent:(NSString *)content dataDetector:(UIDataDetectorTypes)dataDetectors;
 - (id)initWithURL:(NSURL *)url;

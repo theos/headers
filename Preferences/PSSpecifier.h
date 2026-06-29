@@ -114,7 +114,7 @@ FOUNDATION_EXPORT NSString *const PSValuesDataSourceKey; // @"valuesDataSource"
 
 @interface PSSpecifier : NSObject {
 @public
-	SEL action;
+    SEL action;
 }
 
 + (instancetype)preferenceSpecifierNamed:(NSString *)identifier target:(id)target set:(SEL)set get:(SEL)get detail:(Class)detail cell:(PSCellType)cellType edit:(Class)edit;

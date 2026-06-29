@@ -2,7 +2,8 @@
 
 @class SBApplicationIcon;
 
-API_AVAILABLE(ios(3.0)) @interface SBIconModel : NSObject
+API_AVAILABLE(ios(3.0))
+@interface SBIconModel : NSObject
 
 - (SBApplicationIcon *)applicationIconForBundleIdentifier:(NSString *)bundleID API_AVAILABLE(ios(8.0));
 - (SBApplicationIcon *)applicationIconForDisplayIdentifier:(NSString *)displayIdentifier API_DEPRECATED_WITH_REPLACEMENT("expectedIconForDisplayIdentifier:displayIdentifier", ios(4.0, 7.0));

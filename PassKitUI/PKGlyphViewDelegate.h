@@ -3,7 +3,7 @@
 
 @class PKGlyphView;
 
-@protocol PKGlyphViewDelegate <NSObject>
+@protocol PKGlyphViewDelegate<NSObject>
 @optional
 
 - (void)glyphView:(PKGlyphView *)view revealingCheckmark:(BOOL)revealing;

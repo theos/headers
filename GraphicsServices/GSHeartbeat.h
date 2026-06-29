@@ -66,7 +66,6 @@ struct __GSHeartbeat {
 }
 */
 
-
 GSHeartbeatTime GSHeartbeatGetCurrentTime();
 
 CFTypeID GSHeartbeatGetTypeID();

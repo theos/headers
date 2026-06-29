@@ -2,7 +2,7 @@
 
 @class MPUNowPlayingController, MPUNowPlayingMetadata;
 
-@protocol MPUNowPlayingDelegate <NSObject>
+@protocol MPUNowPlayingDelegate<NSObject>
 
 @optional
 
@@ -18,7 +18,7 @@
 
 @interface MPUNowPlayingController : NSObject
 
-@property (nonatomic) id <MPUNowPlayingDelegate> delegate;
+@property (nonatomic) id<MPUNowPlayingDelegate> delegate;
 
 - (void)startUpdating;
 - (void)stopUpdating;

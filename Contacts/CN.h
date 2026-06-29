@@ -5,6 +5,6 @@
 
 @interface CN : NSObject
 
-+ (NSArray <CNPropertyDescription *> *)allNameComponentRelatedProperties;
++ (NSArray<CNPropertyDescription *> *)allNameComponentRelatedProperties;
 
 @end

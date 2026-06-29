@@ -35,8 +35,8 @@
 
 - (NSInteger)interfaceOrientation;
 
-- (id <textInputDelegate>)inputDelegate;
-- (id <textInputDelegate>)asynchronousInputDelegate;
+- (id<textInputDelegate>)inputDelegate;
+- (id<textInputDelegate>)asynchronousInputDelegate;
 - (id)delegate;
 
 - (BOOL)acceptInputString:(NSString *)input;

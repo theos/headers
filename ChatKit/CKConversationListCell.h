@@ -4,7 +4,7 @@
 @class CKConversation;
 
 @interface CKConversationListCell : UITableViewCell {
-		UILabel *_summaryLabel;
+    UILabel *_summaryLabel;
 }
 
 @property (nonatomic, retain) CKConversation *conversation;

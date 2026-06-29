@@ -17,11 +17,11 @@ typedef enum {
 } TSIncludeInstructionType;
 
 @interface TSIncludeInstruction : TSInstruction
-@property(nonatomic, readonly) NSData *content;
-@property(nonatomic, readonly) NSString *command;
-@property(nonatomic, readonly) NSString *filepath;
-@property(nonatomic, readonly) NSString *mimeType;
-@property(nonatomic, readonly) TSIncludeInstructionType includeType;
+@property (nonatomic, readonly) NSData *content;
+@property (nonatomic, readonly) NSString *command;
+@property (nonatomic, readonly) NSString *filepath;
+@property (nonatomic, readonly) NSString *mimeType;
+@property (nonatomic, readonly) TSIncludeInstructionType includeType;
 @end
 
 /* vim: set ft=objc ff=unix sw=4 ts=4 tw=80 expandtab: */

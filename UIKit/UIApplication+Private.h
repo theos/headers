@@ -3,11 +3,11 @@
 @class UIStatusBar;
 
 typedef enum {
-	UIBackgroundStyleDefault,
-	UIBackgroundStyleTransparent,
-	UIBackgroundStyleLightBlur,
-	UIBackgroundStyleDarkBlur,
-	UIBackgroundStyleDarkTranslucent
+    UIBackgroundStyleDefault,
+    UIBackgroundStyleTransparent,
+    UIBackgroundStyleLightBlur,
+    UIBackgroundStyleDarkBlur,
+    UIBackgroundStyleDarkTranslucent
 } UIBackgroundStyle;
 
 @interface UIApplication (Private)

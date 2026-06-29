@@ -54,13 +54,12 @@
     IODestroyPlugInInterface(). Do not call Release() on it.
     </p>
 */
- 
+
 #ifndef _IOKIT_PM_IOUPSPLUGIN_H
 #define _IOKIT_PM_IOUPSPLUGIN_H
 
 #include <CoreFoundation/CoreFoundation.h>
 #include <IOKit/IOCFPlugIn.h>
-
 
 /* 40A57A4E-26A0-11D8-9295-000A958A2C78 */
 /*! 
@@ -68,8 +67,8 @@
     @discussion Type ID for the IOUPSPlugInInterface. Corresponds to an
                  available UPS device. 
 */
-#define kIOUPSPlugInTypeID CFUUIDGetConstantUUIDWithBytes(NULL, 	\
-    0x40, 0xa5, 0x7a, 0x4e, 0x26, 0xa0, 0x11, 0xd8,			\
+#define kIOUPSPlugInTypeID CFUUIDGetConstantUUIDWithBytes(NULL, \
+    0x40, 0xa5, 0x7a, 0x4e, 0x26, 0xa0, 0x11, 0xd8,             \
     0x92, 0x95, 0x00, 0x0a, 0x95, 0x8a, 0x2c, 0x78)
 
 /* 63F8BFC4-26A0-11D8-88B4-000A958A2C78 */
@@ -78,20 +77,19 @@
     @discussion Interface ID for the IOUPSPlugInInterface. Corresponds to an
                  available UPS device. 
 */
-#define kIOUPSPlugInInterfaceID CFUUIDGetConstantUUIDWithBytes(NULL, 	\
-    0x63, 0xf8, 0xbf, 0xc4, 0x26, 0xa0, 0x11, 0xd8, 			\
+#define kIOUPSPlugInInterfaceID CFUUIDGetConstantUUIDWithBytes(NULL, \
+    0x63, 0xf8, 0xbf, 0xc4, 0x26, 0xa0, 0x11, 0xd8,                  \
     0x88, 0xb4, 0x0, 0xa, 0x95, 0x8a, 0x2c, 0x78)
-    
+
 /* E60E0799-9AA6-49DF-B55B-A5C94BA07A4A */
 /*! 
     @define kIOUPSPlugInInterfaceID_v140
     @discussion Interface ID for the IOUPSPlugInInterface. Corresponds to an
                  available UPS device. 
 */
-#define kIOUPSPlugInInterfaceID_v140 CFUUIDGetConstantUUIDWithBytes(NULL, 	\
-    0xe6, 0xe, 0x7, 0x99, 0x9a, 0xa6, 0x49, 0xdf,               \
+#define kIOUPSPlugInInterfaceID_v140 CFUUIDGetConstantUUIDWithBytes(NULL, \
+    0xe6, 0xe, 0x7, 0x99, 0x9a, 0xa6, 0x49, 0xdf,                         \
     0xb5, 0x5b, 0xa5, 0xc9, 0x4b, 0xa0, 0x7a, 0x4a)
-
 
 /*! 
     @typedef IOUPSEventCallbackFunction
@@ -105,31 +103,29 @@
     @param sender Interface instance sending the completion routine.
     @param event CFDictionaryRef containing event data.
 */
-typedef void (*IOUPSEventCallbackFunction)
-              (void *	 		target,
-               IOReturn 		result,
-               void * 			refcon,
-               void * 			sender,
-               CFDictionaryRef  event);
+typedef void (*IOUPSEventCallbackFunction)(void *target,
+    IOReturn result,
+    void *refcon,
+    void *sender,
+    CFDictionaryRef event);
 
-#define IOUPSPLUGINBASE							\
-    IOReturn (*getProperties)(	void * thisPointer, 			\
-                                CFDictionaryRef * properties);		\
-    IOReturn (*getCapabilities)(void * thisPointer, 			\
-                                CFSetRef * capabilities);		\
-    IOReturn (*getEvent)(	void * thisPointer, 			\
-                                CFDictionaryRef * event);		\
-    IOReturn (*setEventCallback)(void * thisPointer, 			\
-                                IOUPSEventCallbackFunction callback,	\
-                                void * callbackTarget,  		\
-                                void * callbackRefcon);			\
-    IOReturn (*sendCommand)(	void * thisPointer, 			\
-                                CFDictionaryRef command)
-                                
-#define IOUPSPLUGIN_V140							\
-    IOReturn (*createAsyncEventSource)(void * thisPointer,      \
-                                CFTypeRef * source)
+#define IOUPSPLUGINBASE                             \
+    IOReturn (*getProperties)(void *thisPointer,    \
+        CFDictionaryRef *properties);               \
+    IOReturn (*getCapabilities)(void *thisPointer,  \
+        CFSetRef *capabilities);                    \
+    IOReturn (*getEvent)(void *thisPointer,         \
+        CFDictionaryRef *event);                    \
+    IOReturn (*setEventCallback)(void *thisPointer, \
+        IOUPSEventCallbackFunction callback,        \
+        void *callbackTarget,                       \
+        void *callbackRefcon);                      \
+    IOReturn (*sendCommand)(void *thisPointer,      \
+        CFDictionaryRef command)
 
+#define IOUPSPLUGIN_V140                                  \
+    IOReturn (*createAsyncEventSource)(void *thisPointer, \
+        CFTypeRef *source)
 
 typedef struct IOUPSPlugInInterface {
     IUNKNOWN_C_GUTS;
@@ -143,9 +139,9 @@ typedef struct IOUPSPlugInInterface_v140 {
 } IOUPSPlugInInterface_v140;
 
 //
-//  BEGIN READABLE STRUCTURE DEFINITIONS 
-//  
-//  This portion of uncompiled code provides a more reader friendly representation of 
+//  BEGIN READABLE STRUCTURE DEFINITIONS
+//
+//  This portion of uncompiled code provides a more reader friendly representation of
 //  the CFPlugin methods defined above.
 
 #if 0
@@ -251,6 +247,6 @@ typedef struct IOUPSPlugInInterface {
 } IOUPSPlugInInterface;
 #endif
 
-//  END READABLE STRUCTURE DEFINITIONS 
+//  END READABLE STRUCTURE DEFINITIONS
 
 #endif /* !_IOKIT_PM_IOUPSPLUGIN_H */

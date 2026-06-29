@@ -3,22 +3,22 @@
 @class PSSpecifier;
 
 typedef NS_ENUM(NSInteger, PSCellType) {
-	PSGroupCell,
-	PSLinkCell,
-	PSLinkListCell,
-	PSListItemCell,
-	PSTitleValueCell,
-	PSSliderCell,
-	PSSwitchCell,
-	PSStaticTextCell,
-	PSEditTextCell,
-	PSSegmentCell,
-	PSGiantIconCell,
-	PSGiantCell,
-	PSSecureEditTextCell,
-	PSButtonCell,
-	PSEditTextViewCell,
-	PSSpinnerCell
+    PSGroupCell,
+    PSLinkCell,
+    PSLinkListCell,
+    PSListItemCell,
+    PSTitleValueCell,
+    PSSliderCell,
+    PSSwitchCell,
+    PSStaticTextCell,
+    PSEditTextCell,
+    PSSegmentCell,
+    PSGiantIconCell,
+    PSGiantCell,
+    PSSecureEditTextCell,
+    PSButtonCell,
+    PSEditTextViewCell,
+    PSSpinnerCell
 };
 
 @interface PSTableCell : UITableViewCell

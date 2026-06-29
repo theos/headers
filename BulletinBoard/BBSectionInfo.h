@@ -1,9 +1,9 @@
 #import "BBSectionInfoSettings.h"
 
 typedef NS_ENUM(NSUInteger, BBSectionInfoAlertType) {
-	BBSectionInfoAlertTypeNone,
-	BBSectionInfoAlertTypeBanner,
-	BBSectionInfoAlertTypeAlert
+    BBSectionInfoAlertTypeNone,
+    BBSectionInfoAlertTypeBanner,
+    BBSectionInfoAlertTypeAlert
 };
 
 @protocol BBDataProvider;
@@ -11,7 +11,7 @@ typedef NS_ENUM(NSUInteger, BBSectionInfoAlertType) {
 @interface BBSectionInfo : NSObject
 
 + (instancetype)defaultSectionInfoForType:(NSUInteger)type;
-+ (instancetype)defaultSectionInfoForSection:(id <BBDataProvider>)section;
++ (instancetype)defaultSectionInfoForSection:(id<BBDataProvider>)section;
 
 @property (nonatomic, retain) NSString *sectionID;
 @property (nonatomic, retain) NSString *subsectionID;

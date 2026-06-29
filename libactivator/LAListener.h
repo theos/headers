@@ -6,7 +6,7 @@
 
 @class LAActivator, LAEvent, UIImage;
 
-@protocol LAListener <NSObject>
+@protocol LAListener<NSObject>
 @optional
 
 - (void)activator:(LAActivator *)activator didChangeToEventMode:(NSString *)eventMode;

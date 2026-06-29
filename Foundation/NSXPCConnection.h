@@ -3,7 +3,7 @@
 #import <Foundation/NSCoder.h>
 
 #if __has_include(<xpc/xpc.h>)
-    #import <xpc/xpc.h>
+#import <xpc/xpc.h>
 #endif
 
 @class NSXPCConnection, NSXPCListener, NSXPCInterface, NSXPCListenerEndpoint;
@@ -60,7 +60,7 @@ typedef NS_OPTIONS(NSUInteger, NSXPCConnectionOptions) { NSXPCConnectionPrivileg
 
 @interface NSXPCListener : NSObject
 
-@property (nullable, weak) id <NSXPCListenerDelegate> delegate;
+@property (nullable, weak) id<NSXPCListenerDelegate> delegate;
 @property (readonly, retain) NSXPCListenerEndpoint *endpoint;
 
 + (NSXPCListener *)serviceListener;
@@ -76,7 +76,7 @@ typedef NS_OPTIONS(NSUInteger, NSXPCConnectionOptions) { NSXPCConnectionPrivileg
 
 // --- //
 
-@protocol NSXPCListenerDelegate <NSObject>
+@protocol NSXPCListenerDelegate<NSObject>
 @optional
 - (BOOL)listener:(NSXPCListener *)listener shouldAcceptNewConnection:(NSXPCConnection *)newConnection;
 @end
@@ -102,12 +102,12 @@ typedef NS_OPTIONS(NSUInteger, NSXPCConnectionOptions) { NSXPCConnectionPrivileg
 
 // -- //
 
-@interface NSXPCListenerEndpoint : NSObject <NSSecureCoding>
+@interface NSXPCListenerEndpoint : NSObject<NSSecureCoding>
 @end
 
 @interface NSXPCCoder : NSCoder
 
-@property (nullable, retain) id <NSObject> userInfo;
+@property (nullable, retain) id<NSObject> userInfo;
 @property (nullable, readonly, strong) NSXPCConnection *connection API_AVAILABLE(ios(10.0));
 
 #if __has_include(<xpc/xpc.h>)

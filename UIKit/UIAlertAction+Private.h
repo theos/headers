@@ -21,5 +21,4 @@
 @property (nonatomic, setter=_setTitleTextAlignment:) NSTextAlignment _titleTextAlignment;
 @property (nonatomic, getter=_isChecked, setter=_setChecked:) BOOL _checked;
 
-
 @end

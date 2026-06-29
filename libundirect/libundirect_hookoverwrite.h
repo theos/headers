@@ -3,7 +3,7 @@ extern "C" {
 #endif
 inline static void libundirect_MSHookMessageEx_wrapper(Class _class, SEL message, IMP hook, IMP *old)
 {
-	libundirect_MSHookMessageEx(_class, message, hook, old);
+    libundirect_MSHookMessageEx(_class, message, hook, old);
 }
 #define MSHookMessageEx libundirect_MSHookMessageEx_wrapper
 #ifdef __cplusplus

@@ -3,7 +3,7 @@
 
 @class BBActionResponse, BBBulletinRequestParameters, BBDataProviderIdentity, BBSectionIcon, BBSectionInfo, BBSectionParameters, BBThumbnailSizeConstraints;
 
-@protocol BBSectionIdentity <NSObject>
+@protocol BBSectionIdentity<NSObject>
 
 @required
 
@@ -22,7 +22,7 @@
 
 @end
 
-@protocol BBDataProvider <BBSectionIdentity>
+@protocol BBDataProvider<BBSectionIdentity>
 
 - (NSArray *)sortDescriptors;
 
@@ -35,7 +35,7 @@
 - (BOOL)migrateSectionInfo:(BBSectionInfo *)sectionInfo oldSectionInfo:(BBSectionInfo *)sectionInfo;
 - (BOOL)syncsBulletinDismissal;
 
-- (NSArray <BBSectionInfo *> *)defaultSubsectionInfos;
+- (NSArray<BBSectionInfo *> *)defaultSubsectionInfos;
 - (NSString *)displayNameForSubsectionID:(NSString *)subsectionID;
 
 - (void)noteSectionInfoDidChange:(BBSectionInfo *)sectionInfo;
@@ -64,7 +64,7 @@
 
 @end
 
-@interface BBDataProvider : NSObject <BBDataProvider>
+@interface BBDataProvider : NSObject<BBDataProvider>
 
 @property (nonatomic, retain) BBDataProviderIdentity *identity;
 

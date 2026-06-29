@@ -1,7 +1,7 @@
 #import "IMItem.h"
 
 typedef NS_OPTIONS(unsigned long long, IMMessageItemFlags) {
-	IMMessageItemFlagsFinished = 0x1
+    IMMessageItemFlagsFinished = 0x1
 };
 
 @interface IMMessageItem : IMItem

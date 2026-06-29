@@ -30,7 +30,7 @@
 
 __BEGIN_DECLS
 
-typedef struct __IOHIDUserDevice * IOHIDUserDeviceRef;
+typedef struct __IOHIDUserDevice *IOHIDUserDeviceRef;
 
 /*!
 	@function   IOHIDUserDeviceGetTypeID
@@ -50,9 +50,8 @@ CFTypeID IOHIDUserDeviceGetTypeID(void);
 */
 CF_EXPORT
 IOHIDUserDeviceRef IOHIDUserDeviceCreate(
-                                CFAllocatorRef                  allocator, 
-                                CFDictionaryRef                 properties);
-
+    CFAllocatorRef allocator,
+    CFDictionaryRef properties);
 
 /*!
 	@function   IOHIDUserDeviceHandleReport
@@ -60,9 +59,9 @@ IOHIDUserDeviceRef IOHIDUserDeviceCreate(
 */
 CF_EXPORT
 IOReturn IOHIDUserDeviceHandleReport(
-                                IOHIDUserDeviceRef              device, 
-                                uint8_t *                       report, 
-                                CFIndex                         reportLength);
+    IOHIDUserDeviceRef device,
+    uint8_t *report,
+    CFIndex reportLength);
 
 __END_DECLS
 

@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 
-@protocol CCUIContentModuleContentViewController <NSObject>
+@protocol CCUIContentModuleContentViewController<NSObject>
 
 @property (nonatomic, readonly) CGFloat preferredExpandedContentHeight;
 @property (nonatomic, readonly) CGFloat preferredExpandedContentWidth;

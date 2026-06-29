@@ -41,12 +41,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #if __cplusplus
 extern "C" {
 #endif
-	
-	typedef struct IOHIDSessionWorkSpace {
-		uint64_t value;
-	} IOHIDSessionWorkSpace;	
-	
-	typedef struct __IOHIDSession
+
+typedef struct IOHIDSessionWorkSpace {
+    uint64_t value;
+} IOHIDSessionWorkSpace;
+
+typedef struct __IOHIDSession
 #if 0
 	{
 		CFRuntimeBase _base;	// 0, 4
@@ -94,59 +94,57 @@ extern "C" {
 		int         logLevel;	// 144, initially = 6
 	}
 #endif
-	* IOHIDSessionRef;
-	
-	typedef void(*IOHIDSessionCallback)(CFTypeRef client, void* refcon, IOHIDServiceRef service, IOHIDEventRef event);
-	
+    *IOHIDSessionRef;
+
+typedef void (*IOHIDSessionCallback)(CFTypeRef client, void *refcon, IOHIDServiceRef service, IOHIDEventRef event);
+
 #pragma mark -
 #pragma mark Creators
-	
-	CFTypeID IOHIDSessionGetTypeID(void);
-	IOHIDSessionRef IOHIDSessionCreate(CFAllocatorRef allocator);
-		
+
+CFTypeID IOHIDSessionGetTypeID(void);
+IOHIDSessionRef IOHIDSessionCreate(CFAllocatorRef allocator);
+
 #pragma mark -
 #pragma mark Accessors
-	
-	CFTypeRef IOHIDSessionGetProperty(IOHIDSessionRef session, CFStringRef key);
-	Boolean IOHIDSessionSetProperty(IOHIDSessionRef session, CFStringRef key, CFTypeRef value);
-	
-	IOHIDSessionWorkSpace IOHIDSessionGetWorkSpace(IOHIDSessionRef session);
-	void IOHIDSessionSetWorkSpace(IOHIDSessionRef session, IOHIDSessionWorkSpace workSpace);
-	
-	Boolean IOHIDSessionGetLockState(IOHIDSessionRef session);
-	void IOHIDSessionSetLockState(IOHIDSessionRef session, Boolean lockState);
-	
+
+CFTypeRef IOHIDSessionGetProperty(IOHIDSessionRef session, CFStringRef key);
+Boolean IOHIDSessionSetProperty(IOHIDSessionRef session, CFStringRef key, CFTypeRef value);
+
+IOHIDSessionWorkSpace IOHIDSessionGetWorkSpace(IOHIDSessionRef session);
+void IOHIDSessionSetWorkSpace(IOHIDSessionRef session, IOHIDSessionWorkSpace workSpace);
+
+Boolean IOHIDSessionGetLockState(IOHIDSessionRef session);
+void IOHIDSessionSetLockState(IOHIDSessionRef session, Boolean lockState);
+
 #pragma mark -
 #pragma mark Actions
-	
-	Boolean IOHIDSessionOpen(IOHIDSessionRef session, CFTypeRef client, IOHIDSessionCallback callback, void* refcon)
-	void IOHIDSessionClose(IOHIDSessionRef session, CFTypeRef client);
-	
-	void IOHIDSessionAddService(IOHIDSessionRef, IOHIDServiceRef service);
-	void IOHIDSessionRemoveService(IOHIDSessionRef, IOHIDServiceRef service);
-	
-	void IOHIDSessionAddDisplay(IOHIDSessionRef, IOHIDDisplayRef display);
-	void IOHIDSessionRemoveDisplay(IOHIDSessionRef session, IOHIDDisplayRef display);
-	
-	IOHIDEventRef IOHIDSessionCopyEvent(IOHIDSessionRef session, IOHIDEventType type, IOHIDEventRef event, IOOptionBits options);
-		
+
+Boolean IOHIDSessionOpen(IOHIDSessionRef session, CFTypeRef client, IOHIDSessionCallback callback, void *refcon) void IOHIDSessionClose(IOHIDSessionRef session, CFTypeRef client);
+
+void IOHIDSessionAddService(IOHIDSessionRef, IOHIDServiceRef service);
+void IOHIDSessionRemoveService(IOHIDSessionRef, IOHIDServiceRef service);
+
+void IOHIDSessionAddDisplay(IOHIDSessionRef, IOHIDDisplayRef display);
+void IOHIDSessionRemoveDisplay(IOHIDSessionRef session, IOHIDDisplayRef display);
+
+IOHIDEventRef IOHIDSessionCopyEvent(IOHIDSessionRef session, IOHIDEventType type, IOHIDEventRef event, IOOptionBits options);
+
 #pragma mark -
 #pragma mark Constants
-	
-	static const CFStringRef kIOHIDSessionPropertyDisplayOrientation = CFSTR("DisplayOrientation");
-	static const CFStringRef kIOHIDSessionPropertyDisplayBrightnessFactor = CFSTR("DisplayBrightnessFactor");
-	static const CFStringRef kIOHIDSessionPropertyDisplayBrightnessFactorWithFade = CFSTR("DisplayBrightnessFactorWithFade");
-	static const CFStringRef kIOHIDSessionPropertyDisplayBrightnessFactorPending = CFSTR("DisplayBrightnessFactorPending");
-	static const CFStringRef kIOHIDSessionPropertyLogLevel = CFSTR("LogLevel");
-	static const CFStringRef kIOHIDSessionPropertyALSIntPeriodOrientationEnabled = CFSTR("ALSIntPeriodOrientationEnabled");
-	static const CFStringRef kIOHIDSessionPropertyALSIntPeriod = CFSTR("ALSIntPeriod");
-	static const CFStringRef kIOHIDSessionPropertyALSIntPeriodOrientationPortrait = CFSTR("ALSIntPeriodOrientationPortrait");
-	static const CFStringRef kIOHIDSessionPropertyALSIntPeriodOrientationPortraitInv = CFSTR("ALSIntPeriodOrientationPortraitInv");
-	static const CFStringRef kIOHIDSessionPropertyALSIntPeriodOrientationLandscape = CFSTR("ALSIntPeriodOrientationLandscape");
-	
+
+static const CFStringRef kIOHIDSessionPropertyDisplayOrientation = CFSTR("DisplayOrientation");
+static const CFStringRef kIOHIDSessionPropertyDisplayBrightnessFactor = CFSTR("DisplayBrightnessFactor");
+static const CFStringRef kIOHIDSessionPropertyDisplayBrightnessFactorWithFade = CFSTR("DisplayBrightnessFactorWithFade");
+static const CFStringRef kIOHIDSessionPropertyDisplayBrightnessFactorPending = CFSTR("DisplayBrightnessFactorPending");
+static const CFStringRef kIOHIDSessionPropertyLogLevel = CFSTR("LogLevel");
+static const CFStringRef kIOHIDSessionPropertyALSIntPeriodOrientationEnabled = CFSTR("ALSIntPeriodOrientationEnabled");
+static const CFStringRef kIOHIDSessionPropertyALSIntPeriod = CFSTR("ALSIntPeriod");
+static const CFStringRef kIOHIDSessionPropertyALSIntPeriodOrientationPortrait = CFSTR("ALSIntPeriodOrientationPortrait");
+static const CFStringRef kIOHIDSessionPropertyALSIntPeriodOrientationPortraitInv = CFSTR("ALSIntPeriodOrientationPortraitInv");
+static const CFStringRef kIOHIDSessionPropertyALSIntPeriodOrientationLandscape = CFSTR("ALSIntPeriodOrientationLandscape");
+
 #if __cplusplus
 }
 #endif
 
 #endif
-

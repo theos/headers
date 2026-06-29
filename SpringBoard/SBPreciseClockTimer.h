@@ -6,7 +6,7 @@
 
 + (instancetype)sharedInstance;
 
-- (NSNumber *)startMinuteUpdatesWithHandler:(void(^)())handler;
+- (NSNumber *)startMinuteUpdatesWithHandler:(void (^)())handler;
 - (void)stopMinuteUpdatesForToken:(NSNumber *)token;
 
 @end

@@ -1,11 +1,11 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_OPTIONS(NSUInteger, PSSystemPolicyOptions) {
-	PSSystemPolicyOptionsNotifications = 1 << 0,
-	PSSystemPolicyOptionsContacts = 1 << 2,
-	PSSystemPolicyOptionsCalendars = 1 << 3,
-	PSSystemPolicyOptionsReminders = 1 << 4,
-	PSSystemPolicyOptionsPhotos = 1 << 5
+    PSSystemPolicyOptionsNotifications = 1 << 0,
+    PSSystemPolicyOptionsContacts = 1 << 2,
+    PSSystemPolicyOptionsCalendars = 1 << 3,
+    PSSystemPolicyOptionsReminders = 1 << 4,
+    PSSystemPolicyOptionsPhotos = 1 << 5
 };
 
 @class PSSpecifier;
@@ -14,7 +14,7 @@ typedef NS_OPTIONS(NSUInteger, PSSystemPolicyOptions) {
 
 - (instancetype)initWithBundleIdentifier:(NSString *)bundleIdentifier;
 
-- (NSArray <PSSpecifier *> *)specifiersForPolicyOptions:(PSSystemPolicyOptions)options force:(BOOL)force;
+- (NSArray<PSSpecifier *> *)specifiersForPolicyOptions:(PSSystemPolicyOptions)options force:(BOOL)force;
 
 - (PSSpecifier *)notificationSpecifier;
 

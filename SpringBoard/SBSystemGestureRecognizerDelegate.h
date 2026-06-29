@@ -1,7 +1,7 @@
 #import <UIKit/UIView.h>
 #import <UIKit/UIGestureRecognizer.h>
 
-@protocol SBSystemGestureRecognizerDelegate <UIGestureRecognizerDelegate>
+@protocol SBSystemGestureRecognizerDelegate<UIGestureRecognizerDelegate>
 
 @required
 

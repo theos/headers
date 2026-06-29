@@ -1,17 +1,17 @@
 #import <UIKit/UIView.h>
 
 typedef NS_ENUM(NSUInteger, MTLumaDodgePillStyle) {
-	MTLumaDodgePillStyleNone,
-	MTLumaDodgePillStyleThin,
-	MTLumaDodgePillStyleGray,
-	MTLumaDodgePillStyleBlack,
-	MTLumaDodgePillStyleWhite
+    MTLumaDodgePillStyleNone,
+    MTLumaDodgePillStyleThin,
+    MTLumaDodgePillStyleGray,
+    MTLumaDodgePillStyleBlack,
+    MTLumaDodgePillStyleWhite
 };
 
 typedef NS_ENUM(NSUInteger, MTLumaDodgePillBackgroundLuminance) {
-	MTLumaDodgePillBackgroundLuminanceUnknown,
-	MTLumaDodgePillBackgroundLuminanceDark,
-	MTLumaDodgePillBackgroundLuminanceLight
+    MTLumaDodgePillBackgroundLuminanceUnknown,
+    MTLumaDodgePillBackgroundLuminanceDark,
+    MTLumaDodgePillBackgroundLuminanceLight
 };
 
 @interface MTLumaDodgePillView : UIView

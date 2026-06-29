@@ -29,7 +29,7 @@
  *              CFDictionaries, as returned by <code>@link //apple_ref/c/func/IOPSGetPowerSourceDescription IOPSGetPowerSourceDescription @/link</code>
  *              Note that all of these C strings must be converted to CFStrings before use. You can wrap
  *              them with the CFSTR() macro, or create a CFStringRef (that you must later CFRelease()) using CFStringCreateWithCString().
- */  
+ */
 
 #ifndef _IOPSKEYS_H_
 #define _IOPSKEYS_H_
@@ -41,7 +41,7 @@
  *              Use these kIOPSPowerAdapter keys to decipher the dictionary returned
  *              by @link //apple_ref/c/func/IOPSCopyExternalPowerAdapterDetails IOPSCopyExternalPowerAdapterDetails @/link
  */
- 
+
 /*!
  * @define      kIOPSPowerAdapterIDKey
  *
@@ -52,7 +52,7 @@
  *              @link //apple_ref/c/func/IOPSCopyExternalPowerAdapterDetails IOPSCopyExternalPowerAdapterDetails @/link
  *              This key might not be defined in the adapter details dictionary.
  */
-#define kIOPSPowerAdapterIDKey          "AdapterID"
+#define kIOPSPowerAdapterIDKey "AdapterID"
 
 /*!
  * @define      kIOPSPowerAdapterWattsKey
@@ -64,7 +64,7 @@
  *              @link //apple_ref/c/func/IOPSCopyExternalPowerAdapterDetails IOPSCopyExternalPowerAdapterDetails @/link
  *              This key might not be defined in the adapter details dictionary.
  */
-#define kIOPSPowerAdapterWattsKey       "Watts"
+#define kIOPSPowerAdapterWattsKey "Watts"
 
 /*!
  * @define      kIOPSPowerAdapterRevisionKey
@@ -76,7 +76,7 @@
  *              @link //apple_ref/c/func/IOPSCopyExternalPowerAdapterDetails IOPSCopyExternalPowerAdapterDetails @/link
  *              This key might not be defined in the adapter details dictionary.
  */
-#define kIOPSPowerAdapterRevisionKey   "AdapterRevision"
+#define kIOPSPowerAdapterRevisionKey "AdapterRevision"
 
 /*!
  * @define      kIOPSPowerAdapterSerialNumberKey
@@ -87,8 +87,8 @@
  * @discussion  This key may be present in the dictionary returned from 
  *              @link //apple_ref/c/func/IOPSCopyExternalPowerAdapterDetails IOPSCopyExternalPowerAdapterDetails @/link
  *              This key might not be defined in the adapter details dictionary.
- */ 
-#define kIOPSPowerAdapterSerialNumberKey    "SerialNumber"
+ */
+#define kIOPSPowerAdapterSerialNumberKey "SerialNumber"
 
 /*!
  * @define      kIOPSPowerAdapterFamilyKey
@@ -100,10 +100,7 @@
  *              @link //apple_ref/c/func/IOPSCopyExternalPowerAdapterDetails IOPSCopyExternalPowerAdapterDetails @/link
  *              This key might not be defined in the adapter details dictionary.
  */
-#define kIOPSPowerAdapterFamilyKey          "FamilyCode"
-
-
-
+#define kIOPSPowerAdapterFamilyKey "FamilyCode"
 
 /*! 
  * @group       Internal Keys
@@ -117,35 +114,33 @@
  * @discussion  kIOPSUPSManagementClaimed is obsolete. Do not use. 
  * @deprecated  Unsupported in OS X 10.5 and later.
  */
-#define kIOPSUPSManagementClaimed       "/IOKit/UPSPowerManagementClaimed"
+#define kIOPSUPSManagementClaimed "/IOKit/UPSPowerManagementClaimed"
 
 /*!
  * @define      kIOPSLowWarnLevelKey 
  *
  * @abstract    Key for the "Warning" UPS low power trigger-level. Default is 50%.
 */
-#define kIOPSLowWarnLevelKey           "Low Warn Level"
+#define kIOPSLowWarnLevelKey "Low Warn Level"
 
 /*!
  * @define      kIOPSDeadWarnLevelKey 
  *
  * @abstract    Key for the "Shutdown System" low power trigger-level. Default is 20%.
  */
-#define kIOPSDeadWarnLevelKey          "Shutdown Level"
-
+#define kIOPSDeadWarnLevelKey "Shutdown Level"
 
 /*!
  * @define      kIOPSDynamicStorePath
  *
  * @abstract    This is only used for internal bookkeeping, and should be ignored.
  */
-#define kIOPSDynamicStorePath          "/IOKit/PowerSources"
-
+#define kIOPSDynamicStorePath "/IOKit/PowerSources"
 
 /*!
  * @group       Power Source Commands (UPS)
  *
- */ 
+ */
 
 /*!
  * @define      kIOPSCommandDelayedRemovePowerKey
@@ -157,7 +152,7 @@
  *                  <li>remove power from its AC power ports.
  *              </ul>
  */
-#define kIOPSCommandDelayedRemovePowerKey     "Delayed Remove Power"
+#define kIOPSCommandDelayedRemovePowerKey "Delayed Remove Power"
 
 /*!
  * @define      kIOPSCommandEnableAudibleAlarmKey
@@ -170,7 +165,7 @@
  *              </ul>
  */
 
-#define kIOPSCommandEnableAudibleAlarmKey     "Enable Audible Alarm"
+#define kIOPSCommandEnableAudibleAlarmKey "Enable Audible Alarm"
 
 /*!
  * @define      kIOPSCommandStartupDelayKey
@@ -182,8 +177,7 @@
  *                  <li>remove power from its AC power ports.
  *              </ul>
  */
-#define kIOPSCommandStartupDelayKey           "Startup Delay"
-
+#define kIOPSCommandStartupDelayKey "Startup Delay"
 
 /*!
  * @group       Power Source data keys
@@ -206,7 +200,7 @@
  *                  <li> This key is DEPRECATED, do not provide it. 
  *              </ul>
  *
- */ 
+ */
 
 /*!
  * @define      kIOPSPowerSourceIDKey
@@ -220,10 +214,9 @@
  *              <li> Type CFNumber, kCFNumberIntType, uniquely identifying an attached UPS.
  *              </ul>
  */
- 
-#define kIOPSPowerSourceIDKey          "Power Source ID"
 
- 
+#define kIOPSPowerSourceIDKey "Power Source ID"
+
 /*!
  * @define      kIOPSPowerSourceStateKey
  *
@@ -239,7 +232,7 @@
  *              </ul>
  */
 
-#define kIOPSPowerSourceStateKey       "Power Source State"
+#define kIOPSPowerSourceStateKey "Power Source State"
 
 /*!
  * @define      kIOPSCurrentCapacityKey
@@ -257,7 +250,7 @@
  *              </ul>
  */
 
-#define kIOPSCurrentCapacityKey        "Current Capacity"
+#define kIOPSCurrentCapacityKey "Current Capacity"
 
 /*!
  * @define      kIOPSMaxCapacityKey
@@ -271,7 +264,7 @@
  *              </ul>
  */
 
-#define kIOPSMaxCapacityKey            "Max Capacity"
+#define kIOPSMaxCapacityKey "Max Capacity"
 
 /*!
  * @define      kIOPSDesignCapacityKey
@@ -285,7 +278,7 @@
  *              </ul>
  */
 
-#define kIOPSDesignCapacityKey          "DesignCapacity"
+#define kIOPSDesignCapacityKey "DesignCapacity"
 
 /*!
  * @define      kIOPSTimeToEmptyKey
@@ -302,8 +295,7 @@
  *              </ul>
  */
 
-
-#define kIOPSTimeToEmptyKey            "Time to Empty"
+#define kIOPSTimeToEmptyKey "Time to Empty"
 
 /*!
  * @define      kIOPSTimeToFullChargeKey
@@ -318,7 +310,7 @@
  *              </ul>
  */
 
-#define kIOPSTimeToFullChargeKey       "Time to Full Charge"
+#define kIOPSTimeToFullChargeKey "Time to Full Charge"
 
 /*!
  * @define      kIOPSIsChargingKey
@@ -331,7 +323,7 @@
  *              </ul>
  */
 
-#define kIOPSIsChargingKey             "Is Charging"
+#define kIOPSIsChargingKey "Is Charging"
 
 /*!
  * @define      kIOPSIsPresentKey
@@ -347,7 +339,7 @@
  *              </ul>
  */
 
-#define kIOPSIsPresentKey              "Is Present"
+#define kIOPSIsPresentKey "Is Present"
 
 /*!
  * @define      kIOPSVoltageKey
@@ -360,7 +352,7 @@
  *              </ul>
  */
 
-#define kIOPSVoltageKey                "Voltage"
+#define kIOPSVoltageKey "Voltage"
 
 /*!
  * @define      kIOPSCurrentKey
@@ -373,7 +365,7 @@
  *              </ul>
  */
 
-#define kIOPSCurrentKey                "Current"
+#define kIOPSCurrentKey "Current"
 
 /*!
  * @define      kIOPSNameKey
@@ -386,8 +378,7 @@
  *              </ul>
  */
 
-#define kIOPSNameKey                   "Name"
-
+#define kIOPSNameKey "Name"
 
 /*!
  * @define      kIOPSTypeKey
@@ -400,8 +391,7 @@
  *              </ul>
  */
 
-#define kIOPSTypeKey          "Type"
-
+#define kIOPSTypeKey "Type"
 
 /*!
  * @define      kIOPSTransportTypeKey
@@ -417,7 +407,7 @@
  *              </ul>
  */
 
-#define kIOPSTransportTypeKey          "Transport Type"
+#define kIOPSTransportTypeKey "Transport Type"
 
 /*!
  * @define      kIOPSVendorDataKey
@@ -430,7 +420,7 @@
  *              </ul>
  */
 
-#define kIOPSVendorDataKey          "Vendor Specific Data"
+#define kIOPSVendorDataKey "Vendor Specific Data"
 
 /*!
  * @define      kIOPSBatteryHealthKey
@@ -446,7 +436,7 @@
  *              </ul>
  */
 
-#define kIOPSBatteryHealthKey       "BatteryHealth"
+#define kIOPSBatteryHealthKey "BatteryHealth"
 
 /*!
  * @define      kIOPSBatteryHealthConditionKey
@@ -460,7 +450,7 @@
  *              </ul>
  */
 
-#define kIOPSBatteryHealthConditionKey       "BatteryHealthCondition"
+#define kIOPSBatteryHealthConditionKey "BatteryHealthCondition"
 
 /*!
  * @define      kIOPSBatteryFailureModesKey
@@ -478,7 +468,7 @@
  *              <li> Type CFArrayRef
  *              </ul>
  */
-#define kIOPSBatteryFailureModesKey          "BatteryFailureModes"
+#define kIOPSBatteryFailureModesKey "BatteryFailureModes"
 
 /*!
  * @define      kIOPSHealthConfidenceKey    
@@ -494,8 +484,7 @@
  *              </ul>
  */
 
-#define kIOPSHealthConfidenceKey    "HealthConfidence"
-
+#define kIOPSHealthConfidenceKey "HealthConfidence"
 
 /*!
  * @define      kIOPSMaxErrKey
@@ -509,7 +498,7 @@
  *              </ul>
  */
 
-#define kIOPSMaxErrKey              "MaxErr"
+#define kIOPSMaxErrKey "MaxErr"
 
 /*!
  * @define      kIOPSIsChargedKey
@@ -525,7 +514,7 @@
  *              </ul>
  */
 
-#define kIOPSIsChargedKey                   "Is Charged"
+#define kIOPSIsChargedKey "Is Charged"
 
 /*!
  * @define      kIOPSIsFinishingChargeKey
@@ -540,7 +529,7 @@
  *              </ul>
  */
 
-#define kIOPSIsFinishingChargeKey              "Is Finishing Charge"
+#define kIOPSIsFinishingChargeKey "Is Finishing Charge"
 
 /*!
  * @define      kIOPSHardwareSerialNumberKey
@@ -554,10 +543,7 @@
  *              </ul>
  */
 
-
-#define kIOPSHardwareSerialNumberKey            "Hardware Serial Number"
-
-
+#define kIOPSHardwareSerialNumberKey "Hardware Serial Number"
 
 /*
  * @group       Transport types
@@ -568,28 +554,27 @@
  * @abstract    Value for key <code>@link kIOPSTransportTypeKey @/link</code>. 
  * @discussion  Indicates the power source is a UPS attached over a serial connection.
  */
-#define kIOPSSerialTransportType       "Serial"
+#define kIOPSSerialTransportType "Serial"
 
 /*!
  * @define      kIOPSUSBTransportType
  * @abstract    Value for key <code>@link kIOPSTransportTypeKey @/link</code>. 
  * @discussion  Indicates the power source is a UPS attached over a USB connection.
  */
-#define kIOPSUSBTransportType          "USB"
+#define kIOPSUSBTransportType "USB"
 
 /*!
  * @define      kIOPSNetworkTransportType
  * @abstract    Value for key <code>@link kIOPSTransportTypeKey @/link</code>. 
  * @discussion  Indicates the power source is a UPS attached over a network connection (and it may be managing several computers).
  */
-#define kIOPSNetworkTransportType      "Ethernet"
+#define kIOPSNetworkTransportType "Ethernet"
 
 /*!
  * @define      kIOPSInternalType
  * @abstract    Value for key <code>@link kIOPSTransportTypeKey @/link</code>. Indicates the power source is an internal battery.
 */
-#define kIOPSInternalType              "Internal"
-
+#define kIOPSInternalType "Internal"
 
 /*
  * @group       PowerSource Types
@@ -603,14 +588,14 @@
  *
  * @abstract    Represents a battery residing inside a Mac.
  */
-#define kIOPSInternalBatteryType    "InternalBattery"
+#define kIOPSInternalBatteryType "InternalBattery"
 
 /*!
  * @define      kIOPSUPSType 
  *
  * @abstract    Represents an external attached UPS.
  */
-#define kIOPSUPSType                "UPS"
+#define kIOPSUPSType "UPS"
 
 /*
  * PS state 
@@ -619,21 +604,19 @@
  * @define      kIOPSOffLineValue
  * @abstract    Value for key kIOPSPowerSourceStateKey. Power source is off-line or no longer connected.
 */
-#define kIOPSOffLineValue              "Off Line"
+#define kIOPSOffLineValue "Off Line"
 
 /*!
  * @define      kIOPSACPowerValue
  * @abstract    Value for key kIOPSPowerSourceStateKey. Power source is connected to external or AC power, and is not draining the internal battery.
 */
-#define kIOPSACPowerValue              "AC Power"
+#define kIOPSACPowerValue "AC Power"
 
 /*!
  * @define      kIOPSBatteryPowerValue
  * @abstract    Value for key kIOPSPowerSourceStateKey. Power source is currently using the internal battery.
 */
-#define kIOPSBatteryPowerValue         "Battery Power"
-
-
+#define kIOPSBatteryPowerValue "Battery Power"
 
 /*!
  * @group Battery Health values
@@ -642,21 +625,19 @@
  * @define      kIOPSPoorValue
  * @abstract    Value for key <code>@link kIOPSBatteryHealthKey @/link</code>.
 */
-#define kIOPSPoorValue                  "Poor"
+#define kIOPSPoorValue "Poor"
 
 /*!
  * @define      kIOPSFairValue
  * @abstract    Value for key <code>@link kIOPSBatteryHealthKey @/link</code>.
 */
-#define kIOPSFairValue                  "Fair"
+#define kIOPSFairValue "Fair"
 
 /*!
  * @define      kIOPSGoodValue
  * @abstract    Value for key <code>@link kIOPSBatteryHealthKey @/link</code>.
 */
-#define kIOPSGoodValue                  "Good"
-
-
+#define kIOPSGoodValue "Good"
 
 /*
  * @group       Battery Health Condition values
@@ -668,7 +649,7 @@
  *
  * @discussion  This value indicates that the battery should be checked out by a licensed Mac repair service.
  */
-#define kIOPSCheckBatteryValue                      "Check Battery"
+#define kIOPSCheckBatteryValue "Check Battery"
 
 /*!
  * @define      kIOPSPermanentFailureValue
@@ -677,8 +658,7 @@
  *
  * @discussion  Indicates the battery needs replacement.
  */
-#define kIOPSPermanentFailureValue                  "Permanent Battery Failure"
-
+#define kIOPSPermanentFailureValue "Permanent Battery Failure"
 
 /*!
  * @group       Battery Failure Mode values
@@ -689,85 +669,84 @@
  *
  * @abstract    Value for key <code>@link kIOPSBatteryFailureModesKey@/link</code>
  */
-#define kIOPSFailureExternalInput                   "Externally Indicated Failure"
+#define kIOPSFailureExternalInput "Externally Indicated Failure"
 /*!
  *  @define     kIOPSFailureSafetyOverVoltage
  *
  *  @abstract   Potential value for key <code>@link kIOPSBatteryFailureModesKey@/link</code>
  */
-#define kIOPSFailureSafetyOverVoltage               "Safety Over-Voltage"
+#define kIOPSFailureSafetyOverVoltage "Safety Over-Voltage"
 /*!
  *  @define     kIOPSFailureChargeOverTemp
  *
  *  @abstract   Potential value for key <code>@link kIOPSBatteryFailureModesKey@/link</code>
  */
-#define kIOPSFailureChargeOverTemp                  "Charge Over-Temperature"
+#define kIOPSFailureChargeOverTemp "Charge Over-Temperature"
 /*!
  *  @define     kIOPSFailureDischargeOverTemp
  *
  *  @abstract   Potential value for key <code>@link kIOPSBatteryFailureModesKey@/link</code>
  */
-#define kIOPSFailureDischargeOverTemp               "Discharge Over-Temperature"
+#define kIOPSFailureDischargeOverTemp "Discharge Over-Temperature"
 /*!
  *  @define     kIOPSFailureCellImbalance
  *
  *  @abstract   Potential value for key <code>@link kIOPSBatteryFailureModesKey@/link</code>
  */
-#define kIOPSFailureCellImbalance                   "Cell Imbalance"
+#define kIOPSFailureCellImbalance "Cell Imbalance"
 /*!
  *  @define     kIOPSFailureChargeFET
  *
  *  @abstract   Potential value for key <code>@link kIOPSBatteryFailureModesKey@/link</code>
  */
-#define kIOPSFailureChargeFET                       "Charge FET"
+#define kIOPSFailureChargeFET "Charge FET"
 /*!
  *  @define     kIOPSFailureDischargeFET
  *
  *  @abstract   Potential value for key <code>@link kIOPSBatteryFailureModesKey@/link</code>
  */
-#define kIOPSFailureDischargeFET                    "Discharge FET"
+#define kIOPSFailureDischargeFET "Discharge FET"
 /*!
  *  @define     kIOPSFailureDataFlushFault
  *
  *  @abstract   Potential value for key <code>@link kIOPSBatteryFailureModesKey@/link</code>
  */
-#define kIOPSFailureDataFlushFault                  "Data Flush Fault"
+#define kIOPSFailureDataFlushFault "Data Flush Fault"
 /*!
  *  @define     kIOPSFailurePermanentAFEComms
  *
  *  @abstract   Potential value for key <code>@link kIOPSBatteryFailureModesKey@/link</code>
  */
-#define kIOPSFailurePermanentAFEComms               "Permanent AFE Comms"
+#define kIOPSFailurePermanentAFEComms "Permanent AFE Comms"
 /*!
  *  @define     kIOPSFailurePeriodicAFEComms
  *
  *  @abstract   Potential value for key <code>@link kIOPSBatteryFailureModesKey@/link</code>
  */
-#define kIOPSFailurePeriodicAFEComms                "Periodic AFE Comms"
+#define kIOPSFailurePeriodicAFEComms "Periodic AFE Comms"
 /*!
  *  @define     kIOPSFailureChargeOverCurrent
  *
  *  @abstract   Potential value for key <code>@link kIOPSBatteryFailureModesKey@/link</code>
  */
-#define kIOPSFailureChargeOverCurrent               "Charge Over-Current"
+#define kIOPSFailureChargeOverCurrent "Charge Over-Current"
 /*!
  *  @define     kIOPSFailureDischargeOverCurrent
  *
  *  @abstract   Potential value for key <code>@link kIOPSBatteryFailureModesKey@/link</code>
  */
-#define kIOPSFailureDischargeOverCurrent            "Discharge Over-Current"
+#define kIOPSFailureDischargeOverCurrent "Discharge Over-Current"
 /*!
  *  @define     kIOPSFailureOpenThermistor
  *
  *  @abstract   Potential value for key <code>@link kIOPSBatteryFailureModesKey@/link</code>
  */
-#define kIOPSFailureOpenThermistor                  "Open Thermistor"
+#define kIOPSFailureOpenThermistor "Open Thermistor"
 /*!
  *  @define     kIOPSFailureFuseBlown
  *
  *  @abstract   Potential value for key <code>@link kIOPSBatteryFailureModesKey@/link</code>
  */
-#define kIOPSFailureFuseBlown                       "Fuse Blown"
-
+#define kIOPSFailureFuseBlown "Fuse Blown"
 
 #endif

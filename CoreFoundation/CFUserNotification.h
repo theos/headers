@@ -38,7 +38,7 @@
 CF_IMPLICIT_BRIDGING_ENABLED
 CF_EXTERN_C_BEGIN
 
-typedef struct __CFUserNotification * CFUserNotificationRef;
+typedef struct __CFUserNotification *CFUserNotificationRef;
 
 /* A CFUserNotification is a notification intended to be presented to a 
 user at the console (if one is present).  This is for the use of processes
@@ -83,7 +83,7 @@ which button was used to dismiss the notification, which checkboxes or
 radio buttons were checked, and what the selection of the popup was.
 It also carries a response dictionary, which describes the contents
 of the textfields.  */
-    
+
 typedef void (*CFUserNotificationCallBack)(CFUserNotificationRef userNotification, CFOptionFlags responseFlags);
 
 CF_EXPORT
@@ -112,39 +112,37 @@ CFRunLoopSourceRef CFUserNotificationCreateRunLoopSource(CFAllocatorRef allocato
 
 /* Convenience functions for handling the simplest and most common cases:  
 a one-way notification, and a notification with up to three buttons. */
-    
+
 CF_EXPORT
 SInt32 CFUserNotificationDisplayNotice(CFTimeInterval timeout, CFOptionFlags flags, CFURLRef iconURL, CFURLRef soundURL, CFURLRef localizationURL, CFStringRef alertHeader, CFStringRef alertMessage, CFStringRef defaultButtonTitle);
 
 CF_EXPORT
 SInt32 CFUserNotificationDisplayAlert(CFTimeInterval timeout, CFOptionFlags flags, CFURLRef iconURL, CFURLRef soundURL, CFURLRef localizationURL, CFStringRef alertHeader, CFStringRef alertMessage, CFStringRef defaultButtonTitle, CFStringRef alternateButtonTitle, CFStringRef otherButtonTitle, CFOptionFlags *responseFlags);
 
-
 /* Flags */
 
 enum {
-    kCFUserNotificationStopAlertLevel 		= 0,
-    kCFUserNotificationNoteAlertLevel 		= 1,
-    kCFUserNotificationCautionAlertLevel 	= 2,
-    kCFUserNotificationPlainAlertLevel		= 3
+    kCFUserNotificationStopAlertLevel = 0,
+    kCFUserNotificationNoteAlertLevel = 1,
+    kCFUserNotificationCautionAlertLevel = 2,
+    kCFUserNotificationPlainAlertLevel = 3
 };
 
 enum {
-    kCFUserNotificationDefaultResponse		= 0,
-    kCFUserNotificationAlternateResponse	= 1,
-    kCFUserNotificationOtherResponse		= 2,
-    kCFUserNotificationCancelResponse		= 3
+    kCFUserNotificationDefaultResponse = 0,
+    kCFUserNotificationAlternateResponse = 1,
+    kCFUserNotificationOtherResponse = 2,
+    kCFUserNotificationCancelResponse = 3
 };
 
 enum {
-    kCFUserNotificationNoDefaultButtonFlag 	= (1UL << 5),
-    kCFUserNotificationUseRadioButtonsFlag 	= (1UL << 6)
+    kCFUserNotificationNoDefaultButtonFlag = (1UL << 5),
+    kCFUserNotificationUseRadioButtonsFlag = (1UL << 6)
 };
 
-CF_INLINE CFOptionFlags CFUserNotificationCheckBoxChecked(CFIndex i) {return ((CFOptionFlags)(1UL << (8 + i)));}
-CF_INLINE CFOptionFlags CFUserNotificationSecureTextField(CFIndex i) {return ((CFOptionFlags)(1UL << (16 + i)));}
-CF_INLINE CFOptionFlags CFUserNotificationPopUpSelection(CFIndex n) {return ((CFOptionFlags)(n << 24));}
-
+CF_INLINE CFOptionFlags CFUserNotificationCheckBoxChecked(CFIndex i) { return ((CFOptionFlags)(1UL << (8 + i))); }
+CF_INLINE CFOptionFlags CFUserNotificationSecureTextField(CFIndex i) { return ((CFOptionFlags)(1UL << (16 + i))); }
+CF_INLINE CFOptionFlags CFUserNotificationPopUpSelection(CFIndex n) { return ((CFOptionFlags)(n << 24)); }
 
 /* Keys */
 
@@ -188,12 +186,12 @@ CF_EXPORT
 const CFStringRef kCFUserNotificationTextFieldValuesKey;
 
 CF_EXPORT
-const CFStringRef kCFUserNotificationPopUpSelectionKey	CF_AVAILABLE(10_3, NA);
+const CFStringRef kCFUserNotificationPopUpSelectionKey CF_AVAILABLE(10_3, NA);
 
 #if (TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)
 CF_EXPORT
 const CFStringRef kCFUserNotificationAlertTopMostKey;
-        
+
 CF_EXPORT
 const CFStringRef kCFUserNotificationKeyboardTypesKey;
 #endif

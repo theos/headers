@@ -2,8 +2,9 @@
 
 @class SBDockIconListView, SBIconModel, SBRootIconListView, SBRootFolderController, SBIconViewMap, SBIconContentView, SBRootFolder, SBIconListView, SBFolder;
 
-API_AVAILABLE(ios(3.0))  @interface SBIconController : NSObject {
-	SBIconModel *_iconModel;
+API_AVAILABLE(ios(3.0))
+@interface SBIconController : NSObject {
+    SBIconModel *_iconModel;
 }
 
 + (instancetype)sharedInstance;
@@ -12,8 +13,8 @@ API_AVAILABLE(ios(3.0))  @interface SBIconController : NSObject {
 
 @property (nonatomic, readonly) SBIconViewMap *homescreenIconViewMap API_AVAILABLE(ios(6.0));
 
-@property (nonatomic, retain, readonly) SBRootIconListView *currentRootIconList  API_AVAILABLE(ios(4.0));
-@property (nonatomic, retain, readonly) SBDockIconListView *dockListView  API_AVAILABLE(ios(11.0));
+@property (nonatomic, retain, readonly) SBRootIconListView *currentRootIconList API_AVAILABLE(ios(4.0));
+@property (nonatomic, retain, readonly) SBDockIconListView *dockListView API_AVAILABLE(ios(11.0));
 @property (nonatomic, retain, readonly) SBIconContentView *contentView;
 
 @property (nonatomic, retain, readonly) SBRootFolderController *_rootFolderController;

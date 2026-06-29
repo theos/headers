@@ -3,7 +3,7 @@
 @class UIActivityIndicatorView;
 
 @interface PSSwitchTableCell : PSControlTableCell {
-	UIActivityIndicatorView *_activityIndicator;
+    UIActivityIndicatorView *_activityIndicator;
 }
 
 @property (nonatomic) BOOL loading;

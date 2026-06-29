@@ -107,9 +107,9 @@ void LHCloseImage(struct libhooker_image *libhookerImage);
 * Returns true if all symbols were found
 */
 bool LHFindSymbols(struct libhooker_image *libhookerImage,
-                  const char **symbolNames,
-                  void **searchSyms,
-                  size_t searchSymCount);
+    const char **symbolNames,
+    void **searchSyms,
+    size_t searchSymCount);
 
 /*!
 * @function LHExecMemory

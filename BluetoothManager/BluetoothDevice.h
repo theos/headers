@@ -3,7 +3,7 @@
 typedef struct BTDeviceImpl *BTDeviceImplRef;
 
 API_AVAILABLE(ios(5.0))
-@interface BluetoothDevice : NSObject <NSCopying>
+@interface BluetoothDevice : NSObject<NSCopying>
 
 - (instancetype)initWithDevice:(BTDeviceImplRef)device address:(NSString *)address;
 

@@ -37,39 +37,39 @@ FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_VibeIntensityDi
 FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_ActiveAudioRouteAttribute;
 FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_ActiveInputRouteForPlayAndRecordNoBluetoothAttribute; /* NSString */
 FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_AllowAppToInitiatePlaybackTemporarilyAttribute;
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_AppWantsVolumeChangesAttribute;                       /* NSNumber, BOOL */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_AudioIsPlayingSomewhereAttribute;                     /* NSNumber, BOOL */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_CanBeNowPlayingAppAttribute;                          /* NSNumber, BOOL */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_CarPlayIsConnectedAttribute;                          /* NSNumber, BOOL */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_CurrentExternalScreenAttribute;                       /* NSString */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_CurrentlyActiveCategoryAttribute;                     /* NSString */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_CurrentlyActiveModeAttribute;                         /* NSString */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_DisableAutoPauseOnHeadphoneJackDisconnectAttribute;   /* NSNumber, BOOL */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_DiscoveryModeAttribute;                               /* NSString */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_DownlinkMuteAttribute;                                /* NSNumber, BOOL */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_EUVolumeLimitAttribute;                               /* NSNumber, float */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_EUVolumeLimitEnforcedAttribute;                       /* NSNumber, BOOL */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_FullMuteAttribute;                                    /* NSNumber, BOOL */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_HeadphoneJackHasInputAttribute;                       /* NSNumber, BOOL */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_HeadphoneJackIsConnectedAttribute;                    /* NSNumber, BOOL */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_HeadphoneVolumeLimitAttribute;                        /* NSNumber, float */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_AppWantsVolumeChangesAttribute; /* NSNumber, BOOL */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_AudioIsPlayingSomewhereAttribute; /* NSNumber, BOOL */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_CanBeNowPlayingAppAttribute; /* NSNumber, BOOL */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_CarPlayIsConnectedAttribute; /* NSNumber, BOOL */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_CurrentExternalScreenAttribute; /* NSString */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_CurrentlyActiveCategoryAttribute; /* NSString */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_CurrentlyActiveModeAttribute; /* NSString */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_DisableAutoPauseOnHeadphoneJackDisconnectAttribute; /* NSNumber, BOOL */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_DiscoveryModeAttribute; /* NSString */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_DownlinkMuteAttribute; /* NSNumber, BOOL */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_EUVolumeLimitAttribute; /* NSNumber, float */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_EUVolumeLimitEnforcedAttribute; /* NSNumber, BOOL */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_FullMuteAttribute; /* NSNumber, BOOL */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_HeadphoneJackHasInputAttribute; /* NSNumber, BOOL */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_HeadphoneJackIsConnectedAttribute; /* NSNumber, BOOL */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_HeadphoneVolumeLimitAttribute; /* NSNumber, float */
 FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_IAmTheiPodAppAttribute;
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_IsSomeoneRecordingAttribute;                          /* NSNumber, int */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_NowPlayingAppDisplayIDAttribute;                      /* NSString */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_IsSomeoneRecordingAttribute; /* NSNumber, int */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_NowPlayingAppDisplayIDAttribute; /* NSString */
 FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_NowPlayingAppIsInterruptedAttribute;
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_NowPlayingAppIsPlayingAttribute;                      /* NSNumber, BOOL */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_NowPlayingAppPIDAttribute;                            /* NSNumber, pid_t */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_NowPlayingAppShouldPlayOnCarPlayConnectAttribute;     /* NSNumber, BOOL */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_ParentalVolumeCappedToEUVolumeLimitAttribute;         /* NSNumber, BOOL */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_NowPlayingAppIsPlayingAttribute; /* NSNumber, BOOL */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_NowPlayingAppPIDAttribute; /* NSNumber, pid_t */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_NowPlayingAppShouldPlayOnCarPlayConnectAttribute; /* NSNumber, BOOL */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_ParentalVolumeCappedToEUVolumeLimitAttribute; /* NSNumber, BOOL */
 FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_PickableRoutesAttribute;
 FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_PickedRouteAttribute;
 FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_RouteAwayFromAirPlayAttribute;
 FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_RouteAwayFromWirelessRouteAttribute;
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_ShouldIgnorePlayCommandsFromAccessoryAttribute;       /* NSNumber, BOOL */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_SomeClientIsPlayingLongFormAudioAttribute;            /* NSNumber, BOOL */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_ShouldIgnorePlayCommandsFromAccessoryAttribute; /* NSNumber, BOOL */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_SomeClientIsPlayingLongFormAudioAttribute; /* NSNumber, BOOL */
 FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_SystemHasAudioInputDeviceExcludingBluetoothAttribute; /* NSNumber, BOOL */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_SystemSoundVolumeMultiplierAttribute;                 /* NSNumber, float */
-FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_UplinkMuteAttribute;                                  /* NSNumber, BOOL */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_SystemSoundVolumeMultiplierAttribute; /* NSNumber, float */
+FOUNDATION_EXPORT AVSystemControllerKey const AVSystemController_UplinkMuteAttribute; /* NSNumber, BOOL */
 
 @interface AVSystemController : NSObject
 

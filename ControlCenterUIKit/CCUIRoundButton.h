@@ -3,7 +3,7 @@
 #import "CCUICAPackageDescription.h"
 
 API_AVAILABLE(ios(11.0))
-@interface CCUIRoundButton : UIControl <UIGestureRecognizerDelegate>
+@interface CCUIRoundButton : UIControl<UIGestureRecognizerDelegate>
 
 @property (nonatomic, retain) UIColor *highlightColor;
 

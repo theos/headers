@@ -3,7 +3,7 @@
 
 @class SBAppSwitcherPeopleScrollView, SBScrollViewItemWrapper;
 
-@protocol SBAppSwitcherPeopleScrollViewDelegate <UIScrollViewDelegate>
+@protocol SBAppSwitcherPeopleScrollViewDelegate<UIScrollViewDelegate>
 
 - (NSInteger)numberOfSectionsInPeopleScrollView:(SBAppSwitcherPeopleScrollView *)peopleScrollView;
 - (SBScrollViewItemWrapper *)peopleScrollView:(SBAppSwitcherPeopleScrollView *)peopleScrollView itemAtIndexPath:(NSIndexPath *)indexPath;

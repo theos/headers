@@ -2,15 +2,15 @@
 #import <libkern/OSAtomic.h>
 
 enum {
-	ALApplicationIconSizeSmall = 29,
-	ALApplicationIconSizeLarge = 59
+    ALApplicationIconSizeSmall = 29,
+    ALApplicationIconSizeLarge = 59
 };
 typedef NSUInteger ALApplicationIconSize;
 
 @interface ALApplicationList : NSObject {
 @private
-	NSMutableDictionary *cachedIcons;
-	OSSpinLock spinLock;
+    NSMutableDictionary *cachedIcons;
+    OSSpinLock spinLock;
 }
 + (ALApplicationList *)sharedApplicationList;
 

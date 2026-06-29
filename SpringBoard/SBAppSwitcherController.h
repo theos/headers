@@ -3,7 +3,7 @@
 
 @class SBAppSwitcherPageViewController;
 
-@interface SBAppSwitcherController : UIViewController <SBAppSwitcherScrollingViewDelegate>
+@interface SBAppSwitcherController : UIViewController<SBAppSwitcherScrollingViewDelegate>
 
 @property (nonatomic, retain) SBAppSwitcherPageViewController *pageController;
 
