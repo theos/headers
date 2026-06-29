@@ -3,7 +3,7 @@
 
 @class SBAppSliderScrollingViewController;
 
-@interface SBAppSliderController : UIViewController <SBAppSliderScrollingViewDelegate>
+@interface SBAppSliderController : UIViewController<SBAppSliderScrollingViewDelegate>
 
 - (NSString *)_displayIDAtIndex:(NSUInteger)index;
 

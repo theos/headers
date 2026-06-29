@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 API_AVAILABLE(ios(7.0))
-@interface BiometricKitIdentity : NSObject <NSSecureCoding, NSCopying>
+@interface BiometricKitIdentity : NSObject<NSSecureCoding, NSCopying>
 
 + (instancetype)biometricKitIdentity;
 

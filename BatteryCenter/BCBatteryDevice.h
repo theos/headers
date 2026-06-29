@@ -29,24 +29,24 @@ typedef NS_ENUM(NSUInteger, BCBatteryDeviceAccessoryCategory) {
 
 typedef NS_OPTIONS(NSUInteger, BCBatteryDevicePart) {
     BCBatteryDevicePartNone,
-    BCBatteryDevicePartLeft  = 1 << 0,
+    BCBatteryDevicePartLeft = 1 << 0,
     BCBatteryDevicePartRight = 1 << 1,
-    BCBatteryDevicePartCase  = 1 << 2,
+    BCBatteryDevicePartCase = 1 << 2,
 };
 
 typedef NS_ENUM(NSInteger, BCBatteryDeviceTransportType) {
-    BCBatteryDeviceTransportTypeUnknown         = 0,
-    BCBatteryDeviceTransportTypeInternal        = 1,
-    BCBatteryDeviceTransportTypeSerial          = 2,
-    BCBatteryDeviceTransportTypeUSB             = 2,
-    BCBatteryDeviceTransportTypeAID             = 2,
-    BCBatteryDeviceTransportTypeBluetooth       = 3,
-    BCBatteryDeviceTransportTypeBluetoothLE     = 3,
+    BCBatteryDeviceTransportTypeUnknown = 0,
+    BCBatteryDeviceTransportTypeInternal = 1,
+    BCBatteryDeviceTransportTypeSerial = 2,
+    BCBatteryDeviceTransportTypeUSB = 2,
+    BCBatteryDeviceTransportTypeAID = 2,
+    BCBatteryDeviceTransportTypeBluetooth = 3,
+    BCBatteryDeviceTransportTypeBluetoothLE = 3,
     BCBatteryDeviceTransportTypeInductiveInBand = 3,
 };
 
 API_AVAILABLE(ios(9.0))
-@interface BCBatteryDevice : NSObject <NSCopying, NSCoding> // NSSecureCoding in 11.4
+@interface BCBatteryDevice : NSObject<NSCopying, NSCoding> // NSSecureCoding in 11.4
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *identifier;
@@ -57,7 +57,7 @@ API_AVAILABLE(ios(9.0))
 @property (nonatomic, copy) NSString *groupName API_AVAILABLE(ios(9.3));
 
 @property (nonatomic) BCBatteryDeviceAccessoryCategory accessoryCategory API_AVAILABLE(ios(11.4));
-@property (nonatomic, copy) NSString *accessoryIdentifier                API_AVAILABLE(ios(11.4));
+@property (nonatomic, copy) NSString *accessoryIdentifier API_AVAILABLE(ios(11.4));
 
 @property (nonatomic) BOOL approximatesPercentCharge API_AVAILABLE(ios(10.0));
 

@@ -4,7 +4,7 @@
 
 @class UIColor;
 
-@protocol FSSwitchDataSource <NSObject>
+@protocol FSSwitchDataSource<NSObject>
 @optional
 
 - (FSSwitchState)stateForSwitchIdentifier:(NSString *)switchIdentifier;
@@ -71,7 +71,7 @@
 - (NSString *)descriptionOfState:(FSSwitchState)state forSwitchIdentifier:(NSString *)switchIdentifier;
 // Requests a description of a specific state, in the context of a specific switch identifier (1.0.3 or later)
 
-- (Class <FSSwitchSettingsViewController>)settingsViewControllerClassForSwitchIdentifier:(NSString *)switchIdentifier;
+- (Class<FSSwitchSettingsViewController>)settingsViewControllerClassForSwitchIdentifier:(NSString *)switchIdentifier;
 // Requests the class to handle configuration for the specified switch (1.0.3)
 
 - (BOOL)switchWithIdentifierIsSimpleAction:(NSString *)switchIdentifier;

@@ -53,7 +53,7 @@ __BEGIN_DECLS
  * safe. You must use your own locking with threads sharing access to OSKext.
  * You can not use this library in an application with garbage collection.
  */
- 
+
 #pragma mark Types and Constants
 /*******************************************************************************
 * Types and Constants
@@ -71,11 +71,10 @@ __BEGIN_DECLS
  *
  * The kernel counterpart of OSKext is the OSKext libkern C++ class.
  */
-typedef struct __OSKext * OSKextRef
-                ;
+typedef struct __OSKext *OSKextRef;
 
-#define kOSKextBundleExtension  "kext"
-#define kOSKextMkextExtension   "mkext"
+#define kOSKextBundleExtension "kext"
+#define kOSKextMkextExtension "mkext"
 
 /*!
  * @typedef OSKextDiagnosticsFlags
@@ -86,14 +85,14 @@ typedef struct __OSKext * OSKextRef
  * @constant kOSKextDiagnosticsFlagWarnings
  */
 enum {
-    kOSKextDiagnosticsFlagNone           = (UInt32)       0x0U,
+    kOSKextDiagnosticsFlagNone = (UInt32)0x0U,
 
-    kOSKextDiagnosticsFlagValidation     = (UInt32)       0x1U,
-    kOSKextDiagnosticsFlagAuthentication = (UInt32)       0x2U,
-    kOSKextDiagnosticsFlagDependencies   = (UInt32)       0x4U,
-    kOSKextDiagnosticsFlagWarnings       = (UInt32)       0x8U,
+    kOSKextDiagnosticsFlagValidation = (UInt32)0x1U,
+    kOSKextDiagnosticsFlagAuthentication = (UInt32)0x2U,
+    kOSKextDiagnosticsFlagDependencies = (UInt32)0x4U,
+    kOSKextDiagnosticsFlagWarnings = (UInt32)0x8U,
 
-    kOSKextDiagnosticsFlagAll            = (UInt32)0xFFFFFFFFU,
+    kOSKextDiagnosticsFlagAll = (UInt32)0xFFFFFFFFU,
 };
 typedef UInt32 OSKextDiagnosticsFlags;
 typedef UInt64 OSKextLogFlags;
@@ -101,9 +100,9 @@ typedef SInt64 OSKextVersion;
 typedef kern_return_t OSReturn;
 
 typedef uint8_t OSKextExcludeLevel;
-#define kOSKextExcludeNone  (0)
-#define kOSKextExcludeKext  (1)
-#define kOSKextExcludeAll   (2)
+#define kOSKextExcludeNone (0)
+#define kOSKextExcludeKext (1)
+#define kOSKextExcludeAll (2)
 
 /* Top-level keys for diagnostics dicts. See @link OSKextCopyDiagnostics@/link.
  */
@@ -126,8 +125,7 @@ const CFStringRef kOSKextDiagnosticsWarningsKey;
  * @result   The type identifier for the OSKext opaque type.
  */
 CF_EXPORT CFTypeID
-OSKextGetTypeID(void)
-                ;
+OSKextGetTypeID(void);
 
 #pragma mark Module Configuration
 /*********************************************************************
@@ -170,8 +168,7 @@ OSKextGetTypeID(void)
  */
 // xxx - should this also have a flushDependenciesFlag?
 CF_EXPORT Boolean
-OSKextSetArchitecture(const NXArchInfo * archInfo)
-                ;
+OSKextSetArchitecture(const NXArchInfo *archInfo);
 
 /*!
  * @function OSKextGetArchitecture
@@ -190,8 +187,7 @@ OSKextSetArchitecture(const NXArchInfo * archInfo)
  * the user-space process).
  */
 CF_EXPORT const NXArchInfo *
-OSKextGetArchitecture(void)
-                ;
+OSKextGetArchitecture(void);
 
 /*!
  * @function OSKextGetRunningKernelArchitecture
@@ -209,8 +205,7 @@ OSKextGetArchitecture(void)
  * running with a 64-bit kernel, or vice-versa).
  */
 CF_EXPORT const NXArchInfo *
-OSKextGetRunningKernelArchitecture(void)
-                ;
+OSKextGetRunningKernelArchitecture(void);
 
 /*! @function OSKextGetLogFlags 
  @param kext The kext to get the log flags. Pass NULL to get the global flag. */
@@ -235,10 +230,9 @@ CF_EXPORT void OSKextSetLogFlags(OSKextRef kext, OSKextLogFlags logFlags);
  */
 /* xxx - no CF_EXPORT, compiler dies */
 typedef void (*OSKextLogFunction)(
-    OSKextLogFlags   flags,
-    const char     * format,
-    ...)
-                ;
+    OSKextLogFlags flags,
+    const char *format,
+    ...);
 
 /*!
  * @function OSKextSetLogFunction
@@ -253,8 +247,7 @@ typedef void (*OSKextLogFunction)(
  * Log messages have no trailing newline, to accommodate system log facilities.
  */
 CF_EXPORT void
-OSKextSetLogFunction(OSKextLogFunction func)
-                ;
+OSKextSetLogFunction(OSKextLogFunction func);
 
 /*!
  * @function OSKextSetSimulatedSafeBoot
@@ -270,8 +263,7 @@ OSKextSetLogFunction(OSKextLogFunction func)
  * catch non-loadable kexts and present appropriate diagnostics.
  */
 CF_EXPORT void
-OSKextSetSimulatedSafeBoot(Boolean flag)
-                ;
+OSKextSetSimulatedSafeBoot(Boolean flag);
 
 /*!
  * @function OSKextGetSimulatedSafeBoot
@@ -288,8 +280,7 @@ OSKextSetSimulatedSafeBoot(Boolean flag)
  * catch non-loadable kexts and present appropriate diagnostics.
  */
 CF_EXPORT Boolean
-OSKextGetSimulatedSafeBoot(void)
-                ;
+OSKextGetSimulatedSafeBoot(void);
 
 /*!
  * @function OSKextGetActualSafeBoot
@@ -309,8 +300,7 @@ OSKextGetSimulatedSafeBoot(void)
  */
 // xxx - we used to disallow kexts w/debug-log flags in safe boot, too
 CF_EXPORT Boolean
-OSKextGetActualSafeBoot(void)
-                ;
+OSKextGetActualSafeBoot(void);
 
 /*!
  * @function OSKextGetSystemExtensionsFolderURLs
@@ -327,8 +317,7 @@ OSKextGetActualSafeBoot(void)
  * @link OSKextCreateKextsFromURLs@/link.
  */
 CF_EXPORT CFArrayRef
-OSKextGetSystemExtensionsFolderURLs(void)
-                ;
+OSKextGetSystemExtensionsFolderURLs(void);
 
 /*!
  * @function OSKextSetRecordsDiagnostics
@@ -360,8 +349,7 @@ OSKextGetSystemExtensionsFolderURLs(void)
  */
 // Could list a pile of see also's here....
 CF_EXPORT void
-OSKextSetRecordsDiagnostics(OSKextDiagnosticsFlags flags)
-                ;
+OSKextSetRecordsDiagnostics(OSKextDiagnosticsFlags flags);
 
 /*!
  * @function OSKextGetRecordsDiagnostics
@@ -375,9 +363,7 @@ OSKextSetRecordsDiagnostics(OSKextDiagnosticsFlags flags)
  * @link OSKextSetRecordsDiagnostics@/link.
  */
 CF_EXPORT OSKextDiagnosticsFlags
-OSKextGetRecordsDiagnostics(void)
-                ;
-
+OSKextGetRecordsDiagnostics(void);
 
 /*!
  * @function OSKextSetUsesCaches
@@ -396,8 +382,7 @@ OSKextGetRecordsDiagnostics(void)
  * See also @link OSKextGetUsesCaches@/link.
  */
 CF_EXPORT void
-OSKextSetUsesCaches(Boolean flag)
-                ;
+OSKextSetUsesCaches(Boolean flag);
 
 /*!
  * @function OSKextGetUsesCaches
@@ -416,8 +401,7 @@ OSKextSetUsesCaches(Boolean flag)
  * See also @link OSKextGetUsesCaches@/link.
  */
 CF_EXPORT Boolean
-OSKextGetUsesCaches(void)
-                ;
+OSKextGetUsesCaches(void);
 
 #pragma mark Instance Management
 /*********************************************************************
@@ -459,8 +443,7 @@ OSKextGetUsesCaches(void)
 CF_EXPORT OSKextRef
 OSKextCreate(
     CFAllocatorRef allocator,
-    CFURLRef       anURL)
-                ;
+    CFURLRef anURL);
 
 /*!
  * @function OSKextCreateKextsFromURL
@@ -495,8 +478,7 @@ OSKextCreate(
  */
 CFArrayRef OSKextCreateKextsFromURL(
     CFAllocatorRef allocator,
-    CFURLRef anURL)
-                ;
+    CFURLRef anURL);
 
 /*!
  * @function OSKextCreateKextsFromURLs
@@ -530,8 +512,7 @@ CFArrayRef OSKextCreateKextsFromURL(
 CF_EXPORT CFArrayRef
 OSKextCreateKextsFromURLs(
     CFAllocatorRef allocator,
-    CFArrayRef arrayOfURLs)
-                ;
+    CFArrayRef arrayOfURLs);
 
 /*!
  * @function OSKextGetAllKexts
@@ -547,8 +528,7 @@ OSKextCreateKextsFromURLs(
  * This function is potentially expensive, so use with care.
  */
 CF_EXPORT CFArrayRef
-OSKextGetAllKexts(void)
-                ;
+OSKextGetAllKexts(void);
 
 /*! @function OSKextCopyKextsWithIdentifier */
 CF_EXPORT CFArrayRef OSKextCopyKextsWithIdentifier(CFStringRef bundleID);
@@ -580,8 +560,7 @@ CF_EXPORT CFArrayRef OSKextGetKextsWithIdentifiers(CFArrayRef bundleIDs);
 // xxx - check on same-version ordering with folks
 CF_EXPORT OSKextRef
 OSKextGetKextWithIdentifierAndVersion(
-    CFStringRef aBundleID, OSKextVersion aVersion)
-                ;
+    CFStringRef aBundleID, OSKextVersion aVersion);
 
 /*!
  * @function OSKextGetKextsWithIdentifier
@@ -604,8 +583,7 @@ OSKextGetKextWithIdentifierAndVersion(
  */
 CF_EXPORT CFArrayRef
 OSKextCopyKextsWithIdentifier(
-    CFStringRef aBundleID)
-                ;
+    CFStringRef aBundleID);
 
 /*!
  * @function OSKextGetLoadedKextWithIdentifier
@@ -629,8 +607,7 @@ OSKextCopyKextsWithIdentifier(
  */
 CF_EXPORT OSKextRef
 OSKextGetLoadedKextWithIdentifier(
-    CFStringRef aBundleID)
-                ;
+    CFStringRef aBundleID);
 
 /*!
  * @function OSKextGetCompatibleKextWithIdentifier
@@ -657,9 +634,8 @@ OSKextGetLoadedKextWithIdentifier(
  */
 CF_EXPORT OSKextRef
 OSKextGetCompatibleKextWithIdentifier(
-    CFStringRef  aBundleID,
-    OSKextVersion requestedVersion)
-                ;
+    CFStringRef aBundleID,
+    OSKextVersion requestedVersion);
 
 #pragma mark Basic Accessors
 /*********************************************************************
@@ -681,8 +657,7 @@ OSKextGetCompatibleKextWithIdentifier(
  * URLs.
  */
 CF_EXPORT CFURLRef
-OSKextGetURL(OSKextRef aKext)
-                ; // always absolute
+OSKextGetURL(OSKextRef aKext); // always absolute
 
 /*!
  * @function OSKextGetIdentifier
@@ -696,8 +671,7 @@ OSKextGetURL(OSKextRef aKext)
  * @link //apple_ref/doc/uid/20001148-SW1 Get Rule@/link.
  */
 CF_EXPORT CFStringRef
-OSKextGetIdentifier(OSKextRef aKext)
-                ;
+OSKextGetIdentifier(OSKextRef aKext);
 
 /*!
  * @function OSKextGetValueForInfoDictionaryKey
@@ -746,9 +720,8 @@ OSKextGetIdentifier(OSKextRef aKext)
  */
 CF_EXPORT CFTypeRef
 OSKextGetValueForInfoDictionaryKey(
-    OSKextRef   aKext,
-    CFStringRef key)
-                ;
+    OSKextRef aKext,
+    CFStringRef key);
 
 /*!
  * @function OSKextCopyInfoDictionary
@@ -767,8 +740,7 @@ OSKextGetValueForInfoDictionaryKey(
  * of the info dictionary, in order to match the parsing used in the kernel.
  */
 CF_EXPORT CFMutableDictionaryRef
-OSKextCopyInfoDictionary(OSKextRef aKext)
-                ;
+OSKextCopyInfoDictionary(OSKextRef aKext);
 
 /*!
  * @function OSKextFlushInfoDictionary
@@ -799,8 +771,7 @@ OSKextCopyInfoDictionary(OSKextRef aKext)
  * dictionaries.
  */
 CF_EXPORT void
-OSKextFlushInfoDictionary(OSKextRef aKext)
-                ;
+OSKextFlushInfoDictionary(OSKextRef aKext);
 
 /*!
  * @function OSKextGetVersion
@@ -814,8 +785,7 @@ OSKextFlushInfoDictionary(OSKextRef aKext)
  * xxx - need to fix definition of OSKextVersion.
  */
 CF_EXPORT OSKextVersion
-OSKextGetVersion(OSKextRef aKext)
-                ;
+OSKextGetVersion(OSKextRef aKext);
 
 /*!
  * @function OSKextGetCompatibleVersion
@@ -832,8 +802,7 @@ OSKextGetVersion(OSKextRef aKext)
  * xxx - needs more info on version format, ref to tn: http://developer.apple.com/technotes/tn/tn1132.html
  */
 CF_EXPORT OSKextVersion
-OSKextGetCompatibleVersion(OSKextRef aKext)
-                ;
+OSKextGetCompatibleVersion(OSKextRef aKext);
 
 /*!
  * @function OSKextCopyUUIDForArchitecture
@@ -855,8 +824,7 @@ OSKextGetCompatibleVersion(OSKextRef aKext)
  */
 CF_EXPORT CFDataRef
 OSKextCopyUUIDForArchitecture(OSKextRef aKext,
-    const NXArchInfo * anArch)
-                ;
+    const NXArchInfo *anArch);
 
 /*!
  * @function OSKextIsKernelComponent
@@ -877,8 +845,7 @@ OSKextCopyUUIDForArchitecture(OSKextRef aKext,
  * (see @link OSKextIsInterface@/link).
  */
 CF_EXPORT Boolean
-OSKextIsKernelComponent(OSKextRef aKext)
-                ;
+OSKextIsKernelComponent(OSKextRef aKext);
 
 /*!
  * @function OSKextIsInterface
@@ -900,8 +867,7 @@ OSKextIsKernelComponent(OSKextRef aKext)
  * the define the kernel programming interfaces for Mac OS X.
  */
 CF_EXPORT Boolean
-OSKextIsInterface(OSKextRef aKext)
-                ;
+OSKextIsInterface(OSKextRef aKext);
 
 /*!
  * @function OSKextIsLibrary
@@ -919,8 +885,7 @@ OSKextIsInterface(OSKextRef aKext)
  * property.
  */
 CF_EXPORT Boolean
-OSKextIsLibrary(OSKextRef aKext)
-                ;
+OSKextIsLibrary(OSKextRef aKext);
 
 /*!
  * @function OSKextDeclaresExecutable
@@ -938,8 +903,7 @@ OSKextIsLibrary(OSKextRef aKext)
  * for more on the latter type.
  */
 CF_EXPORT Boolean
-OSKextDeclaresExecutable(OSKextRef aKext)
-                ;
+OSKextDeclaresExecutable(OSKextRef aKext);
 
 /*!
  * @function OSKextHasLogOrDebugFlags
@@ -957,8 +921,7 @@ OSKextDeclaresExecutable(OSKextRef aKext)
  * Kexts built for distribution should not have any logging or debug flags set.
  */
 CF_EXPORT Boolean
-OSKextHasLogOrDebugFlags(OSKextRef aKext)
-                ;
+OSKextHasLogOrDebugFlags(OSKextRef aKext);
 
 /*!
  * @function OSKextIsLoadableInSafeBoot
@@ -980,8 +943,7 @@ OSKextHasLogOrDebugFlags(OSKextRef aKext)
  * @link OSKextIsLoadable@/link.
  */
 CF_EXPORT Boolean
-OSKextIsLoadableInSafeBoot(OSKextRef aKext)
-                ;
+OSKextIsLoadableInSafeBoot(OSKextRef aKext);
 
 /*!
  * @function OSKextCopyArchitectures
@@ -999,8 +961,7 @@ OSKextIsLoadableInSafeBoot(OSKextRef aKext)
  * <code>NXArchInfo</code> pointers.
  */
 CF_EXPORT const NXArchInfo **
-OSKextCopyArchitectures(OSKextRef aKext)
-                ;
+OSKextCopyArchitectures(OSKextRef aKext);
 
 /*!
  * @function OSKextSupportsArchitecture
@@ -1016,9 +977,8 @@ OSKextCopyArchitectures(OSKextRef aKext)
  * @discussion
  */
 // null for current (NOT host) arch
-Boolean    OSKextSupportsArchitecture(OSKextRef aKext,
-    const NXArchInfo * anArch)
-;  // if NULL, uses current default
+Boolean OSKextSupportsArchitecture(OSKextRef aKext,
+    const NXArchInfo *anArch); // if NULL, uses current default
 
 /*!
  * @function OSKextCopyPlugins
@@ -1038,9 +998,8 @@ Boolean    OSKextSupportsArchitecture(OSKextRef aKext,
  * this function returns an empty array.
  */
 CF_EXPORT CFArrayRef
-OSKextCopyPlugins(OSKextRef aKext)
-                ;
-                
+OSKextCopyPlugins(OSKextRef aKext);
+
 /*!
  * @function OSKextIsPlugin
  * @abstract Returns whether a kext is a plugin of some other kext.
@@ -1055,8 +1014,7 @@ OSKextCopyPlugins(OSKextRef aKext)
  * ".kext/" in the absolute path leading up to the kext's bundle name.
  */
 CF_EXPORT Boolean
-OSKextIsPlugin(OSKextRef aKext)
-                ;
+OSKextIsPlugin(OSKextRef aKext);
 
 /*!
  * @function OSKextCopyContainerForPluginKext
@@ -1077,8 +1035,7 @@ OSKextIsPlugin(OSKextRef aKext)
  * This may result in the creation of a new kext.
  */
 CF_EXPORT OSKextRef
-OSKextCopyContainerForPluginKext(OSKextRef aKext)
-                ;
+OSKextCopyContainerForPluginKext(OSKextRef aKext);
 
 /*!
  * @function OSKextCopyPersonalitiesArray
@@ -1096,8 +1053,7 @@ OSKextCopyContainerForPluginKext(OSKextRef aKext)
  * personalities dictionary for the current architecture.
  */
 CF_EXPORT CFArrayRef
-OSKextCopyPersonalitiesArray(OSKextRef aKext)
-                ;
+OSKextCopyPersonalitiesArray(OSKextRef aKext);
 
 // xxx - would it be awful to have a function that takes a CFTypeRef that's
 // xxx - a single kext, an array of kexts, or NULL for all open kexts?
@@ -1117,8 +1073,7 @@ OSKextCopyPersonalitiesArray(OSKextRef aKext)
  * rather than a dictionary. This function facilitates such use.
  */
 CF_EXPORT CFArrayRef
-OSKextCopyPersonalitiesOfKexts(CFArrayRef kextArray)
-                ;
+OSKextCopyPersonalitiesOfKexts(CFArrayRef kextArray);
 
 /*!
  * @function OSKextCopyExecutableForArchitecture
@@ -1139,8 +1094,7 @@ OSKextCopyPersonalitiesOfKexts(CFArrayRef kextArray)
  */
 CF_EXPORT CFDataRef
 OSKextCopyExecutableForArchitecture(OSKextRef aKext,
-    const NXArchInfo * anArch)
-                ;
+    const NXArchInfo *anArch);
 
 /*!
  * @function OSKextCopyResource
@@ -1169,10 +1123,9 @@ OSKextCopyExecutableForArchitecture(OSKextRef aKext,
  */
 CF_EXPORT CFDataRef
 OSKextCopyResource(
-    OSKextRef   aKext,
+    OSKextRef aKext,
     CFStringRef resourceName,
-    CFStringRef resourceType)
-                ;
+    CFStringRef resourceType);
 
 #pragma mark Dependency Resolution
 /*********************************************************************
@@ -1206,8 +1159,7 @@ OSKextCopyResource(
  */
 // xxx - check on same-version ordering with folks
 CF_EXPORT Boolean
-OSKextResolveDependencies(OSKextRef aKext)
-                ;
+OSKextResolveDependencies(OSKextRef aKext);
 
 /*!
  * @function OSKextFlushDependencies
@@ -1240,8 +1192,7 @@ OSKextResolveDependencies(OSKextRef aKext)
  * and @link OSKextFlushDiagnostics@/link.
  */
 CF_EXPORT void
-OSKextFlushDependencies(OSKextRef aKext)
-                ;
+OSKextFlushDependencies(OSKextRef aKext);
 
 /*!
  * @function OSKextCopyDeclaredDependencies
@@ -1263,9 +1214,7 @@ OSKextFlushDependencies(OSKextRef aKext)
 CF_EXPORT CFArrayRef
 OSKextCopyDeclaredDependencies(
     OSKextRef aKext,
-    Boolean   needAllFlag)
-                ;
-    
+    Boolean needAllFlag);
 
 /*!
  * @function OSKextCopyLinkDependencies
@@ -1291,12 +1240,11 @@ OSKextCopyDeclaredDependencies(
  * This function calls @link OSKextResolveDependencies@/link to find
  * dependencies.
  */
- // xxx - need to insert a manpage link on kextstat
+// xxx - need to insert a manpage link on kextstat
 CF_EXPORT CFArrayRef
 OSKextCopyLinkDependencies(
     OSKextRef aKext,
-    Boolean   needAllFlag)
-                ;
+    Boolean needAllFlag);
 
 /*!
  * @function OSKextCopyLoadList
@@ -1324,8 +1272,7 @@ OSKextCopyLinkDependencies(
 CF_EXPORT CFMutableArrayRef
 OSKextCopyLoadList(
     OSKextRef aKext,
-    Boolean   needAllFlag)
-                ;
+    Boolean needAllFlag);
 
 /*!
  * @function OSKextCopyLoadListForKexts
@@ -1351,12 +1298,10 @@ OSKextCopyLoadList(
  * This function calls @link OSKextResolveDependencies@/link to find
  * dependencies.
  */
-CF_EXPORT CFMutableArrayRef 
+CF_EXPORT CFMutableArrayRef
 OSKextCopyLoadListForKexts(
-    CFArrayRef  kexts, 
-    Boolean     needAllFlag)
-                ;
-
+    CFArrayRef kexts,
+    Boolean needAllFlag);
 
 /*!
  * @function OSKextCopyAllDependencies
@@ -1379,8 +1324,7 @@ OSKextCopyLoadListForKexts(
 CF_EXPORT CFMutableArrayRef
 OSKextCopyAllDependencies(
     OSKextRef aKext,
-    Boolean   needAllFlag)
-                ;
+    Boolean needAllFlag);
 
 /*!
  * @function OSKextCopyIndirectDependencies
@@ -1408,8 +1352,7 @@ OSKextCopyAllDependencies(
 // xxx - This one isn't really useful, is it?
 CFMutableArrayRef OSKextCopyIndirectDependencies(
     OSKextRef aKext,
-    Boolean   needAllFlag)
-;
+    Boolean needAllFlag);
 
 /*!
  * @function OSKextDependsOnKext
@@ -1440,8 +1383,7 @@ CF_EXPORT Boolean
 OSKextDependsOnKext(
     OSKextRef aKext,
     OSKextRef libraryKext,
-    Boolean   directFlag)
-                ;
+    Boolean directFlag);
 
 /*!
  * @function OSKextCopyDependents
@@ -1468,8 +1410,7 @@ OSKextDependsOnKext(
  */
 CF_EXPORT CFMutableArrayRef
 OSKextCopyDependents(OSKextRef aKext,
-    Boolean directFlag)
-                ;
+    Boolean directFlag);
 
 /*!
  * @function OSKextIsCompatibleWithVersion
@@ -1487,9 +1428,8 @@ OSKextCopyDependents(OSKextRef aKext,
  */
 CF_EXPORT Boolean
 OSKextIsCompatibleWithVersion(
-    OSKextRef    aKext,
-    OSKextVersion aVersion)
-                ;
+    OSKextRef aKext,
+    OSKextVersion aVersion);
 
 /*!
  * @function OSKextLogDependencyGraph
@@ -1514,8 +1454,7 @@ OSKextIsCompatibleWithVersion(
 CF_EXPORT void
 OSKextLogDependencyGraph(OSKextRef aKext,
     Boolean bundleIDFlag,
-    Boolean linkFlag)
-                ;
+    Boolean linkFlag);
 
 /*!
  * @function OSKextFindLinkDependencies
@@ -1576,14 +1515,13 @@ OSKextLogDependencyGraph(OSKextRef aKext,
  * kexts' information dictionaries, and all library kexts' executables.
  */
 CFArrayRef OSKextFindLinkDependencies(
-    OSKextRef         aKext,
-    Boolean           nonKPIFlag,
-    Boolean           allowUnsupportedFlag,
-    CFDictionaryRef * undefinedSymbolsOut,
-    CFDictionaryRef * onedefSymbolsOut,
-    CFDictionaryRef * multiplyDefinedSymbolsOut,
-    CFArrayRef      * multipleDefinitionLibrariesOut)
-                ;
+    OSKextRef aKext,
+    Boolean nonKPIFlag,
+    Boolean allowUnsupportedFlag,
+    CFDictionaryRef *undefinedSymbolsOut,
+    CFDictionaryRef *onedefSymbolsOut,
+    CFDictionaryRef *multiplyDefinedSymbolsOut,
+    CFArrayRef *multipleDefinitionLibrariesOut);
 
 #pragma mark Linking and Loading; Other Kernel Operations
 /*********************************************************************
@@ -1617,8 +1555,7 @@ CFArrayRef OSKextFindLinkDependencies(
  */
 // xxx - need to list errors that may be returned
 CF_EXPORT OSReturn
-OSKextLoad(OSKextRef aKext)
-                ;
+OSKextLoad(OSKextRef aKext);
 
 /*!
  * @function OSKextLoadWithOptions
@@ -1676,13 +1613,12 @@ OSKextLoad(OSKextRef aKext)
 // xxx - need to list errors that may be returned
 CF_EXPORT OSReturn
 OSKextLoadWithOptions(
-    OSKextRef           aKext,
-    OSKextExcludeLevel  startExclusion,
-    OSKextExcludeLevel  addPersonalitiesExclusion,
-    CFArrayRef          personalityNames,
-    Boolean             delayAutounloadFlag)
-                ;
-  
+    OSKextRef aKext,
+    OSKextExcludeLevel startExclusion,
+    OSKextExcludeLevel addPersonalitiesExclusion,
+    CFArrayRef personalityNames,
+    Boolean delayAutounloadFlag);
+
 /*!
  * @function OSKextGenerateDebugSymbols
  * @abstract Generate debug symbols for a kext and its dependencies.
@@ -1714,8 +1650,7 @@ OSKextLoadWithOptions(
 CF_EXPORT CFDictionaryRef
 OSKextGenerateDebugSymbols(
     OSKextRef aKext,
-    CFDataRef kernelImage)
-                ;
+    CFDataRef kernelImage);
 
 /*!
  * @function OSKextNeedsLoadAddressForDebugSymbols
@@ -1729,8 +1664,7 @@ OSKextGenerateDebugSymbols(
  * @link OSKextGenerateDebugSymbols@/link, <code>false</code> otherwise.
  */
 CF_EXPORT Boolean
-OSKextNeedsLoadAddressForDebugSymbols(OSKextRef aKext)
-                ;
+OSKextNeedsLoadAddressForDebugSymbols(OSKextRef aKext);
 
 /*!
  * @function OSKextUnload
@@ -1757,8 +1691,7 @@ OSKextNeedsLoadAddressForDebugSymbols(OSKextRef aKext)
 // xxx - need to list errors that may be returned
 CF_EXPORT OSReturn
 OSKextUnload(OSKextRef aKext,
-    Boolean terminateServiceAndRemovePersonalities)
-                ;
+    Boolean terminateServiceAndRemovePersonalities);
 
 /*!
  * OSKextUnload
@@ -1786,8 +1719,7 @@ OSKextUnload(OSKextRef aKext,
 // xxx - need to list errors that may be returned
 CF_EXPORT OSReturn
 OSKextUnloadKextWithIdentifier(CFStringRef kextIdentifier,
-    Boolean terminateServiceAndRemovePersonalities)
-                ;
+    Boolean terminateServiceAndRemovePersonalities);
 
 /*!
  * @function OSKextIsStarted
@@ -1803,8 +1735,7 @@ OSKextUnloadKextWithIdentifier(CFStringRef kextIdentifier,
  * @link OSKextReadLoadedKextInfo@/link was called.
  */
 CF_EXPORT Boolean
-OSKextIsStarted(OSKextRef aKext)
-                ;
+OSKextIsStarted(OSKextRef aKext);
 
 /*!
  * @function OSKextStart
@@ -1828,8 +1759,7 @@ OSKextIsStarted(OSKextRef aKext)
 // xxx - need to list errors that may be returned
  */
 CF_EXPORT OSReturn
-OSKextStart(OSKextRef aKext)
-                ;
+OSKextStart(OSKextRef aKext);
 
 /*!
  * @function OSKextStop
@@ -1858,8 +1788,7 @@ OSKextStart(OSKextRef aKext)
 // xxx - themselves not started?
 // xxx - need to list errors that may be returned
 CF_EXPORT OSReturn
-OSKextStop(OSKextRef aKext)
-                ;
+OSKextStop(OSKextRef aKext);
 
 /*!
  * @function OSKextSendPersonalitiesToKernel
@@ -1881,8 +1810,7 @@ OSKextStop(OSKextRef aKext)
  */
 // xxx - need to list errors that may be returned
 CF_EXPORT OSReturn
-OSKextSendPersonalitiesToKernel(CFArrayRef personalities)
-                ;
+OSKextSendPersonalitiesToKernel(CFArrayRef personalities);
 
 /*!
  * @function OSKextSendKextPersonalitiesToKernel
@@ -1911,9 +1839,8 @@ OSKextSendPersonalitiesToKernel(CFArrayRef personalities)
 // xxx - need to list errors that may be returned
 CF_EXPORT OSReturn
 OSKextSendKextPersonalitiesToKernel(
-    OSKextRef  aKext,
-    CFArrayRef personalityNames)
-                ;
+    OSKextRef aKext,
+    CFArrayRef personalityNames);
 
 /*!
  * @function OSKextSendPersonalitiesOfKextsToKernel
@@ -1933,8 +1860,7 @@ OSKextSendKextPersonalitiesToKernel(
  */
 // xxx - need to list errors that may be returned
 CF_EXPORT OSReturn
-OSKextSendPersonalitiesOfKextsToKernel(CFArrayRef kextArray)
-                ;
+OSKextSendPersonalitiesOfKextsToKernel(CFArrayRef kextArray);
 
 /*!
  * @function OSKextRemoveKextPersonalitiesFromKernel
@@ -1971,8 +1897,7 @@ OSKextSendPersonalitiesOfKextsToKernel(CFArrayRef kextArray)
 // xxx - might we just want the function to take a bundle ID?
 // xxx - does IOCatalogueSendData really require root access?
 CF_EXPORT OSReturn
-OSKextRemoveKextPersonalitiesFromKernel(OSKextRef aKext)
-                ;
+OSKextRemoveKextPersonalitiesFromKernel(OSKextRef aKext);
 
 /*!
  * @function OSKextRemovePersonalitiesForIdentifierFromKernel
@@ -2001,8 +1926,7 @@ OSKextRemoveKextPersonalitiesFromKernel(OSKextRef aKext)
 // xxx - I want 2 separate functions for logging; a kext can have flags in it
 // xxx - does IOCatalogueSendData really require root access?
 CF_EXPORT OSReturn
-OSKextRemovePersonalitiesForIdentifierFromKernel(CFStringRef aBundleID)
-                ;
+OSKextRemovePersonalitiesForIdentifierFromKernel(CFStringRef aBundleID);
 
 /*!
  * @function OSKextCreateLoadedKextInfo
@@ -2021,8 +1945,7 @@ OSKextRemovePersonalitiesForIdentifierFromKernel(CFStringRef aBundleID)
 // xxx - need to document the keys from OSKextLib.h.
 CF_EXPORT CFArrayRef
 OSKextCreateLoadedKextInfo(
-    CFArrayRef kextIdentifiers)
-                ;
+    CFArrayRef kextIdentifiers);
 
 /*!
  * @function OSKextReadLoadedKextInfo
@@ -2068,8 +1991,7 @@ OSKextCreateLoadedKextInfo(
 CF_EXPORT OSReturn
 OSKextReadLoadedKextInfo(
     CFArrayRef kexts,
-    Boolean    flushDependenciesFlag)
-                ;
+    Boolean flushDependenciesFlag);
 
 /*!
  * @function OSKextIsLoaded
@@ -2088,8 +2010,7 @@ OSKextReadLoadedKextInfo(
  * a different version of <code>aKext</code> is loaded.
  */
 CF_EXPORT Boolean
-OSKextIsLoaded(OSKextRef aKext)
-                ;
+OSKextIsLoaded(OSKextRef aKext);
 
 /*!
  * @function OSKextGetLoadAddress
@@ -2109,8 +2030,7 @@ OSKextIsLoaded(OSKextRef aKext)
  * @link OSKextSetLoadAddress@/link for the load address to be nonzero.
  */
 CF_EXPORT uint64_t
-OSKextGetLoadAddress(OSKextRef aKext)
-                ;
+OSKextGetLoadAddress(OSKextRef aKext);
 
 /*!
  * @function OSKextSetLoadAddress
@@ -2132,8 +2052,7 @@ OSKextGetLoadAddress(OSKextRef aKext)
  * with @link OSKextGenerateDebugSymbols@/link.
  */
 CF_EXPORT Boolean
-OSKextSetLoadAddress(OSKextRef aKext, uint64_t anAddress)
-                ;
+OSKextSetLoadAddress(OSKextRef aKext, uint64_t anAddress);
 
 /*!
  * @function OSKextGetLoadTag
@@ -2155,8 +2074,7 @@ OSKextSetLoadAddress(OSKextRef aKext, uint64_t anAddress)
  * is loaded.
  */
 CF_EXPORT uint32_t
-OSKextGetLoadTag(OSKextRef aKext)
-                ;
+OSKextGetLoadTag(OSKextRef aKext);
 
 /*!
  * @function OSKextFlushLoadInfo
@@ -2195,8 +2113,7 @@ OSKextGetLoadTag(OSKextRef aKext)
 CF_EXPORT void
 OSKextFlushLoadInfo(
     OSKextRef aKext,
-    Boolean flushDependenciesFlag)
-                ;
+    Boolean flushDependenciesFlag);
 
 /*!
  * @function OSKextCopyAllRequestedIdentifiers
@@ -2210,9 +2127,8 @@ OSKextFlushLoadInfo(
  * @link //apple_ref/doc/uid/20001148-103029 Create Rule@/link.
  *
  */
-CF_EXPORT CFArrayRef 
-OSKextCopyAllRequestedIdentifiers(void)
-                ;
+CF_EXPORT CFArrayRef
+OSKextCopyAllRequestedIdentifiers(void);
 
 #pragma mark Sanity Checking and Diagnostics
 /*********************************************************************
@@ -2231,13 +2147,11 @@ OSKextCopyAllRequestedIdentifiers(void)
  * Returns -1 if the version couldn't be parsed.
  */
 CF_EXPORT OSKextVersion
-OSKextParseVersionCFString(CFStringRef versionString)
-                ;
+OSKextParseVersionCFString(CFStringRef versionString);
 
 /*! @function OSKextParseVersionString */
-CF_EXPORT OSKextVersion OSKextParseVersionString(const char* versionString);
-CF_EXPORT void OSKextVersionGetString(OSKextVersion version, char* buffer, size_t bufferLength);
-
+CF_EXPORT OSKextVersion OSKextParseVersionString(const char *versionString);
+CF_EXPORT void OSKextVersionGetString(OSKextVersion version, char *buffer, size_t bufferLength);
 
 /*!
  * @function OSKextValidate
@@ -2262,8 +2176,7 @@ CF_EXPORT void OSKextVersionGetString(OSKextVersion version, char* buffer, size_
  */
 // compare with CFBundlePreflightExecutable()
 CF_EXPORT Boolean
-OSKextValidate(OSKextRef aKext)
-                ;
+OSKextValidate(OSKextRef aKext);
 
 /*!
  * @function OSKextIsValid
@@ -2281,8 +2194,7 @@ OSKextValidate(OSKextRef aKext)
  * validation of all possible problems, use @link OSKextValidate@/link.
  */
 CF_EXPORT Boolean
-OSKextIsValid(OSKextRef aKext)
-                ;
+OSKextIsValid(OSKextRef aKext);
 
 /*!
  * @function OSKextValidateDependencies
@@ -2308,8 +2220,7 @@ OSKextIsValid(OSKextRef aKext)
  * dependencies.
  */
 CF_EXPORT Boolean
-OSKextValidateDependencies(OSKextRef aKext)
-                ;
+OSKextValidateDependencies(OSKextRef aKext);
 
 /*!
  * @function OSKextAuthenticate
@@ -2335,8 +2246,7 @@ OSKextValidateDependencies(OSKextRef aKext)
  * (see @link OSKextCreateKextsFromMkextFile@/link.
  */
 CF_EXPORT Boolean
-OSKextAuthenticate(OSKextRef aKext)
-                ;
+OSKextAuthenticate(OSKextRef aKext);
 
 /*!
  * @function OSKextIsAuthentic
@@ -2354,8 +2264,7 @@ OSKextAuthenticate(OSKextRef aKext)
  * validation of all possible problems, use @link OSKextValidate@/link.
  */
 CF_EXPORT Boolean
-OSKextIsAuthentic(OSKextRef aKext)
-                ;
+OSKextIsAuthentic(OSKextRef aKext);
 
 /*!
  * @function OSKextAuthenticateDependencies
@@ -2377,8 +2286,7 @@ OSKextIsAuthentic(OSKextRef aKext)
  * dependencies.
  */
 CF_EXPORT Boolean
-OSKextAuthenticateDependencies(OSKextRef aKext)
-                ;
+OSKextAuthenticateDependencies(OSKextRef aKext);
 
 /*!
  * @function OSKextIsLoadable
@@ -2407,8 +2315,7 @@ OSKextAuthenticateDependencies(OSKextRef aKext)
  * dependencies.
  */
 CF_EXPORT Boolean
-OSKextIsLoadable(OSKextRef aKext)
-                ;
+OSKextIsLoadable(OSKextRef aKext);
 
 /*!
  * @function OSKextCopyDiagnostics
@@ -2433,8 +2340,7 @@ OSKextIsLoadable(OSKextRef aKext)
  */
 // xxx - need to tie in with the kernel & linker to get link failures
 CFDictionaryRef OSKextCopyDiagnostics(OSKextRef aKext,
-        OSKextDiagnosticsFlags typeFlags)
-;
+    OSKextDiagnosticsFlags typeFlags);
 
 /*!
  * @function OSKextLogDiagnostics
@@ -2450,9 +2356,8 @@ CFDictionaryRef OSKextCopyDiagnostics(OSKextRef aKext,
  */
 CF_EXPORT void
 OSKextLogDiagnostics(
-    OSKextRef              aKext,
-    OSKextDiagnosticsFlags typeFlags)
-                ;
+    OSKextRef aKext,
+    OSKextDiagnosticsFlags typeFlags);
 
 /*!
  * @function OSKextFlushDiagnostics
@@ -2476,22 +2381,20 @@ OSKextLogDiagnostics(
  * and @link OSKextFlushLoadInfo@/link.
  */
 CF_EXPORT void
-OSKextFlushDiagnostics(OSKextRef aKext, OSKextDiagnosticsFlags typeFlags)
-                ;
+OSKextFlushDiagnostics(OSKextRef aKext, OSKextDiagnosticsFlags typeFlags);
 
 #pragma mark Mkext and Prelinked Kernel Files
 /*********************************************************************
 * Mkext and Prelinked Kernel Files
 *********************************************************************/
 // xxx - Use "Flag" or "Mask"?
-typedef uint32_t OSKextRequiredFlags
-;
-#define kOSKextOSBundleRequiredNone              0x0
-#define kOSKextOSBundleRequiredRootFlag          0x1ULL
-#define kOSKextOSBundleRequiredLocalRootFlag     0x1ULL << 1
-#define kOSKextOSBundleRequiredNetworkRootFlag   0x1ULL << 2
-#define kOSKextOSBundleRequiredSafeBootFlag      0x1ULL << 3
-#define kOSKextOSBundleRequiredConsoleFlag       0x1ULL << 4
+typedef uint32_t OSKextRequiredFlags;
+#define kOSKextOSBundleRequiredNone 0x0
+#define kOSKextOSBundleRequiredRootFlag 0x1ULL
+#define kOSKextOSBundleRequiredLocalRootFlag 0x1ULL << 1
+#define kOSKextOSBundleRequiredNetworkRootFlag 0x1ULL << 2
+#define kOSKextOSBundleRequiredSafeBootFlag 0x1ULL << 3
+#define kOSKextOSBundleRequiredConsoleFlag 0x1ULL << 4
 
 /*!
  * @function OSKextIsFromMkext
@@ -2507,8 +2410,7 @@ typedef uint32_t OSKextRequiredFlags
  * and any resources listed in its the OSBundleStartupResources property.
  */
 CF_EXPORT Boolean
-OSKextIsFromMkext(OSKextRef aKext)
-                ;
+OSKextIsFromMkext(OSKextRef aKext);
 
 /*!
  * @function OSKextMatchesRequiredFlags
@@ -2531,8 +2433,7 @@ OSKextIsFromMkext(OSKextRef aKext)
  */
 CF_EXPORT Boolean
 OSKextMatchesRequiredFlags(OSKextRef aKext,
-    OSKextRequiredFlags requiredFlags)
-                ;
+    OSKextRequiredFlags requiredFlags);
 
 /*!
  * @function OSKextFilterRequiredKexts
@@ -2556,8 +2457,7 @@ OSKextMatchesRequiredFlags(OSKextRef aKext,
  */
 CF_EXPORT CFArrayRef
 OSKextFilterRequiredKexts(CFArrayRef kextArray,
-    OSKextRequiredFlags requiredFlags)
-                ;
+    OSKextRequiredFlags requiredFlags);
 
 /*!
  * @function OSKextCreateMkext
@@ -2602,13 +2502,12 @@ OSKextFilterRequiredKexts(CFArrayRef kextArray,
 // xxx - add flag to take only most recent version of a given bundle ID?
 CF_EXPORT CFDataRef
 OSKextCreateMkext(
-    CFAllocatorRef      allocator,
-    CFArrayRef          kextArray,
-    CFURLRef            volumeRootURL,
+    CFAllocatorRef allocator,
+    CFArrayRef kextArray,
+    CFURLRef volumeRootURL,
     OSKextRequiredFlags requiredFlags,
-    Boolean             compressFlag)
-                ;
-    
+    Boolean compressFlag);
+
 /*!
  * @function OSKextCreateKextsFromMkextFile
  * @abstract Reads all kexts from an mkext file on disk. 
@@ -2641,8 +2540,7 @@ OSKextCreateMkext(
  */
 CF_EXPORT CFArrayRef
 OSKextCreateKextsFromMkextFile(CFAllocatorRef allocator,
-    CFURLRef mkextURL)
-                ;
+    CFURLRef mkextURL);
 
 /*!
  * @function OSKextCreateKextsFromMkextData
@@ -2676,8 +2574,7 @@ OSKextCreateKextsFromMkextFile(CFAllocatorRef allocator,
  */
 CF_EXPORT CFArrayRef
 OSKextCreateKextsFromMkextData(CFAllocatorRef allocator,
-    CFDataRef mkextData)
-                ;
+    CFDataRef mkextData);
 
 /*!
  * @function OSKextCreatePrelinkedKernel
@@ -2716,14 +2613,13 @@ OSKextCreateKextsFromMkextData(CFAllocatorRef allocator,
  */
 CF_EXPORT CFDataRef
 OSKextCreatePrelinkedKernel(
-    CFDataRef         kernelImage,
-    CFArrayRef        kextArray,
-    CFURLRef          volumeRootURL,
-    Boolean           needAllFlag,
-    Boolean           skipAuthenticationFlag,
-    Boolean           printDiagnosticsFlag,
-    CFDictionaryRef * symbolsOut)
-                ;
+    CFDataRef kernelImage,
+    CFArrayRef kextArray,
+    CFURLRef volumeRootURL,
+    Boolean needAllFlag,
+    Boolean skipAuthenticationFlag,
+    Boolean printDiagnosticsFlag,
+    CFDictionaryRef *symbolsOut);
 
 /*!
  * @function OSKextotherCFBundleVersionIsLoaded 
@@ -2745,7 +2641,7 @@ OSKextCreatePrelinkedKernel(
  * Use @link OSKextIsLoaded@/link to check whether <code>aKext</code>
  * itself is loaded. 
  */
-CF_EXPORT Boolean OSKextotherCFBundleVersionIsLoaded(OSKextRef kext, Boolean* uuidFlag);
+CF_EXPORT Boolean OSKextotherCFBundleVersionIsLoaded(OSKextRef kext, Boolean *uuidFlag);
 
 __END_DECLS
 

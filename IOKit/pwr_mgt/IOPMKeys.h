@@ -28,10 +28,10 @@
     Note that all of these C strings must be converted to CFStrings before use. You can wrap
     them with the CFSTR() macro, or create a CFStringRef (that you must later CFRelease()) using CFStringCreateWithCString()
  */
- 
+
 #ifndef _IOPMKEYS_H_
 #define _IOPMKEYS_H_
- 
+
 /*
  * Types of power event
  * These are potential arguments to IOPMSchedulePowerEvent().
@@ -42,13 +42,13 @@
     @define kIOPMAutoWake 
     @abstract Value for scheduled wake from sleep.
 */
-#define kIOPMAutoWake                                   "wake"
+#define kIOPMAutoWake "wake"
 
 /*!
     @define kIOPMAutoPowerOn 
     @abstract Value for scheduled power on from off state.
 */
-#define kIOPMAutoPowerOn                                "poweron"
+#define kIOPMAutoPowerOn "poweron"
 
 /*!
     @define kIOPMAutoWakeOrPowerOn 
@@ -56,25 +56,25 @@
         power on, whichever is necessary.
 */
 
-#define kIOPMAutoWakeOrPowerOn                          "wakepoweron"
+#define kIOPMAutoWakeOrPowerOn "wakepoweron"
 /*!
     @define kIOPMAutoSleep
     @abstract Value for scheduled sleep.
 */
 
-#define kIOPMAutoSleep                                   "sleep"
+#define kIOPMAutoSleep "sleep"
 /*!
     @define kIOPMAutoShutdown 
     @abstract Value for scheduled shutdown.
 */
 
-#define kIOPMAutoShutdown                               "shutdown"
+#define kIOPMAutoShutdown "shutdown"
 /*!
     @define kIOPMAutoRestart 
     @abstract Value for scheduled restart.
 */
 
-#define kIOPMAutoRestart                                "restart"
+#define kIOPMAutoRestart "restart"
 
 /*
  * Keys for evaluating the CFDictionaries returned by IOPMCopyScheduledPowerEvents()
@@ -83,18 +83,18 @@
     @define kIOPMPowerEventTimeKey 
     @abstract Key for the time of the scheduled power event. Value is a CFDateRef.
 */
-#define kIOPMPowerEventTimeKey                          "time"
+#define kIOPMPowerEventTimeKey "time"
 
 /*!
     @define kIOPMPowerEventAppNameKey 
     @abstract Key for the CFBundleIdentifier of the app that scheduled the power event. Value is a CFStringRef.
 */
-#define kIOPMPowerEventAppNameKey                       "scheduledby"
+#define kIOPMPowerEventAppNameKey "scheduledby"
 
 /*!
     @define kIOPMPowerEventTypeKey 
     @abstract Key for the type of power event. Value is a CFStringRef, with the c-string value of one of the "kIOPMAuto" strings.
 */
-#define kIOPMPowerEventTypeKey                          "eventtype"
+#define kIOPMPowerEventTypeKey "eventtype"
 
 #endif

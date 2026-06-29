@@ -42,8 +42,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #if __cplusplus
 extern "C" {
 #endif
-			
-	typedef struct __IOHIDEventSystemClient
+
+typedef struct __IOHIDEventSystemClient
 #if 0
 	{
 		void* x00;
@@ -61,24 +61,23 @@ extern "C" {
 		CFStringRef mode;	// 38
 	}
 #endif
-	* IOHIDEventSystemClientRef;
-	
-	typedef void(*IOHIDEventSystemClientEventCallback)(void* target, void* refcon, IOHIDEventQueueRef queue, IOHIDEventRef event);
-	
-	void IOHIDEventSystemClientRegisterEventCallback(IOHIDEventSystemClientRef client, IOHIDEventSystemClientEventCallback callback, void* target, void* refcon);
-	void IOHIDEventSystemClientUnregisterEventCallback(IOHIDEventSystemClientRef client);
-	
-	void IOHIDEventSystemClientUnscheduleWithRunLoop(IOHIDEventSystemClientRef client, CFRunLoopRef runloop, CFStringRef mode);
-	void IOHIDEventSystemClientScheduleWithRunLoop(IOHIDEventSystemClientRef client, CFRunLoopRef runloop, CFStringRef mode);
-	
-	CFPropertyListRef IOHIDEventSystemClientCopyProperty(IOHIDEventSystemClientRef client, CFStringRef property);
-	Boolean IOHIDEventSystemClientSetProperty(IOHIDEventSystemClientRef client, CFStringRef property, CFPropertyListRef value);
-	
-	IOHIDEventSystemClientRef IOHIDEventSystemClient(void);
-	
+    *IOHIDEventSystemClientRef;
+
+typedef void (*IOHIDEventSystemClientEventCallback)(void *target, void *refcon, IOHIDEventQueueRef queue, IOHIDEventRef event);
+
+void IOHIDEventSystemClientRegisterEventCallback(IOHIDEventSystemClientRef client, IOHIDEventSystemClientEventCallback callback, void *target, void *refcon);
+void IOHIDEventSystemClientUnregisterEventCallback(IOHIDEventSystemClientRef client);
+
+void IOHIDEventSystemClientUnscheduleWithRunLoop(IOHIDEventSystemClientRef client, CFRunLoopRef runloop, CFStringRef mode);
+void IOHIDEventSystemClientScheduleWithRunLoop(IOHIDEventSystemClientRef client, CFRunLoopRef runloop, CFStringRef mode);
+
+CFPropertyListRef IOHIDEventSystemClientCopyProperty(IOHIDEventSystemClientRef client, CFStringRef property);
+Boolean IOHIDEventSystemClientSetProperty(IOHIDEventSystemClientRef client, CFStringRef property, CFPropertyListRef value);
+
+IOHIDEventSystemClientRef IOHIDEventSystemClient(void);
+
 #if __cplusplus
 }
 #endif
 
 #endif
-

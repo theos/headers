@@ -37,8 +37,7 @@
 
 CF_EXTERN_C_BEGIN
 
-
-enum {	// Legal level values for CFLog()
+enum { // Legal level values for CFLog()
     kCFLogLevelEmergency = 0,
     kCFLogLevelAlert = 1,
     kCFLogLevelCritical = 2,

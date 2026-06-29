@@ -2,7 +2,7 @@
 
 @class FBSDisplay;
 
-@interface FBSystemGestureManager : NSObject <UIGestureRecognizerDelegate>
+@interface FBSystemGestureManager : NSObject<UIGestureRecognizerDelegate>
 
 + (instancetype)sharedInstance;
 

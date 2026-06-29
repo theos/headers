@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@protocol FBSceneClientProvider <NSObject>
+@protocol FBSceneClientProvider<NSObject>
 
 @required
 

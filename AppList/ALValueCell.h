@@ -4,7 +4,7 @@
 
 @interface ALValueCell : UITableViewCell {
 @private
-	id<ALValueCellDelegate> delegate;
+    id<ALValueCellDelegate> delegate;
 }
 
 @property (nonatomic, assign) id<ALValueCellDelegate> delegate;
@@ -16,14 +16,14 @@
 
 @end
 
-@protocol ALValueCellDelegate <NSObject>
+@protocol ALValueCellDelegate<NSObject>
 @required
 - (void)valueCell:(ALValueCell *)valueCell didChangeToValue:(id)newValue;
 @end
 
 @interface ALSwitchCell : ALValueCell {
 @private
-	UISwitch *switchView;
+    UISwitch *switchView;
 }
 
 @property (nonatomic, readonly) UISwitch *switchView;
@@ -37,4 +37,3 @@
 @interface ALDisclosureIndicatedCell : ALValueCell
 
 @end
-

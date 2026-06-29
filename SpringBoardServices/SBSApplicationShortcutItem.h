@@ -12,6 +12,6 @@
 @property (nonatomic, copy) SBSApplicationShortcutIcon *icon;
 @property (nonatomic, copy) NSString *bundleIdentifierToLaunch;
 
-+ (instancetype)staticShortcutItemWithDictionary:(NSDictionary *)dictionary localizationHandler:(/*^block*/id)handler;
++ (instancetype)staticShortcutItemWithDictionary:(NSDictionary *)dictionary localizationHandler:(/*^block*/ id)handler;
 
 @end

@@ -4,8 +4,8 @@
 
 + (instancetype)sharedInstance;
 
-- (void)presentAnimated:(BOOL)animated completion:(void(^)())completion;
-- (void)dismissAnimated:(BOOL)animated completion:(void(^)())completion;
+- (void)presentAnimated:(BOOL)animated completion:(void (^)())completion;
+- (void)dismissAnimated:(BOOL)animated completion:(void (^)())completion;
 
 @property (nonatomic, assign, getter=isUILocked) BOOL UILocked;
 

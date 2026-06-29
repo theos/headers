@@ -6,9 +6,11 @@
 // Main event dispatcher that is responsible for sending events, maintaining the list of actions/events, and querying information about them
 
 @class LAEvent, LAListenerConfigurationViewController, LAEventConfigurationViewController;
-@protocol LAListener, LAEventDataSource;
+@protocol LAListener
+, LAEventDataSource;
 
-@interface LAActivator : NSObject LA_PRIVATE_IVARS(LAActivator)
+@interface LAActivator : NSObject
+LA_PRIVATE_IVARS(LAActivator)
 
 + (LAActivator *)sharedInstance;
 
@@ -123,10 +125,10 @@ extern LAActivator *LASharedActivator;
 - (NSString *)localizedDescriptionForListenerName:(NSString *)listenerName;
 @end
 
-extern NSString * const LAEventModeSpringBoard;
-extern NSString * const LAEventModeApplication;
-extern NSString * const LAEventModeLockScreen;
+extern NSString *const LAEventModeSpringBoard;
+extern NSString *const LAEventModeApplication;
+extern NSString *const LAEventModeLockScreen;
 
-extern NSString * const LAActivatorAvailableListenersChangedNotification;
-extern NSString * const LAActivatorAvailableEventsChangedNotification;
-extern NSString * const LAActivatorAssignmentsChangedNotification;
+extern NSString *const LAActivatorAvailableListenersChangedNotification;
+extern NSString *const LAActivatorAvailableEventsChangedNotification;
+extern NSString *const LAActivatorAssignmentsChangedNotification;

@@ -38,10 +38,10 @@ _UIBackdropViewSettingsLightLeopard		3901	iOS 7.1+
 */
 
 typedef NS_ENUM(NSInteger, _UIBackdropViewStyle) {
-	_UIBackdropViewStyleNone = -2,
-	_UIBackdropViewStyleLight = 0,
-	_UIBackdropViewStyleDark,
-	_UIBackdropViewStyleBlur
+    _UIBackdropViewStyleNone = -2,
+    _UIBackdropViewStyleLight = 0,
+    _UIBackdropViewStyleDark,
+    _UIBackdropViewStyleBlur
 };
 
 @interface _UIBackdropView : UIView

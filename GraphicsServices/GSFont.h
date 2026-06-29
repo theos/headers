@@ -51,7 +51,6 @@ GSFont is a "mid-level" wrapper of many CGFont operations. It includes functions
 - Creating common fonts by a font family, traits and size.
 */
 
-
 typedef struct __GSFont *GSFontRef;
 
 typedef enum __GSFontTraitMask {
@@ -83,9 +82,9 @@ struct __GSFont {
 }
 */
 
-CFHashCode GSFontHash(GSFontRef font);         ///< Compute the font's hash value.
+CFHashCode GSFontHash(GSFontRef font); ///< Compute the font's hash value.
 Boolean GSFontEqual(GSFontRef a, GSFontRef b); ///< Determine if two fonts are equal.
-CFTypeID GSFontGetTypeID();                    ///< Get the CoreFoundation type identifier of GSFont.
+CFTypeID GSFontGetTypeID(); ///< Get the CoreFoundation type identifier of GSFont.
 
 /*!
 @brief Set to use legacy font metrics or not.
@@ -98,15 +97,15 @@ nearest integers (floor(0.5+x)). There may be some other differences in the algo
 void GSFontSetUseLegacyFontMetrics(Boolean useLegacyFontMetrics);
 Boolean GSFontGetUseLegacyFontMetrics(); ///< Get whether legacy font metrics is used.
 
-CGFontRef GSFontGetCGFont(GSFontRef font);                  ///< Get CGFont from a GSFont.
-Boolean GSFontIsBold(GSFontRef font);                       ///< Check whether a font is bold.
-GSFontTraitMask GSFontGetTraits(GSFontRef font);            ///< Get the traits mask of the font.
+CGFontRef GSFontGetCGFont(GSFontRef font); ///< Get CGFont from a GSFont.
+Boolean GSFontIsBold(GSFontRef font); ///< Check whether a font is bold.
+GSFontTraitMask GSFontGetTraits(GSFontRef font); ///< Get the traits mask of the font.
 GSFontTraitMask GSFontGetSynthesizedTraits(GSFontRef font); ///< Get the synthesized traits mask of the font.
-CGFloat GSFontGetSize(GSFontRef font);                      ///< Get the font's point size
-CGFloat GSFontGetAscent(GSFontRef font);                    ///< Get the font's ascent.
-CGFloat GSFontGetDescent(GSFontRef font);                   ///< Get the font's descent.
-CGFloat GSFontGetLineSpacing(GSFontRef font);               ///< Get the font's line spacing.
-CGFloat GSFontGetLineGap(GSFontRef font);                   ///< Get the font's line gap.
+CGFloat GSFontGetSize(GSFontRef font); ///< Get the font's point size
+CGFloat GSFontGetAscent(GSFontRef font); ///< Get the font's ascent.
+CGFloat GSFontGetDescent(GSFontRef font); ///< Get the font's descent.
+CGFloat GSFontGetLineSpacing(GSFontRef font); ///< Get the font's line spacing.
+CGFloat GSFontGetLineGap(GSFontRef font); ///< Get the font's line gap.
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 CGFloat GSFontGetMaximumAdvanceWidth(GSFontRef font); ///< Get the font's maximum advance width.
 #endif

@@ -12,8 +12,10 @@ extern NSString *const PLFilterKey;
 @property (nonatomic, retain, readonly) NSBundle *preferenceLoaderBundle;
 @end
 
-@interface PLCustomListController: PSListController { }
+@interface PLCustomListController : PSListController {
+}
 @end
 
-@interface PLLocalizedListController: PLCustomListController { }
+@interface PLLocalizedListController : PLCustomListController {
+}
 @end

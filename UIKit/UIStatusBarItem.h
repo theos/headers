@@ -2,7 +2,7 @@
 
 // this enum was reversed out of iOS 10.2, not clear if it's ABI stable
 typedef enum {
-    UIStatusBarItemTypeTime,           // this Time has a centerOrder of 1
+    UIStatusBarItemTypeTime, // this Time has a centerOrder of 1
     UIStatusBarItemTypeQuietModeQuietMode,
     UIStatusBarItemTypeAirplaneModeAirplane,
     UIStatusBarItemTypeSignalStrength,

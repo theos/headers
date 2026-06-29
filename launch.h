@@ -102,7 +102,7 @@ __BEGIN_DECLS
 #define LAUNCH_JOBKEY_THROTTLEINTERVAL "ThrottleInterval"
 #define LAUNCH_JOBKEY_LAUNCHONLYONCE "LaunchOnlyOnce"
 #define LAUNCH_JOBKEY_ABANDONPROCESSGROUP "AbandonProcessGroup"
-#define LAUNCH_JOBKEY_IGNOREPROCESSGROUPATSHUTDOWN	"IgnoreProcessGroupAtShutdown"
+#define LAUNCH_JOBKEY_IGNOREPROCESSGROUPATSHUTDOWN "IgnoreProcessGroupAtShutdown"
 #define LAUNCH_JOBKEY_POLICIES "Policies"
 #define LAUNCH_JOBKEY_ENABLETRANSACTIONS "EnableTransactions"
 
@@ -120,7 +120,7 @@ __BEGIN_DECLS
 #define LAUNCH_JOBKEY_KEEPALIVE_PATHSTATE "PathState"
 #define LAUNCH_JOBKEY_KEEPALIVE_OTHERJOBACTIVE "OtherJobActive"
 #define LAUNCH_JOBKEY_KEEPALIVE_OTHERJOBENABLED "OtherJobEnabled"
-#define LAUNCH_JOBKEY_KEEPALIVE_AFTERINITIALDEMAND	"AfterInitialDemand"
+#define LAUNCH_JOBKEY_KEEPALIVE_AFTERINITIALDEMAND "AfterInitialDemand"
 #define LAUNCH_JOBKEY_KEEPALIVE_CRASHED "Crashed"
 
 #define LAUNCH_JOBKEY_LAUNCHEVENTS "LaunchEvents"
@@ -163,167 +163,145 @@ __BEGIN_DECLS
 typedef struct _launch_data *launch_data_t;
 
 typedef enum {
-	LAUNCH_DATA_DICTIONARY = 1,
-	LAUNCH_DATA_ARRAY,
-	LAUNCH_DATA_FD,
-	LAUNCH_DATA_INTEGER,
-	LAUNCH_DATA_REAL,
-	LAUNCH_DATA_BOOL,
-	LAUNCH_DATA_STRING,
-	LAUNCH_DATA_OPAQUE,
-	LAUNCH_DATA_ERRNO,
-	LAUNCH_DATA_MACHPORT,
+    LAUNCH_DATA_DICTIONARY = 1,
+    LAUNCH_DATA_ARRAY,
+    LAUNCH_DATA_FD,
+    LAUNCH_DATA_INTEGER,
+    LAUNCH_DATA_REAL,
+    LAUNCH_DATA_BOOL,
+    LAUNCH_DATA_STRING,
+    LAUNCH_DATA_OPAQUE,
+    LAUNCH_DATA_ERRNO,
+    LAUNCH_DATA_MACHPORT,
 } launch_data_type_t;
 
 __ld_allocator
-launch_data_t
-launch_data_alloc(launch_data_type_t);
+    launch_data_t
+        launch_data_alloc(launch_data_type_t);
 
 __ld_allocator
-launch_data_t
-launch_data_copy(launch_data_t);
+    launch_data_t
+        launch_data_copy(launch_data_t);
 
 __ld_getter
-launch_data_type_t
-launch_data_get_type(const launch_data_t);
+    launch_data_type_t
+    launch_data_get_type(const launch_data_t);
 
-__ld_setter
-void
-launch_data_free(launch_data_t);
+__ld_setter void
+    launch_data_free(launch_data_t);
 
-__ld_setter
-bool
+__ld_setter bool
 launch_data_dict_insert(launch_data_t, const launch_data_t, const char *);
 
 __ld_getter
-launch_data_t
-launch_data_dict_lookup(const launch_data_t, const char *);
+    launch_data_t
+    launch_data_dict_lookup(const launch_data_t, const char *);
 
-__ld_setter
-bool
+__ld_setter bool
 launch_data_dict_remove(launch_data_t, const char *);
 
-__ld_iterator(1, 2)
-void
-launch_data_dict_iterate(const launch_data_t,
-	void (*)(const launch_data_t, const char *, void *), void *);
+__ld_iterator(1, 2) void launch_data_dict_iterate(const launch_data_t,
+    void (*)(const launch_data_t, const char *, void *), void *);
 
 __ld_getter
-size_t
-launch_data_dict_get_count(const launch_data_t);
+    size_t
+    launch_data_dict_get_count(const launch_data_t);
 
-__ld_setter
-bool
+__ld_setter bool
 launch_data_array_set_index(launch_data_t, const launch_data_t, size_t);
 
 __ld_getter
-launch_data_t
-launch_data_array_get_index(const launch_data_t, size_t);
+    launch_data_t
+    launch_data_array_get_index(const launch_data_t, size_t);
 
 __ld_getter
-size_t
-launch_data_array_get_count(const launch_data_t);
+    size_t
+    launch_data_array_get_count(const launch_data_t);
 
 __ld_allocator
-launch_data_t
-launch_data_new_fd(int);
+    launch_data_t
+    launch_data_new_fd(int);
 
 __ld_allocator
-launch_data_t
-launch_data_new_machport(mach_port_t);
+    launch_data_t
+        launch_data_new_machport(mach_port_t);
 
 __ld_allocator
-launch_data_t
-launch_data_new_integer(long long);
+    launch_data_t
+    launch_data_new_integer(long long);
 
 __ld_allocator
-launch_data_t
-launch_data_new_bool(bool);
+    launch_data_t
+    launch_data_new_bool(bool);
 
 __ld_allocator
-launch_data_t
-launch_data_new_real(double);
+    launch_data_t
+    launch_data_new_real(double);
 
 __ld_allocator
-launch_data_t
-launch_data_new_string(const char *);
+    launch_data_t
+    launch_data_new_string(const char *);
 
 __ld_allocator
-launch_data_t
-launch_data_new_opaque(const void *, size_t);
+    launch_data_t
+    launch_data_new_opaque(const void *, size_t);
 
- __ld_setter
-bool
+__ld_setter bool
 launch_data_set_fd(launch_data_t, int);
 
- __ld_setter
-bool
-launch_data_set_machport(launch_data_t, mach_port_t);
+__ld_setter bool
+    launch_data_set_machport(launch_data_t, mach_port_t);
 
- __ld_setter
-bool
+__ld_setter bool
 launch_data_set_integer(launch_data_t, long long);
 
- __ld_setter
-bool
+__ld_setter bool
 launch_data_set_bool(launch_data_t, bool);
 
- __ld_setter
-bool
+__ld_setter bool
 launch_data_set_real(launch_data_t, double);
 
- __ld_setter
-bool
+__ld_setter bool
 launch_data_set_string(launch_data_t, const char *);
 
- __ld_setter
-bool
+__ld_setter bool
 launch_data_set_opaque(launch_data_t, const void *, size_t);
 
-__ld_getter
-int	
+__ld_getter int
 launch_data_get_fd(const launch_data_t);
 
 __ld_getter
-mach_port_t
-launch_data_get_machport(const launch_data_t);
+    mach_port_t
+    launch_data_get_machport(const launch_data_t);
 
-__ld_getter
-long long
+__ld_getter long long
 launch_data_get_integer(const launch_data_t);
 
-__ld_getter
-bool
+__ld_getter bool
 launch_data_get_bool(const launch_data_t);
 
-__ld_getter
-double
+__ld_getter double
 launch_data_get_real(const launch_data_t);
 
-__ld_getter
-const char *
+__ld_getter const char *
 launch_data_get_string(const launch_data_t);
 
-__ld_getter
-void *
+__ld_getter void *
 launch_data_get_opaque(const launch_data_t);
 
 __ld_getter
-size_t
-launch_data_get_opaque_size(const launch_data_t);
+    size_t
+    launch_data_get_opaque_size(const launch_data_t);
 
-__ld_getter
-int
+__ld_getter int
 launch_data_get_errno(const launch_data_t);
-
 
 /* launch_get_fd()
  *
  * Use this to get the FD if you're doing asynchronous I/O with select(),
  * poll() or kevent().
  */
-__ld_normal
-int
+__ld_normal int
 launch_get_fd(void);
 
 /* launch_msg()
@@ -331,8 +309,8 @@ launch_get_fd(void);
  * Use this API to check in. Nothing else.
  */
 __ld_normal
-launch_data_t
-launch_msg(const launch_data_t);
+    launch_data_t
+    launch_msg(const launch_data_t);
 
 __END_DECLS
 

@@ -1,8 +1,8 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger, UIStatusBarItemViewTextStyle) {
-	UIStatusBarItemViewTextStyleRegular = 1,
-	UIStatusBarItemViewTextStyleBold = 3
+    UIStatusBarItemViewTextStyleRegular = 1,
+    UIStatusBarItemViewTextStyleBold = 3
 };
 
 typedef NSUInteger UIStatusBarItemViewActions; // TODO

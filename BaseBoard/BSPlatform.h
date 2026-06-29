@@ -3,14 +3,14 @@
 #import <Foundation/NSObjCRuntime.h>
 
 typedef NS_ENUM(NSUInteger, BSDeviceClass) {
-	BSDeviceClassIPhone,
-	BSDeviceClassIPod,
-	BSDeviceClassIPad
+    BSDeviceClassIPhone,
+    BSDeviceClassIPod,
+    BSDeviceClassIPad
 };
 
 typedef NS_ENUM(NSUInteger, BSHomeButtonType) {
-	BSHomeButtonTypeButton = 0,
-	BSHomeButtonTypeBorderless = 2
+    BSHomeButtonTypeButton = 0,
+    BSHomeButtonTypeBorderless = 2
 };
 
 @interface BSPlatform : NSObject

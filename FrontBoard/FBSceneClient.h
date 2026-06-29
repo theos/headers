@@ -2,7 +2,7 @@
 
 @class FBScene, FBSSceneSettings, FBSSceneSettingsDiff, FBSSceneTransitionContext;
 
-@protocol FBSceneClient <NSObject>
+@protocol FBSceneClient<NSObject>
 
 @required
 

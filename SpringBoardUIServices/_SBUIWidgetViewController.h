@@ -1,6 +1,6 @@
 #import "_SBUIWidgetHost.h"
 
-@interface _SBUIWidgetViewController : UIViewController <_SBUIWidgetHost>
+@interface _SBUIWidgetViewController : UIViewController<_SBUIWidgetHost>
 
 @property (copy) NSString *widgetIdentifier;
 @property (readonly, assign, nonatomic) CGSize preferredViewSize; // override this to set a height
@@ -14,6 +14,6 @@
 - (void)invalidatePreferredViewSize;
 
 - (void)requestLaunchOfURL:(NSURL *)url;
-- (void)requestPresentationOfViewController:(UIViewController *)viewController presentationStyle:(UIModalPresentationStyle)presentationStyle context:(void *)context completion:(void(^)(void))completion; // this method appears to be unimplemented in 7.0
+- (void)requestPresentationOfViewController:(UIViewController *)viewController presentationStyle:(UIModalPresentationStyle)presentationStyle context:(void *)context completion:(void (^)(void))completion; // this method appears to be unimplemented in 7.0
 
 @end

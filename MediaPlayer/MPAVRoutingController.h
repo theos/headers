@@ -8,7 +8,6 @@ typedef NS_ENUM(NSInteger, MPRouteDiscoveryMode) {
     MPRouteDiscoveryModeDetailed,
 };
 
-
 @interface MPAVRoutingController : NSObject
 
 @property (nonatomic, assign) MPRouteDiscoveryMode discoveryMode;

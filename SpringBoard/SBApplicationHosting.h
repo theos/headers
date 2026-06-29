@@ -2,7 +2,7 @@
 
 @class SBApplication;
 
-@protocol SBApplicationHosting <NSObject>
+@protocol SBApplicationHosting<NSObject>
 @required
 
 - (SBApplication *)hostedApp;

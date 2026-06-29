@@ -2,7 +2,7 @@
 
 @class SBWallpaperView;
 
-@interface SBUIController : NSObject <UIGestureRecognizerDelegate>
+@interface SBUIController : NSObject<UIGestureRecognizerDelegate>
 
 + (instancetype)sharedInstance;
 

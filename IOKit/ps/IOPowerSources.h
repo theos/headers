@@ -31,7 +31,6 @@
 #include <sys/cdefs.h>
 __BEGIN_DECLS
 
-
 /*! 
  * @header IOPowerSources.h
  *
@@ -53,7 +52,7 @@ __BEGIN_DECLS
  *  @abstract   Notify(3) key. The system delivers notifications on this key when the 
  *              battery time remaining drops into a warnable level.
  */
-#define kIOPSNotifyLowBattery   "com.apple.system.powersources.lowbattery"
+#define kIOPSNotifyLowBattery "com.apple.system.powersources.lowbattery"
 
 /*!
  * @enum       IOPSLowBatteryWarningLevel
@@ -61,16 +60,16 @@ __BEGIN_DECLS
  * @discussion Possible return values from <code>@link IOPSGetBatteryWarningLevel@/link</code>
  */
 typedef enum {
-/*! @constant   kIOPSLowBatteryWarningNone
+    /*! @constant   kIOPSLowBatteryWarningNone
  *
  *  @abstract   The system is not in a low battery situation, or is on drawing from an external power source.
  *
  *  @discussion The system displays no low power warnings; neither should application clients of this
  *              API.
  */
-    kIOPSLowBatteryWarningNone  = 1,
+    kIOPSLowBatteryWarningNone = 1,
 
-/*! @constant   kIOPSLowBatteryWarningEarly
+    /*! @constant   kIOPSLowBatteryWarningEarly
  *
  *  @abstract   The system is in an early low battery situation.
  *
@@ -80,7 +79,7 @@ typedef enum {
  */
     kIOPSLowBatteryWarningEarly = 2,
 
-/*! @constant   kIOPSLowBatteryWarningFinal
+    /*! @constant   kIOPSLowBatteryWarningFinal
  *
  *  @abstract   The battery can provide no more than 10 minutes of runtime.
  *
@@ -112,7 +111,7 @@ IOPSLowBatteryWarningLevel IOPSGetBatteryWarningLevel(void);
  *
  * @discussion  Use notify(3) API to register for notifications.
  */
-#define kIOPSTimeRemainingNotificationKey        "com.apple.system.powersources.timeremaining"
+#define kIOPSTimeRemainingNotificationKey "com.apple.system.powersources.timeremaining"
 
 /*!
  * @constant    kIOPSTimeRemainingUnknown
@@ -124,7 +123,7 @@ IOPSLowBatteryWarningLevel IOPSGetBatteryWarningLevel(void);
  *              <code>@link kIOPSPowerSourcesNotificationKey@/link</code> fires.
  */
 
-#define     kIOPSTimeRemainingUnknown           ((CFTimeInterval)-1.0)
+#define kIOPSTimeRemainingUnknown ((CFTimeInterval)-1.0)
 
 /*!
  * @constant    kIOPSTimeRemainingUnlimited
@@ -134,7 +133,7 @@ IOPSLowBatteryWarningLevel IOPSGetBatteryWarningLevel(void);
  * @discussion  Indicates the system is connected to an external power source, without a time limit.
  */
 
-#define     kIOPSTimeRemainingUnlimited         ((CFTimeInterval)-2.0)
+#define kIOPSTimeRemainingUnlimited ((CFTimeInterval)-2.0)
 
 /*! 
  * @function    IOPSGetTimeRemainingEstimate
@@ -173,12 +172,11 @@ IOPSLowBatteryWarningLevel IOPSGetBatteryWarningLevel(void);
  */
 CFTimeInterval IOPSGetTimeRemainingEstimate(void);
 
-
 /*! 
  *  @functiongroup Power Source Descriptions
  */
 
-typedef void  (*IOPowerSourceCallbackType)(void *context);
+typedef void (*IOPowerSourceCallbackType)(void *context);
 
 /*! @function   IOPSCopyPowerSourcesInfo
  *
@@ -204,7 +202,7 @@ CFTypeRef IOPSCopyPowerSourcesInfo(void);
  *
  * @result      One of: CFSTR(kIOPMACPowerKey), CFSTR(kIOPMBatteryPowerKey), CFSTR(kIOPMUPSPowerKey)
  */
-CFStringRef     IOPSGetProvidingPowerSourceType(CFTypeRef snapshot);
+CFStringRef IOPSGetProvidingPowerSourceType(CFTypeRef snapshot);
 
 /*! @function   IOPSCopyPowerSourcesList
  *
@@ -256,7 +254,6 @@ CFDictionaryRef IOPSGetPowerSourceDescription(CFTypeRef blob, CFTypeRef ps);
  *              release the CFRunLoopSource.
  */
 CFRunLoopSourceRef IOPSNotificationCreateRunLoopSource(IOPowerSourceCallbackType callback, void *context);
-
 
 /*! @function   IOPSCopyExternalPowerAdapterDetails
  *

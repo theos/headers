@@ -61,16 +61,16 @@ void GSColorSetColor(CGContextRef context, CGColorRef color);
 void GSColorGetRGBAComponents(CGColorRef color, CGFloat *r, CGFloat *g, CGFloat *b, CGFloat *a);
 
 CGFloat GSColorGetAlphaComponent(CGColorRef color); ///< Get the alpha component.
-CGFloat GSColorGetBlueComponent(CGColorRef color);  ///< Get the blue component.
+CGFloat GSColorGetBlueComponent(CGColorRef color); ///< Get the blue component.
 CGFloat GSColorGetGreenComponent(CGColorRef color); ///< Get the green component.
-CGFloat GSColorGetRedComponent(CGColorRef color);   ///< Get the red component.
+CGFloat GSColorGetRedComponent(CGColorRef color); ///< Get the red component.
 
 typedef enum GSSystemColor {
     kGSBlackColor,
     kGSWhiteColor,
-    kGSGrayColor,      // 50%
+    kGSGrayColor, // 50%
     kGSLightGrayColor, // 70%
-    kGSDarkGrayColor,  // 30%
+    kGSDarkGrayColor, // 30%
     kGSRedColor,
     kGSGreenColor,
     kGSBlueColor,
@@ -79,14 +79,14 @@ typedef enum GSSystemColor {
     kGSYellowColor,
     kGSOrangeColor, // #FF8000
     kGSPurpleColor, // #800080
-    kGSBrownColor,  // #996633
+    kGSBrownColor, // #996633
     kGSClearColor
 } GSSystemColor;
 
 /// Get a "system color". The color will be cached by the system.
 CGColorRef GSColorForSystemColor(GSSystemColor colorType);
 
-CGColorRef GSColorGetShadowColor();    ///< Get the shadow color, i.e. black.
+CGColorRef GSColorGetShadowColor(); ///< Get the shadow color, i.e. black.
 CGColorRef GSColorGetHighlightColor(); ///< Get the highlight color, i.e. white.
 
 /// Set the fill and stroke color of the context to the specified system color.

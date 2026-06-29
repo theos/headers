@@ -45,14 +45,14 @@ __BEGIN_DECLS
 typedef struct __GSEvent *GSEventRef;
 
 typedef struct GSPathInfo {
-    unsigned char pathIndex;     // 0x0 = 0x5C
-    unsigned char pathIdentity;  // 0x1 = 0x5D
+    unsigned char pathIndex; // 0x0 = 0x5C
+    unsigned char pathIdentity; // 0x1 = 0x5D
     unsigned char pathProximity; // 0x2 = 0x5E
-    CGFloat pathPressure;        // 0x4 = 0x60
-    CGFloat pathMajorRadius;     // 0x8 = 0x64
-    CGPoint pathLocation;        // 0xC = 0x68
-    GSWindowRef pathWindow;      // 0x14 = 0x70
-} GSPathInfo;                    // sizeof = 0x18.
+    CGFloat pathPressure; // 0x4 = 0x60
+    CGFloat pathMajorRadius; // 0x8 = 0x64
+    CGPoint pathLocation; // 0xC = 0x68
+    GSWindowRef pathWindow; // 0x14 = 0x70
+} GSPathInfo; // sizeof = 0x18.
 
 typedef enum __GSHandInfoType {
     kGSHandInfoTypeTouchDown = 0,
@@ -64,7 +64,7 @@ typedef enum __GSHandInfoType {
 
 // A.k.a. XXStruct_$jUSvD
 typedef struct GSHandInfo {
-    GSHandInfoType type;  // 0x0 == 0x3C
+    GSHandInfoType type; // 0x0 == 0x3C
     short deltaX, deltaY; // 2, 4 = 0x40, 0x42
     float _0x44;
     float _0x48;
@@ -74,8 +74,8 @@ typedef struct GSHandInfo {
     float _0x58;
     unsigned char _0x5C;
     unsigned char pathInfosCount; // 0x22 == 0x5D
-    GSPathInfo pathInfos[0];      // 0x60
-} GSHandInfo;                     // sizeof = 0x24.
+    GSPathInfo pathInfos[0]; // 0x60
+} GSHandInfo; // sizeof = 0x24.
 
 typedef struct __GSScrollWheelInfo {
     int deltaY;
@@ -92,19 +92,19 @@ typedef struct __GSDeviceOrientationInfo {
 
 typedef struct __GSKeyInfo {
     UniChar keyCode, characterIgnoringModifier, charCode; // 0x3C, 0x3E, 0x40
-    unsigned short characterSet;                          // 0x42
-    Boolean isKeyRepeating;                               // 0x44
+    unsigned short characterSet; // 0x42
+    Boolean isKeyRepeating; // 0x44
 } GSKeyInfo;
 
 typedef struct __GSHardwareKeyInfo {
-    UniChar keyCode;                       // 3c
-    UniChar characterIgnoringModifier;     // 3e
-    UniChar charCode;                      // 40
-    unsigned short characterSet;           // 42
-    uint16_t characters_length;            // 44
-    UniChar characters[32];                // 46 .. 84
+    UniChar keyCode; // 3c
+    UniChar characterIgnoringModifier; // 3e
+    UniChar charCode; // 40
+    unsigned short characterSet; // 42
+    uint16_t characters_length; // 44
+    UniChar characters[32]; // 46 .. 84
     uint16_t unmodified_characters_length; // 86
-    UniChar unmodified_characters[32];     // 88 .. C6
+    UniChar unmodified_characters[32]; // 88 .. C6
     int unknown0 : 1;
     int isKeyVariant : 1;
     int unknown2 : 14;
@@ -176,7 +176,7 @@ typedef enum __GSEventType {
     kGSEventMotionBegin = 1020,
     kGSEventHeadsetAvailabilityChanged = 1021,
     kGSEventMediaKeyDown = 1022, // ≥3.2
-    kGSEventMediaKeyUp = 1023,   // ≥3.2
+    kGSEventMediaKeyUp = 1023, // ≥3.2
 
     kGSEventVibrate = 1100,
     kGSEventSetBacklightFactor = 1102,
@@ -221,16 +221,16 @@ typedef enum GSEventFlags {
 } GSEventFlags;
 
 typedef struct GSEventRecord {
-    GSEventType type;       // 0x8
+    GSEventType type; // 0x8
     GSEventSubType subtype; // 0xC
-    CGPoint location;       // 0x10
+    CGPoint location; // 0x10
     CGPoint windowLocation; // 0x18
-    int windowContextId;    // 0x20
-    uint64_t timestamp;     // 0x24, from mach_absolute_time
-    GSWindowRef window;     // 0x2C
-    GSEventFlags flags;     // 0x30
-    unsigned senderPID;     // 0x34
-    CFIndex infoSize;       // 0x38
+    int windowContextId; // 0x20
+    uint64_t timestamp; // 0x24, from mach_absolute_time
+    GSWindowRef window; // 0x2C
+    GSEventFlags flags; // 0x30
+    unsigned senderPID; // 0x34
+    CFIndex infoSize; // 0x38
 } GSEventRecord;
 
 #pragma mark -
@@ -287,7 +287,7 @@ mach_port_name_t GSRegisterPurpleNamedPort(const char *service_name);
 mach_port_name_t GSCopyPurpleNamedPort(const char *service_name);
 mach_port_name_t GSGetPurpleSystemEventPort() __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_0);
 
-void GSEventPopRunLoopMode(CFStringRef mode);  ///< Stop the event run loop, and remove "mode" from the run loop mode stack if it is at the top.
+void GSEventPopRunLoopMode(CFStringRef mode); ///< Stop the event run loop, and remove "mode" from the run loop mode stack if it is at the top.
 void GSEventPushRunLoopMode(CFStringRef mode); ///< Stop the event run loop and push "mode" to the top of run loop mode stack.
 
 void GSEventStopModal();
@@ -300,7 +300,7 @@ void GSEventInitialize(Boolean registerPurple);
 #pragma mark Sending events
 void GSSendEvent(const GSEventRecord *record, mach_port_t port);
 void GSSendSimpleEvent(GSEventType type, mach_port_t port) __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_0); ///< This calls GSSendEvent with an empty record.
-void GSSendSystemEvent(const GSEventRecord *record);                                                         ///< Send event to the PurpleSystemEventPort.
+void GSSendSystemEvent(const GSEventRecord *record); ///< Send event to the PurpleSystemEventPort.
 
 #pragma mark -
 #pragma mark Callback functions
@@ -421,8 +421,8 @@ void _GSEventPlayAlertOrSystemSoundAtPath(CFStringRef path, Boolean loop, Boolea
 SInt32 GSEventPrimeSoundAtPath(CFStringRef path);
 void GSEventStopSoundAtPath(CFStringRef path, Boolean unknown);
 void GSEventPlayAlertSoundAtPath(CFStringRef path); // Equivalent to _GSEventPlayAlertOrSystemSoundAtPath(path, 0, 1)
-void GSEventLoopSoundAtPath(CFStringRef path);      // Equivalent to _GSEventPlayAlertOrSystemSoundAtPath(path, 1, 0)
-void GSEventPlaySoundAtPath(CFStringRef path);      // Equivalent to _GSEventPlayAlertOrSystemSoundAtPath(path, 0, 0)
+void GSEventLoopSoundAtPath(CFStringRef path); // Equivalent to _GSEventPlayAlertOrSystemSoundAtPath(path, 1, 0)
+void GSEventPlaySoundAtPath(CFStringRef path); // Equivalent to _GSEventPlayAlertOrSystemSoundAtPath(path, 0, 0)
 
 void GSEventVibrateForDuration(float secs);
 void GSEventStopVibrator(); ///< Equivalent to GSEventVibrateForDuration(0)
@@ -436,20 +436,20 @@ void GSEventSetHardwareKeyboardAttached(Boolean attached);
 
 // "type" must be 10 or 14.
 GSEventRef GSEventCreateKeyEvent(GSEventType type,
-                                 CGPoint windowLocation,
-                                 CFStringRef characters,
-                                 CFStringRef unmodifiedCharacters,
-                                 GSEventFlags modifiers,
-                                 uint16_t usagePage,
-                                 unsigned options7, unsigned options8);
+    CGPoint windowLocation,
+    CFStringRef characters,
+    CFStringRef unmodifiedCharacters,
+    GSEventFlags modifiers,
+    uint16_t usagePage,
+    unsigned options7, unsigned options8);
 void GSSendKeyEvent(GSEventType type,
-                    CGPoint windowLocation,
-                    CFStringRef characters,
-                    CFStringRef unmodifiedCharacters,
-                    GSEventFlags modifiers,
-                    uint16_t usagePage,
-                    unsigned short options7,
-                    unsigned short options8);
+    CGPoint windowLocation,
+    CFStringRef characters,
+    CFStringRef unmodifiedCharacters,
+    GSEventFlags modifiers,
+    uint16_t usagePage,
+    unsigned short options7,
+    unsigned short options8);
 
 uint16_t GSEventGetUsagePage(GSEventRef event);
 void GSEventSetCharCode(GSEventRef event, UniChar charCode);

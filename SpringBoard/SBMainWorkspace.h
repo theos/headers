@@ -17,7 +17,7 @@
 - (void)handleReachabilityModeActivated;
 - (void)handleReachabilityModeDeactivated;
 
--(void)_suspend;
--(void)_resume;
+- (void)_suspend;
+- (void)_resume;
 
 @end

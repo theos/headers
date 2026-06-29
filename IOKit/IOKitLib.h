@@ -61,18 +61,16 @@ IOKit objects returned by all functions should be released with IOObjectRelease.
 */
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-typedef struct IONotificationPort * IONotificationPortRef;
-
+typedef struct IONotificationPort *IONotificationPortRef;
 
 /*! @typedef IOServiceMatchingCallback
     @abstract Callback function to be notified of IOService publication.
     @param refcon The refcon passed when the notification was installed.
     @param iterator The notification iterator which now has new objects.
 */
-typedef void
-(*IOServiceMatchingCallback)(
-	void *			refcon,
-	io_iterator_t		iterator );
+typedef void (*IOServiceMatchingCallback)(
+    void *refcon,
+    io_iterator_t iterator);
 
 /*! @typedef IOServiceInterestCallback
     @abstract Callback function to be notified of changes in state of an IOService.
@@ -82,12 +80,11 @@ typedef void
     @param messageArgument An argument for the message, dependent on the messageType.
 */
 
-typedef void
-(*IOServiceInterestCallback)(
-	void *			refcon,
-	io_service_t		service,
-	uint32_t		messageType,
-	void *			messageArgument );
+typedef void (*IOServiceInterestCallback)(
+    void *refcon,
+    io_service_t service,
+    uint32_t messageType,
+    void *messageArgument);
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -96,8 +93,7 @@ typedef void
     @discussion When specifying a master port to IOKit functions, the NULL argument indicates "use the default". This is a synonym for NULL, if you'd rather use a named constant.
 */
 
-extern
-const mach_port_t kIOMasterPortDefault;
+extern const mach_port_t kIOMasterPortDefault;
 
 /*! @function IOMasterPort
     @abstract Returns the mach port used to initiate communication with IOKit.
@@ -107,9 +103,8 @@ const mach_port_t kIOMasterPortDefault;
     @result A kern_return_t error code. */
 
 kern_return_t
-IOMasterPort( mach_port_t	bootstrapPort,
-	      mach_port_t *	masterPort );
-
+IOMasterPort(mach_port_t bootstrapPort,
+    mach_port_t *masterPort);
 
 /*! @function IONotificationPortCreate
     @abstract Creates and returns a notification object for receiving IOKit notifications of new devices or state changes.
@@ -119,15 +114,14 @@ IOMasterPort( mach_port_t	bootstrapPort,
 
 IONotificationPortRef
 IONotificationPortCreate(
-	mach_port_t		masterPort );
+    mach_port_t masterPort);
 
 /*! @function IONotificationPortDestroy
     @abstract Destroys a notification object created with IONotificationPortCreate.
     @param notify A reference to the notification object. */
 
-void
-IONotificationPortDestroy(
-	IONotificationPortRef	notify );
+void IONotificationPortDestroy(
+    IONotificationPortRef notify);
 
 /*! @function IONotificationPortGetRunLoopSource
     @abstract Returns a CFRunLoopSource to be used to listen for notifications.
@@ -137,7 +131,7 @@ IONotificationPortDestroy(
 
 CFRunLoopSourceRef
 IONotificationPortGetRunLoopSource(
-	IONotificationPortRef	notify );
+    IONotificationPortRef notify);
 
 /*! @function IONotificationPortGetMachPort
     @abstract Returns a mach_port to be used to listen for notifications.
@@ -147,7 +141,7 @@ IONotificationPortGetRunLoopSource(
 
 mach_port_t
 IONotificationPortGetMachPort(
-	IONotificationPortRef	notify );
+    IONotificationPortRef notify);
 
 /*! @function IODispatchCalloutFromMessage
     @abstract Dispatches callback notifications from a mach message.
@@ -156,11 +150,10 @@ IONotificationPortGetMachPort(
     @param msg A pointer to the message received.
     @param reference Pass the IONotificationPortRef for the object. */
 
-void
-IODispatchCalloutFromMessage(
-        void 			*unused,
-        mach_msg_header_t	*msg,
-        void			*reference );
+void IODispatchCalloutFromMessage(
+    void *unused,
+    mach_msg_header_t *msg,
+    void *reference);
 
 /*! @function IOCreateReceivePort
     @abstract Creates and returns a mach port suitable for receiving IOKit messages of the specified type.
@@ -174,7 +167,7 @@ IODispatchCalloutFromMessage(
     @result A kern_return_t error code. */
 
 kern_return_t
-IOCreateReceivePort( uint32_t msgType, mach_port_t * recvPort );
+IOCreateReceivePort(uint32_t msgType, mach_port_t *recvPort);
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -190,7 +183,7 @@ IOCreateReceivePort( uint32_t msgType, mach_port_t * recvPort );
 
 kern_return_t
 IOObjectRelease(
-	io_object_t	object );
+    io_object_t object);
 
 /*! @function IOObjectRetain
     @abstract Retains an object handle previously returned by IOKitLib.
@@ -200,7 +193,7 @@ IOObjectRelease(
 
 kern_return_t
 IOObjectRetain(
-	io_object_t	object );
+    io_object_t object);
 
 /*! @function IOObjectGetClass
     @abstract Return the class name of an IOKit object.
@@ -211,18 +204,18 @@ IOObjectRetain(
 
 kern_return_t
 IOObjectGetClass(
-	io_object_t	object,
-	io_name_t	className );
-	
+    io_object_t object,
+    io_name_t className);
+
 /*! @function CFStringRef IOObjectCopyClass
     @abstract Return the class name of an IOKit object.
 	@discussion This function does the same thing as IOObjectGetClass, but returns the result as a CFStringRef.
 	@param object The IOKit object.
 	@result The resulting CFStringRef. This should be released by the caller. If a valid object is not passed in, then NULL is returned.*/
-	
-CFStringRef 
+
+CFStringRef
 IOObjectCopyClass(io_object_t object)
-AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 /*! @function CFStringRef IOObjectCopySuperclassForClass
     @abstract Return the superclass name of the given class.
@@ -230,9 +223,9 @@ AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 	@param classname The name of the class as a CFString.
 	@result The resulting CFStringRef. This should be released by the caller. If there is no superclass, or a valid class name is not passed in, then NULL is returned.*/
 
-CFStringRef 
+CFStringRef
 IOObjectCopySuperclassForClass(CFStringRef classname)
-AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 /*! @function CFStringRef IOObjectCopyBundleIdentifierForClass
     @abstract Return the bundle identifier of the given class.
@@ -240,9 +233,9 @@ AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 	@param classname The name of the class as a CFString.
 	@result The resulting CFStringRef. This should be released by the caller. If a valid class name is not passed in, then NULL is returned.*/
 
-CFStringRef 
+CFStringRef
 IOObjectCopyBundleIdentifierForClass(CFStringRef classname)
-AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 /*! @function IOObjectConformsTo
     @abstract Performs an OSDynamicCast operation on an IOKit object.
@@ -253,8 +246,8 @@ AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 boolean_t
 IOObjectConformsTo(
-	io_object_t	object,
-	const io_name_t	className );
+    io_object_t object,
+    const io_name_t className);
 
 /*! @function IOObjectIsEqualTo
     @abstract Checks two object handles to see if they represent the same kernel object.
@@ -265,8 +258,8 @@ IOObjectConformsTo(
 
 boolean_t
 IOObjectIsEqualTo(
-	io_object_t	object,
-	io_object_t	anObject );
+    io_object_t object,
+    io_object_t anObject);
 
 /*! @function IOObjectGetRetainCount
     @abstract Returns kernel retain count of an IOKit object.
@@ -276,7 +269,7 @@ IOObjectIsEqualTo(
 
 uint32_t
 IOObjectGetRetainCount(
-	io_object_t	object );
+    io_object_t object);
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -292,16 +285,15 @@ IOObjectGetRetainCount(
 
 io_object_t
 IOIteratorNext(
-	io_iterator_t	iterator );
+    io_iterator_t iterator);
 
 /*! @function IOIteratorReset
     @abstract Resets an iteration back to the beginning.
     @discussion If an iterator is invalid, or if the caller wants to start over, IOIteratorReset will set the iteration back to the beginning.
     @param iterator An IOKit iterator handle. */
 
-void
-IOIteratorReset(
-	io_iterator_t	iterator );
+void IOIteratorReset(
+    io_iterator_t iterator);
 
 /*! @function IOIteratorIsValid
     @abstract Checks an iterator is still valid.
@@ -311,7 +303,7 @@ IOIteratorReset(
 
 boolean_t
 IOIteratorIsValid(
-	io_iterator_t	iterator );
+    io_iterator_t iterator);
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -330,8 +322,8 @@ IOIteratorIsValid(
 
 io_service_t
 IOServiceGetMatchingService(
-	mach_port_t	masterPort,
-	CFDictionaryRef	matching );
+    mach_port_t masterPort,
+    CFDictionaryRef matching);
 
 /*! @function IOServiceGetMatchingServices
     @abstract Look up registered IOService objects that match a matching dictionary.
@@ -343,19 +335,18 @@ IOServiceGetMatchingService(
 
 kern_return_t
 IOServiceGetMatchingServices(
-	mach_port_t	masterPort,
-	CFDictionaryRef	matching,
-	io_iterator_t * existing );
-
+    mach_port_t masterPort,
+    CFDictionaryRef matching,
+    io_iterator_t *existing);
 
 kern_return_t
 IOServiceAddNotification(
-	mach_port_t	masterPort,
-	const io_name_t	notificationType,
-	CFDictionaryRef	matching,
-	mach_port_t	wakePort,
-	uintptr_t	reference,
-	io_iterator_t *	notification )  DEPRECATED_ATTRIBUTE;
+    mach_port_t masterPort,
+    const io_name_t notificationType,
+    CFDictionaryRef matching,
+    mach_port_t wakePort,
+    uintptr_t reference,
+    io_iterator_t *notification) DEPRECATED_ATTRIBUTE;
 
 /*! @function IOServiceAddMatchingNotification
     @abstract Look up registered IOService objects that match a matching dictionary, and install a notification request of new IOServices that match.
@@ -375,12 +366,12 @@ IOServiceAddNotification(
 
 kern_return_t
 IOServiceAddMatchingNotification(
-	IONotificationPortRef	notifyPort,
-	const io_name_t		notificationType,
-	CFDictionaryRef		matching,
-        IOServiceMatchingCallback callback,
-        void *			refCon,
-	io_iterator_t * 	notification );
+    IONotificationPortRef notifyPort,
+    const io_name_t notificationType,
+    CFDictionaryRef matching,
+    IOServiceMatchingCallback callback,
+    void *refCon,
+    io_iterator_t *notification);
 
 /*! @function IOServiceAddInterestNotification
     @abstract Register for notification of state changes in an IOService.
@@ -396,12 +387,12 @@ IOServiceAddMatchingNotification(
 
 kern_return_t
 IOServiceAddInterestNotification(
-	IONotificationPortRef	notifyPort,
-        io_service_t		service,
-	const io_name_t 	interestType,
-        IOServiceInterestCallback callback,
-        void *			refCon,
-        io_object_t *		notification );
+    IONotificationPortRef notifyPort,
+    io_service_t service,
+    const io_name_t interestType,
+    IOServiceInterestCallback callback,
+    void *refCon,
+    io_object_t *notification);
 
 /*! @function IOServiceMatchPropertyTable
     @abstract Match an IOService objects with matching dictionary.
@@ -413,9 +404,9 @@ IOServiceAddInterestNotification(
 
 kern_return_t
 IOServiceMatchPropertyTable(
-        io_service_t	service,
-        CFDictionaryRef matching,
-        boolean_t *	matches );
+    io_service_t service,
+    CFDictionaryRef matching,
+    boolean_t *matches);
 
 /*! @function IOServiceGetBusyState
     @abstract Returns the busyState of an IOService.
@@ -426,8 +417,8 @@ IOServiceMatchPropertyTable(
 
 kern_return_t
 IOServiceGetBusyState(
-	io_service_t    service,
-	uint32_t *	busyState );
+    io_service_t service,
+    uint32_t *busyState);
 
 /*! @function IOServiceWaitQuiet
     @abstract Wait for an IOService's busyState to be zero.
@@ -438,8 +429,8 @@ IOServiceGetBusyState(
 
 kern_return_t
 IOServiceWaitQuiet(
-	io_service_t      service,
-	mach_timespec_t * waitTime );
+    io_service_t service,
+    mach_timespec_t *waitTime);
 
 /*! @function IOKitGetBusyState
     @abstract Returns the busyState of all IOServices.
@@ -450,8 +441,8 @@ IOServiceWaitQuiet(
 
 kern_return_t
 IOKitGetBusyState(
-	mach_port_t	masterPort,
-	uint32_t *	busyState );
+    mach_port_t masterPort,
+    uint32_t *busyState);
 
 /*! @function IOKitWaitQuiet
     @abstract Wait for a all IOServices' busyState to be zero.
@@ -462,8 +453,8 @@ IOKitGetBusyState(
 
 kern_return_t
 IOKitWaitQuiet(
-	mach_port_t	  masterPort,
-	mach_timespec_t * waitTime );
+    mach_port_t masterPort,
+    mach_timespec_t *waitTime);
 
 /*! @function IOServiceOpen
     @abstract A request to create a connection to an IOService.
@@ -476,10 +467,10 @@ IOKitWaitQuiet(
 
 kern_return_t
 IOServiceOpen(
-	io_service_t    service,
-	task_port_t	owningTask,
-	uint32_t	type,
-	io_connect_t  *	connect );
+    io_service_t service,
+    task_port_t owningTask,
+    uint32_t type,
+    io_connect_t *connect);
 
 /*! @function IOServiceRequestProbe
     @abstract A request to rescan a bus for device changes.
@@ -490,8 +481,8 @@ IOServiceOpen(
 
 kern_return_t
 IOServiceRequestProbe(
-	io_service_t    service,
-	uint32_t	options );
+    io_service_t service,
+    uint32_t options);
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -507,7 +498,7 @@ IOServiceRequestProbe(
 
 kern_return_t
 IOServiceClose(
-	io_connect_t	connect );
+    io_connect_t connect);
 
 /*! @function IOConnectAddRef
     @abstract Adds a reference to the connect handle.
@@ -517,7 +508,7 @@ IOServiceClose(
 
 kern_return_t
 IOConnectAddRef(
-	io_connect_t	connect );
+    io_connect_t connect);
 
 /*! @function IOConnectRelease
     @abstract Remove a reference to the connect handle.
@@ -527,7 +518,7 @@ IOConnectAddRef(
 
 kern_return_t
 IOConnectRelease(
-	io_connect_t	connect );
+    io_connect_t connect);
 
 /*! @function IOConnectGetService
     @abstract Returns the IOService a connect handle was opened on.
@@ -538,8 +529,8 @@ IOConnectRelease(
 
 kern_return_t
 IOConnectGetService(
-	io_connect_t	connect,
-	io_service_t  *	service );
+    io_connect_t connect,
+    io_service_t *service);
 
 /*! @function IOConnectSetNotificationPort
     @abstract Set a port to receive family specific notifications.
@@ -552,10 +543,10 @@ IOConnectGetService(
 
 kern_return_t
 IOConnectSetNotificationPort(
-	io_connect_t	connect,
-	uint32_t	type,
-	mach_port_t	port,
-	uintptr_t	reference );
+    io_connect_t connect,
+    uint32_t type,
+    mach_port_t port,
+    uintptr_t reference);
 
 /*! @function IOConnectMapMemory
     @abstract Map hardware or shared memory into the caller's task.
@@ -570,23 +561,23 @@ IOConnectSetNotificationPort(
 #if !__LP64__
 kern_return_t
 IOConnectMapMemory(
-	io_connect_t	connect,
-	uint32_t	memoryType,
-	task_port_t	intoTask,
-	vm_address_t	*atAddress,
-	vm_size_t	*ofSize,
-	IOOptionBits	 options );
+    io_connect_t connect,
+    uint32_t memoryType,
+    task_port_t intoTask,
+    vm_address_t *atAddress,
+    vm_size_t *ofSize,
+    IOOptionBits options);
 
 kern_return_t IOConnectMapMemory64
 #else
 kern_return_t IOConnectMapMemory
 #endif
-	(io_connect_t		connect,
-	 uint32_t		memoryType,
-	 task_port_t		intoTask,
-	 mach_vm_address_t	*atAddress,
-	 mach_vm_size_t		*ofSize,
-	 IOOptionBits		 options );
+    (io_connect_t connect,
+        uint32_t memoryType,
+        task_port_t intoTask,
+        mach_vm_address_t *atAddress,
+        mach_vm_size_t *ofSize,
+        IOOptionBits options);
 
 /*! @function IOConnectUnmapMemory
     @abstract Remove a mapping made with IOConnectMapMemory.
@@ -600,19 +591,19 @@ kern_return_t IOConnectMapMemory
 #if !__LP64__
 kern_return_t
 IOConnectUnmapMemory(
-	io_connect_t	connect,
-	uint32_t	memoryType,
-	task_port_t	fromTask,
-	vm_address_t	atAddress );
+    io_connect_t connect,
+    uint32_t memoryType,
+    task_port_t fromTask,
+    vm_address_t atAddress);
 
 kern_return_t IOConnectUnmapMemory64
 #else
 kern_return_t IOConnectUnmapMemory
 #endif
-	(io_connect_t		connect,
-	 uint32_t		memoryType,
-	 task_port_t		fromTask,
-	 mach_vm_address_t	atAddress );
+    (io_connect_t connect,
+        uint32_t memoryType,
+        task_port_t fromTask,
+        mach_vm_address_t atAddress);
 
 /*! @function IOConnectSetCFProperties
     @abstract Set CF container based properties on a connection.
@@ -623,8 +614,8 @@ kern_return_t IOConnectUnmapMemory
 
 kern_return_t
 IOConnectSetCFProperties(
-	io_connect_t	connect,
-	CFTypeRef	properties );
+    io_connect_t connect,
+    CFTypeRef properties);
 
 /*! @function IOConnectSetCFProperty
     @abstract Set a CF container based property on a connection.
@@ -636,9 +627,9 @@ IOConnectSetCFProperties(
 
 kern_return_t
 IOConnectSetCFProperty(
-	io_connect_t	connect,
-        CFStringRef	propertyName,
-	CFTypeRef	property );
+    io_connect_t connect,
+    CFStringRef propertyName,
+    CFTypeRef property);
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -646,131 +637,131 @@ IOConnectSetCFProperty(
 
 kern_return_t
 IOConnectCallMethod(
-	mach_port_t	 connection,		// In
-	uint32_t	 selector,		// In
-	const uint64_t	*input,			// In
-	uint32_t	 inputCnt,		// In
-	const void      *inputStruct,		// In
-	size_t		 inputStructCnt,	// In
-	uint64_t	*output,		// Out
-	uint32_t	*outputCnt,		// In/Out
-	void		*outputStruct,		// Out
-	size_t		*outputStructCnt)	// In/Out
-AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+    mach_port_t connection, // In
+    uint32_t selector, // In
+    const uint64_t *input, // In
+    uint32_t inputCnt, // In
+    const void *inputStruct, // In
+    size_t inputStructCnt, // In
+    uint64_t *output, // Out
+    uint32_t *outputCnt, // In/Out
+    void *outputStruct, // Out
+    size_t *outputStructCnt) // In/Out
+    AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
 
 kern_return_t
 IOConnectCallAsyncMethod(
-	mach_port_t	 connection,		// In
-	uint32_t	 selector,		// In
-	mach_port_t	 wake_port,		// In
-	uint64_t	*reference,		// In
-	uint32_t	 referenceCnt,		// In
-	const uint64_t	*input,			// In
-	uint32_t	 inputCnt,		// In
-	const void	*inputStruct,		// In
-	size_t		 inputStructCnt,	// In
-	uint64_t	*output,		// Out
-	uint32_t	*outputCnt,		// In/Out
-	void		*outputStruct,		// Out
-	size_t		*outputStructCnt)	// In/Out
-AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+    mach_port_t connection, // In
+    uint32_t selector, // In
+    mach_port_t wake_port, // In
+    uint64_t *reference, // In
+    uint32_t referenceCnt, // In
+    const uint64_t *input, // In
+    uint32_t inputCnt, // In
+    const void *inputStruct, // In
+    size_t inputStructCnt, // In
+    uint64_t *output, // Out
+    uint32_t *outputCnt, // In/Out
+    void *outputStruct, // Out
+    size_t *outputStructCnt) // In/Out
+    AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
 
 kern_return_t
 IOConnectCallStructMethod(
-	mach_port_t	 connection,		// In
-	uint32_t	 selector,		// In
-	const void	*inputStruct,		// In
-	size_t		 inputStructCnt,	// In
-	void		*outputStruct,		// Out
-	size_t		*outputStructCnt)	// In/Out
-AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+    mach_port_t connection, // In
+    uint32_t selector, // In
+    const void *inputStruct, // In
+    size_t inputStructCnt, // In
+    void *outputStruct, // Out
+    size_t *outputStructCnt) // In/Out
+    AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
 
 kern_return_t
 IOConnectCallAsyncStructMethod(
-	mach_port_t	 connection,		// In
-	uint32_t	 selector,		// In
-	mach_port_t	 wake_port,		// In
-	uint64_t	*reference,		// In
-	uint32_t	 referenceCnt,		// In
-	const void	*inputStruct,		// In
-	size_t		 inputStructCnt,	// In
-	void		*outputStruct,		// Out
-	size_t		*outputStructCnt)	// In/Out
-AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+    mach_port_t connection, // In
+    uint32_t selector, // In
+    mach_port_t wake_port, // In
+    uint64_t *reference, // In
+    uint32_t referenceCnt, // In
+    const void *inputStruct, // In
+    size_t inputStructCnt, // In
+    void *outputStruct, // Out
+    size_t *outputStructCnt) // In/Out
+    AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
 
 kern_return_t
 IOConnectCallScalarMethod(
-	mach_port_t	 connection,		// In
-	uint32_t	 selector,		// In
-	const uint64_t	*input,			// In
-	uint32_t	 inputCnt,		// In
-	uint64_t	*output,		// Out
-	uint32_t	*outputCnt)		// In/Out
-AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+    mach_port_t connection, // In
+    uint32_t selector, // In
+    const uint64_t *input, // In
+    uint32_t inputCnt, // In
+    uint64_t *output, // Out
+    uint32_t *outputCnt) // In/Out
+    AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
 
 kern_return_t
 IOConnectCallAsyncScalarMethod(
-	mach_port_t	 connection,		// In
-	uint32_t	 selector,		// In
-	mach_port_t	 wake_port,		// In
-	uint64_t	*reference,		// In
-	uint32_t	 referenceCnt,		// In
-	const uint64_t	*input,			// In
-	uint32_t	 inputCnt,		// In
-	uint64_t	*output,		// Out
-	uint32_t	*outputCnt)		// In/Out
-AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+    mach_port_t connection, // In
+    uint32_t selector, // In
+    mach_port_t wake_port, // In
+    uint64_t *reference, // In
+    uint32_t referenceCnt, // In
+    const uint64_t *input, // In
+    uint32_t inputCnt, // In
+    uint64_t *output, // Out
+    uint32_t *outputCnt) // In/Out
+    AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 kern_return_t
-IOConnectTrap0(io_connect_t	connect,
-	       uint32_t		index );
+IOConnectTrap0(io_connect_t connect,
+    uint32_t index);
 
 kern_return_t
-IOConnectTrap1(io_connect_t	connect,
-	       uint32_t		index,
-	       uintptr_t	p1 );
+IOConnectTrap1(io_connect_t connect,
+    uint32_t index,
+    uintptr_t p1);
 
 kern_return_t
-IOConnectTrap2(io_connect_t	connect,
-	       uint32_t		index,
-	       uintptr_t	p1,
-	       uintptr_t	p2);
+IOConnectTrap2(io_connect_t connect,
+    uint32_t index,
+    uintptr_t p1,
+    uintptr_t p2);
 
 kern_return_t
-IOConnectTrap3(io_connect_t	connect,
-	       uint32_t		index,
-	       uintptr_t	p1,
-	       uintptr_t	p2,
-	       uintptr_t	p3);
+IOConnectTrap3(io_connect_t connect,
+    uint32_t index,
+    uintptr_t p1,
+    uintptr_t p2,
+    uintptr_t p3);
 
 kern_return_t
-IOConnectTrap4(io_connect_t	connect,
-	       uint32_t		index,
-	       uintptr_t	p1,
-	       uintptr_t	p2,
-	       uintptr_t	p3,
-	       uintptr_t	p4);
+IOConnectTrap4(io_connect_t connect,
+    uint32_t index,
+    uintptr_t p1,
+    uintptr_t p2,
+    uintptr_t p3,
+    uintptr_t p4);
 
 kern_return_t
-IOConnectTrap5(io_connect_t	connect,
-	       uint32_t		index,
-	       uintptr_t	p1,
-	       uintptr_t	p2,
-	       uintptr_t	p3,
-	       uintptr_t	p4,
-	       uintptr_t	p5);
+IOConnectTrap5(io_connect_t connect,
+    uint32_t index,
+    uintptr_t p1,
+    uintptr_t p2,
+    uintptr_t p3,
+    uintptr_t p4,
+    uintptr_t p5);
 
 kern_return_t
-IOConnectTrap6(io_connect_t	connect,
-	       uint32_t		index,
-	       uintptr_t	p1,
-	       uintptr_t	p2,
-	       uintptr_t	p3,
-	       uintptr_t	p4,
-	       uintptr_t	p5,
-	       uintptr_t	p6);
+IOConnectTrap6(io_connect_t connect,
+    uint32_t index,
+    uintptr_t p1,
+    uintptr_t p2,
+    uintptr_t p3,
+    uintptr_t p4,
+    uintptr_t p5,
+    uintptr_t p6);
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -783,8 +774,8 @@ IOConnectTrap6(io_connect_t	connect,
 
 kern_return_t
 IOConnectAddClient(
-	io_connect_t	connect,
-	io_connect_t	client );
+    io_connect_t connect,
+    io_connect_t client);
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -800,7 +791,7 @@ IOConnectAddClient(
 
 io_registry_entry_t
 IORegistryGetRootEntry(
-	mach_port_t	masterPort );
+    mach_port_t masterPort);
 
 /*! @function IORegistryEntryFromPath
     @abstract Looks up a registry entry by path.
@@ -811,13 +802,13 @@ IORegistryGetRootEntry(
 
 io_registry_entry_t
 IORegistryEntryFromPath(
-	mach_port_t		masterPort,
-	const io_string_t	path );
+    mach_port_t masterPort,
+    const io_string_t path);
 
 // options for IORegistryCreateIterator(), IORegistryEntryCreateIterator, IORegistryEntrySearchCFProperty()
 enum {
-    kIORegistryIterateRecursively	= 0x00000001,
-    kIORegistryIterateParents		= 0x00000002
+    kIORegistryIterateRecursively = 0x00000001,
+    kIORegistryIterateParents = 0x00000002
 };
 
 /*! @function IORegistryCreateIterator
@@ -831,10 +822,10 @@ enum {
 
 kern_return_t
 IORegistryCreateIterator(
-	mach_port_t	masterPort,
-	const io_name_t	plane,
-	IOOptionBits	options,
-	io_iterator_t * iterator );
+    mach_port_t masterPort,
+    const io_name_t plane,
+    IOOptionBits options,
+    io_iterator_t *iterator);
 
 /*! @function IORegistryEntryCreateIterator
     @abstract Create an iterator rooted at a given registry entry.
@@ -847,10 +838,10 @@ IORegistryCreateIterator(
 
 kern_return_t
 IORegistryEntryCreateIterator(
-	io_registry_entry_t	entry,
-	const io_name_t		plane,
-	IOOptionBits		options,
-	io_iterator_t 	      * iterator );
+    io_registry_entry_t entry,
+    const io_name_t plane,
+    IOOptionBits options,
+    io_iterator_t *iterator);
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -865,7 +856,7 @@ IORegistryEntryCreateIterator(
 
 kern_return_t
 IORegistryIteratorEnterEntry(
-	io_iterator_t	iterator );
+    io_iterator_t iterator);
 
 /*! @function IORegistryIteratorExitEntry
     @abstract Exits a level of recursion, restoring the current entry.
@@ -874,7 +865,7 @@ IORegistryIteratorEnterEntry(
 
 kern_return_t
 IORegistryIteratorExitEntry(
-	io_iterator_t	iterator );
+    io_iterator_t iterator);
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -891,8 +882,8 @@ IORegistryIteratorExitEntry(
 
 kern_return_t
 IORegistryEntryGetName(
-	io_registry_entry_t	entry,
-	io_name_t 	        name );
+    io_registry_entry_t entry,
+    io_name_t name);
 
 /*! @function IORegistryEntryGetNameInPlane
     @abstract Returns a C-string name assigned to a registry entry, in a specified plane.
@@ -904,9 +895,9 @@ IORegistryEntryGetName(
 
 kern_return_t
 IORegistryEntryGetNameInPlane(
-	io_registry_entry_t	entry,
-	const io_name_t 	plane,
-	io_name_t 	        name );
+    io_registry_entry_t entry,
+    const io_name_t plane,
+    io_name_t name);
 
 /*! @function IORegistryEntryGetLocationInPlane
     @abstract Returns a C-string location assigned to a registry entry, in a specified plane.
@@ -918,9 +909,9 @@ IORegistryEntryGetNameInPlane(
 
 kern_return_t
 IORegistryEntryGetLocationInPlane(
-	io_registry_entry_t	entry,
-	const io_name_t 	plane,
-	io_name_t 	        location );
+    io_registry_entry_t entry,
+    const io_name_t plane,
+    io_name_t location);
 
 /*! @function IORegistryEntryGetPath
     @abstract Create a path for a registry entry.
@@ -932,9 +923,9 @@ IORegistryEntryGetLocationInPlane(
 
 kern_return_t
 IORegistryEntryGetPath(
-	io_registry_entry_t	entry,
-	const io_name_t         plane,
-	io_string_t		path );
+    io_registry_entry_t entry,
+    const io_name_t plane,
+    io_string_t path);
 
 /*! @function IORegistryEntryCreateCFProperties
     @abstract Create a CF dictionary representation of a registry entry's property table.
@@ -947,10 +938,10 @@ IORegistryEntryGetPath(
 
 kern_return_t
 IORegistryEntryCreateCFProperties(
-	io_registry_entry_t	entry,
-	CFMutableDictionaryRef * properties,
-        CFAllocatorRef		allocator,
-	IOOptionBits		options );
+    io_registry_entry_t entry,
+    CFMutableDictionaryRef *properties,
+    CFAllocatorRef allocator,
+    IOOptionBits options);
 
 /*! @function IORegistryEntryCreateCFProperty
     @abstract Create a CF representation of a registry entry's property.
@@ -963,10 +954,10 @@ IORegistryEntryCreateCFProperties(
 
 CFTypeRef
 IORegistryEntryCreateCFProperty(
-	io_registry_entry_t	entry,
-	CFStringRef		key,
-        CFAllocatorRef		allocator,
-	IOOptionBits		options );
+    io_registry_entry_t entry,
+    CFStringRef key,
+    CFAllocatorRef allocator,
+    IOOptionBits options);
 
 /*! @function IORegistryEntrySearchCFProperty
     @abstract Create a CF representation of a registry entry's property.
@@ -981,21 +972,21 @@ This function will search for a property, starting first with specified registry
 
 CFTypeRef
 IORegistryEntrySearchCFProperty(
-	io_registry_entry_t	entry,
-	const io_name_t		plane,
-	CFStringRef		key,
-        CFAllocatorRef		allocator,
-	IOOptionBits		options );
+    io_registry_entry_t entry,
+    const io_name_t plane,
+    CFStringRef key,
+    CFAllocatorRef allocator,
+    IOOptionBits options);
 
 /*  @function IORegistryEntryGetProperty - deprecated,
     use IORegistryEntryCreateCFProperty */
 
 kern_return_t
 IORegistryEntryGetProperty(
-	io_registry_entry_t	entry,
-	const io_name_t		propertyName,
-	io_struct_inband_t	buffer,
-	uint32_t	      * size );
+    io_registry_entry_t entry,
+    const io_name_t propertyName,
+    io_struct_inband_t buffer,
+    uint32_t *size);
 
 /*! @function IORegistryEntrySetCFProperties
     @abstract Set CF container based properties in a registry entry.
@@ -1006,8 +997,8 @@ IORegistryEntryGetProperty(
 
 kern_return_t
 IORegistryEntrySetCFProperties(
-	io_registry_entry_t	entry,
-	CFTypeRef	 	properties );
+    io_registry_entry_t entry,
+    CFTypeRef properties);
 
 /*! @function IORegistryEntrySetCFProperty
     @abstract Set a CF container based property in a registry entry.
@@ -1019,9 +1010,9 @@ IORegistryEntrySetCFProperties(
 
 kern_return_t
 IORegistryEntrySetCFProperty(
-	io_registry_entry_t	entry,
-        CFStringRef		propertyName,
-	CFTypeRef	 	property );
+    io_registry_entry_t entry,
+    CFStringRef propertyName,
+    CFTypeRef property);
 
 /*! @function IORegistryEntryGetChildIterator
     @abstract Returns an iterator over an registry entry's child entries in a plane.
@@ -1033,9 +1024,9 @@ IORegistryEntrySetCFProperty(
 
 kern_return_t
 IORegistryEntryGetChildIterator(
-	io_registry_entry_t	entry,
-	const io_name_t		plane,
-	io_iterator_t	      * iterator );
+    io_registry_entry_t entry,
+    const io_name_t plane,
+    io_iterator_t *iterator);
 
 /*! @function IORegistryEntryGetChildEntry
     @abstract Returns the first child of a registry entry in a plane.
@@ -1047,9 +1038,9 @@ IORegistryEntryGetChildIterator(
 
 kern_return_t
 IORegistryEntryGetChildEntry(
-	io_registry_entry_t	entry,
-	const io_name_t		plane,
-	io_registry_entry_t   * child );
+    io_registry_entry_t entry,
+    const io_name_t plane,
+    io_registry_entry_t *child);
 
 /*! @function IORegistryEntryGetParentIterator
     @abstract Returns an iterator over an registry entry's parent entries in a plane.
@@ -1061,9 +1052,9 @@ IORegistryEntryGetChildEntry(
 
 kern_return_t
 IORegistryEntryGetParentIterator(
-	io_registry_entry_t	entry,
-	const io_name_t		plane,
-	io_iterator_t	      * iterator );
+    io_registry_entry_t entry,
+    const io_name_t plane,
+    io_iterator_t *iterator);
 
 /*! @function IORegistryEntryGetParentEntry
     @abstract Returns the first parent of a registry entry in a plane.
@@ -1075,9 +1066,9 @@ IORegistryEntryGetParentIterator(
 
 kern_return_t
 IORegistryEntryGetParentEntry(
-	io_registry_entry_t	entry,
-	const io_name_t		plane,
-	io_registry_entry_t   * parent );
+    io_registry_entry_t entry,
+    const io_name_t plane,
+    io_registry_entry_t *parent);
 
 /*! @function IORegistryEntryInPlane
     @abstract Determines if the registry entry is attached in a plane.
@@ -1088,8 +1079,8 @@ IORegistryEntryGetParentEntry(
 
 boolean_t
 IORegistryEntryInPlane(
-	io_registry_entry_t	entry,
-	const io_name_t		plane );
+    io_registry_entry_t entry,
+    const io_name_t plane);
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -1105,7 +1096,7 @@ IORegistryEntryInPlane(
 
 CFMutableDictionaryRef
 IOServiceMatching(
-	const char *	name );
+    const char *name);
 
 /*! @function IOServiceNameMatching
     @abstract Create a matching dictionary that specifies an IOService name match.
@@ -1115,7 +1106,7 @@ IOServiceMatching(
 
 CFMutableDictionaryRef
 IOServiceNameMatching(
-	const char *	name );
+    const char *name);
 
 /*! @function IOBSDNameMatching
     @abstract Create a matching dictionary that specifies an IOService match based on BSD device name.
@@ -1127,9 +1118,9 @@ IOServiceNameMatching(
 
 CFMutableDictionaryRef
 IOBSDNameMatching(
-	mach_port_t	masterPort,
-	uint32_t	options,
-	const char *	bsdName );
+    mach_port_t masterPort,
+    uint32_t options,
+    const char *bsdName);
 
 /*! @function IOOpenFirmwarePathMatching
     @abstract Create a matching dictionary that specifies an IOService match based on  an OpenFirmware device path.
@@ -1141,9 +1132,9 @@ IOBSDNameMatching(
 
 CFMutableDictionaryRef
 IOOpenFirmwarePathMatching(
-	mach_port_t	masterPort,
-	uint32_t	options,
-	const char *	path );
+    mach_port_t masterPort,
+    uint32_t options,
+    const char *path);
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -1156,10 +1147,10 @@ IOOpenFirmwarePathMatching(
     @result A kern_return_t error code. */
 
 kern_return_t
-IOServiceOFPathToBSDName(mach_port_t		masterPort,
-                         const io_name_t	openFirmwarePath,
-                         io_name_t		bsdName);
-						 
+IOServiceOFPathToBSDName(mach_port_t masterPort,
+    const io_name_t openFirmwarePath,
+    io_name_t bsdName);
+
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 /*! @typedef IOAsyncCallback0
@@ -1199,19 +1190,18 @@ typedef void (*IOAsyncCallback2)(void *refcon, IOReturn result, void *arg0, void
     @param numArgs Number of extra arguments
 */
 typedef void (*IOAsyncCallback)(void *refcon, IOReturn result, void **args,
-                                uint32_t numArgs);
-
+    uint32_t numArgs);
 
 /* Internal use */
 
 kern_return_t
 OSGetNotificationFromMessage(
-	mach_msg_header_t     * msg,
-	uint32_t	  	index,
-        uint32_t    	      * type,
-        uintptr_t	      * reference,
-	void		     ** content,
-        vm_size_t	      * size );
+    mach_msg_header_t *msg,
+    uint32_t index,
+    uint32_t *type,
+    uintptr_t *reference,
+    void **content,
+    vm_size_t *size);
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -1219,33 +1209,33 @@ OSGetNotificationFromMessage(
 
 kern_return_t
 IOCatalogueSendData(
-        mach_port_t             masterPort,
-        uint32_t                flag,
-        const char             *buffer,
-        uint32_t                size );
+    mach_port_t masterPort,
+    uint32_t flag,
+    const char *buffer,
+    uint32_t size);
 
 kern_return_t
 IOCatalogueTerminate(
-        mach_port_t		masterPort,
-        uint32_t                flag,
-	io_name_t		description );
+    mach_port_t masterPort,
+    uint32_t flag,
+    io_name_t description);
 
 kern_return_t
 IOCatalogueGetData(
-        mach_port_t             masterPort,
-        uint32_t                flag,
-        char                  **buffer,
-        uint32_t               *size );
+    mach_port_t masterPort,
+    uint32_t flag,
+    char **buffer,
+    uint32_t *size);
 
 kern_return_t
 IOCatalogueModuleLoaded(
-        mach_port_t             masterPort,
-        io_name_t               name );
+    mach_port_t masterPort,
+    io_name_t name);
 
 kern_return_t
 IOCatalogueReset(
-        mach_port_t             masterPort,
-        uint32_t                flag );
+    mach_port_t masterPort,
+    uint32_t flag);
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -1261,160 +1251,160 @@ typedef struct IOObject IOObject;
 
 kern_return_t
 IORegistryDisposeEnumerator(
-	io_enumerator_t	enumerator ) DEPRECATED_ATTRIBUTE;
+    io_enumerator_t enumerator) DEPRECATED_ATTRIBUTE;
 
 kern_return_t
 IOMapMemory(
-	io_connect_t	connect,
-	uint32_t	memoryType,
-	task_port_t	intoTask,
-	vm_address_t *	atAddress,
-	vm_size_t    *	ofSize,
-	uint32_t	flags ) DEPRECATED_ATTRIBUTE;
+    io_connect_t connect,
+    uint32_t memoryType,
+    task_port_t intoTask,
+    vm_address_t *atAddress,
+    vm_size_t *ofSize,
+    uint32_t flags) DEPRECATED_ATTRIBUTE;
 
 // for CGS
 
 kern_return_t
 IOCompatibiltyNumber(
-	mach_port_t	connect,
-	uint32_t *	objectNumber ) DEPRECATED_ATTRIBUTE;
+    mach_port_t connect,
+    uint32_t *objectNumber) DEPRECATED_ATTRIBUTE;
 
 // Traditional IOUserClient transport routines
 kern_return_t
-IOConnectMethodScalarIScalarO( 
-	io_connect_t	connect,
-        uint32_t	index,
-        IOItemCount	scalarInputCount,
-        IOItemCount	scalarOutputCount,
-        ... ) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
+IOConnectMethodScalarIScalarO(
+    io_connect_t connect,
+    uint32_t index,
+    IOItemCount scalarInputCount,
+    IOItemCount scalarOutputCount,
+    ...) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 kern_return_t
 IOConnectMethodScalarIStructureO(
-	io_connect_t	connect,
-        uint32_t	index,
-        IOItemCount	scalarInputCount,
-        IOByteCount *	structureSize,
-        ... ) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
+    io_connect_t connect,
+    uint32_t index,
+    IOItemCount scalarInputCount,
+    IOByteCount *structureSize,
+    ...) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 kern_return_t
 IOConnectMethodScalarIStructureI(
-	io_connect_t	connect,
-        uint32_t	index,
-        IOItemCount	scalarInputCount,
-        IOByteCount	structureSize,
-        ... ) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
+    io_connect_t connect,
+    uint32_t index,
+    IOItemCount scalarInputCount,
+    IOByteCount structureSize,
+    ...) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 kern_return_t
 IOConnectMethodStructureIStructureO(
-	io_connect_t	connect,
-        uint32_t	index,
-        IOItemCount	structureInputSize,
-        IOByteCount *	structureOutputSize,
-        void *		inputStructure,
-        void *		ouputStructure ) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
+    io_connect_t connect,
+    uint32_t index,
+    IOItemCount structureInputSize,
+    IOByteCount *structureOutputSize,
+    void *inputStructure,
+    void *ouputStructure) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 // Compatability with earlier Mig interface routines
 #if IOCONNECT_NO_32B_METHODS
 
 kern_return_t
 io_connect_map_memory(
-	io_connect_t		connect,
-	uint32_t		memoryType,
-	task_port_t		intoTask,
-	vm_address_t		*atAddress,
-	vm_size_t		*ofSize,
-	IOOptionBits		options) DEPRECATED_ATTRIBUTE;
+    io_connect_t connect,
+    uint32_t memoryType,
+    task_port_t intoTask,
+    vm_address_t *atAddress,
+    vm_size_t *ofSize,
+    IOOptionBits options) DEPRECATED_ATTRIBUTE;
 
 kern_return_t
 io_connect_unmap_memory(
-	io_connect_t		connect,
-	uint32_t		memoryType,
-	task_port_t		fromTask,
-	vm_address_t		atAddress) DEPRECATED_ATTRIBUTE;
+    io_connect_t connect,
+    uint32_t memoryType,
+    task_port_t fromTask,
+    vm_address_t atAddress) DEPRECATED_ATTRIBUTE;
 
 kern_return_t
 io_connect_method_scalarI_scalarO(
-	mach_port_t connection,
-	int selector,
-	io_scalar_inband_t input,
-	mach_msg_type_number_t inputCnt,
-	io_scalar_inband_t output,
-	mach_msg_type_number_t *outputCnt) DEPRECATED_ATTRIBUTE;
+    mach_port_t connection,
+    int selector,
+    io_scalar_inband_t input,
+    mach_msg_type_number_t inputCnt,
+    io_scalar_inband_t output,
+    mach_msg_type_number_t *outputCnt) DEPRECATED_ATTRIBUTE;
 
 kern_return_t
 io_connect_method_scalarI_structureO(
-	mach_port_t connection,
-	int selector,
-	io_scalar_inband_t input,
-	mach_msg_type_number_t inputCnt,
-	io_struct_inband_t output,
-	mach_msg_type_number_t *outputCnt) DEPRECATED_ATTRIBUTE;
+    mach_port_t connection,
+    int selector,
+    io_scalar_inband_t input,
+    mach_msg_type_number_t inputCnt,
+    io_struct_inband_t output,
+    mach_msg_type_number_t *outputCnt) DEPRECATED_ATTRIBUTE;
 
 kern_return_t
 io_connect_method_scalarI_structureI(
-	mach_port_t connection,
-	int selector,
-	io_scalar_inband_t input,
-	mach_msg_type_number_t inputCnt,
-	io_struct_inband_t inputStruct,
-	mach_msg_type_number_t inputStructCnt) DEPRECATED_ATTRIBUTE;
+    mach_port_t connection,
+    int selector,
+    io_scalar_inband_t input,
+    mach_msg_type_number_t inputCnt,
+    io_struct_inband_t inputStruct,
+    mach_msg_type_number_t inputStructCnt) DEPRECATED_ATTRIBUTE;
 
 kern_return_t
 io_connect_method_structureI_structureO(
-	mach_port_t connection,
-	int selector,
-	io_struct_inband_t input,
-	mach_msg_type_number_t inputCnt,
-	io_struct_inband_t output,
-	mach_msg_type_number_t *outputCnt) DEPRECATED_ATTRIBUTE;
+    mach_port_t connection,
+    int selector,
+    io_struct_inband_t input,
+    mach_msg_type_number_t inputCnt,
+    io_struct_inband_t output,
+    mach_msg_type_number_t *outputCnt) DEPRECATED_ATTRIBUTE;
 
 kern_return_t
 io_async_method_scalarI_scalarO(
-	mach_port_t connection,
-	mach_port_t wake_port,
-	io_async_ref_t reference,
-	mach_msg_type_number_t referenceCnt,
-	int selector,
-	io_scalar_inband_t input,
-	mach_msg_type_number_t inputCnt,
-	io_scalar_inband_t output,
-	mach_msg_type_number_t *outputCnt) DEPRECATED_ATTRIBUTE;
+    mach_port_t connection,
+    mach_port_t wake_port,
+    io_async_ref_t reference,
+    mach_msg_type_number_t referenceCnt,
+    int selector,
+    io_scalar_inband_t input,
+    mach_msg_type_number_t inputCnt,
+    io_scalar_inband_t output,
+    mach_msg_type_number_t *outputCnt) DEPRECATED_ATTRIBUTE;
 
 kern_return_t
 io_async_method_scalarI_structureO(
-	mach_port_t connection,
-	mach_port_t wake_port,
-	io_async_ref_t reference,
-	mach_msg_type_number_t referenceCnt,
-	int selector,
-	io_scalar_inband_t input,
-	mach_msg_type_number_t inputCnt,
-	io_struct_inband_t output,
-	mach_msg_type_number_t *outputCnt) DEPRECATED_ATTRIBUTE;
+    mach_port_t connection,
+    mach_port_t wake_port,
+    io_async_ref_t reference,
+    mach_msg_type_number_t referenceCnt,
+    int selector,
+    io_scalar_inband_t input,
+    mach_msg_type_number_t inputCnt,
+    io_struct_inband_t output,
+    mach_msg_type_number_t *outputCnt) DEPRECATED_ATTRIBUTE;
 
 kern_return_t
 io_async_method_scalarI_structureI(
-	mach_port_t connection,
-	mach_port_t wake_port,
-	io_async_ref_t reference,
-	mach_msg_type_number_t referenceCnt,
-	int selector,
-	io_scalar_inband_t input,
-	mach_msg_type_number_t inputCnt,
-	io_struct_inband_t inputStruct,
-	mach_msg_type_number_t inputStructCnt) DEPRECATED_ATTRIBUTE;
+    mach_port_t connection,
+    mach_port_t wake_port,
+    io_async_ref_t reference,
+    mach_msg_type_number_t referenceCnt,
+    int selector,
+    io_scalar_inband_t input,
+    mach_msg_type_number_t inputCnt,
+    io_struct_inband_t inputStruct,
+    mach_msg_type_number_t inputStructCnt) DEPRECATED_ATTRIBUTE;
 
 kern_return_t
 io_async_method_structureI_structureO(
-	mach_port_t connection,
-	mach_port_t wake_port,
-	io_async_ref_t reference,
-	mach_msg_type_number_t referenceCnt,
-	int selector,
-	io_struct_inband_t input,
-	mach_msg_type_number_t inputCnt,
-	io_struct_inband_t output,
-	mach_msg_type_number_t *outputCnt) DEPRECATED_ATTRIBUTE;
+    mach_port_t connection,
+    mach_port_t wake_port,
+    io_async_ref_t reference,
+    mach_msg_type_number_t referenceCnt,
+    int selector,
+    io_struct_inband_t input,
+    mach_msg_type_number_t inputCnt,
+    io_struct_inband_t output,
+    mach_msg_type_number_t *outputCnt) DEPRECATED_ATTRIBUTE;
 #endif // IOCONNECT_NO_32B_METHODS
 
 #endif /* defined(__LP64__) */

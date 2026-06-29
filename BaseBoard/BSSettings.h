@@ -3,7 +3,7 @@
 #import <Foundation/NSIndexSet.h>
 
 typedef NS_ENUM(NSUInteger, BSSettingType) {
-	BSSettingTypeThisIsAReminderToFillOutTheseEnumNames = 8
+    BSSettingTypeThisIsAReminderToFillOutTheseEnumNames = 8
 };
 
 @interface BSSettings : NSObject

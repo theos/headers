@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
 
-@protocol DevicePINControllerDelegate <NSObject>
+@protocol DevicePINControllerDelegate<NSObject>
 
 @end

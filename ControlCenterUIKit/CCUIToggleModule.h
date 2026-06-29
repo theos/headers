@@ -2,7 +2,7 @@
 #import "CCUIContentModule-Protocol.h"
 
 API_AVAILABLE(ios(11.0))
-@interface CCUIToggleModule : NSObject <CCUIContentModule>
+@interface CCUIToggleModule : NSObject<CCUIContentModule>
 
 @property (assign, getter=isSelected, nonatomic) BOOL selected;
 
@@ -17,7 +17,7 @@ API_AVAILABLE(ios(11.0))
 
 @property (nonatomic, copy, readonly) CCUICAPackageDescription *glyphPackageDescription;
 
-@property (nonatomic, readonly) UIViewController <CCUIContentModuleContentViewController> *contentViewController;
+@property (nonatomic, readonly) UIViewController<CCUIContentModuleContentViewController> *contentViewController;
 @property (nonatomic, readonly) UIViewController *backgroundViewController;
 
 - (void)refreshState; // Force a refresh of the switch state

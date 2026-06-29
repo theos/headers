@@ -16,7 +16,6 @@ CA_EXTERN void CARenderSetGlobalFeatureFlags(unsigned flags);
 CA_EXTERN CARenderObjectRef CARenderRetain(CARenderObjectRef object);
 CA_EXTERN void CARenderRelease(CARenderObjectRef object);
 
-
 @interface NSObject (CARenderValue)
 - (CARenderObjectRef)CA_copyRenderValue;
 @end

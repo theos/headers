@@ -93,15 +93,15 @@ enum {
 */
 typedef unsigned long IOPMPowerFlags;
 enum {
-    kIOPMPowerOn                    = 0x00000002,
-    kIOPMDeviceUsable               = 0x00008000,
-    kIOPMLowPower                   = 0x00010000,
-    kIOPMPreventIdleSleep           = 0x00000040,
-    kIOPMSleepCapability            = 0x00000004,
-    kIOPMRestartCapability          = 0x00000080,
-    kIOPMSleep                      = 0x00000001,
-    kIOPMRestart                    = 0x00000080,
-    kIOPMInitialDeviceState         = 0x00000100
+    kIOPMPowerOn = 0x00000002,
+    kIOPMDeviceUsable = 0x00008000,
+    kIOPMLowPower = 0x00010000,
+    kIOPMPreventIdleSleep = 0x00000040,
+    kIOPMSleepCapability = 0x00000004,
+    kIOPMRestartCapability = 0x00000080,
+    kIOPMSleep = 0x00000001,
+    kIOPMRestart = 0x00000080,
+    kIOPMInitialDeviceState = 0x00000100
 };
 
 /*
@@ -112,13 +112,13 @@ enum {
  * Their behavior is undefined
  */
 enum {
-    kIOPMClockNormal                = 0x0004,
-    kIOPMClockRunning               = 0x0008,
-    kIOPMPreventSystemSleep         = 0x0010,
-    kIOPMDoze                       = 0x0400,
-    kIOPMChildClamp                 = 0x0080,
-    kIOPMChildClamp2                = 0x0200,
-    kIOPMNotPowerManaged            = 0x0800
+    kIOPMClockNormal = 0x0004,
+    kIOPMClockRunning = 0x0008,
+    kIOPMPreventSystemSleep = 0x0010,
+    kIOPMDoze = 0x0400,
+    kIOPMChildClamp = 0x0080,
+    kIOPMChildClamp2 = 0x0200,
+    kIOPMNotPowerManaged = 0x0800
 };
 
 /*
@@ -127,50 +127,46 @@ enum {
  * Capability, InputPowerRequirement, or OutputPowerCharacter fields.
  */
 enum {
-    kIOPMMaxPerformance             = 0x4000,
-    kIOPMPassThrough                = 0x0100,
-    kIOPMAuxPowerOn                 = 0x0020,
-    kIOPMNotAttainable              = 0x0001,
-    kIOPMContextRetained            = 0x2000,
-    kIOPMConfigRetained             = 0x1000,
-    kIOPMStaticPowerValid           = 0x0800,
-    kIOPMSoftSleep                  = 0x0400,
-    kIOPMCapabilitiesMask =     kIOPMPowerOn | kIOPMDeviceUsable | 
-                                kIOPMMaxPerformance | kIOPMContextRetained | 
-                                kIOPMConfigRetained | kIOPMSleepCapability |
-                                kIOPMRestartCapability
+    kIOPMMaxPerformance = 0x4000,
+    kIOPMPassThrough = 0x0100,
+    kIOPMAuxPowerOn = 0x0020,
+    kIOPMNotAttainable = 0x0001,
+    kIOPMContextRetained = 0x2000,
+    kIOPMConfigRetained = 0x1000,
+    kIOPMStaticPowerValid = 0x0800,
+    kIOPMSoftSleep = 0x0400,
+    kIOPMCapabilitiesMask = kIOPMPowerOn | kIOPMDeviceUsable | kIOPMMaxPerformance | kIOPMContextRetained | kIOPMConfigRetained | kIOPMSleepCapability | kIOPMRestartCapability
 };
 
 /*
  * Support for old names of IOPMPowerFlag constants
  */
 enum {
-    IOPMNotAttainable           = kIOPMNotAttainable,
-    IOPMPowerOn                 = kIOPMPowerOn,
-    IOPMClockNormal             = kIOPMClockNormal,
-    IOPMClockRunning            = kIOPMClockRunning,
-    IOPMAuxPowerOn              = kIOPMAuxPowerOn,
-    IOPMDeviceUsable            = kIOPMDeviceUsable,
-    IOPMMaxPerformance          = kIOPMMaxPerformance,
-    IOPMContextRetained         = kIOPMContextRetained,
-    IOPMConfigRetained          = kIOPMConfigRetained,
-    IOPMNotPowerManaged         = kIOPMNotPowerManaged,
-    IOPMSoftSleep               = kIOPMSoftSleep
-};
-
-
-enum {
-    kIOPMNextHigherState        = 1,
-    kIOPMHighestState           = 2,
-    kIOPMNextLowerState         = 3,
-    kIOPMLowestState            = 4
+    IOPMNotAttainable = kIOPMNotAttainable,
+    IOPMPowerOn = kIOPMPowerOn,
+    IOPMClockNormal = kIOPMClockNormal,
+    IOPMClockRunning = kIOPMClockRunning,
+    IOPMAuxPowerOn = kIOPMAuxPowerOn,
+    IOPMDeviceUsable = kIOPMDeviceUsable,
+    IOPMMaxPerformance = kIOPMMaxPerformance,
+    IOPMContextRetained = kIOPMContextRetained,
+    IOPMConfigRetained = kIOPMConfigRetained,
+    IOPMNotPowerManaged = kIOPMNotPowerManaged,
+    IOPMSoftSleep = kIOPMSoftSleep
 };
 
 enum {
-    IOPMNextHigherState         = kIOPMNextHigherState,
-    IOPMHighestState            = kIOPMHighestState,
-    IOPMNextLowerState          = kIOPMNextLowerState,
-    IOPMLowestState             = kIOPMLowestState
+    kIOPMNextHigherState = 1,
+    kIOPMHighestState = 2,
+    kIOPMNextLowerState = 3,
+    kIOPMLowestState = 4
+};
+
+enum {
+    IOPMNextHigherState = kIOPMNextHigherState,
+    IOPMHighestState = kIOPMHighestState,
+    IOPMNextLowerState = kIOPMNextLowerState,
+    IOPMLowestState = kIOPMLowestState
 };
 
 // Internal commands used by power managment command queue
@@ -197,7 +193,7 @@ enum {
  *  false       == clamshell is open
  *  not present == no clamshell on this hardware
  */
-#define kAppleClamshellStateKey             "AppleClamshellState"
+#define kAppleClamshellStateKey "AppleClamshellState"
 
 /* AppleClamshellCausesSleep 
  * reflects the clamshell close behavior on a portable. 
@@ -207,7 +203,7 @@ enum {
  *                  (typically external display mode)
  *  not present == no clamshell on this hardware
  */
-#define kAppleClamshellCausesSleepKey       "AppleClamshellCausesSleep"
+#define kAppleClamshellCausesSleepKey "AppleClamshellCausesSleep"
 
 /* kIOPMSleepWakeUUIDKey
  * Key refers to a CFStringRef that will uniquely identify
@@ -220,7 +216,7 @@ enum {
  * 
  * See IOPMrootDomain notification kIOPMMessageSleepWakeUUIDChange
  */
- #define kIOPMSleepWakeUUIDKey              "SleepWakeUUID"
+#define kIOPMSleepWakeUUIDKey "SleepWakeUUID"
 
 /* kIOPMDeepSleepEnabledKey
  * Indicates the Deep Sleep enable state.
@@ -229,14 +225,14 @@ enum {
  *  false       == Deep Sleep is disabled
  *  not present == Deep Sleep is not supported on this hardware
  */
-#define kIOPMDeepSleepEnabledKey            "Standby Enabled"
+#define kIOPMDeepSleepEnabledKey "Standby Enabled"
 
 /* kIOPMDeepSleepDelayKey
  * Key refers to a CFNumberRef that represents the delay in seconds before
  * entering Deep Sleep state. The property is not present if Deep Sleep is
  * unsupported.
  */
-#define kIOPMDeepSleepDelayKey              "Standby Delay"
+#define kIOPMDeepSleepDelayKey "Standby Delay"
 
 /* kIOPMDestroyFVKeyOnStandbyKey
  * Specifies if FileVault key can be stored when going to standby mode
@@ -245,7 +241,7 @@ enum {
  *  false       == Retain FV key when going to standby mode
  *  not present == Retain FV key when going to standby mode
  */
-#define kIOPMDestroyFVKeyOnStandbyKey            "DestroyFVKeyOnStandby"
+#define kIOPMDestroyFVKeyOnStandbyKey "DestroyFVKeyOnStandby"
 
 /*******************************************************************************
  *
@@ -261,12 +257,12 @@ enum {
      * When set, PM kernel will prefer to leave the CPU and core hardware
      * running in "Dark Wake" state, instead of sleeping.
      */
-    kIOPMDriverAssertionCPUBit                      = 0x01,
+    kIOPMDriverAssertionCPUBit = 0x01,
 
     /*! kIOPMDriverAssertionUSBExternalDeviceBit
      * When set, driver is informing PM that an external USB device is attached.
      */
-    kIOPMDriverAssertionUSBExternalDeviceBit        = 0x04,
+    kIOPMDriverAssertionUSBExternalDeviceBit = 0x04,
 
     /*! kIOPMDriverAssertionBluetoothHIDDevicePairedBit
      * When set, driver is informing PM that a Bluetooth HID device is paired.
@@ -276,38 +272,38 @@ enum {
     /*! kIOPMDriverAssertionExternalMediaMountedBit
      * When set, driver is informing PM that an external media is mounted.
      */
-    kIOPMDriverAssertionExternalMediaMountedBit     = 0x10,
+    kIOPMDriverAssertionExternalMediaMountedBit = 0x10,
 
     /*! kIOPMDriverAssertionReservedBit5
      * Reserved for Thunderbolt.
      */
-    kIOPMDriverAssertionReservedBit5                = 0x20,
+    kIOPMDriverAssertionReservedBit5 = 0x20,
 
     /*! kIOPMDriverAssertionPreventDisplaySleepBit
      * When set, the display should remain powered on while the system's awake.
      */
-    kIOPMDriverAssertionPreventDisplaySleepBit      = 0x40,
+    kIOPMDriverAssertionPreventDisplaySleepBit = 0x40,
 
-    kIOPMDriverAssertionReservedBit7                = 0x80
+    kIOPMDriverAssertionReservedBit7 = 0x80
 };
 
- /* kIOPMAssertionsDriverKey
+/* kIOPMAssertionsDriverKey
   * This kIOPMrootDomain key refers to a CFNumberRef property, containing
   * a bitfield describing the aggregate PM assertion levels.
   * Example: A value of 0 indicates that no driver has asserted anything.
   * Or, a value of <link>kIOPMDriverAssertionCPUBit</link>
   *   indicates that a driver (or drivers) have asserted a need fro CPU and video.
   */
-#define kIOPMAssertionsDriverKey            "DriverPMAssertions"
+#define kIOPMAssertionsDriverKey "DriverPMAssertions"
 
- /* kIOPMAssertionsDriverKey
+/* kIOPMAssertionsDriverKey
   * This kIOPMrootDomain key refers to a CFNumberRef property, containing
   * a bitfield describing the aggregate PM assertion levels.
   * Example: A value of 0 indicates that no driver has asserted anything.
   * Or, a value of <link>kIOPMDriverAssertionCPUBit</link>
   *   indicates that a driver (or drivers) have asserted a need fro CPU and video.
   */
-#define kIOPMAssertionsDriverDetailedKey    "DriverPMAssertionsDetailed"
+#define kIOPMAssertionsDriverDetailedKey "DriverPMAssertionsDetailed"
 
 /*******************************************************************************
  *
@@ -317,13 +313,13 @@ enum {
  *  kIOPMAssertionsDriverKey.
  *
  */
-#define kIOPMDriverAssertionIDKey               "ID"
-#define kIOPMDriverAssertionCreatedTimeKey      "CreatedTime"
-#define kIOPMDriverAssertionModifiedTimeKey     "ModifiedTime"
-#define kIOPMDriverAssertionOwnerStringKey      "Owner"
-#define kIOPMDriverAssertionOwnerServiceKey     "ServicePtr"
-#define kIOPMDriverAssertionLevelKey            "Level"
-#define kIOPMDriverAssertionAssertedKey         "Assertions"
+#define kIOPMDriverAssertionIDKey "ID"
+#define kIOPMDriverAssertionCreatedTimeKey "CreatedTime"
+#define kIOPMDriverAssertionModifiedTimeKey "ModifiedTime"
+#define kIOPMDriverAssertionOwnerStringKey "Owner"
+#define kIOPMDriverAssertionOwnerServiceKey "ServicePtr"
+#define kIOPMDriverAssertionLevelKey "Level"
+#define kIOPMDriverAssertionAssertedKey "Assertions"
 
 /*******************************************************************************
  *
@@ -347,8 +343,8 @@ enum {
     kClamshellSleepBit = (1 << 1)
 };
 
-#define kIOPMMessageClamshellStateChange   \
-                iokit_family_msg(sub_iokit_powermanagement, 0x100)
+#define kIOPMMessageClamshellStateChange \
+    iokit_family_msg(sub_iokit_powermanagement, 0x100)
 
 /* kIOPMMessageFeatureChange
  * Delivered when the set of supported features ("Supported Features" dictionary
@@ -356,8 +352,8 @@ enum {
  * removal of a supported feature.
  * RootDomain passes no argument with this message.
  */
-#define kIOPMMessageFeatureChange           \
-                iokit_family_msg(sub_iokit_powermanagement, 0x110)
+#define kIOPMMessageFeatureChange \
+    iokit_family_msg(sub_iokit_powermanagement, 0x110)
 
 /* kIOPMMessageInflowDisableCancelled
  * The battery has drained completely to its "Fully Discharged" state. 
@@ -373,40 +369,40 @@ enum {
 /* kIOPMMessageInternalBatteryFullyDischarged
  * The battery has drained completely to its "Fully Discharged" state. 
  */
-#define kIOPMMessageInternalBatteryFullyDischarged  \
-                iokit_family_msg(sub_iokit_powermanagement, 0x120)
+#define kIOPMMessageInternalBatteryFullyDischarged \
+    iokit_family_msg(sub_iokit_powermanagement, 0x120)
 
 /* kIOPMMessageSystemPowerEventOccurred
  * Some major system thermal property has changed, and interested clients may
  * modify their behavior.
  */
-#define kIOPMMessageSystemPowerEventOccurred  \
-                iokit_family_msg(sub_iokit_powermanagement, 0x130)
+#define kIOPMMessageSystemPowerEventOccurred \
+    iokit_family_msg(sub_iokit_powermanagement, 0x130)
 
 /* kIOPMMessageSleepWakeUUIDChange
  * Either a new SleepWakeUUID has been specified at the beginning of a sleep,
  * or we're removing the existing property upon completion of a wakeup.
  */
-#define kIOPMMessageSleepWakeUUIDChange  \
-                iokit_family_msg(sub_iokit_powermanagement, 0x140)
-                
+#define kIOPMMessageSleepWakeUUIDChange \
+    iokit_family_msg(sub_iokit_powermanagement, 0x140)
+
 /* kIOPMMessageSleepWakeUUIDSet
  * Argument accompanying the kIOPMMessageSleepWakeUUIDChange notification when 
  * a new UUID has been specified.
  */
-#define kIOPMMessageSleepWakeUUIDSet                    ((void *)1)
+#define kIOPMMessageSleepWakeUUIDSet ((void *)1)
 
 /* kIOPMMessageSleepWakeUUIDCleared
  * Argument accompanying the kIOPMMessageSleepWakeUUIDChange notification when 
  * the current UUID has been removed.
  */
-#define kIOPMMessageSleepWakeUUIDCleared                ((void *)0)
+#define kIOPMMessageSleepWakeUUIDCleared ((void *)0)
 
 /*! kIOPMMessageDriverAssertionsChanged
  *  Sent when kernel PM driver assertions have changed.
  */
-#define kIOPMMessageDriverAssertionsChanged  \
-                iokit_family_msg(sub_iokit_powermanagement, 0x150)
+#define kIOPMMessageDriverAssertionsChanged \
+    iokit_family_msg(sub_iokit_powermanagement, 0x150)
 
 /*******************************************************************************
  *
@@ -419,19 +415,18 @@ enum {
  * TODO: deprecate kIOPMAllowSleep and kIOPMPreventSleep
  ******************************************************************************/
 enum {
-  kIOPMSleepNow                 = (1<<0),  // put machine to sleep now
-  kIOPMAllowSleep               = (1<<1),  // allow idle sleep
-  kIOPMPreventSleep             = (1<<2),  // do not allow idle sleep
-  kIOPMPowerButton              = (1<<3),  // power button was pressed
-  kIOPMClamshellClosed          = (1<<4),  // clamshell was closed
-  kIOPMPowerEmergency           = (1<<5),  // battery dangerously low
-  kIOPMDisableClamshell         = (1<<6),  // do not sleep on clamshell closure
-  kIOPMEnableClamshell          = (1<<7),  // sleep on clamshell closure
-  kIOPMProcessorSpeedChange     = (1<<8),  // change the processor speed
-  kIOPMOverTemp                 = (1<<9),  // system dangerously hot
-  kIOPMClamshellOpened          = (1<<10)  // clamshell was opened
+    kIOPMSleepNow = (1 << 0), // put machine to sleep now
+    kIOPMAllowSleep = (1 << 1), // allow idle sleep
+    kIOPMPreventSleep = (1 << 2), // do not allow idle sleep
+    kIOPMPowerButton = (1 << 3), // power button was pressed
+    kIOPMClamshellClosed = (1 << 4), // clamshell was closed
+    kIOPMPowerEmergency = (1 << 5), // battery dangerously low
+    kIOPMDisableClamshell = (1 << 6), // do not sleep on clamshell closure
+    kIOPMEnableClamshell = (1 << 7), // sleep on clamshell closure
+    kIOPMProcessorSpeedChange = (1 << 8), // change the processor speed
+    kIOPMOverTemp = (1 << 9), // system dangerously hot
+    kIOPMClamshellOpened = (1 << 10) // clamshell was opened
 };
-
 
 /*******************************************************************************
  *
@@ -439,37 +434,37 @@ enum {
  *
  ******************************************************************************/
 enum {
-    kIOPMNoErr                  = 0,
+    kIOPMNoErr = 0,
 
     // Returned by driver's setPowerState(), powerStateWillChangeTo(),
     // powerStateDidChangeTo(), or acknowledgeSetPowerState() to
     // implicitly acknowledge power change upon function return.
-    kIOPMAckImplied             = 0,
+    kIOPMAckImplied = 0,
 
     // Deprecated
-    kIOPMWillAckLater           = 1,
+    kIOPMWillAckLater = 1,
 
     // Returned by requestPowerDomainState() to indicate
     // unrecognized specification parameter.
-    kIOPMBadSpecification       = 4,
+    kIOPMBadSpecification = 4,
 
     // Returned by requestPowerDomainState() to indicate
     // no power state matches search specification.
-    kIOPMNoSuchState            = 5,
+    kIOPMNoSuchState = 5,
 
     // Deprecated
-    kIOPMCannotRaisePower       = 6,
+    kIOPMCannotRaisePower = 6,
 
     // Deprecated
-    kIOPMParameterError         = 7,
+    kIOPMParameterError = 7,
 
     // Returned when power management state is accessed
     // before driver has called PMinit().
-    kIOPMNotYetInitialized      = 8,
+    kIOPMNotYetInitialized = 8,
 
     // And the old constants; deprecated
     IOPMNoErr = kIOPMNoErr,
-    IOPMAckImplied = kIOPMAckImplied, 
+    IOPMAckImplied = kIOPMAckImplied,
     IOPMWillAckLater = kIOPMWillAckLater,
     IOPMBadSpecification = kIOPMBadSpecification,
     IOPMNoSuchState = kIOPMNoSuchState,
@@ -478,50 +473,49 @@ enum {
     IOPMNotYetInitialized = kIOPMNotYetInitialized
 };
 
-
 // IOPMPowerSource class descriptive strings
-// Power Source state is published as properties to the IORegistry under these 
+// Power Source state is published as properties to the IORegistry under these
 // keys.
-#define kIOPMPSExternalConnectedKey                 "ExternalConnected"
-#define kIOPMPSExternalChargeCapableKey             "ExternalChargeCapable"
-#define kIOPMPSBatteryInstalledKey                  "BatteryInstalled"
-#define kIOPMPSIsChargingKey                        "IsCharging"
-#define kIOPMFullyChargedKey                        "FullyCharged"
-#define kIOPMPSAtWarnLevelKey                       "AtWarnLevel"
-#define kIOPMPSAtCriticalLevelKey                   "AtCriticalLevel"
-#define kIOPMPSCurrentCapacityKey                   "CurrentCapacity"
-#define kIOPMPSMaxCapacityKey                       "MaxCapacity"
-#define kIOPMPSDesignCapacityKey                    "DesignCapacity"
-#define kIOPMPSTimeRemainingKey                     "TimeRemaining"
-#define kIOPMPSAmperageKey                          "Amperage"
-#define kIOPMPSVoltageKey                           "Voltage"
-#define kIOPMPSCycleCountKey                        "CycleCount"
-#define kIOPMPSMaxErrKey                            "MaxErr"
-#define kIOPMPSAdapterInfoKey                       "AdapterInfo"
-#define kIOPMPSLocationKey                          "Location"
-#define kIOPMPSErrorConditionKey                    "ErrorCondition"
-#define kIOPMPSManufacturerKey                      "Manufacturer"
-#define kIOPMPSManufactureDateKey                   "ManufactureDate"
-#define kIOPMPSModelKey                             "Model"
-#define kIOPMPSSerialKey                            "Serial"
-#define kIOPMDeviceNameKey                          "DeviceName"
-#define kIOPMPSLegacyBatteryInfoKey                 "LegacyBatteryInfo"
-#define kIOPMPSBatteryHealthKey                     "BatteryHealth"
-#define kIOPMPSHealthConfidenceKey                  "HealthConfidence"
-#define kIOPMPSCapacityEstimatedKey	                "CapacityEstimated"
-#define kIOPMPSBatteryChargeStatusKey               "ChargeStatus"
-#define kIOPMPSBatteryTemperatureKey                "Temperature"
-#define kIOPMPSAdapterDetailsKey		    "AdapterDetails"
-#define kIOPMPSChargerConfigurationKey		    "ChargerConfiguration"
+#define kIOPMPSExternalConnectedKey "ExternalConnected"
+#define kIOPMPSExternalChargeCapableKey "ExternalChargeCapable"
+#define kIOPMPSBatteryInstalledKey "BatteryInstalled"
+#define kIOPMPSIsChargingKey "IsCharging"
+#define kIOPMFullyChargedKey "FullyCharged"
+#define kIOPMPSAtWarnLevelKey "AtWarnLevel"
+#define kIOPMPSAtCriticalLevelKey "AtCriticalLevel"
+#define kIOPMPSCurrentCapacityKey "CurrentCapacity"
+#define kIOPMPSMaxCapacityKey "MaxCapacity"
+#define kIOPMPSDesignCapacityKey "DesignCapacity"
+#define kIOPMPSTimeRemainingKey "TimeRemaining"
+#define kIOPMPSAmperageKey "Amperage"
+#define kIOPMPSVoltageKey "Voltage"
+#define kIOPMPSCycleCountKey "CycleCount"
+#define kIOPMPSMaxErrKey "MaxErr"
+#define kIOPMPSAdapterInfoKey "AdapterInfo"
+#define kIOPMPSLocationKey "Location"
+#define kIOPMPSErrorConditionKey "ErrorCondition"
+#define kIOPMPSManufacturerKey "Manufacturer"
+#define kIOPMPSManufactureDateKey "ManufactureDate"
+#define kIOPMPSModelKey "Model"
+#define kIOPMPSSerialKey "Serial"
+#define kIOPMDeviceNameKey "DeviceName"
+#define kIOPMPSLegacyBatteryInfoKey "LegacyBatteryInfo"
+#define kIOPMPSBatteryHealthKey "BatteryHealth"
+#define kIOPMPSHealthConfidenceKey "HealthConfidence"
+#define kIOPMPSCapacityEstimatedKey "CapacityEstimated"
+#define kIOPMPSBatteryChargeStatusKey "ChargeStatus"
+#define kIOPMPSBatteryTemperatureKey "Temperature"
+#define kIOPMPSAdapterDetailsKey "AdapterDetails"
+#define kIOPMPSChargerConfigurationKey "ChargerConfiguration"
 
 // kIOPMPSBatteryChargeStatusKey may have one of the following values, or may have
 // no value. If kIOPMBatteryChargeStatusKey has a NULL value (or no value) associated with it
 // then charge is proceeding normally. If one of these battery charge status reasons is listed,
 // then the charge may have been interrupted.
-#define kIOPMBatteryChargeStatusTooHot              "HighTemperature"
-#define kIOPMBatteryChargeStatusTooCold             "LowTemperature"
-#define kIOPMBatteryChargeStatusTooHotOrCold	    "HighOrLowTemperature"
-#define kIOPMBatteryChargeStatusGradient            "BatteryTemperatureGradient"
+#define kIOPMBatteryChargeStatusTooHot "HighTemperature"
+#define kIOPMBatteryChargeStatusTooCold "LowTemperature"
+#define kIOPMBatteryChargeStatusTooHotOrCold "HighOrLowTemperature"
+#define kIOPMBatteryChargeStatusGradient "BatteryTemperatureGradient"
 
 // Definitions for battery location, in case of multiple batteries.
 // A location of 0 is unspecified
@@ -535,32 +529,31 @@ enum {
 // properties in an IOPMPowerSource battery kext.
 enum {
     kIOPMUndefinedValue = 0,
-    kIOPMPoorValue      = 1,
-    kIOPMFairValue      = 2,
-    kIOPMGoodValue      = 3
+    kIOPMPoorValue = 1,
+    kIOPMFairValue = 2,
+    kIOPMGoodValue = 3
 };
 
 // Keys for kIOPMPSAdapterDetailsKey dictionary
-#define kIOPMPSAdapterDetailsIDKey		    "AdapterID"
-#define kIOPMPSAdapterDetailsWattsKey		    "Watts"
-#define kIOPMPSAdapterDetailsRevisionKey	    "AdapterRevision"
-#define kIOPMPSAdapterDetailsSerialNumberKey	    "SerialNumber"
-#define kIOPMPSAdapterDetailsFamilyKey		    "FamilyCode"
-#define kIOPMPSAdapterDetailsAmperageKey	    "Amperage"
-#define kIOPMPSAdapterDetailsDescriptionKey	    "Description"
-#define kIOPMPSAdapterDetailsPMUConfigurationKey    "PMUConfiguration"
+#define kIOPMPSAdapterDetailsIDKey "AdapterID"
+#define kIOPMPSAdapterDetailsWattsKey "Watts"
+#define kIOPMPSAdapterDetailsRevisionKey "AdapterRevision"
+#define kIOPMPSAdapterDetailsSerialNumberKey "SerialNumber"
+#define kIOPMPSAdapterDetailsFamilyKey "FamilyCode"
+#define kIOPMPSAdapterDetailsAmperageKey "Amperage"
+#define kIOPMPSAdapterDetailsDescriptionKey "Description"
+#define kIOPMPSAdapterDetailsPMUConfigurationKey "PMUConfiguration"
 
 // Battery's time remaining estimate is invalid this long (seconds) after a wake
-#define kIOPMPSInvalidWakeSecondsKey           "BatteryInvalidWakeSeconds"
+#define kIOPMPSInvalidWakeSecondsKey "BatteryInvalidWakeSeconds"
 
 // Battery must wait this long (seconds) after being completely charged before
 // the battery is settled.
-#define kIOPMPSPostChargeWaitSecondsKey        "PostChargeWaitSeconds"
+#define kIOPMPSPostChargeWaitSecondsKey "PostChargeWaitSeconds"
 
-// Battery must wait this long (seconds) after being completely discharged 
+// Battery must wait this long (seconds) after being completely discharged
 // before the battery is settled.
-#define kIOPMPSPostDishargeWaitSecondsKey      "PostDischargeWaitSeconds"
-
+#define kIOPMPSPostDishargeWaitSecondsKey "PostDischargeWaitSeconds"
 
 /* CPU Power Management status keys
  * Pass as arguments to IOPMrootDomain::systemPowerEventOccurred
@@ -571,53 +564,49 @@ enum {
  * power constraints.
  */
 
-
 /* kIOPMGraphicsPowerLimitsKey
  *   The key representing the dictionary of graphics power limits.
  *   The dictionary contains the other kIOPMCPUPower keys & their associated
  *   values (e.g. Speed limit, Processor Count, and Schedule limits).
  */
-#define kIOPMGraphicsPowerLimitsKey                     "Graphics_Power_Limits"
+#define kIOPMGraphicsPowerLimitsKey "Graphics_Power_Limits"
 
 /* kIOPMGraphicsPowerLimitPerformanceKey
  *   The key representing the percent of overall performance made available
  *   by the graphics chip as a percentage (integer 0 - 100).
  */
-#define kIOPMGraphicsPowerLimitPerformanceKey           "Graphics_Power_Performance"
-
-
+#define kIOPMGraphicsPowerLimitPerformanceKey "Graphics_Power_Performance"
 
 /* kIOPMCPUPowerLimitsKey
  *   The key representing the dictionary of CPU Power Limits.
  *   The dictionary contains the other kIOPMCPUPower keys & their associated
  *   values (e.g. Speed limit, Processor Count, and Schedule limits).
  */
-#define kIOPMCPUPowerLimitsKey                          "CPU_Power_Limits"
+#define kIOPMCPUPowerLimitsKey "CPU_Power_Limits"
 
 /* kIOPMCPUPowerLimitProcessorSpeedKey defines the speed & voltage limits placed 
  *   on the CPU.
  *   Represented as a percentage (0-100) of maximum CPU speed.
  */
-#define kIOPMCPUPowerLimitProcessorSpeedKey             "CPU_Speed_Limit"
+#define kIOPMCPUPowerLimitProcessorSpeedKey "CPU_Speed_Limit"
 
 /* kIOPMCPUPowerLimitProcessorCountKey reflects how many, if any, CPUs have been
  *   taken offline. Represented as an integer number of CPUs (0 - Max CPUs).
  */
-#define kIOPMCPUPowerLimitProcessorCountKey             "CPU_Available_CPUs"
+#define kIOPMCPUPowerLimitProcessorCountKey "CPU_Available_CPUs"
 
 /* kIOPMCPUPowerLimitSchedulerTimeKey represents the percentage (0-100) of CPU time 
  *   available. 100% at normal operation. The OS may limit this time for a percentage
  *   less than 100%.
  */
-#define kIOPMCPUPowerLimitSchedulerTimeKey              "CPU_Scheduler_Limit"
-
+#define kIOPMCPUPowerLimitSchedulerTimeKey "CPU_Scheduler_Limit"
 
 /* Thermal Level Warning Key
  * Indicates the thermal constraints placed on the system. This value may 
  * cause clients to action to consume fewer system resources.
  * The value associated with this warning is defined by the platform.
  */
-#define kIOPMThermalLevelWarningKey                     "Thermal_Level_Warning"
+#define kIOPMThermalLevelWarningKey "Thermal_Level_Warning"
 
 /* Thermal Warning Level values
  *      kIOPMThermalWarningLevelNormal - under normal operating conditions
@@ -627,51 +616,50 @@ enum {
  * The platform may define additional thermal levels if necessary.
  */
 enum {
-  kIOPMThermalWarningLevelNormal    = 0,
-  kIOPMThermalWarningLevelDanger    = 5,
-  kIOPMThermalWarningLevelCrisis    = 10
+    kIOPMThermalWarningLevelNormal = 0,
+    kIOPMThermalWarningLevelDanger = 5,
+    kIOPMThermalWarningLevelCrisis = 10
 };
-
 
 // PM Settings Controller setting types
 // Settings types used primarily with:
 //      IOPMrootDomain::registerPMSettingController
 // The values are identical to the similarly named keys for use in user space
 // PM settings work. Those keys are defined in IOPMLibPrivate.h.
-#define kIOPMSettingWakeOnRingKey                   "Wake On Modem Ring"
-#define kIOPMSettingRestartOnPowerLossKey           "Automatic Restart On Power Loss"
-#define kIOPMSettingWakeOnACChangeKey               "Wake On AC Change"
-#define kIOPMSettingSleepOnPowerButtonKey           "Sleep On Power Button"
-#define kIOPMSettingWakeOnClamshellKey              "Wake On Clamshell Open"
-#define kIOPMSettingReduceBrightnessKey             "ReduceBrightness"
-#define kIOPMSettingDisplaySleepUsesDimKey          "Display Sleep Uses Dim"
-#define kIOPMSettingTimeZoneOffsetKey               "TimeZoneOffsetSeconds"
-#define kIOPMSettingMobileMotionModuleKey           "MobileMotionModule"
-#define kIOPMSettingGraphicsSwitchKey               "GPUSwitch"
+#define kIOPMSettingWakeOnRingKey "Wake On Modem Ring"
+#define kIOPMSettingRestartOnPowerLossKey "Automatic Restart On Power Loss"
+#define kIOPMSettingWakeOnACChangeKey "Wake On AC Change"
+#define kIOPMSettingSleepOnPowerButtonKey "Sleep On Power Button"
+#define kIOPMSettingWakeOnClamshellKey "Wake On Clamshell Open"
+#define kIOPMSettingReduceBrightnessKey "ReduceBrightness"
+#define kIOPMSettingDisplaySleepUsesDimKey "Display Sleep Uses Dim"
+#define kIOPMSettingTimeZoneOffsetKey "TimeZoneOffsetSeconds"
+#define kIOPMSettingMobileMotionModuleKey "MobileMotionModule"
+#define kIOPMSettingGraphicsSwitchKey "GPUSwitch"
 
 // Setting controlling drivers can register to receive scheduled wake data
 // Either in "CF seconds" type, or structured calendar data in a formatted
 // IOPMCalendarStruct defined below.
-#define kIOPMSettingAutoWakeSecondsKey              "wake"
-#define kIOPMSettingAutoWakeCalendarKey             "WakeByCalendarDate"
-#define kIOPMSettingAutoPowerSecondsKey             "poweron"
-#define kIOPMSettingAutoPowerCalendarKey            "PowerByCalendarDate"
+#define kIOPMSettingAutoWakeSecondsKey "wake"
+#define kIOPMSettingAutoWakeCalendarKey "WakeByCalendarDate"
+#define kIOPMSettingAutoPowerSecondsKey "poweron"
+#define kIOPMSettingAutoPowerCalendarKey "PowerByCalendarDate"
 
 // Debug seconds auto wake
 // Used by sleep cycling debug tools
-#define kIOPMSettingDebugWakeRelativeKey            "WakeRelativeToSleep"
-#define kIOPMSettingDebugPowerRelativeKey           "PowerRelativeToShutdown"
+#define kIOPMSettingDebugWakeRelativeKey "WakeRelativeToSleep"
+#define kIOPMSettingDebugPowerRelativeKey "PowerRelativeToShutdown"
 
 // Maintenance wake calendar.
-#define kIOPMSettingMaintenanceWakeCalendarKey      "MaintenanceWakeCalendarDate"
+#define kIOPMSettingMaintenanceWakeCalendarKey "MaintenanceWakeCalendarDate"
 
 struct IOPMCalendarStruct {
-    UInt32      year;
-    UInt8       month;
-    UInt8       day;
-    UInt8       hour;
-    UInt8       minute;
-    UInt8       second;
+    UInt32 year;
+    UInt8 month;
+    UInt8 day;
+    UInt8 hour;
+    UInt8 minute;
+    UInt8 second;
 };
 typedef struct IOPMCalendarStruct IOPMCalendarStruct;
 
@@ -687,7 +675,7 @@ enum {
     kPMMotionSensor,
     kPMLastAggressivenessType
 };
-#define kMaxType (kPMLastAggressivenessType-1)
+#define kMaxType (kPMLastAggressivenessType - 1)
 
 // SetAggressiveness values for the kPMPowerSource aggressiveness type
 enum {
@@ -695,46 +683,46 @@ enum {
     kIOPMExternalPower
 };
 
-#define kIOREMSleepEnabledKey               "REMSleepEnabled"
+#define kIOREMSleepEnabledKey "REMSleepEnabled"
 
 // Strings for deciphering the dictionary returned from IOPMCopyBatteryInfo
-#define kIOBatteryInfoKey                   "IOBatteryInfo"
-#define kIOBatteryCurrentChargeKey          "Current"
-#define kIOBatteryCapacityKey               "Capacity"
-#define kIOBatteryFlagsKey                  "Flags"
-#define kIOBatteryVoltageKey                "Voltage"
-#define kIOBatteryAmperageKey               "Amperage"
-#define kIOBatteryCycleCountKey             "Cycle Count"
+#define kIOBatteryInfoKey "IOBatteryInfo"
+#define kIOBatteryCurrentChargeKey "Current"
+#define kIOBatteryCapacityKey "Capacity"
+#define kIOBatteryFlagsKey "Flags"
+#define kIOBatteryVoltageKey "Voltage"
+#define kIOBatteryAmperageKey "Amperage"
+#define kIOBatteryCycleCountKey "Cycle Count"
 
 enum {
-    kIOBatteryInstalled         = (1 << 2),
-    kIOBatteryCharge            = (1 << 1),
-    kIOBatteryChargerConnect    = (1 << 0)
+    kIOBatteryInstalled = (1 << 2),
+    kIOBatteryCharge = (1 << 1),
+    kIOBatteryChargerConnect = (1 << 0)
 };
 
 // Private power management message indicating battery data has changed
 // Indicates new data resides in the IORegistry
-#define kIOPMMessageBatteryStatusHasChanged         iokit_family_msg(sub_iokit_pmu, 0x100)
+#define kIOPMMessageBatteryStatusHasChanged iokit_family_msg(sub_iokit_pmu, 0x100)
 
 // Apple private Legacy messages for re-routing AutoWake and AutoPower messages to the PMU
 // through newer user space IOPMSchedulePowerEvent API
-#define kIOPMUMessageLegacyAutoWake                 iokit_family_msg(sub_iokit_pmu, 0x200)
-#define kIOPMUMessageLegacyAutoPower                iokit_family_msg(sub_iokit_pmu, 0x210)
+#define kIOPMUMessageLegacyAutoWake iokit_family_msg(sub_iokit_pmu, 0x200)
+#define kIOPMUMessageLegacyAutoPower iokit_family_msg(sub_iokit_pmu, 0x210)
 
 // For use with IOPMPowerSource bFlags
-#define IOPM_POWER_SOURCE_REV   2
+#define IOPM_POWER_SOURCE_REV 2
 enum {
-  kIOPMACInstalled      = kIOBatteryChargerConnect,
-  kIOPMBatteryCharging  = kIOBatteryCharge,
-  kIOPMBatteryInstalled = kIOBatteryInstalled,
-  kIOPMUPSInstalled     = (1<<3),
-  kIOPMBatteryAtWarn    = (1<<4),
-  kIOPMBatteryDepleted  = (1<<5),
-  kIOPMACnoChargeCapability = (1<<6),     // AC adapter cannot charge battery
-  kIOPMRawLowBattery    = (1<<7),         // used only by  Platform Expert
-  kIOPMForceLowSpeed    = (1<<8),         // set by Platfm Expert, chk'd by Pwr Plugin
-  kIOPMClosedClamshell  = (1<<9),         // set by PMU - reflects state of the clamshell
-  kIOPMClamshellStateOnWake = (1<<10)     // used only by Platform Expert
+    kIOPMACInstalled = kIOBatteryChargerConnect,
+    kIOPMBatteryCharging = kIOBatteryCharge,
+    kIOPMBatteryInstalled = kIOBatteryInstalled,
+    kIOPMUPSInstalled = (1 << 3),
+    kIOPMBatteryAtWarn = (1 << 4),
+    kIOPMBatteryDepleted = (1 << 5),
+    kIOPMACnoChargeCapability = (1 << 6), // AC adapter cannot charge battery
+    kIOPMRawLowBattery = (1 << 7), // used only by  Platform Expert
+    kIOPMForceLowSpeed = (1 << 8), // set by Platfm Expert, chk'd by Pwr Plugin
+    kIOPMClosedClamshell = (1 << 9), // set by PMU - reflects state of the clamshell
+    kIOPMClamshellStateOnWake = (1 << 10) // used only by Platform Expert
 };
 
 // **********************************************
@@ -754,17 +742,17 @@ enum {
 };
 
 struct stateChangeNote {
-    IOPMPowerFlags    stateFlags;
-    unsigned long    stateNum;
-    void *         powerRef;
+    IOPMPowerFlags stateFlags;
+    unsigned long stateNum;
+    void *powerRef;
 };
 typedef struct stateChangeNote stateChangeNote;
 
 struct IOPowerStateChangeNotification {
-    void *        powerRef;
-    unsigned long    returnValue;
-    unsigned long    stateNumber;
-    IOPMPowerFlags    stateFlags;
+    void *powerRef;
+    unsigned long returnValue;
+    unsigned long stateNumber;
+    IOPMPowerFlags stateFlags;
 };
 typedef struct IOPowerStateChangeNotification IOPowerStateChangeNotification;
 typedef IOPowerStateChangeNotification sleepWakeNote;
@@ -795,13 +783,13 @@ typedef IOPowerStateChangeNotification sleepWakeNote;
     @field __reserved2 Set to zero.
  */
 struct IOPMSystemCapabilityChangeParameters {
-    uint32_t    notifyRef;
-    uint32_t    maxWaitForReply;
-    uint32_t    changeFlags;
-    uint32_t    __reserved1;
-    uint32_t    fromCapabilities;
-    uint32_t    toCapabilities;
-    uint32_t    __reserved2[4];
+    uint32_t notifyRef;
+    uint32_t maxWaitForReply;
+    uint32_t changeFlags;
+    uint32_t __reserved1;
+    uint32_t fromCapabilities;
+    uint32_t toCapabilities;
+    uint32_t __reserved2[4];
 };
 
 /*! @enum IOPMSystemCapabilityChangeFlags
@@ -810,14 +798,14 @@ struct IOPMSystemCapabilityChangeParameters {
 */
 enum {
     kIOPMSystemCapabilityWillChange = 0x01,
-    kIOPMSystemCapabilityDidChange  = 0x02
+    kIOPMSystemCapabilityDidChange = 0x02
 };
 
 enum {
-    kIOPMSystemCapabilityCPU        = 0x01,
-    kIOPMSystemCapabilityGraphics   = 0x02,
-    kIOPMSystemCapabilityAudio      = 0x04,
-    kIOPMSystemCapabilityNetwork    = 0x08
+    kIOPMSystemCapabilityCPU = 0x01,
+    kIOPMSystemCapabilityGraphics = 0x02,
+    kIOPMSystemCapabilityAudio = 0x04,
+    kIOPMSystemCapabilityNetwork = 0x08
 };
 
 #endif /* ! _IOKIT_IOPM_H */

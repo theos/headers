@@ -8,7 +8,7 @@ API_DEPRECATED_WITH_REPLACEMENT("SBVolumeControl", ios(2.0, 13.0))
 - (void)increaseVolume;
 - (void)decreaseVolume;
 
-- (float)volumeStepUp   API_AVAILABLE(ios(6.0));
+- (float)volumeStepUp API_AVAILABLE(ios(6.0));
 - (float)volumeStepDown API_AVAILABLE(ios(6.0));
 
 - (float)volume API_AVAILABLE(ios(4.0));

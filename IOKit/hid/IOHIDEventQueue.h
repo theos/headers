@@ -39,8 +39,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #if __cplusplus
 extern "C" {
 #endif
-	
-	typedef struct __IOHIDEventQueue
+
+typedef struct __IOHIDEventQueue
 #if 0
 	{
 		CFRuntimeBase base;	// 0, 4
@@ -51,30 +51,30 @@ extern "C" {
 		int topBitOfToken;	// 18, = token >> 31
 	}
 #endif
-	* IOHIDEventQueueRef;
-	
+    *IOHIDEventQueueRef;
+
 #pragma mark -
 #pragma mark Creators
-	
-	CFTypeID IOHIDEventQueueGetTypeID(void);	
-	
-	// Token must be nonzero.
-	IOHIDEventQueueRef IOHIDEventQueueCreateWithToken(CFAllocatorRef allocator, uint32_t token);
-	IOHIDEventQueueRef IOHIDEventQueueCreate(CFAllocatorRef allocator, int notificationPortType, uint32_t token);
+
+CFTypeID IOHIDEventQueueGetTypeID(void);
+
+// Token must be nonzero.
+IOHIDEventQueueRef IOHIDEventQueueCreateWithToken(CFAllocatorRef allocator, uint32_t token);
+IOHIDEventQueueRef IOHIDEventQueueCreate(CFAllocatorRef allocator, int notificationPortType, uint32_t token);
 
 #pragma mark -
 #pragma mark Accessors
-	
-	uint32_t IOHIDEventQueueGetToken(IOHIDEventQueueRef queue);
-	
-	void IOHIDEventQueueSetNotificationPort(IOHIDEventQueueRef queue, mach_port_t port);
-	
+
+uint32_t IOHIDEventQueueGetToken(IOHIDEventQueueRef queue);
+
+void IOHIDEventQueueSetNotificationPort(IOHIDEventQueueRef queue, mach_port_t port);
+
 #pragma mark -
 #pragma mark Actions
-	
-	IOHIDEventRef IOHIDEventQueueDequeueCopy(IOHIDEventQueueRef queue);
-	void IOHIDEventQueueEnqueue(IOHIDEventQueueRef queue, IOHIDEventRef event);	// will send a message to the "tickle port" as well.
-	
+
+IOHIDEventRef IOHIDEventQueueDequeueCopy(IOHIDEventQueueRef queue);
+void IOHIDEventQueueEnqueue(IOHIDEventQueueRef queue, IOHIDEventRef event); // will send a message to the "tickle port" as well.
+
 #if __cplusplus
 }
 #endif

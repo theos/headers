@@ -7,6 +7,6 @@
 
 + (instancetype)sharedInstance;
 
-- (NSArray <IMDChat *> *)chats;
+- (NSArray<IMDChat *> *)chats;
 
 @end

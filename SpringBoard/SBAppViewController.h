@@ -3,7 +3,7 @@
 
 @class SBApplication, SBAppView, SBWorkspaceApplication, SBApplicationSceneEntity;
 
-@interface SBAppViewController : UIViewController <SBApplicationHosting>
+@interface SBAppViewController : UIViewController<SBApplicationHosting>
 @property (nonatomic, copy, readonly) NSString *bundleIdentifier;
 @property (assign, nonatomic) BOOL automatesLifecycle;
 @property (assign, nonatomic) NSInteger requestedMode;

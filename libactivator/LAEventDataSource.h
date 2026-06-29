@@ -3,7 +3,7 @@
 // Event Data Sources represent the metadata associated with specific events
 // A data source is constructed automatically for each event in /Library/Activator/Events
 
-@protocol LAEventDataSource <NSObject>
+@protocol LAEventDataSource<NSObject>
 
 @required
 - (NSString *)localizedTitleForEventName:(NSString *)eventName;
@@ -23,4 +23,3 @@
 - (void)eventWithName:(NSString *)eventName didSaveNewConfiguration:(id)configuration;
 
 @end
-

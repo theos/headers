@@ -7,14 +7,14 @@
 #import <Foundation/NSDictionary.h>
 
 typedef NS_ENUM(NSInteger, MIBundleType) {
-	MIBundleTypeSystemApp = 1,
-	MIBundleTypeInternalApp,
-	MIBundleTypeDiskImageApp,
-	MIBundleTypeUserApp,
-	MIBundleTypeVPNPlugin,
-	MIBundleTypeCarrierBundle,
-	MIBundleTypeAppExtension,
-	MIBundleTypeFramework
+    MIBundleTypeSystemApp = 1,
+    MIBundleTypeInternalApp,
+    MIBundleTypeDiskImageApp,
+    MIBundleTypeUserApp,
+    MIBundleTypeVPNPlugin,
+    MIBundleTypeCarrierBundle,
+    MIBundleTypeAppExtension,
+    MIBundleTypeFramework
 };
 
 @interface MIBundle : NSObject

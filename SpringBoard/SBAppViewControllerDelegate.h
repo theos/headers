@@ -3,7 +3,7 @@
 
 @class SBApplication, SBAppViewController;
 
-@protocol SBAppViewControllerDelegate <NSObject>
+@protocol SBAppViewControllerDelegate<NSObject>
 @optional
 
 - (BOOL)appViewController:(SBAppViewController *)controller shouldTransitionToMode:(NSInteger)mode;

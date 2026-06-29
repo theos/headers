@@ -2,7 +2,7 @@
 
 @class BiometricKitEnrollProgressInfo, BiometricKitIdentity;
 
-@protocol BiometricKitDelegate <NSObject>
+@protocol BiometricKitDelegate<NSObject>
 @optional
 
 - (void)enrollProgress:(BiometricKitEnrollProgressInfo *)progress;

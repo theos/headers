@@ -44,10 +44,9 @@ __BEGIN_DECLS
  */
 CFPropertyListRef _getCapability(CFStringRef capability);
 
-CFStringRef GSGetLocalizedDeviceName();                ///< Get the localized device name (which is the "device-name-localized" capability).
-CFStringRef GSGetDeviceName();                         ///< Get the device name (which is the "device-name" capability).
+CFStringRef GSGetLocalizedDeviceName(); ///< Get the localized device name (which is the "device-name-localized" capability).
+CFStringRef GSGetDeviceName(); ///< Get the device name (which is the "device-name" capability).
 Boolean GSSystemHasCapability(CFStringRef capability); ///< Check if the system has the specified capability.
-
 
 Boolean GSSystemCanTakePhoto(); ///< Returns if the device can take photos (i.e. have "still-camera" but not "cameraRestriction" capabilities).
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
@@ -55,7 +54,7 @@ Boolean GSSystemHasTelephonyCapability(); ///< Returns if the device has "teleph
 #endif
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 Boolean GSSystemGetCellularDataCapability(void); ///< Returns if the device has "cellular-data" capability.
-Boolean GSSystemGetTelephonyCapability(void);    ///< Returns if the device has "telephony" capability.
+Boolean GSSystemGetTelephonyCapability(void); ///< Returns if the device has "telephony" capability.
 #endif
 
 /// If the capability is a dictionary (e.g. the "screen-dimensions" capability), copy the value of a key in that dictionary.

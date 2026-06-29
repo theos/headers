@@ -7,10 +7,10 @@
 
 @interface IMDChat : NSObject
 
-@property (nonatomic, retain) NSDictionary <NSString *, id> *properties;
+@property (nonatomic, retain) NSDictionary<NSString *, id> *properties;
 
-- (void)updateProperties:(NSDictionary <NSString *, id> *)properties;
+- (void)updateProperties:(NSDictionary<NSString *, id> *)properties;
 
-@property (nonatomic, retain) NSArray <IMDHandle *> *participants;
+@property (nonatomic, retain) NSArray<IMDHandle *> *participants;
 
 @end

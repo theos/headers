@@ -84,25 +84,25 @@ GSEventFlags GSKeyboardGetModifierState(GSKeyboardRef keyboard);
 
 // ref: http://developer.apple.com/mac/library/documentation/Carbon/Reference/Unicode_Utilities_Ref/Reference/reference.html#//apple_ref/doc/uid/TP30000122-CH1g-F10792
 OSStatus GSKeyTranslate(GSKeyboardRef keyboard,
-                        UInt16 virtualKeyCode,
-                        UInt16 keyAction,
-                        UInt32 modifierKeyState,
-                        UInt32 keyboardType,
-                        OptionBits keyTranslateOptions,
-                        UInt32 *deadKeyState,
-                        UniCharCount maxStringLength,
-                        UniCharCount *actualStringLength,
-                        UniChar unicodeString[]);
+    UInt16 virtualKeyCode,
+    UInt16 keyAction,
+    UInt32 modifierKeyState,
+    UInt32 keyboardType,
+    OptionBits keyTranslateOptions,
+    UInt32 *deadKeyState,
+    UniCharCount maxStringLength,
+    UniCharCount *actualStringLength,
+    UniChar unicodeString[]);
 
 OSStatus GSKeyboardTranslateKey(GSKeyboardRef keyboard,
-                                UInt16 virtualKeyCode,
-                                UInt16 unknown,
-                                OptionBits keyTranslateOptions,
-                                UniCharCount maxStringLength,
-                                UniCharCount *actualStringLength,
-                                UniChar unicodeString[],
-                                UniCharCount *actualStringLength2,
-                                UniChar unicodeString2[]);
+    UInt16 virtualKeyCode,
+    UInt16 unknown,
+    OptionBits keyTranslateOptions,
+    UniCharCount maxStringLength,
+    UniCharCount *actualStringLength,
+    UniChar unicodeString[],
+    UniCharCount *actualStringLength2,
+    UniChar unicodeString2[]);
 
 __END_DECLS
 

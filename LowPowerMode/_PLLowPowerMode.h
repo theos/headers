@@ -8,7 +8,6 @@ static NSString *const kPMLPMSourceSiri = @"Siri";
 static NSString *const kPMLPMSourceLostMode = @"LostMode";
 static NSString *const kPMLPMSourceSystemDisable = @"SystemDisable";
 
-
 API_AVAILABLE(ios(15.0))
 @interface _PLLowPowerMode : NSObject
 + (instancetype)sharedInstance;

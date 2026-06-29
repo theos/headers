@@ -12,7 +12,7 @@
 @property (nonatomic, retain) NSString *sectionDisplayName;
 
 @property (nonatomic, retain) BBSectionInfo *defaultSectionInfo;
-@property (nonatomic, retain) NSArray <BBSectionInfo *> *defaultSubsectionInfos;
+@property (nonatomic, retain) NSArray<BBSectionInfo *> *defaultSubsectionInfos;
 
 @property (nonatomic, retain) BBSectionParameters *sectionParameters;
 

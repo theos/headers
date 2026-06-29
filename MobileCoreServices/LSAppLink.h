@@ -3,10 +3,10 @@
 @class LSApplicationProxy;
 
 typedef NS_ENUM(NSInteger, LSAppLinkOpenStrategy) {
-	LSAppLinkOpenStrategyUnknown = -1,
-	LSAppLinkOpenStrategyApp,
-	LSAppLinkOpenStrategyIdk,
-	LSAppLinkOpenStrategyBrowser,
+    LSAppLinkOpenStrategyUnknown = -1,
+    LSAppLinkOpenStrategyApp,
+    LSAppLinkOpenStrategyIdk,
+    LSAppLinkOpenStrategyBrowser,
 };
 
 API_AVAILABLE(ios(9.0))

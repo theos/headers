@@ -41,8 +41,8 @@
 
 typedef UInt32 IOMessage;
 
-#define iokit_common_msg(message)          (UInt32)(sys_iokit|sub_iokit_common|message)
-#define iokit_family_msg(sub,message)      (UInt32)(sys_iokit|sub|message)
+#define iokit_common_msg(message) (UInt32)(sys_iokit | sub_iokit_common | message)
+#define iokit_family_msg(sub, message) (UInt32)(sys_iokit | sub | message)
 
 /*! 
  * @defined         iokit_vendor_specific_msg
@@ -50,27 +50,26 @@ typedef UInt32 IOMessage;
  *                  subsystem. It can be used to generate messages that are used for private 
  *                  communication between vendor specific code with the IOService::message() etc. APIs.
  */
-#define iokit_vendor_specific_msg(message) (UInt32)(sys_iokit|sub_iokit_vendor_specific|message)
+#define iokit_vendor_specific_msg(message) (UInt32)(sys_iokit | sub_iokit_vendor_specific | message)
 
-#define kIOMessageServiceIsTerminated      iokit_common_msg(0x010)
-#define kIOMessageServiceIsSuspended       iokit_common_msg(0x020)
-#define kIOMessageServiceIsResumed         iokit_common_msg(0x030)
+#define kIOMessageServiceIsTerminated iokit_common_msg(0x010)
+#define kIOMessageServiceIsSuspended iokit_common_msg(0x020)
+#define kIOMessageServiceIsResumed iokit_common_msg(0x030)
 
 #define kIOMessageServiceIsRequestingClose iokit_common_msg(0x100)
-#define kIOMessageServiceIsAttemptingOpen  iokit_common_msg(0x101)
-#define kIOMessageServiceWasClosed         iokit_common_msg(0x110)
+#define kIOMessageServiceIsAttemptingOpen iokit_common_msg(0x101)
+#define kIOMessageServiceWasClosed iokit_common_msg(0x110)
 
-#define kIOMessageServiceBusyStateChange   iokit_common_msg(0x120)
+#define kIOMessageServiceBusyStateChange iokit_common_msg(0x120)
 
-#define kIOMessageConsoleSecurityChange    iokit_common_msg(0x128)
+#define kIOMessageConsoleSecurityChange iokit_common_msg(0x128)
 
-#define kIOMessageServicePropertyChange    iokit_common_msg(0x130)
+#define kIOMessageServicePropertyChange iokit_common_msg(0x130)
 
-#define kIOMessageCopyClientID             iokit_common_msg(0x330)
+#define kIOMessageCopyClientID iokit_common_msg(0x330)
 
-#define kIOMessageSystemCapabilityChange   iokit_common_msg(0x340)
-#define kIOMessageDeviceSignaledWakeup     iokit_common_msg(0x350)
-
+#define kIOMessageSystemCapabilityChange iokit_common_msg(0x340)
+#define kIOMessageDeviceSignaledWakeup iokit_common_msg(0x350)
 
 /*!
  * @defined         kIOMessageDeviceWillPowerOff
@@ -78,7 +77,7 @@ typedef UInt32 IOMessage;
  *                  Sent to IOKit interest notification clients of type <code>kIOAppPowerStateInterest</code>
  *                  and <code>kIOGeneralInterest</code>.
  */
-#define kIOMessageDeviceWillPowerOff       iokit_common_msg(0x210)
+#define kIOMessageDeviceWillPowerOff iokit_common_msg(0x210)
 
 /*!
  * @defined         kIOMessageDeviceHasPoweredOn
@@ -86,7 +85,7 @@ typedef UInt32 IOMessage;
  *                  Sent to IOKit interest notification clients of type <code>kIOAppPowerStateInterest</code>
  *                  and <code>kIOGeneralInterest</code>.
  */
-#define kIOMessageDeviceHasPoweredOn       iokit_common_msg(0x230)
+#define kIOMessageDeviceHasPoweredOn iokit_common_msg(0x230)
 
 /*! @group          In-kernel system shutdown and restart notifications
  */
@@ -100,7 +99,7 @@ typedef UInt32 IOMessage;
  *                  and to clients of <code>registerPrioritySleepWakeInterest()</code>.
  *                  Never delivered to user space notification clients.
  */
-#define kIOMessageSystemWillPowerOff       iokit_common_msg(0x250)
+#define kIOMessageSystemWillPowerOff iokit_common_msg(0x250)
 
 /*!
  * @defined         kIOMessageSystemWillRestart
@@ -111,7 +110,7 @@ typedef UInt32 IOMessage;
  *                  and to clients of <code>registerPrioritySleepWakeInterest()</code>.
  *                  Never delivered to user space notification clients.
  */
-#define kIOMessageSystemWillRestart        iokit_common_msg(0x310)
+#define kIOMessageSystemWillRestart iokit_common_msg(0x310)
 
 /*!
  * @defined         kIOMessageSystemPagingOff
@@ -121,8 +120,7 @@ typedef UInt32 IOMessage;
  *                  Delivered to clients of <code>registerPrioritySleepWakeInterest()</code>.
  *                  Never delivered to user space notification clients.
  */
-#define kIOMessageSystemPagingOff       iokit_common_msg(0x255)
-
+#define kIOMessageSystemPagingOff iokit_common_msg(0x255)
 
 /*! @group          System sleep and wake notifications
  */
@@ -134,7 +132,7 @@ typedef UInt32 IOMessage;
  *                  and <code>kIOPriorityPowerStateInterest</code>.
  *                  Delivered to user clients of <code>IORegisterForSystemPower</code>.
  */
-#define kIOMessageCanSystemSleep           iokit_common_msg(0x270)
+#define kIOMessageCanSystemSleep iokit_common_msg(0x270)
 
 /*!
  * @defined         kIOMessageSystemWillNotSleep
@@ -144,7 +142,7 @@ typedef UInt32 IOMessage;
  *                  and <code>kIOPriorityPowerStateInterest</code>.
  *                  Delivered to user clients of <code>IORegisterForSystemPower</code>.
  */
-#define kIOMessageSystemWillNotSleep       iokit_common_msg(0x290)
+#define kIOMessageSystemWillNotSleep iokit_common_msg(0x290)
 
 /*!
  * @defined         kIOMessageSystemWillSleep
@@ -153,7 +151,7 @@ typedef UInt32 IOMessage;
  *                  and <code>kIOPriorityPowerStateInterest</code>.
  *                  Delivered to user clients of <code>IORegisterForSystemPower</code>.
  */
-#define kIOMessageSystemWillSleep          iokit_common_msg(0x280)
+#define kIOMessageSystemWillSleep iokit_common_msg(0x280)
 
 /*!
  * @defined         kIOMessageSystemWillPowerOn
@@ -163,7 +161,7 @@ typedef UInt32 IOMessage;
  *                  and <code>kIOPriorityPowerStateInterest</code>.
  *                  Delivered to user clients of <code>IORegisterForSystemPower</code>.
  */
-#define kIOMessageSystemWillPowerOn        iokit_common_msg(0x320)
+#define kIOMessageSystemWillPowerOn iokit_common_msg(0x320)
 
 /*!
  * @defined         kIOMessageSystemHasPoweredOn
@@ -172,7 +170,7 @@ typedef UInt32 IOMessage;
  *                  and <code>kIOPriorityPowerStateInterest</code>.
  *                  Delivered to user clients of <code>IORegisterForSystemPower</code>.
  */
-#define kIOMessageSystemHasPoweredOn       iokit_common_msg(0x300)
+#define kIOMessageSystemHasPoweredOn iokit_common_msg(0x300)
 
 /*! @group          Unused and deprecated notifications
  */
@@ -183,38 +181,37 @@ typedef UInt32 IOMessage;
  *                  devices that implement their own idle timeouts.
  *                  This message type is almost never used.
  */
-#define kIOMessageCanDevicePowerOff        iokit_common_msg(0x200)
+#define kIOMessageCanDevicePowerOff iokit_common_msg(0x200)
 
 /*! 
  * @defined         kIOMessageDeviceWillNotPowerOff
  * @discussion      This IOKit interest notification is largely unused;
  *                  it's not very interesting.
  */
-#define kIOMessageDeviceWillNotPowerOff    iokit_common_msg(0x220)
+#define kIOMessageDeviceWillNotPowerOff iokit_common_msg(0x220)
 
 /*! 
  * @defined         kIOMessageSystemWillNotPowerOff
  * @deprecated      This IOKit message is unused.
  */
-#define kIOMessageSystemWillNotPowerOff    iokit_common_msg(0x260)
+#define kIOMessageSystemWillNotPowerOff iokit_common_msg(0x260)
 
 /*!
  * @defined         kIOMessageCanSystemPowerOff
  * @deprecated      This IOKit message is unused.
  */
-#define kIOMessageCanSystemPowerOff        iokit_common_msg(0x240)
+#define kIOMessageCanSystemPowerOff iokit_common_msg(0x240)
 
 /*!
  * @defined         kIOMessageDeviceWillPowerOn
  * @discussion      IOService power mgt does not send kIOMessageDeviceWillPowerOn.
  */
-#define kIOMessageDeviceWillPowerOn        iokit_common_msg(0x215)
+#define kIOMessageDeviceWillPowerOn iokit_common_msg(0x215)
 
 /*!
  * @defined         kIOMessageDeviceHasPoweredOff
  * @discussion      IOService power mgt does not send kIOMessageDeviceHasPoweredOff.
  */
-#define kIOMessageDeviceHasPoweredOff      iokit_common_msg(0x225)
-
+#define kIOMessageDeviceHasPoweredOff iokit_common_msg(0x225)
 
 #endif /* ! __IOKIT_IOMESSAGE_H */

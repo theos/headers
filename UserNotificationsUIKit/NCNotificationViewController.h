@@ -7,7 +7,7 @@
 @interface NCNotificationViewController : UIViewController
 
 @property (nonatomic, retain) NCNotificationRequest *notificationRequest;
-@property (nonatomic, retain) id <NCNotificationStaticContentProviding> staticContentProvider;
+@property (nonatomic, retain) id<NCNotificationStaticContentProviding> staticContentProvider;
 
 - (UIView *)_lookViewIfLoaded;
 

@@ -4,15 +4,16 @@
 @class BBAction, BBContent, BBSectionIcon, BBSectionParameters, BBSectionSubtypeParameters, BBImage;
 
 typedef NS_ENUM(NSUInteger, BBBulletinAccessoryStyle) {
-	BBBulletinAccessoryStyleNone,
-	BBBulletinAccessoryStyleVIP = 4
+    BBBulletinAccessoryStyleNone,
+    BBBulletinAccessoryStyleVIP = 4
 };
 
 typedef NS_ENUM(NSInteger, BBAttachmentMetadataType) {
-	BBAttachmentMetadataTypeImage = 1
+    BBAttachmentMetadataTypeImage = 1
 };
 
-API_AVAILABLE(ios(5.0))  @interface BBBulletin : NSObject
+API_AVAILABLE(ios(5.0))
+@interface BBBulletin : NSObject
 
 @property (nonatomic, copy) NSString *section;
 @property (nonatomic, copy) NSString *sectionID;

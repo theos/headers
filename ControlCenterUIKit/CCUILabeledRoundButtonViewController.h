@@ -31,4 +31,3 @@ API_AVAILABLE(ios(11.0))
 - (instancetype)initWithGlyphPackageDescription:(CCUICAPackageDescription *)glyphPackageDescription highlightColor:(UIColor *)highlightColor useLightStyle:(BOOL)useLightStyle;
 
 @end
-

@@ -1,9 +1,9 @@
 #import <UIKit/UIKit.h>
 #import "CCUIContentModuleContentViewController-Protocol.h"
 
-@protocol CCUIContentModule <NSObject>
+@protocol CCUIContentModule<NSObject>
 
-@property (nonatomic, readonly) UIViewController <CCUIContentModuleContentViewController> *contentViewController;
+@property (nonatomic, readonly) UIViewController<CCUIContentModuleContentViewController> *contentViewController;
 @property (nonatomic, readonly) UIViewController *backgroundViewController;
 
 @optional
@@ -11,6 +11,6 @@
 - (UIViewController *)backgroundViewController;
 
 @required
-- (UIViewController <CCUIContentModuleContentViewController> *)contentViewController;
+- (UIViewController<CCUIContentModuleContentViewController> *)contentViewController;
 
 @end

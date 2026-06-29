@@ -6,7 +6,7 @@
 
 @interface IMHandle : NSObject
 
-+ (NSArray <IMHandle *> *)imHandlesForIMPerson:(IMPerson *)person;
++ (NSArray<IMHandle *> *)imHandlesForIMPerson:(IMPerson *)person;
 
 @property (nonatomic, retain, readonly) NSString *ID;
 

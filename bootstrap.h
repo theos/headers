@@ -88,8 +88,8 @@ __BEGIN_DECLS
 
 #pragma GCC visibility push(default)
 
-#define	BOOTSTRAP_MAX_NAME_LEN			128
-#define	BOOTSTRAP_MAX_CMD_LEN			512
+#define BOOTSTRAP_MAX_NAME_LEN 128
+#define BOOTSTRAP_MAX_CMD_LEN 512
 
 typedef char name_t[BOOTSTRAP_MAX_NAME_LEN];
 typedef char cmd_t[BOOTSTRAP_MAX_CMD_LEN];
@@ -97,24 +97,24 @@ typedef name_t *name_array_t;
 typedef int bootstrap_status_t;
 typedef bootstrap_status_t *bootstrap_status_array_t;
 typedef unsigned int bootstrap_property_t;
-typedef bootstrap_property_t * bootstrap_property_array_t;
+typedef bootstrap_property_t *bootstrap_property_array_t;
 
 typedef boolean_t *bool_array_t;
 
-#define	BOOTSTRAP_MAX_LOOKUP_COUNT		20
+#define BOOTSTRAP_MAX_LOOKUP_COUNT 20
 
-#define	BOOTSTRAP_SUCCESS				0
-#define	BOOTSTRAP_NOT_PRIVILEGED		1100
-#define	BOOTSTRAP_NAME_IN_USE			1101
-#define	BOOTSTRAP_UNKNOWN_SERVICE		1102
-#define	BOOTSTRAP_SERVICE_ACTIVE		1103
-#define	BOOTSTRAP_BAD_COUNT				1104
-#define	BOOTSTRAP_NO_MEMORY				1105
-#define BOOTSTRAP_NO_CHILDREN			1106
+#define BOOTSTRAP_SUCCESS 0
+#define BOOTSTRAP_NOT_PRIVILEGED 1100
+#define BOOTSTRAP_NAME_IN_USE 1101
+#define BOOTSTRAP_UNKNOWN_SERVICE 1102
+#define BOOTSTRAP_SERVICE_ACTIVE 1103
+#define BOOTSTRAP_BAD_COUNT 1104
+#define BOOTSTRAP_NO_MEMORY 1105
+#define BOOTSTRAP_NO_CHILDREN 1106
 
-#define BOOTSTRAP_STATUS_INACTIVE		0
-#define BOOTSTRAP_STATUS_ACTIVE			1
-#define BOOTSTRAP_STATUS_ON_DEMAND		2
+#define BOOTSTRAP_STATUS_INACTIVE 0
+#define BOOTSTRAP_STATUS_ACTIVE 1
+#define BOOTSTRAP_STATUS_ON_DEMAND 2
 
 /*
  * After main() starts, it is safe to assume that this variable is always set.
@@ -156,11 +156,11 @@ extern mach_port_t bootstrap_port;
  *		Returns BOOTSTRAP_NOT_PRIVILEGED, bootstrap or uid invalid.
  */
 kern_return_t bootstrap_create_server(
-		mach_port_t bp,
-		cmd_t server_cmd,
-		uid_t server_uid,
-		boolean_t on_demand,
-		mach_port_t *server_port);
+    mach_port_t bp,
+    cmd_t server_cmd,
+    uid_t server_uid,
+    boolean_t on_demand,
+    mach_port_t *server_port);
 
 /*
  * bootstrap_subset()
@@ -180,9 +180,9 @@ kern_return_t bootstrap_create_server(
  * Errors:	Returns appropriate kernel errors on rpc failure.
  */
 kern_return_t bootstrap_subset(
-		mach_port_t bp,
-		mach_port_t requestor_port,
-		mach_port_t *subset_port);
+    mach_port_t bp,
+    mach_port_t requestor_port,
+    mach_port_t *subset_port);
 
 /*
  * bootstrap_unprivileged()
@@ -200,9 +200,9 @@ kern_return_t bootstrap_subset(
  * Native launchd jobs are always started with an unprivileged port.
  */
 kern_return_t bootstrap_unprivileged(
-		mach_port_t bp,
-		mach_port_t *unpriv_port)
-		AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
+    mach_port_t bp,
+    mach_port_t *unpriv_port)
+    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 /*
  * bootstrap_parent()
@@ -218,8 +218,8 @@ kern_return_t bootstrap_unprivileged(
  *	token in the message trailer).
  */
 kern_return_t bootstrap_parent(
-		mach_port_t bp,
-		mach_port_t *parent_port);
+    mach_port_t bp,
+    mach_port_t *parent_port);
 
 /*
  * bootstrap_register()
@@ -308,9 +308,9 @@ bootstrap_create_service(mach_port_t bp, name_t service_name, mach_port_t *sp);
  *			registered or checked-in.
  */
 kern_return_t bootstrap_check_in(
-		mach_port_t bp,
-		const name_t service_name,
-		mach_port_t *sp);
+    mach_port_t bp,
+    const name_t service_name,
+    mach_port_t *sp);
 
 /*
  * bootstrap_look_up()
@@ -323,9 +323,9 @@ kern_return_t bootstrap_check_in(
  *		Returns BOOTSTRAP_UNKNOWN_SERVICE, if service does not exist.
  */
 kern_return_t bootstrap_look_up(
-		mach_port_t bp,
-		const name_t service_name,
-		mach_port_t *sp);
+    mach_port_t bp,
+    const name_t service_name,
+    mach_port_t *sp);
 
 /*
  * bootstrap_status()
@@ -340,10 +340,10 @@ kern_return_t bootstrap_look_up(
  * for failure.
  */
 kern_return_t bootstrap_status(
-		mach_port_t bp,
-		name_t service_name,
-		bootstrap_status_t *service_active)
-		AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
+    mach_port_t bp,
+    name_t service_name,
+    bootstrap_status_t *service_active)
+    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 /* bootstrap_strerror()
  *

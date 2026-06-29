@@ -2,7 +2,8 @@
 
 @class SBLockScreenViewController, CSCoverSheetViewController;
 
-API_AVAILABLE(ios(7.0)) @interface SBLockScreenManager : NSObject
+API_AVAILABLE(ios(7.0))
+@interface SBLockScreenManager : NSObject
 
 + (instancetype)sharedInstance;
 

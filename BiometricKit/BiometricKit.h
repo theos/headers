@@ -10,7 +10,7 @@ API_AVAILABLE(ios(7.0))
 @property (assign) BOOL inUse;
 
 // research on iOS 10.2 shows `options` supports { "BKFilterIdentity" : BiometricKitIdentity }
-- (NSArray <BiometricKitIdentity *> *)identities:(NSDictionary *)options;
+- (NSArray<BiometricKitIdentity *> *)identities:(NSDictionary *)options;
 
 - (float)getModulationRatio;
 

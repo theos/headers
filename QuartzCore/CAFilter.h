@@ -2,14 +2,14 @@
 #import <QuartzCore/CABase.h>
 
 API_AVAILABLE(ios(2.0))
-@interface CAFilter : NSObject <NSCopying, NSMutableCopying, NSCoding>
+@interface CAFilter : NSObject<NSCopying, NSMutableCopying, NSCoding>
 
 @property (readonly) NSString *type;
 @property (copy) NSString *name;
 @property (getter=isEnabled) BOOL enabled;
 @property BOOL cachesInputImage API_AVAILABLE(ios(3.0));
 
-+ (NSArray <NSString *> *)filterTypes;
++ (NSArray<NSString *> *)filterTypes;
 + (CAFilter *)filterWithType:(NSString *)type;
 + (CAFilter *)filterWithName:(NSString *)name; // alias for filterWithType:
 
