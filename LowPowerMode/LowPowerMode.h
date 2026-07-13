@@ -1,1 +1,1 @@
-#import <LowPowerMode/_PLLowPowerMode.h>
+#import <LowPowerMode/_PMLowPowerMode.h>

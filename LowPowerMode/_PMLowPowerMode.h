@@ -10,7 +10,7 @@ static NSString *const kPMLPMSourceSystemDisable = @"SystemDisable";
 
 
 API_AVAILABLE(ios(15.0))
-@interface _PLLowPowerMode : NSObject
+@interface _PMLowPowerMode : NSObject
 + (instancetype)sharedInstance;
 - (NSInteger)getPowerMode;
 - (void)setPowerMode:(NSInteger)powerMode fromSource:(NSString *)source;
