@@ -83,9 +83,12 @@
  * 17.4     2420
  * 17.5     2503.1
  * 18.0     3000
+ * 18.1     3107
+ * 18.2     3208
  * 18.3     3301
  * 26.0     4040.1
  * 27.0     5027
+ * 27.1     5027
  * 27.2     5027.1
  *
  * Reference:
@@ -394,6 +397,14 @@
 #define kCFCoreFoundationVersionNumber_iOS_18_0 3000
 #endif
 
+#ifndef kCFCoreFoundationVersionNumber_iOS_18_1
+#define kCFCoreFoundationVersionNumber_iOS_18_1 3107
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_18_2
+#define kCFCoreFoundationVersionNumber_iOS_18_2 3208
+#endif
+
 #ifndef kCFCoreFoundationVersionNumber_iOS_18_3
 #define kCFCoreFoundationVersionNumber_iOS_18_3 3301
 #endif
@@ -404,6 +415,10 @@
 
 #ifndef kCFCoreFoundationVersionNumber_iOS_27_0
 #define kCFCoreFoundationVersionNumber_iOS_27_0 5027
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_27_1
+#define kCFCoreFoundationVersionNumber_iOS_27_1 5027
 #endif
 
 #ifndef kCFCoreFoundationVersionNumber_iOS_27_2
