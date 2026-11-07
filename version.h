@@ -75,8 +75,8 @@
  * 16.4     1971
  * 16.5     1977
  * 16.6     1979
- * 16.7     1979.1.101
- * 17.0     2048.1.101
+ * 16.7     1979.1
+ * 17.0     2048.1
  * 17.1     2106
  * 17.2     2202
  * 17.3     2303
@@ -363,11 +363,11 @@
 #endif
 
 #ifndef kCFCoreFoundationVersionNumber_iOS_16_7
-#define kCFCoreFoundationVersionNumber_iOS_16_7 1979.1.101
+#define kCFCoreFoundationVersionNumber_iOS_16_7 1979.1
 #endif
 
 #ifndef kCFCoreFoundationVersionNumber_iOS_17_0
-#define kCFCoreFoundationVersionNumber_iOS_17_0 2048.1.101
+#define kCFCoreFoundationVersionNumber_iOS_17_0 2048.1
 #endif
 
 #ifndef kCFCoreFoundationVersionNumber_iOS_17_1
