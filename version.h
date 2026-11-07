@@ -64,12 +64,35 @@
  * 15.2     1856.105
  * 15.3     1856.105
  * 15.4     1858.112
+ * 15.5     1863
+ * 15.6     1866
+ * 15.7     1866
+ * 15.8     1866
  * 16.0     1946.102
  * 16.1     1953.1
+ * 16.2     1953.300
+ * 16.3     1953.300
  * 16.4     1971
+ * 16.5     1977
+ * 16.6     1979
+ * 16.7     1979.1
+ * 17.0     2048.1
+ * 17.1     2106
+ * 17.2     2202
+ * 17.3     2303
+ * 17.4     2420
+ * 17.5     2503.1
+ * 18.0     3000
+ * 18.1     3107
+ * 18.2     3208
+ * 18.3     3301
+ * 26.0     4040.1
+ * 27.0     5027
+ * 27.1     5027
+ * 27.2     5027.1
  *
  * Reference:
- * https://iphonedev.wiki/index.php/CoreFoundation.framework#Versions
+ * https://theapplewiki.com/wiki/Dev:CoreFoundation.framework
  */
 
 // iOS 2.0 – 4.2 are defined in <CoreFoundation/CFBase.h>. The format prior to 4.0 is
@@ -298,6 +321,22 @@
 #define kCFCoreFoundationVersionNumber_iOS_15_4 1858.112
 #endif
 
+#ifndef kCFCoreFoundationVersionNumber_iOS_15_5
+#define kCFCoreFoundationVersionNumber_iOS_15_5 1863
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_15_6
+#define kCFCoreFoundationVersionNumber_iOS_15_6 1866
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_15_7
+#define kCFCoreFoundationVersionNumber_iOS_15_7 1866
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_15_8
+#define kCFCoreFoundationVersionNumber_iOS_15_8 1866
+#endif
+
 #ifndef kCFCoreFoundationVersionNumber_iOS_16_0
 #define kCFCoreFoundationVersionNumber_iOS_16_0 1946.102
 #endif
@@ -306,8 +345,84 @@
 #define kCFCoreFoundationVersionNumber_iOS_16_1 1953.1
 #endif
 
+#ifndef kCFCoreFoundationVersionNumber_iOS_16_2
+#define kCFCoreFoundationVersionNumber_iOS_16_2 1953.300
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_16_3
+#define kCFCoreFoundationVersionNumber_iOS_16_3 1953.300
+#endif
+
 #ifndef kCFCoreFoundationVersionNumber_iOS_16_4
 #define kCFCoreFoundationVersionNumber_iOS_16_4 1971
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_16_5
+#define kCFCoreFoundationVersionNumber_iOS_16_5 1977
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_16_6
+#define kCFCoreFoundationVersionNumber_iOS_16_6 1979
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_16_7
+#define kCFCoreFoundationVersionNumber_iOS_16_7 1979.1
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_17_0
+#define kCFCoreFoundationVersionNumber_iOS_17_0 2048.1
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_17_1
+#define kCFCoreFoundationVersionNumber_iOS_17_1 2106
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_17_2
+#define kCFCoreFoundationVersionNumber_iOS_17_2 2202
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_17_3
+#define kCFCoreFoundationVersionNumber_iOS_17_3 2303
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_17_4
+#define kCFCoreFoundationVersionNumber_iOS_17_4 2420
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_17_5
+#define kCFCoreFoundationVersionNumber_iOS_17_5 2503.1
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_18_0
+#define kCFCoreFoundationVersionNumber_iOS_18_0 3000
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_18_1
+#define kCFCoreFoundationVersionNumber_iOS_18_1 3107
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_18_2
+#define kCFCoreFoundationVersionNumber_iOS_18_2 3208
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_18_3
+#define kCFCoreFoundationVersionNumber_iOS_18_3 3301
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_26_0
+#define kCFCoreFoundationVersionNumber_iOS_26_0 4040.1
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_27_0
+#define kCFCoreFoundationVersionNumber_iOS_27_0 5027
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_27_1
+#define kCFCoreFoundationVersionNumber_iOS_27_1 5027
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_27_2
+#define kCFCoreFoundationVersionNumber_iOS_27_2 5027.1
 #endif
 
 #ifndef kCFCoreFoundationVersionNumber10_10
